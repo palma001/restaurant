@@ -4,7 +4,14 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box">
-                        <h4 class="page-title">UPDATE MENU</h4>
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="#">Binfrix</a></li>
+                                <li class="breadcrumb-item"><a href="<?=base_url()."index.php/products";?>" title="">Products</a></li>
+                                <li class="breadcrumb-item active">Update Products</li>
+                            </ol>
+                        </div>
+                        <h4 class="page-title">Update Products</h4>
                     </div>
                 </div>
             </div> 
@@ -12,7 +19,6 @@
     			<div class="col-lg-11">
     			    <div class="card">
     			        <div class="card-body">
-    			            <h4 class="mb-3 header-title">UPDATE MENU</h4>
                             <?php if ($product){?>
                                 <form class="form-horizontal" method="post" action="<?= base_url()."index.php/products/update/".$product->product_id;?>">
                                     <div class="form-group row">
@@ -47,10 +53,7 @@
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-2">
-                                            <a href="<?= base_url()."index.php/products"?>" class="btn btn-danger "><i class="fe-chevrons-left"></i> Previous</a>
-                                        </div>
-                                        <div class="col-2">
-                                            <button type="submit" class="btn btn-dark "><i class="fe-edit"></i> Update</button>
+                                            <button type="submit" class="btn btn-success ">Update</button>
                                         </div>
                                     </div>
                                 </form>     
