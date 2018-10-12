@@ -69,9 +69,9 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#"> <i class="fe-settings"></i> Settings </a>
+                        <a href="<?= base_url('index.php/settings/index/');?>"> <i class="fe-settings"></i> Settings </a>
                     </li>
-                            
+                        
                 </ul>
             </div>
             <!-- End Sidebar -->
