@@ -14,13 +14,14 @@ class customer_model extends CI_Model{
 
      public function inserte($data)
      {
+       $fecha_actual = date('d-m-Y'); 
        $this->email_validatio();
      	if ($this->var=="1") {
           $this->session->set_flashdata('message','the email belongs to a user');
           redirect(base_url('/index.php/Welcome/create/'));          
      	}else {
-     		  $this->db->insert('users',array('full_name'=>$data['fullname'],'email'=>$data['email'],
-          'password'=>$data['password'],'user_type_id'=>$data['usertype']));
+     		   $this->db->insert('users',array('full_name'=>$data['fullname'],'email'=>$data['email'],
+          'password'=>$data['password'],'user_type_id'=>$data['usertype'],'date'=>$fecha_actual));
           $this->session->set_flashdata('message','Registration Done With Exist');
           redirect(base_url('/index.php/Customers/index/')); 
      	}

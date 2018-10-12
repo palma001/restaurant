@@ -38,21 +38,10 @@
                        
                     </li>
                     <li>
-                        <a href="javascript: void(0);">
+                        <a href="<?= base_url('index.php/orders/index/');?>">
                             <i class="fe-edit"></i>
                             <span> Orders </span>
-                            <span class="menu-arrow"></span>
                         </a>
-                        <ul class="nav-second-level nav" aria-expanded="false">
-                            <li>
-                                <a href="#">Add Orders</a>
-                            </li>
-                            <li>
-                                <a href="#" aria-expanded="false">
-                                    List Orders
-                                </a>
-                            </li>
-                        </ul>
                     </li>
                     <li>
                         <a href="javascript: void(0);">

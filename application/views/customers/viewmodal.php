@@ -12,7 +12,7 @@
                                                     <th>Id</th>
                                                     <th>Full Name </th>
                                                     <th>Email</th>
-                                                    <th>Data</th>
+                                                    <th>Date</th>
                                                 </tr>
                                             </thead>
                                         
