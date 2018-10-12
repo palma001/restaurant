@@ -13,24 +13,14 @@
             <div id="sidebar-menu">
                 <ul class="metismenu" id="side-menu">
                    <li class="menu-title">Navigation</li>
+                   <li><a href="" title=""><i class="fe-home"></i> Home</a></li>
                    <li>
-                        <a href="javascript: void(0);">
-                            <i class="fe-clipboard"></i>
-                            <span> Products </span>
-                            <span class="menu-arrow"></span>
+                        <a href="<?= base_url().'index.php/products';?>" aria-expanded="false">
+                            <i class="fe-clipboard"></i> Products
                         </a>
-                        <ul class="nav-second-level nav" aria-expanded="false">
-                            <li>
-                                <a href="<?= base_url().'index.php/products/add_products'?>">Add Products</a>
-                            </li>
-                            <li>
-                                <a href="<?= base_url().'index.php/products';?>" aria-expanded="false">
-                                    List Products
-                                </a>
-                            </li>
-                        </ul>
                     </li>
                     <li>
+
                         <a href="<?= base_url('index.php/Customers/index/');?>">
                             <i class="fe-user"></i> 
                             <span> Clients </span>
@@ -44,27 +34,17 @@
                         </a>
                     </li>
                     <li>
-                        <a href="javascript: void(0);">
-                            <i class="fe-folder-plus"></i>
-                            <span> Type of User </span>
-                            <span class="menu-arrow"></span>
+                       <a href="<?= base_url().'index.php/typeUser';?>">
+                            <i class="fe-folder-plus"></i> Types of Users
                         </a>
-                        <ul class="nav-second-level nav" aria-expanded="false">
-                            <li>
-                                <a href="<?= base_url().'index.php/typeUser';?>">
-                                    Type of User
-                                </a>
-                            </li>
-                        </ul>
                     </li>
                     <li>
-                        <a href="<?= base_url('index.php/settings/index/');?>"> <i class="fe-settings"></i> Settings </a>
-                    </li>
-                        
+
+                        <a href="<?= base_url('index.php/settings/index/');?>"> <i class="fe-settings"></i> Settings </a>      
+
                 </ul>
             </div>
             <!-- End Sidebar -->
-
             <div class="clearfix"></div>
 
         </div>

@@ -19,6 +19,14 @@ class TypeUser extends CI_Controller {
 
 	}
 
+	public function add_types()
+	{
+		$this->load->view('layouts/headers');
+		$this->load->view('layouts/navbar');
+		$this->load->view('type_user/create');	
+		$this->load->view('layouts/footer');
+	}
+
 	public function create()
 	{
 		$data = array(

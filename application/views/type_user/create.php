@@ -148,7 +148,7 @@
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="#">Binfrix</a></li>
-                            <li class="breadcrumb-item active">Types of Users</li>
+                            <li class="breadcrumb-item active">Products</li>
                         </ol>
                     </div>
                     <h4 class="page-title">Types of Users</h4>
@@ -156,43 +156,24 @@
             </div>
         </div> 
         <div class="row justify-content-md-center">
-            <div class="col-11">
+            <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <p class="text-muted font-13 mb-4">
-                            <a href="<?= base_url().'index.php/typeUser/add_types'?>" class="btn btn-dark">Add</a>
-                        </p>
-                        <h4 class="mb-3">List Type of Users</h4>
-                        <table id="basic-datatable" class="table table-sm table-striped nowrap text-center">
-                            <thead>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Types of Users</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                               <?php 
-                               		if ($user_types==false) {
-                               			echo '<tr><td colspan="3"><strong>NO HAY REGISTROS</strong></td></tr>';
-                               		}else{
-                               			foreach ($user_types->result() as $key => $user_types) {
-		                               		echo '
-												<tr>
-													<td>'.$key.'</td>
-													<td>'.ucwords(strtolower($user_types->user_type)).'</td>
-													<td>
-														<a href="'.base_url()."index.php/typeUser/show/".$user_types->user_type_id.'"><i class="fe-edit-2"></i> </a>
-														<a href="'.base_url()."index.php/typeUser/destroy/".$user_types->user_type_id.'"> <i class="fe-x"></i></a>
-
-													</td>
-												</tr>
-		                               		';
-	                               		} 
-                               		}
-                               ?>
-                            </tbody>                             
-                        </table>
+                        <div class="row justify-content-md-center">
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="mb-3">Add Types Of Users</h4>
+                                        <form method="post" action="<?=base_url().'index.php/typeUser/create';?>">
+                                            <div class="form-group">
+                                                <input name="type_user" placeholder="Types Of Users"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                                            </div>
+                                            <button type="submit" class="btn btn-dark">Save</button>
+                                        </form>
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div>
+                        </div>
                     </div> <!-- end card body-->
                 </div> <!-- end card -->
             </div><!-- end col-->
