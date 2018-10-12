@@ -4,10 +4,17 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box">
-                        <h4 class="page-title">Update Types of Users</h4>
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="#">Binfrix</a></li>
+                                <li class="breadcrumb-item"><a href="<?=base_url()."index.php/typeUser";?>" title="">Types of Users</a></li>
+                                <li class="breadcrumb-item active">Update Types of Users</li>
+                            </ol>
+                        </div>
+                        <h4 class="page-title">Types of Users</h4>
                     </div>
                 </div>
-            </div> 
+            </div>  
             <div class="row justify-content-md-center">
                 <div class="col-12">
                     <div class="card">
