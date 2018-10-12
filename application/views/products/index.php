@@ -145,53 +145,62 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">TYPE OF USER</h4>
+                    <h4 class="page-title">Menu</h4>
                 </div>
             </div>
         </div> 
         <div class="row justify-content-md-center">
-            <div class="col-11">
-                <div class="card">
-                    <div class="card-body">
-                        <form class="form-inline" method="post" action="<?=base_url().'index.php/typeUser/create';?>">
-						  <div class="form-group mx-sm-4 mb-2">
-						    <input type="text" class="form-control" name="type_user" placeholder="Type Of User" required>
-						  </div>
-						  <button type="submit" class="btn btn-dark mb-2"><i class="fe-plus-circle"></i> Add</button>
-						</form>
-                        <table id="basic-datatable" class="table table-sm table-striped nowrap text-center">
+			<div class="col-lg-12">
+			    <div class="card">
+			        <div class="card-body">
+			            <h4 class="mb-3 header-title">List Menu</h4>
+			            <table id="basic-datatable" class="table table-sm table-striped nowrap text-center">
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Type Of User</th>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                    <th>Price</th>
+                                    <th>Date</th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                <?php 
-                               		if ($user_types==false) {
-                               			echo '<tr><td colspan="3"><strong>NO HAY REGISTROS</strong></td></tr>';
+                               		if ($products==false) {
+                               			echo '<tr><td colspan="7"><strong>NO HAY REGISTROS</strong></td></tr>';
                                		}else{
-                               			foreach ($user_types->result() as $key => $user_types) {
+                               			foreach ($products->result() as $key => $products) {
 		                               		echo '
 												<tr>
 													<td>'.$key.'</td>
-													<td>'.ucwords(strtolower($user_types->user_type)).'</td>
+													<td>'.ucwords(strtolower($products->title)).'
+													</td>
+													<td>'.ucwords(strtolower($products->description)).'
+													</td>
+													<td>'.ucwords(strtolower($products->price)).'
+													</td>
+													<td>'.ucwords(strtolower($products->date)).'
+													</td>
 													<td>
-														<a href="'.base_url()."index.php/typeUser/show/".$user_types->user_type_id.'"><i class="fe-edit-2"></i> </a>
-														<a href="'.base_url()."index.php/typeUser/destroy/".$user_types->user_type_id.'"> <i class="fe-x"></i></a>
+														<a href="'.base_url().'index.php/products/show/'.$products->product_id.'"><i class="fe-edit-2"></i>
+                                                        </a>
 
+                                                        <a href="#" title=""><i class="fe-eye"></i></a>
+
+														<a href="'.base_url().'index.php/products/destroy/'.$products->product_id.'"><i class="fe-x"></i>
+                                                        </a>
 													</td>
 												</tr>
 		                               		';
 	                               		} 
                                		}
                                ?>
-                            </tbody>                             
+                            </tbody>
                         </table>
-                    </div> <!-- end card body-->
-                </div> <!-- end card -->
-            </div><!-- end col-->
+			        </div>  <!-- end card-body -->
+			    </div>  <!-- end card -->
+			</div>  <!-- end col -->
         </div>
     </div>
     <!-- Footer Start -->

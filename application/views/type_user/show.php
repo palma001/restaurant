@@ -145,50 +145,25 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">TYPE OF USER</h4>
+                    <h4 class="page-title">MODIFICAR TIPOS DE USUARIOS</h4>
                 </div>
             </div>
         </div> 
         <div class="row justify-content-md-center">
-            <div class="col-11">
+            <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <form class="form-inline" method="post" action="<?=base_url().'index.php/typeUser/create';?>">
-						  <div class="form-group mx-sm-4 mb-2">
-						    <input type="text" class="form-control" name="type_user" placeholder="Type Of User" required>
-						  </div>
-						  <button type="submit" class="btn btn-dark mb-2"><i class="fe-plus-circle"></i> Add</button>
-						</form>
-                        <table id="basic-datatable" class="table table-sm table-striped nowrap text-center">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Type Of User</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                               <?php 
-                               		if ($user_types==false) {
-                               			echo '<tr><td colspan="3"><strong>NO HAY REGISTROS</strong></td></tr>';
-                               		}else{
-                               			foreach ($user_types->result() as $key => $user_types) {
-		                               		echo '
-												<tr>
-													<td>'.$key.'</td>
-													<td>'.ucwords(strtolower($user_types->user_type)).'</td>
-													<td>
-														<a href="'.base_url()."index.php/typeUser/show/".$user_types->user_type_id.'"><i class="fe-edit-2"></i> </a>
-														<a href="'.base_url()."index.php/typeUser/destroy/".$user_types->user_type_id.'"> <i class="fe-x"></i></a>
-
-													</td>
-												</tr>
-		                               		';
-	                               		} 
-                               		}
-                               ?>
-                            </tbody>                             
-                        </table>
+                        <?php if ($user_types){?>
+                            <form class="form-inline" method="post" action="<?= base_url().'index.php/typeUser/edit/'.$user_types->user_type_id; ?>">
+                              <div class="form-group mx-sm-3 mb-2">
+                                <input type="text" class="form-control" name="type_user" value="<?= ucwords($user_types->user_type);?>" required>
+                              </div>
+                              <button type="submit" class="btn btn-dark mb-2"><i class="fe-edit"></i> Update</button>
+                              <div class="form-group mx-sm-2 mb-2">
+                                <a href="<?= base_url()."index.php/typeUser"?>" class="btn btn-danger " title=""><i class="fe-chevrons-left"></i> Previous</a>
+                              </div>
+                            </form>
+                        <?php }else{echo "<div class='alert alert-danger'><strong>Error!</strong> in the System</div>";} ?>
                     </div> <!-- end card body-->
                 </div> <!-- end card -->
             </div><!-- end col-->
