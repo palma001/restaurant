@@ -25,12 +25,11 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="#">Simulor</a></li>
-                                            <li class="breadcrumb-item"><a href="#">Tables</a></li>
-                                            <li class="breadcrumb-item active">Advanced Tables</li>
+                                            <li class="breadcrumb-item"><a href="#">Binfrix</a></li>
+                                            <li class="breadcrumb-item active">Clients</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Advanced Tables</h4>
+                                    <h4 class="page-title">Clients</h4>
 
    
 
@@ -46,7 +45,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <p class="text-muted font-13 mb-4">
-                                            <a href="<?= base_url('index.php/Welcome/create/')?>" class="btn btn-dark">Crear</a>
+                                            <a href="<?= base_url('index.php/Welcome/create/')?>" class="btn btn-dark">Add</a>
 
                                         </p>
 
@@ -86,6 +85,7 @@
                                                      <td><?=$obten->user_id;?></td>
                                                      <td><?=$obten->full_name;?></td>
                                                      <td><?=$obten->email;?></td>
+                                                     <th></th>
                                                     <td>
                                                        <a  href="<?= base_url('index.php/Welcome/edit/'.$obten->user_id);?>">  <i class="fe-edit-2"></i> </a>
                                                        <a   id="client"   data-toggle="modal" data-target="#centermodal" 

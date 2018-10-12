@@ -2,7 +2,7 @@
   
                  
                     $mission=array('class' => 'form-control',
-                    'rows' => 4,   'cols' => 40 ,'name'=>'mission','placeholder'=>'mission');
+                    'rows' => 4,   'cols' => 40 ,'name'=>'mission','placeholder'=>'Mission');
                    $currency=array('name'=>'currency','class'=>'form-control','required'=>'required',
                     'type'=>'text','placeholder'=>'currency');
                     $language=array('name'=>'language','class'=>'form-control','required'=>'required',
@@ -14,7 +14,7 @@
                     $tax_name=array('name'=>'tax_name','class'=>'form-control','required'=>'required',
                     'type'=>'password','placeholder'=>'tax_name');
 
-                  $sub=array('value'=>'Procesar','type'=>'submit',
+                  $sub=array('value'=>'Add','type'=>'submit',
                     'class'=>'btn btn-success btn-flat m-b-30 m-t-30');
                  $form=array('class'=>'form-horizontal jsform');
     ?>
@@ -33,12 +33,12 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="#">Binfrix</a></li>
-                                            <li class="breadcrumb-item"><a href="#">Forms</a></li>
-                                            <li class="breadcrumb-item active">General</li>
+                                            <li class=""><a href="#"></a></li>
+                                            <li class=""><a href="#"></a></li>
+                                            <li class=""></li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">User Create</h4>
+                                    <h4 class="page-title">Settings</h4>
                                       <div class="jsError"></div>
                                 </div>
                             </div>
@@ -54,39 +54,40 @@
                                        <?=form_open('',$form);?>
                                             
                                           <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label" for="example-email">mission</label>
+                                                <label class="col-sm-2 col-form-label" for="example-email">Mission</label>
                                                 <div class="col-sm-10">
                                                  <?= form_textarea($mission); ?>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label" for="example-email">currency</label>
-                                                <div class="col-sm-10">
-                                                    <?= form_input($currency);?>
-                                                </div>
-                                            </div>
-                                           <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">language</label>
-                                                <div class="col-sm-10">
-                                                    <?= form_input($language);?>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">vision</label>
+                                                <label class="col-sm-2 col-form-label">Vision</label>
                                                 <div class="col-sm-10">
                                                     <?= form_textarea($vision);?>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">tax</label>
+                                                <label class="col-sm-2 col-form-label" for="example-email">Currency</label>
+                                                <div class="col-sm-10">
+                                                    <?= form_input($currency);?>
+                                                </div>
+                                            </div>
+                                           <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Tax</label>
                                                 <div class="col-sm-10">
                                                     <?= form_input($tax);?>
                                                 </div>
                                             </div>
+                                            
                                             <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">tax name</label>
+                                                <label class="col-sm-2 col-form-label">Tax Name</label>
                                                 <div class="col-sm-10">
                                                     <?= form_input($tax_name);?>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Language</label>
+                                                <div class="col-sm-10">
+                                                    <?= form_input($language);?>
                                                 </div>
                                             </div>
                                              <div class="form-group row">

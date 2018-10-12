@@ -1,12 +1,12 @@
    <?PHP  
   
                  $fullname=array('name'=>'fullname','class'=>'form-control','required'=>'required','type'=>'text',
-                    'placeholder'=>'full name','id'=>'fullname');
+                    'placeholder'=>'Full Name','id'=>'fullname');
                    $email=array('name'=>'email','class'=>'form-control','required'=>'required','type'=>'email',
-                  'placeholder'=>'email', 'id'=>'email');
+                  'placeholder'=>'Email', 'id'=>'email');
                    $pas=array('name'=>'password','class'=>'form-control','required'=>'required',
-                    'type'=>'password','placeholder'=>'password','id'=>'pass');
-                   $sub=array('value'=>'Procesar','type'=>'submit',
+                    'type'=>'password','placeholder'=>'Password','id'=>'pass');
+                   $sub=array('value'=>'Save','type'=>'submit',
                     'class'=>'btn btn-success btn-flat m-b-30 m-t-30');
                  $form=array('class'=>'form-horizontal');
     ?>
@@ -24,13 +24,13 @@
                             <div class="col-12">
                                 <div class="page-title-box">
                                     <div class="page-title-right">
-                                        <ol class="breadcrumb m-0">
+                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="#">Binfrix</a></li>
-                                            <li class="breadcrumb-item"><a href="#">Forms</a></li>
-                                            <li class="breadcrumb-item active">General</li>
+                                            <li class="breadcrumb-item active">Clients</li>
+                                            <li class="breadcrumb-item active">Create</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">General Elements</h4>
+                                    <h4 class="page-title">Create Client</h4>
             
                                 </div>
                             </div>
