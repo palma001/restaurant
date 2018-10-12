@@ -29,7 +29,7 @@
                                                         <input name="type_user" placeholder="Types Of Users"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                                                     </div>
                                                 </div>
-                                                <button type="submit" class="btn btn-dark">Save</button>
+                                                <button type="submit" class="btn btn-success">Save</button>
                                             </form>
                                         </div> <!-- end card-body-->
                                     </div> <!-- end card-->
