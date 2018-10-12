@@ -8,7 +8,6 @@ function __construct()
 		parent::__construct();
 		$this->load->helper('form');
 		$this->load->helper('url');
-		//$this->load->model('orders_model');
 		
 	}
 

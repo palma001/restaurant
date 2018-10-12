@@ -145,7 +145,6 @@
                     full_name=$(this).data('fullname');
                     email=$(this).data('email');
                     date=$(this).data('date');
-
                 }
                 $('#use').val(data_id);
                document.getElementById("table1").rows[1].cells[0].innerHTML = data_id  
