@@ -145,7 +145,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">Products</h4>
+                    <h4 class="page-title">PRODUCTS</h4>
                 </div>
             </div>
         </div> 
@@ -153,6 +153,9 @@
 			<div class="col-lg-12">
 			    <div class="card">
 			        <div class="card-body">
+                        <p class="text-muted font-13 mb-4">
+                            <a href="<?= base_url().'index.php/products/add_products'?>" class="btn btn-dark">Add</a>
+                        </p>
 			            <h4 class="mb-3 header-title">List Products</h4>
 			            <table id="basic-datatable" class="table table-sm table-striped nowrap text-center">
                             <thead>

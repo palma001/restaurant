@@ -21,11 +21,8 @@
                         </a>
                         <ul class="nav-second-level nav" aria-expanded="false">
                             <li>
-                                <a href="<?= base_url().'index.php/products/add_products'?>">Add Products</a>
-                            </li>
-                            <li>
                                 <a href="<?= base_url().'index.php/products';?>" aria-expanded="false">
-                                    List Products
+                                    Products
                                 </a>
                             </li>
                         </ul>
@@ -38,12 +35,7 @@
                         </a>
                         <ul class="nav-second-level nav" aria-expanded="false">
                             <li>
-                                <a href="#">Add Clients</a>
-                            </li>
-                            <li>
-                                <a href="#" aria-expanded="false">
-                                    List Clients
-                                </a>
+                                <a href="#">Clients</a>
                             </li>
                         </ul>
                     </li>
@@ -55,12 +47,7 @@
                         </a>
                         <ul class="nav-second-level nav" aria-expanded="false">
                             <li>
-                                <a href="#">Add Orders</a>
-                            </li>
-                            <li>
-                                <a href="#" aria-expanded="false">
-                                    List Orders
-                                </a>
+                                <a href="#">Orders</a>
                             </li>
                         </ul>
                     </li>
