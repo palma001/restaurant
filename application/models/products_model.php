@@ -9,7 +9,7 @@ class Products_model extends CI_Model {
 		$this->load->database();
 	}
 
-	public function views_menu(){
+	public function view_products(){
 		$this->db->order_by('product_id','Desc');
 		$query = $this->db->get('products');
 		if ($query->num_rows() > 0){
@@ -19,7 +19,7 @@ class Products_model extends CI_Model {
 		}
 	}
 
-	public function view_menu($id)
+	public function view_product($id)
 	{
 		$this->db->where('product_id',$id);
 		$query = $this->db->get('products');
@@ -36,7 +36,7 @@ class Products_model extends CI_Model {
 		$this->db->insert('products',array('title'=>$data['title'], 'description'=>$data['description'], 'price'=>$data['price'], 'outstanding'=>$data['outstanding'], 'views'=>$data['views'], 'date' => $fecha));
 	}
 
-	public function update($id,$data){
+	public function update_products($id,$data){
 		$datos = array(
 			'title' => $data['title'],
 			'description' => $data['description'],

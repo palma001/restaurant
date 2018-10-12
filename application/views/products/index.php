@@ -183,10 +183,10 @@
 													<td>'.ucwords(strtolower($products->date)).'
 													</td>
 													<td>
-														<a href="'.base_url().'index.php/products/show/'.$products->product_id.'"><i class="fe-edit-2"></i>
+														<a href="'.base_url().'index.php/products/edit/'.$products->product_id.'"><i class="fe-edit-2"></i>
                                                         </a>
 
-                                                        <a href="#" title=""><i class="fe-eye"></i></a>
+                                                        <a href="#" title="" data-toggle="modal" data-target="#modal_products"><i class="fe-eye"></i></a>
 
 														<a href="'.base_url().'index.php/products/destroy/'.$products->product_id.'"><i class="fe-x"></i>
                                                         </a>

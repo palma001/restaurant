@@ -155,7 +155,7 @@
 			        <div class="card-body">
 			            <h4 class="mb-3 header-title">UPDATE MENU</h4>
                         <?php if ($product){?>
-                            <form class="form-horizontal" method="post" action="<?= base_url()."index.php/menu/edit/".$product->product_id;?>">
+                            <form class="form-horizontal" method="post" action="<?= base_url()."index.php/products/update/".$product->product_id;?>">
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Title</label>
                                     <div class="col-sm-10">
@@ -188,7 +188,7 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-2">
-                                        <a href="<?= base_url()."index.php/menu"?>" class="btn btn-danger "><i class="fe-chevrons-left"></i> Previous</a>
+                                        <a href="<?= base_url()."index.php/products"?>" class="btn btn-danger "><i class="fe-chevrons-left"></i> Previous</a>
                                     </div>
                                     <div class="col-2">
                                         <button type="submit" class="btn btn-dark "><i class="fe-edit"></i> Update</button>

@@ -10,9 +10,10 @@ class Products extends CI_Controller {
 
 	public function index()
 	{
-		$data['products'] = $this->products_model->views_menu();
+		$data['products'] = $this->products_model->view_products();
 		$this->load->view('layouts/headers');
 		$this->load->view('layouts/navbar');
+		$this->load->view('modals/modal_products');
 		$this->load->view('products/index',$data);
 		$this->load->view('layouts/footer');
 	}
@@ -38,23 +39,29 @@ class Products extends CI_Controller {
 		redirect('products');
 	}
 
-	public function show()
+	public function show($id)
+	{
+		$data['products'] = $this->products_model->view_products();
+		$this->load->view('products/index',$data);
+	}
+
+	public function edit()
 	{
 		$id = $this->uri->segment(3);
-		$data['product'] = $this->products_model->view_menu($id);
+		$data['product'] = $this->products_model->view_product($id);
 		$this->load->view('layouts/headers');
 		$this->load->view('layouts/navbar');
 
 		if (!$id) {
 			redirect('products');
 		}else{
-			$this->load->view('products/show',$data);
+			$this->load->view('products/edit',$data);
 		}
 		
 		$this->load->view('layouts/footer');
 	}
 
-	public function edit($id)
+	public function update($id)
 	{
 		$data = array(
 			'title' => $this->input->post('title'),
@@ -64,7 +71,7 @@ class Products extends CI_Controller {
 			'views' => $this->input->post('views')
 		);
 
-		$this->products_model->update($id,$data);
+		$this->products_model->update_products($id,$data);
 		redirect('products');
 	}
 
