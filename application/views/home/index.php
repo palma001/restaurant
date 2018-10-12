@@ -11,7 +11,7 @@
                                 <li class="breadcrumb-item active">Home</li>
                             </ol>
                         </div>
-                        <h4 class="page-title">Dashboard</h4>
+                        <h4 class="page-title">Home</h4>
                     </div>
                 </div>
             </div>     
