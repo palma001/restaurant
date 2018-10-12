@@ -176,7 +176,7 @@
 													<td>'.$key.'</td>
 													<td>'.ucwords(strtolower($products->title)).'
 													</td>
-													<td>'.ucwords(strtolower($products->description)).'
+													<td>'. substr(ucwords(strtolower($products->description)),0,60).'
 													</td>
 													<td>'.ucwords(strtolower($products->price)).'
 													</td>
