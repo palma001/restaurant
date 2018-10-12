@@ -8,11 +8,11 @@
 		<meta content="Coderthemes" name="author" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<!-- App favicon -->
-		<link href="<?= base_url('assets/images/favicon.ico')?>" rel="stylesheet" type="text/css" />
+		<link href="<?= base_url('admin_template/assets/images/favicon.ico')?>" rel="stylesheet" type="text/css" />
 		<!-- App css -->
-		<link href="<?= base_url('css/bootstrap.min.css')?>" rel="stylesheet" type="text/css" />
-		<link href="<?= base_url('css/icons.min.css')?>" rel="stylesheet" type="text/css" />
-		<link href="<?= base_url('css/app.min.css')?>" rel="stylesheet" type="text/css" />
+		<link href="<?= base_url('admin_template/css/bootstrap.min.css')?>" rel="stylesheet" type="text/css" />
+		<link href="<?= base_url('admin_template/css/icons.min.css')?>" rel="stylesheet" type="text/css" />
+		<link href="<?= base_url('admin_template/css/app.min.css')?>" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
 
