@@ -1,205 +1,65 @@
 <div class="content-page">
     <div class="content">
-    	<div class="navbar-custom navbar-custom-light">
-            <ul class="list-unstyled topbar-right-menu float-right mb-0">
-                <li class="dropdown notification-list">
-                    <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                        <i class="fe-bell noti-icon"></i>
-                        <span class="badge badge-danger rounded-circle noti-icon-badge">2</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated dropdown-lg">
-
-                        <!-- item-->
-                        <div class="dropdown-item noti-title">
-                            <h5 class="m-0">
-                                <span class="float-right">
-                                    <a href="" class="text-dark">
-                                        <small>Clear All</small>
-                                    </a>
-                                </span>Notification</h5>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box">
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="#">Binfrix</a></li>
+                                <li class="breadcrumb-item active">Types of Users</li>
+                            </ol>
                         </div>
-
-                        <div class="slimscroll noti-scroll">
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item active">
-                                <div class="notify-icon">
-                                    <img src="assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt="" /> </div>
-                                <p class="notify-details">Cristina Pride</p>
-                                <p class="text-muted mb-0 user-msg">
-                                    <small>Hi, How are you? What about our next meeting</small>
-                                </p>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon bg-light">
-                                    <i class="mdi mdi-comment-account-outline"></i>
-                                </div>
-                                <p class="notify-details">Caleb Flakelar commented on Admin
-                                    <small class="text-muted">1 min ago</small>
-                                </p>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon">
-                                    <img src="assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt="" /> </div>
-                                <p class="notify-details">Karen Robinson</p>
-                                <p class="text-muted mb-0 user-msg">
-                                    <small>Wow ! this admin looks good and awesome design</small>
-                                </p>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon bg-light">
-                                    <i class="mdi mdi-account-plus"></i>
-                                </div>
-                                <p class="notify-details">New user registered.
-                                    <small class="text-muted">5 hours ago</small>
-                                </p>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon bg-light">
-                                    <i class="mdi mdi-comment-account-outline"></i>
-                                </div>
-                                <p class="notify-details">Caleb Flakelar commented on Admin
-                                    <small class="text-muted">4 days ago</small>
-                                </p>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <div class="notify-icon bg-light">
-                                    <i class="mdi mdi-heart"></i>
-                                </div>
-                                <p class="notify-details">Carlos Crouch liked
-                                    <b>Admin</b>
-                                    <small class="text-muted">13 days ago</small>
-                                </p>
-                            </a>
-                        </div>
-
-                        <!-- All-->
-                        <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
-                            View all
-                            <i class="fi-arrow-right"></i>
-                        </a>
-
+                        <h4 class="page-title">Types of Users</h4>
                     </div>
-                </li>
-
-                <li class="dropdown notification-list">
-                    <a class="nav-link dropdown-toggle nav-user mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                        <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
-                        <small class="pro-user-name ml-1">
-                            Morgan K
-                        </small>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated profile-dropdown ">
-                        <!-- item-->
-                        <div class="dropdown-header noti-title">
-                            <h6 class="text-overflow m-0">Welcome !</h6>
-                        </div>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <i class="fe-user"></i>
-                            <span>My Account</span>
-                        </a>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <i class="fe-settings"></i>
-                            <span>Settings</span>
-                        </a>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <i class="fe-lock"></i>
-                            <span>Lock Screen</span>
-                        </a>
-
-                        <div class="dropdown-divider"></div>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                            <i class="fe-log-out"></i>
-                            <span>Logout</span>
-                        </a>
-
-                    </div>
-                </li>
-            </ul>
-            <button class="button-menu-mobile open-left disable-btn">
-                <i class="fe-menu"></i>
-            </button>
-            <div class="app-search" style="height:70px;">                            
-            </div>
-    	</div>
-    </div> <!-- content -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <div class="page-title-box">
-                    <div class="page-title-right">
-                        <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="#">Binfrix</a></li>
-                            <li class="breadcrumb-item active">Types of Users</li>
-                        </ol>
-                    </div>
-                    <h4 class="page-title">Types of Users</h4>
                 </div>
-            </div>
-        </div> 
-        <div class="row justify-content-md-center">
-            <div class="col-11">
-                <div class="card">
-                    <div class="card-body">
-                        <p class="text-muted font-13 mb-4">
-                            <a href="<?= base_url().'index.php/typeUser/add_types'?>" class="btn btn-dark">Add</a>
-                        </p>
-                        <h4 class="mb-3">List Type of Users</h4>
-                        <table id="basic-datatable" class="table table-sm table-striped nowrap text-center">
-                            <thead>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Types of Users</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                               <?php 
-                               		if ($user_types==false) {
-                               			echo '<tr><td colspan="3"><strong>NO HAY REGISTROS</strong></td></tr>';
-                               		}else{
-                               			foreach ($user_types->result() as $key => $user_types) {
-		                               		echo '
-												<tr>
-													<td>'.$key.'</td>
-													<td>'.ucwords(strtolower($user_types->user_type)).'</td>
-													<td>
-														<a href="'.base_url()."index.php/typeUser/show/".$user_types->user_type_id.'"><i class="fe-edit-2"></i> </a>
-														<a href="'.base_url()."index.php/typeUser/destroy/".$user_types->user_type_id.'"> <i class="fe-x"></i></a>
+            </div> 
+            <div class="row justify-content-md-center">
+                <div class="col-11">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="text-muted font-13 mb-4">
+                                <a href="<?= base_url().'index.php/typeUser/add_types'?>" class="btn btn-dark">Add</a>
+                            </p>
+                            <h4 class="mb-3">List Type of Users</h4>
+                            <table id="basic-datatable" class="table table-sm table-striped nowrap text-center">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Types of Users</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                   <?php 
+                                   		if ($user_types==false) {
+                                   			echo '<tr><td colspan="3"><strong>NO HAY REGISTROS</strong></td></tr>';
+                                   		}else{
+                                   			foreach ($user_types->result() as $key => $user_types) {
+    		                               		echo '
+    												<tr>
+    													<td>'.$key.'</td>
+    													<td>'.ucwords(strtolower($user_types->user_type)).'</td>
+    													<td>
+    														<a href="'.base_url()."index.php/typeUser/show/".$user_types->user_type_id.'"><i class="fe-edit-2"></i> </a>
+    														<a href="'.base_url()."index.php/typeUser/destroy/".$user_types->user_type_id.'"> <i class="fe-x"></i></a>
 
-													</td>
-												</tr>
-		                               		';
-	                               		} 
-                               		}
-                               ?>
-                            </tbody>                             
-                        </table>
-                    </div> <!-- end card body-->
-                </div> <!-- end card -->
-            </div><!-- end col-->
+    													</td>
+    												</tr>
+    		                               		';
+    	                               		} 
+                                   		}
+                                   ?>
+                                </tbody>                             
+                            </table>
+                        </div> <!-- end card body-->
+                    </div> <!-- end card -->
+                </div><!-- end col-->
+            </div>
         </div>
+        <!-- Footer Start -->
+        <footer class="footer">
+        </footer>
+        <!-- end Footer -->
     </div>
-    <!-- Footer Start -->
-    <footer class="footer">
-    </footer>
-    <!-- end Footer -->
 </div>
