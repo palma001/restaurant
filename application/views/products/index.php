@@ -160,7 +160,11 @@
 			    <div class="card">
 			        <div class="card-body">
                         <div class="card-body">
-                            <table id="basic-datatable" class="table table-striped nowrap">
+                            <p class="text-muted font-13 mb-4">
+                                <a href="<?= base_url().'index.php/products/add_products'?>" class="btn btn-dark">Add</a>
+                            </p>
+                            <h4 class="mb-3">List Products</h4>
+                            <table id="basic-datatable" class="table table-sm table-striped nowrap text-center">
                                 <thead>
                                     <tr>
                                         <th>Id</th>
@@ -202,7 +206,7 @@
                                             } 
                                         }
                                    ?>
-                                </tbody> 
+                                </tbody>                            
                             </table>
                         </div> <!-- end card body-->
 			        </div>  <!-- end card-body -->

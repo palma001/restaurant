@@ -154,7 +154,7 @@
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="#">Binfrix</a></li>
-                                <li class="breadcrumb-item active">Dashboard</li>
+                                <li class="breadcrumb-item active">Home</li>
                             </ol>
                         </div>
                         <h4 class="page-title">Dashboard</h4>
@@ -230,7 +230,7 @@
             	<div class="col-xl-2">
             	</div>
                 <div class="col-xl-8">
-                    <center><img src="assets/images/logo binfrix.png" alt="" class="img-fluid" /></center>
+                    <center><img src="<?= base_url('admin_template/assets/images/logo binfrix.png')?>" alt="" class="img-fluid" /></center>
                 </div>
                 <div class="col-xl-2">
             	</div>
