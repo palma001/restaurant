@@ -13,6 +13,7 @@
 		<link href="<?= base_url('admin_template/css/bootstrap.min.css')?>" rel="stylesheet" type="text/css" />
 		<link href="<?= base_url('admin_template/css/icons.min.css')?>" rel="stylesheet" type="text/css" />
 		<link href="<?= base_url('admin_template/css/app.min.css')?>" rel="stylesheet" type="text/css" />
+		<script src="<?= base_url('admin_template/js/vendor.min.js')?>"></script>
 	</head>
 	<body>
 

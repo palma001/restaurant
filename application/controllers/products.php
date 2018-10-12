@@ -39,10 +39,12 @@ class Products extends CI_Controller {
 		redirect('products');
 	}
 
-	public function show($id)
+	public function show()
 	{
-		$data['products'] = $this->products_model->view_products();
-		$this->load->view('products/index',$data);
+		$id = $this->input->post("id");
+		$data =  $this->products_model->view_product($id);
+		echo json_encode($data);
+
 	}
 
 	public function edit()

@@ -186,7 +186,7 @@
 														<a href="'.base_url().'index.php/products/edit/'.$products->product_id.'"><i class="fe-edit-2"></i>
                                                         </a>
 
-                                                        <a href="#" title="" data-toggle="modal" data-target="#modal_products"><i class="fe-eye"></i></a>
+                                                        <a href="#" data-toggle="modal" onclick="show_products('.$products->product_id.')" data-target="#modal_products"><i class="fe-eye"></i></a>
 
 														<a href="'.base_url().'index.php/products/destroy/'.$products->product_id.'"><i class="fe-x"></i>
                                                         </a>
@@ -203,8 +203,25 @@
 			</div>  <!-- end col -->
         </div>
     </div>
-    <!-- Footer Start -->
-    <footer class="footer">
-    </footer>
-    <!-- end Footer -->
 </div>
+<script>
+    function show_products(id){
+        $.ajax({
+            url: '<?= base_url()?>/index.php/products/show/',
+            type: 'POST',
+            data: {id:id},
+            dataType:'JSON',
+            success:function(data){
+               var html = "";
+               html = "<h5>"+data.title+"</h5><p><strong class='float-right'>"+data.date+"</strong></p>"+
+                      "<h6>User: </h6>"+      
+                      "<h6>Price : "+data.price+"</h6>"+
+                      "<p class='mt-3'>Description:</p>"+
+                      "<p class='mt-1'>"+data.description+"</p><hr>"+
+                      "<p class='mt-3'>Outstanding: "+data.outstanding+"</p>"+
+                      "<p>Views: "+data.views+"</p>";
+               $('.products').html(html);
+            }
+        })
+    }
+</script>
