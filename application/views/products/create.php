@@ -145,7 +145,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">Menu</h4>
+                    <h4 class="page-title">Products</h4>
                 </div>
             </div>
         </div> 
@@ -153,7 +153,7 @@
 			<div class="col-lg-11">
 			    <div class="card">
 			        <div class="card-body">
-			            <h4 class="mb-3 header-title">Add Menu</h4>
+			            <h4 class="mb-3 header-title">Add Products</h4>
                         <form class="form-horizontal" method="post" action="create">
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Title</label>

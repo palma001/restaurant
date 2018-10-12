@@ -145,7 +145,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">Menu</h4>
+                    <h4 class="page-title">Products</h4>
                 </div>
             </div>
         </div> 
@@ -153,7 +153,7 @@
 			<div class="col-lg-12">
 			    <div class="card">
 			        <div class="card-body">
-			            <h4 class="mb-3 header-title">List Menu</h4>
+			            <h4 class="mb-3 header-title">List Products</h4>
 			            <table id="basic-datatable" class="table table-sm table-striped nowrap text-center">
                             <thead>
                                 <tr>
