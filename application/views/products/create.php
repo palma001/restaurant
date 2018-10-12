@@ -153,7 +153,7 @@
 			<div class="col-lg-11">
 			    <div class="card">
 			        <div class="card-body">
-			            <h4 class="mb-3 header-title">Add Products</h4>
+			            <h4 class="mb-3">Add Products</h4>
                         <form class="form-horizontal" method="post" action="create">
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Title</label>
@@ -187,7 +187,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-2">
-                                    <button type="submit" class="btn btn-dark "><i class="fe-plus-circle"></i> Save</button>
+                                    <button type="submit" class="btn btn-dark ">Save</button>
                                 </div>
                             </div>
                         </form>

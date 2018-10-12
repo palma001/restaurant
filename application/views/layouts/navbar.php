@@ -27,7 +27,7 @@
                     </li>
                     <li>
                        <a href="<?= base_url().'index.php/typeUser';?>">
-                            <i class="fe-folder-plus"></i> Types Of Users
+                            <i class="fe-folder-plus"></i> Types of Users
                         </a>
                     </li>
                     <li>

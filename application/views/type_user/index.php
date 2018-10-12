@@ -145,7 +145,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">TYPES OF USERS</h4>
+                    <h4 class="page-title">Types of Users</h4>
                 </div>
             </div>
         </div> 
@@ -156,12 +156,12 @@
                         <p class="text-muted font-13 mb-4">
                             <a href="<?= base_url().'index.php/typeUser/add_types'?>" class="btn btn-dark">Add</a>
                         </p>
-                        <h4 class="mb-3 header-title">List Type Of Users</h4>
+                        <h4 class="mb-3">List Type of Users</h4>
                         <table id="basic-datatable" class="table table-sm table-striped nowrap text-center">
                             <thead>
                                 <tr>
-                                    <th>#</th>
-                                    <th>Types Of Users</th>
+                                    <th>Id</th>
+                                    <th>Types of Users</th>
                                     <th></th>
                                 </tr>
                             </thead>
