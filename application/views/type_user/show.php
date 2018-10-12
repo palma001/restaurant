@@ -30,7 +30,7 @@
                                                        <input name="type_user" name="type_user" value="<?= ucwords($user_types->user_type);?>"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                                                     </div>
                                                 </div>
-                                                <button type="submit" class="btn btn-success">Update</button>
+                                                <button type="submit" class="btn btn-success">Save</button>
                                             </form>
                                         </div> <!-- end card-body-->
                                     </div> <!-- end card-->
