@@ -187,9 +187,6 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-2">
-                                    <a href="<?= base_url()."index.php/menu"?>" class="btn btn-danger "><i class="fe-chevrons-left"></i> Previous</a>
-                                </div>
-                                <div class="col-2">
                                     <button type="submit" class="btn btn-dark "><i class="fe-plus-circle"></i> Save</button>
                                 </div>
                             </div>
