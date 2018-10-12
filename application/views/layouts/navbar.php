@@ -31,21 +31,11 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript: void(0);">
+                        <a href="<?= base_url('index.php/Customers/index/');?>">
                             <i class="fe-user"></i> 
                             <span> Clients </span>
-                            <span class="menu-arrow"></span>
                         </a>
-                        <ul class="nav-second-level nav" aria-expanded="false">
-                            <li>
-                                <a href="#">Add Clients</a>
-                            </li>
-                            <li>
-                                <a href="#" aria-expanded="false">
-                                    List Clients
-                                </a>
-                            </li>
-                        </ul>
+                       
                     </li>
                     <li>
                         <a href="javascript: void(0);">
