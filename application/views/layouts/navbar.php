@@ -23,7 +23,7 @@
                         <a href="#"><i class="fe-user"></i>  Clients</a>
                     </li>
                     <li>
-                        <a href="#"> <i class="fe-edit"></i> Orders</a>
+                        <a href="<?= base_url().'index.php/orders';?>"> <i class="fe-edit"></i> Orders</a>
                     </li>
                     <li>
                        <a href="<?= base_url().'index.php/typeUser';?>">
@@ -31,7 +31,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#"> <i class="fe-settings"></i> Settings </a>
+                        <a href="<?= base_url().'index.php/settings';?>"> <i class="fe-settings"></i> Settings </a>
                     </li>      
                 </ul>
             </div>
