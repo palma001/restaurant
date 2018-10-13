@@ -1,7 +1,7 @@
 <div class="left-side-menu">
         <div class="slimscroll-menu">
             <!-- LOGO -->
-            <a href="index.html" class="logo text-center mb-4">
+            <a href="<?= base_url('')?>" class="logo text-center mb-4">
                 <span class="logo-lg">
                     <img src="<?= base_url('admin_template/assets/images/logo.png') ?>" alt="" height="60">
                 </span>
@@ -20,10 +20,18 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#"><i class="fe-user"></i>  Clients</a>
+
+                        <a href="<?= base_url('index.php/Customers/index/');?>">
+                            <i class="fe-user"></i> 
+                            <span> Clients </span>
+                        </a>
+                       
                     </li>
                     <li>
-                        <a href="<?= base_url().'index.php/orders';?>"> <i class="fe-edit"></i> Orders</a>
+                        <a href="<?= base_url('index.php/orders/index/');?>">
+                            <i class="fe-edit"></i>
+                            <span> Orders </span>
+                        </a>
                     </li>
                     <li>
                        <a href="<?= base_url().'index.php/typeUser';?>">
@@ -31,8 +39,9 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?= base_url().'index.php/settings';?>"> <i class="fe-settings"></i> Settings </a>
-                    </li>      
+                        <a href="<?= base_url('index.php/settings/index/');?>"> <i class="fe-settings"></i> Settings </a> 
+                    </li>    
+                        
                 </ul>
             </div>
             <!-- End Sidebar -->

@@ -25,7 +25,14 @@
                                     <i class="mdi mdi-cart text-primary widget-icon"></i>
                                 </div>
                                 <h5 class="text-muted font-weight-normal mt-0">Total Sales</h5>
-                                <h3 class="mt-2">3,543</h3>
+                                <h3 class="mt-2">
+                                     <?php
+                                  if ($rows>0){
+                                      echo $rows;
+                                    }else {
+                                      echo "0";
+                                     }?>
+                                </h3>
                             </div>
                             <div id="sparkline1"></div>
                         </div> <!-- end card-body-->
@@ -55,7 +62,15 @@
                                     <i class="mdi mdi-account-multiple text-primary widget-icon"></i>
                                 </div>
                                 <h5 class="text-muted font-weight-normal mt-0">Total Users</h5>
-                                <h3 class="mt-2">5,387</h3>
+                                <h3 class="mt-2">
+                                      <?php
+                                             if ($customer>0){
+                                               echo $customer;
+                                             }else {
+                                                echo "0";
+                                             }
+                                         ?>
+                                </h3>
                             </div>
                             <div id="sparkline3"></div>
                         </div> <!-- end card-body-->
