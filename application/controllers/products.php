@@ -13,6 +13,11 @@ class Products extends CI_Controller {
 		$data['products'] = $this->products_model->view_products();
 		$this->load->view('layouts/headers');
 		$this->load->view('layouts/navbar');
+
+
+		$this->load->view('layouts/topnav');
+		$this->load->view('modals/modal_products');
+		$this->load->view('products/index',$data);
 		$this->load->view('layouts/footer');
 	}
 
@@ -20,6 +25,7 @@ class Products extends CI_Controller {
 	{
 		$this->load->view('layouts/headers');
 		$this->load->view('layouts/navbar');
+		$this->load->view('layouts/topnav');
 		$this->load->view('products/create');
 		$this->load->view('layouts/footer');
 	}
@@ -51,7 +57,7 @@ class Products extends CI_Controller {
 		$data['product'] = $this->products_model->view_product($id);
 		$this->load->view('layouts/headers');
 		$this->load->view('layouts/navbar');
-
+		$this->load->view('layouts/topnav');
 		if (!$id) {
 			redirect('products');
 		}else{

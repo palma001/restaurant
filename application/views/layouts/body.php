@@ -30,7 +30,8 @@
                                                 <i class="mdi mdi-cart text-primary widget-icon"></i>
                                             </div>
                                             <h5 class="text-muted font-weight-normal mt-0">Total Sales</h5>
-                                            <h3 class="mt-2"><?php
+                                            <h3 class="mt-2">
+                                            <?php
                                              if ($rows>0){
                                                echo $rows;
                                              }else {

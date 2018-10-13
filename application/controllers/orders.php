@@ -17,6 +17,7 @@ function __construct()
 		$data['obtener'] = $this->orders_model->all_orders();
 		$this->load->view('layouts/headers');
 		$this->load->view('layouts/navbar');
+		$this->load->view('layouts/topnav');
 		$this->load->view('orders/orders',$data);
 	  	$this->load->view('layouts/footer');
 
@@ -34,6 +35,7 @@ function __construct()
 	{
         $datos['obtener']=$this->orders_model->orderss($data);
 		$this->load->view('layouts/headers');
+		$this->load->view('layouts/navbar');
 		$this->load->view('layouts/navbar');
 		$this->load->view('orders/details',$datos);
 	  	$this->load->view('layouts/footer');  

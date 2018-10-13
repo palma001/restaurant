@@ -14,6 +14,7 @@ class TypeUser extends CI_Controller {
 		$data['user_types'] = $this->type_user_model->view_users();
 		$this->load->view('layouts/headers');
 		$this->load->view('layouts/navbar');
+		$this->load->view('layouts/topnav');
 		$this->load->view('type_user/index',$data);	
 		$this->load->view('layouts/footer');
 
@@ -23,6 +24,7 @@ class TypeUser extends CI_Controller {
 	{
 		$this->load->view('layouts/headers');
 		$this->load->view('layouts/navbar');
+		$this->load->view('layouts/topnav');
 		$this->load->view('type_user/create');	
 		$this->load->view('layouts/footer');
 	}
@@ -42,6 +44,7 @@ class TypeUser extends CI_Controller {
 		$data['user_types'] = $this->type_user_model->view_user($id);
 		$this->load->view('layouts/headers');
 		$this->load->view('layouts/navbar');
+		$this->load->view('layouts/topnav');
 
 		if (!$id) {
 			redirect('typeUser');
