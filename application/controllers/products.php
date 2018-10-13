@@ -13,8 +13,6 @@ class Products extends CI_Controller {
 		$data['products'] = $this->products_model->view_products();
 		$this->load->view('layouts/headers');
 		$this->load->view('layouts/navbar');
-
-
 		$this->load->view('layouts/topnav');
 		$this->load->view('modals/modal_products');
 		$this->load->view('products/index',$data);
