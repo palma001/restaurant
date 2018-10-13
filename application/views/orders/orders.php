@@ -23,12 +23,11 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="#">Simulor</a></li>
-                                            <li class="breadcrumb-item"><a href="#">Tables</a></li>
-                                            <li class="breadcrumb-item active">Advanced Tables</li>
+                                            <li class="breadcrumb-item"><a href="#">Binfrix</a></li>
+                                            <li class="breadcrumb-item"><a href="#">Orders</a></li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Advanced Tables</h4>
+                                    <h4 class="page-title">Orders</h4>
                                 </div>
                             </div>
                         </div>     
@@ -42,9 +41,11 @@
                                         <table id="basic-datatable" class="table table-striped nowrap">
                                             <thead>
                                                 <tr>
-                                                    <th>Order Id</th>
+                                                   
+                                                    <th>Orders Id</th>
                                                     <th>Full Name</th>
                                                     <th>Total</th>
+                                                    <th></th>
                                                 </tr>
                                             </thead>
                                         
@@ -52,14 +53,18 @@
                                             <tbody>
 
                                             <?php  
-                                            if ($obtener) {
+                                            if ($obtener->result()) {
                                             foreach ($obtener->result() as $obten) { ?>
                                                 <tr>
+                                                <?php $var="1";?>
+
                                                     <td><?=$obten->order_id;?></td>
                                                     <td><?=$obten->full_name;?></td>
                                                     <td><?=$obten->total;?></td>
                                                     <td>
-                                                      <a  href="<?=base_url('index.php/orders/show/'.$obten->order_id);?>"><i class="fe-eye"></i></a>
+                                                        <i class="fe-edit-2"></i> 
+                                                       <a  href="<?=base_url('index.php/orders/show/'.$obten->order_id);?>"><i class="fe-eye"></i></a>
+                                                        <i class="fe-x"></i>
                                                     </td>
                                                 </tr>
                                                  <?php  
@@ -92,6 +97,3 @@
             <!-- ============================================================== -->
             <!-- End Page content -->
             <!-- ============================================================== -->
-
-
-        

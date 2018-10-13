@@ -26,7 +26,8 @@
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="#">Binfrix</a></li>
-                                            <li class="breadcrumb-item active">Clients</li>
+                                            <li class="breadcrumb-item"><a href="#">Clients</a></li>
+                                         
                                         </ol>
                                     </div>
                                     <h4 class="page-title">Clients</h4>
@@ -69,30 +70,28 @@
                                         <table id="basic-datatable" class="table table-striped nowrap">
                                             <thead>
                                                 <tr>
-                                                    <th>Id</th>
+                                                    <th>Id Client</th>
                                                     <th>Full Name </th>
                                                     <th>Email</th>
-                                                    
+                                                    <th></th>
                                                 </tr>
                                             </thead>
                                         
                                         
                                             <tbody>
                                              <?PHP  
-                                            if ($obtener){
+                                            if ($obtener->result()) {
                                             foreach ($obtener->result() as $obten) { ?>
                                                 <tr>
-                                                     <td><?=$obten->user_id;?></td>
+                                                     <td><?=$obten->user_id;?><?php  $var=$obten->user_id;?></td>
                                                      <td><?=$obten->full_name;?></td>
                                                      <td><?=$obten->email;?></td>
-                                                     <th></th>
+                                                    
                                                     <td>
                                                        <a  href="<?= base_url('index.php/Welcome/edit/'.$obten->user_id);?>">  <i class="fe-edit-2"></i> </a>
                                                        <a   id="client"   data-toggle="modal" data-target="#centermodal" 
                                                            data-id="<?php echo $obten->user_id; ?>"
-                                                           data-fullname="<?php echo $obten->full_name; ?>" 
-                                                           data-email="<?php echo $obten->email; ?>"
-                                                           data-date="<?php echo $obten->date; ?>"
+                                                           data-fullname="<?php echo $obten->full_name; ?>" data-email="<?php echo $obten->email; ?>"
                                                             href="#"> <i class="fe-eye"></i></a>
                                                         <a href="<?= base_url('index.php/customers/destroy/'.$obten->user_id);?>"><i class="fe-x"></i></a>
                                                     </td>
@@ -139,18 +138,17 @@
                 var data_id = '';
                 var full_name='';
                 var email='';
-                var date='';
                 if (typeof $(this).data('id') !== 'undefined') {
                     data_id = $(this).data('id');
                     full_name=$(this).data('fullname');
                     email=$(this).data('email');
-                    date=$(this).data('date');
+
                 }
                 $('#use').val(data_id);
                document.getElementById("table1").rows[1].cells[0].innerHTML = data_id  
                 document.getElementById("table1").rows[1].cells[1].innerHTML = full_name
                 document.getElementById("table1").rows[1].cells[2].innerHTML = email       
-               document.getElementById("table1").rows[1].cells[3].innerHTML = date       
+               document.getElementById("table1").rows[1].cells[4].innerHTML = "datos"       
             })
          });
     </script>

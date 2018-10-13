@@ -21,12 +21,12 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="#">Simulor</a></li>
-                                            <li class="breadcrumb-item"><a href="#">Tables</a></li>
-                                            <li class="breadcrumb-item active">Advanced Tables</li>
+                                            <li class="breadcrumb-item"><a href="#">Binfrix</a></li>
+                                            <li class="breadcrumb-item"><a href="#">Orders</a></li>
+                                            <li class="breadcrumb-item active">Details</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Advanced Tables</h4>
+                                    <h4 class="page-title">Order Details</h4>
                                 </div>
                             </div>
                         </div>     
@@ -76,7 +76,7 @@
                                             <table  class="table table-striped nowrap">
                                             <thead>
                                                 <tr>
-                                                    <th>Id</th>
+                                                    <th>Id Product</th>
                                                     <th>Product</th>
                                                     <th>Quantity</th>
                                                 </tr>

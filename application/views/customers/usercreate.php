@@ -27,7 +27,7 @@
                                          <ol class="breadcrumb m-0">
                                             <li class="breadcrumb-item"><a href="#">Binfrix</a></li>
                                             <li class="breadcrumb-item active">Clients</li>
-                                            <li class="breadcrumb-item active">Create</li>
+                                            <li class="breadcrumb-item active">Create Client</li>
                                         </ol>
                                     </div>
                                     <h4 class="page-title">Create Client</h4>

@@ -4,17 +4,17 @@
                     $mission=array('class' => 'form-control',
                     'rows' => 4,   'cols' => 40 ,'name'=>'mission','placeholder'=>'Mission');
                    $currency=array('name'=>'currency','class'=>'form-control','required'=>'required',
-                    'type'=>'text','placeholder'=>'currency');
+                    'type'=>'text','placeholder'=>'Currency');
                     $language=array('name'=>'language','class'=>'form-control','required'=>'required',
-                    'type'=>'text','placeholder'=>'language');
+                    'type'=>'text','placeholder'=>'Language');
                     $vision=array('class' => 'form-control',
-                    'rows' => 4,   'cols' => 40 ,'name'=>'vision','placeholder'=>'vision');
+                    'rows' => 4,   'cols' => 40 ,'name'=>'vision','placeholder'=>'Vision');
                     $tax=array('name'=>'tax','class'=>'form-control','required'=>'required',
-                    'type'=>'text','placeholder'=>'tax','id'=>'pass');
+                    'type'=>'text','placeholder'=>'Tax','id'=>'pass');
                     $tax_name=array('name'=>'tax_name','class'=>'form-control','required'=>'required',
-                    'type'=>'password','placeholder'=>'tax_name');
+                    'type'=>'password','placeholder'=>'Tax Name');
 
-                  $sub=array('value'=>'Add','type'=>'submit',
+                  $sub=array('value'=>'Save','type'=>'submit',
                     'class'=>'btn btn-success btn-flat m-b-30 m-t-30');
                  $form=array('class'=>'form-horizontal jsform');
     ?>
@@ -33,9 +33,8 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class=""><a href="#"></a></li>
-                                            <li class=""><a href="#"></a></li>
-                                            <li class=""></li>
+                                            <li class="breadcrumb-item"><a href="#">Binfrix</a></li>
+                                            <li class="breadcrumb-item active">Settings</li>
                                         </ol>
                                     </div>
                                     <h4 class="page-title">Settings</h4>
@@ -65,33 +64,38 @@
                                                     <?= form_textarea($vision);?>
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label" for="example-email">Currency</label>
-                                                <div class="col-sm-10">
-                                                    <?= form_input($currency);?>
-                                                </div>
-                                            </div>
-                                           <div class="form-group row">
+                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">Tax</label>
                                                 <div class="col-sm-10">
                                                     <?= form_input($tax);?>
                                                 </div>
                                             </div>
-                                            
-                                            <div class="form-group row">
+                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">Tax Name</label>
                                                 <div class="col-sm-10">
                                                     <?= form_input($tax_name);?>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label" for="example-email">Currency</label>
+                                                <div class="col-sm-10">
+                                                 <select class="form-control" name="currency">
+                                                      <option value="volvo">-- Select --</option>
+                                                      <option value="saab">    Dollar   </option>
+                                                 </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">Language</label>
                                                 <div class="col-sm-10">
-                                                    <?= form_input($language);?>
+                                                   <select class="form-control" name="lenguage">
+                                             <option value="volvo">-- Select --</option>
+                                             <option value="saab">English</option>
+                                        </select>
                                                 </div>
                                             </div>
                                              <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label"></label>
+                                                  <label class="col-sm-2 col-form-label"></label>
                                                 <div class="col-sm-10">
                                                     <?= form_submit($sub)?>
                                                 </div>
