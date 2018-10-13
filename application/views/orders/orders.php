@@ -53,7 +53,7 @@
                                             <tbody>
 
                                             <?php  
-                                            if ($obtener->result()) {
+                                            if ($obtener) {
                                             foreach ($obtener->result() as $obten) { ?>
                                                 <tr>
                                                 <?php $var="1";?>
