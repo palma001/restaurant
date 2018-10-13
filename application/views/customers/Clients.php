@@ -80,7 +80,7 @@
                                         
                                             <tbody>
                                              <?PHP  
-                                            if ($obtener->result()) {
+                                            if ($obtener) {
                                             foreach ($obtener->result() as $obten) { ?>
                                                 <tr>
                                                      <td><?=$obten->user_id;?><?php  $var=$obten->user_id;?></td>
