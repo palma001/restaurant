@@ -5,6 +5,7 @@ class Products extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
+		$this->load->library('session');
 		$this->load->model('products_model');
 	}
 
@@ -38,6 +39,7 @@ class Products extends CI_Controller {
 			'views' => $this->input->post('views')
 		);
 		$this->products_model->add_menu($data);	
+		$this->session->set_flashdata('message','Add made successfully');
 		redirect('products');
 	}
 
@@ -76,6 +78,7 @@ class Products extends CI_Controller {
 		);
 
 		$this->products_model->update_products($id,$data);
+		$this->session->set_flashdata('message','Modification made successfully');
 		redirect('products');
 	}
 
@@ -83,6 +86,7 @@ class Products extends CI_Controller {
 	public function destroy(){
 		$id = $this->uri->segment(3);
 		$this->products_model->destroy($id);
+		$this->session->set_flashdata('message','Delete made successfully');
 		redirect('products');
 	}
 

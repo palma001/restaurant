@@ -9,8 +9,8 @@ function __construct()
 		$this->load->helper('form');
 		$this->load->helper('url');
 		$this->load->model('customer_model');
-    $this->load->library('session');
-    $Type="0";
+    	$this->load->library('session');
+    	$Type="0";
 		
 	}
 
