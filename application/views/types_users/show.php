@@ -23,7 +23,11 @@
                                 <div class="col-lg-12">
                                     <div class="card">
                                         <div class="card-body">
+<<<<<<< HEAD
                                             <form class="form-horizontal" method="post" action="<?= base_url().'index.php/TypesUsers/edit/'.$user_types->user_type_id; ?>">
+=======
+                                            <form class="form-horizontal" method="post" action="<?= base_url().'index.php/typesUsers/edit/'.$user_types->user_type_id; ?>">
+>>>>>>> rama_luis
                                                 <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label">Type of User</label>
                                                     <div class="col-sm-10">
