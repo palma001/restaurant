@@ -42,13 +42,25 @@
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Outstanding</label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="out" class="form-control" value="<?= $product->outstanding;?>" placeholder="Outstanding" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">Views</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" name="views" class="form-control" value="<?= $product->views;?>" required>
+                                            <select name="out" class="form-control">
+
+                                                <?php  
+                                                    if ($product->outstanding == "yes") 
+                                                    {
+                                                        echo '
+                                                            <option value="'.$product->outstanding.'">
+                                                            '.ucwords($product->outstanding).'
+                                                            </option>
+                                                        ';
+                                                        echo " <option value= 'no'>No</option>";
+                                                    }else{
+                                                        echo '<option value="'.$product->outstanding.'">'.ucwords($product->outstanding).'</option>';
+                                                            
+                                                        echo " <option value= 'no'>Yes</option>";
+                                                    }
+
+                                                ?>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group row">
