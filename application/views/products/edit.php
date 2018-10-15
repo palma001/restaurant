@@ -16,7 +16,7 @@
                 </div>
             </div> 
             <div class="row justify-content-md-center">
-    			<div class="col-lg-11">
+    			<div class="col-lg-12">
     			    <div class="card">
     			        <div class="card-body">
                             <?php if ($product){?>
@@ -52,8 +52,9 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <div class="col-2">
-                                            <button type="submit" class="btn btn-success ">Save</button>
+                                        <label class="col-sm-2 col-form-label"></label>
+                                        <div class="col-sm-10">
+                                            <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Save</button>
                                         </div>
                                     </div>
                                 </form>     
