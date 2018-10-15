@@ -70,7 +70,7 @@
                                         <table id="basic-datatable" class="table table-striped nowrap">
                                             <thead>
                                                 <tr>
-                                                    <th>Id Client</th>
+                                                    <th>Id</th>
                                                     <th>Full Name </th>
                                                     <th>Email</th>
                                                     <th></th>
