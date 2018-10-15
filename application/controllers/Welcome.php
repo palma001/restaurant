@@ -24,6 +24,7 @@ class Welcome extends CI_Controller {
 	public function create()
 	{
 		$this->load->view('layouts/headers');
+		 $this->load->view('layouts/topnav');
 		$this->load->view('customers/usercreate');
 		$this->load->view('layouts/navbar');
 	    $this->load->view('layouts/footer');

@@ -19,6 +19,7 @@ function __construct()
 	{
     $data['obtener'] = $this->customer_model->all_customer();
     $this->load->view('layouts/headers');
+    $this->load->view('layouts/topnav');
     $this->load->view('customers/Clients',$data);
     $this->load->view('layouts/navbar');
     $this->load->view('customers/viewmodal');
@@ -51,11 +52,11 @@ function __construct()
        redirect(base_url('/index.php/Customers/index/'));
 	}
 
- public function show()
- {
+    public function show()
+       {
       
- }
-
+       }
+   
       public function destroy($data)
         {
   
