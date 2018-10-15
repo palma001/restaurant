@@ -92,11 +92,7 @@
         </li>
 
         <li class="dropdown notification-list">
-            <a class="nav-link dropdown-toggle nav-user mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
-                <small class="pro-user-name ml-1">
-                    Morgan K
-                </small>
+            <a class="nav-link dropdown-toggle nav-user mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">   
             </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated profile-dropdown ">
                 <!-- item-->
