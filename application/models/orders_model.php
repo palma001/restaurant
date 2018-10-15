@@ -3,6 +3,7 @@
 if (! defined('BASEPATH')) exit ('No direct script access allowed');
 class orders_model extends CI_Model{
 
+
 	function  __construct()
 	{
          parent::__construct();
@@ -44,13 +45,6 @@ class orders_model extends CI_Model{
              } else {
               return false;
               }
-  }
-      public function count()
-      {
-            $query= $this->db->get('orders'); 
-            $numero_filas=$query->num_rows(); 
-             return $numero_filas;
-      }
-	
+        }
 
 }

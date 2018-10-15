@@ -19,9 +19,23 @@
                     <div class="card">
                         <div class="card-body">
                             <p class="text-muted font-13 mb-4">
-                                <a href="<?= base_url().'index.php/typeUser/add_types'?>" class="btn btn-dark">Add</a>
+                                <a href="<?= base_url().'index.php/TypesUsers/add_types'?>" class="btn btn-dark">Add</a>
                             </p>
-                            <h4 class="mb-3">List Types of Users</h4>
+                            <?php 
+                                 $message=$this->session->flashdata('message');
+                                  if ($message) {?>
+
+                                <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  <?= $message ?>
+                                  </div>
+                                  <?php 
+                                 }else {
+
+                                 }
+                            ?>
                             <table id="basic-datatable" class="table table-sm table-striped nowrap text-center">
                                 <thead>
                                     <tr>
@@ -39,8 +53,8 @@
                                                         <td>'.$key.'</td>
                                                         <td>'.ucwords(strtolower($user_types->user_type)).'</td>
                                                         <td>
-                                                            <a href="'.base_url()."index.php/typeUser/show/".$user_types->user_type_id.'"><i class="fe-edit-2"></i> </a>
-                                                            <a href="'.base_url()."index.php/typeUser/destroy/".$user_types->user_type_id.'"> <i class="fe-x"></i></a>
+                                                            <a href="'.base_url()."index.php/TypesUsers/show/".$user_types->user_type_id.'"><i class="fe-edit-2"></i> </a>
+                                                            <a href="'.base_url()."index.php/TypesUsers/destroy/".$user_types->user_type_id.'"> <i class="fe-x"></i></a>
 
                                                         </td>
                                                     </tr>

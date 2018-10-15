@@ -33,7 +33,7 @@ class Products_model extends CI_Model {
 	public function add_menu($data)
 	{
 		$fecha = date('Y/m/d');
-		$this->db->insert('products',array('title'=>$data['title'], 'description'=>$data['description'], 'price'=>$data['price'], 'outstanding'=>$data['outstanding'], 'views'=>$data['views'], 'date' => $fecha));
+		$this->db->insert('products',array('title'=>$data['title'], 'description'=>$data['description'], 'price'=>$data['price'], 'outstanding'=>$data['outstanding'], 'date' => $fecha));
 	}
 
 	public function update_products($id,$data){
@@ -51,5 +51,15 @@ class Products_model extends CI_Model {
 
 	public function destroy($id){
 		$this->db->delete('products',array('product_id' => $id));	
+	}
+
+	public function count_views()
+	{
+		$query = $this->db->query("SELECT SUM(views) as views from products");
+		if ($query->num_rows() > 0){
+			return $query->row();
+		}else{
+			return false;
+		}
 	}
 }

@@ -9,21 +9,21 @@ function __construct()
 		$this->load->helper('form');
 		$this->load->helper('url');
 		$this->load->model('customer_model');
-    $this->load->library('session');
-    $Type="0";
+    	$this->load->library('session');
+    	$Type="0";
 		
 	}
 
 
 	public function index()
 	{
-    $data['obtener'] = $this->customer_model->all_customer();
-    $this->load->view('layouts/headers');
-    $this->load->view('layouts/topnav');
-    $this->load->view('customers/Clients',$data);
-    $this->load->view('layouts/navbar');
-    $this->load->view('customers/viewmodal');
-    $this->load->view('layouts/footer');  
+	    $data['obtener'] = $this->customer_model->all_customer();
+	    $this->load->view('layouts/headers');
+	    $this->load->view('layouts/topnav');
+	    $this->load->view('customers/Clients',$data);
+	    $this->load->view('layouts/navbar');
+	    $this->load->view('customers/viewmodal');
+	    $this->load->view('layouts/footer');  
 	}
 
 	public function create()
@@ -39,7 +39,7 @@ function __construct()
 		$datos=$this->customer_model->read($data);
 		if($datos) {
 		  	
-		   }
+		}
 	}
 
 	public function update()
@@ -52,18 +52,17 @@ function __construct()
        redirect(base_url('/index.php/Customers/index/'));
 	}
 
-    public function show()
-       {
-      
-       }
+
    
       public function destroy($data)
         {
   
              $this->customer_model->delete($data);
         }
-
-
+	public function show()
+	{
+	  
+	}
 
 }
 

@@ -34,11 +34,12 @@
                         </a>
                     </li>
                     <li>
-                       <a href="<?= base_url().'index.php/typeUser';?>">
+                       <a href="<?= base_url().'index.php/TypesUsers';?>">
                             <i class="fe-folder-plus"></i> Types of Users
                         </a>
                     </li>
                     <li>
+
 
                         <a href="<?= base_url('index.php/settings/index/');?>"> <i class="fe-settings"></i> Settings </a>      
                     </li>
@@ -48,7 +49,8 @@
 
                     <li>
                         <a href="<?= base_url('index.php/Sliders/index/');?>"> <i class="fe-sliders"></i> Sliders </a>
-                    </li>   
+        
+                        
                 </ul>
             </div>
             <!-- End Sidebar -->

@@ -26,12 +26,12 @@
                                 </div>
                                 <h5 class="text-muted font-weight-normal mt-0">Total Sales</h5>
                                 <h3 class="mt-2">
-                                     <?php
-                                  if ($rows>0){
-                                      echo $rows;
-                                    }else {
-                                      echo "0";
-                                     }?>
+                                    <?php
+                                      if ($rows>0){
+                                          echo $rows;
+                                        }else {
+                                          echo "0";
+                                    }?>
                                 </h3>
                             </div>
                             <div id="sparkline1"></div>
@@ -63,13 +63,13 @@
                                 </div>
                                 <h5 class="text-muted font-weight-normal mt-0">Total Users</h5>
                                 <h3 class="mt-2">
-                                      <?php
-                                             if ($customer>0){
-                                               echo $customer;
-                                             }else {
-                                                echo "0";
-                                             }
-                                         ?>
+                                    <?php
+                                        if ($customer>0){
+                                           echo $customer;
+                                        }else {
+                                            echo "0";
+                                        }
+                                    ?>
                                 </h3>
                             </div>
                             <div id="sparkline3"></div>
@@ -85,7 +85,14 @@
                                     <i class="mdi mdi-eye-outline text-danger widget-icon"></i>
                                 </div>
                                 <h5 class="text-muted font-weight-normal mt-0">Total Visits</h5>
-                                <h3 class="mt-2">74,315</h3>
+                                <h3 class="mt-2">
+                                    <?php
+                                        if ($views){
+                                            echo $views->views;
+                                        }else {
+                                            echo "0";
+                                    }?>   
+                                </h3>
                             </div>
                             <div id="sparkline4"></div>
                         </div> <!-- end card-body-->

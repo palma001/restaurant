@@ -1,17 +1,15 @@
 <?PHP  
-  
-                 $fullname=array('name'=>'fullname','class'=>'form-control','required'=>'required','type'=>'text',
-                    'placeholder'=>'full name','id'=>'fullname','value'=>$full_name);
-                   $email=array('name'=>'email','class'=>'form-control','required'=>'required','type'=>'email',
-                  'placeholder'=>'Email', 'id'=>'email','value'=>$email);
-                   $pas=array('name'=>'password','class'=>'form-control','required'=>'required',
-                    'type'=>'password','placeholder'=>'password','id'=>'pass','value'=>$password);
-                  $sub=array('value'=>'Procesar','type'=>'submit',
-                    'class'=>'btn btn-success btn-flat m-b-30 m-t-30');
-                  $hidden=array('name'=>'user_id','type'=>'hidden','value'=>$user_id);
-                 $form=array('class'=>'form-horizontal');
-
-    ?>
+    $fullname=array('name'=>'fullname','class'=>'form-control','required'=>'required','type'=>'text',
+    'placeholder'=>'full name','id'=>'fullname','value'=>$full_name);
+    $email=array('name'=>'email','class'=>'form-control','required'=>'required','type'=>'email',
+    'placeholder'=>'Email', 'id'=>'email','value'=>$email);
+    $pas=array('name'=>'password','class'=>'form-control','required'=>'required',
+    'type'=>'password','placeholder'=>'password','id'=>'pass','value'=>$password);
+    $sub=array('value'=>'Procesar','type'=>'submit',
+    'class'=>'btn btn-success btn-flat m-b-30 m-t-30');
+    $hidden=array('name'=>'user_id','type'=>'hidden','value'=>$user_id);
+    $form=array('class'=>'form-horizontal');
+?>
 
  
                                                

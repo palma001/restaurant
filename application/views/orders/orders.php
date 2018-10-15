@@ -11,9 +11,6 @@
 
             <div class="content-page">
                 <div class="content">
-
-          
-
                     <!-- Start Content-->
                     <div class="container-fluid">
                         
@@ -32,8 +29,6 @@
                             </div>
                         </div>     
                         <!-- end page title --> 
-
-
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
@@ -41,15 +36,12 @@
                                         <table id="basic-datatable" class="table table-striped nowrap">
                                             <thead>
                                                 <tr>
-                                                   
                                                     <th>Orders Id</th>
                                                     <th>Full Name</th>
                                                     <th>Total</th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
-                                        
-                                        
                                             <tbody>
 
                                             <?php  
