@@ -51,13 +51,29 @@ class Sliders extends CI_Controller {
 
             $file_info = $this->upload->data();
 
-           /// $this->crearMiniatura($file_info['file_name']);
+            $this->crearMiniatura($file_info['file_name']);
             $titulo = $this->input->post('Slidername');
             $imagen = $file_info['file_name'];
             $subir = $this->mupload->upload($titulo,$imagen);      
             $data['titulo'] = $titulo;
             $data['imagen'] = $imagen;
         }
+
+	}
+
+	public function crearMiniatura($filename){
+
+        $config['image_library'] = 'gd2';
+        $config['source_image'] = 'uploads/imagenes/'.$filename;
+        $config['create_thumb'] = TRUE;
+        $config['maintain_ratio'] = TRUE;
+        $config['new_image']='uploads/imagenes/thumbs/';
+        $config['thumb_marker']='';//captura_thumb.png
+        $config['width'] = 150;
+        $config['height'] = 150;
+        $this->load->library('image_lib', $config); 
+        $this->image_lib->resize();
+
 
 	}
 }
