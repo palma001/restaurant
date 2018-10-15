@@ -92,14 +92,7 @@
         </li>
 
         <li class="dropdown notification-list">
-
-            <a class="nav-link dropdown-toggle nav-user mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
-                <small class="pro-user-name ml-1">
-               
-                </small>
             <a class="nav-link dropdown-toggle nav-user mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">   
-
             </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated profile-dropdown ">
                 <!-- item-->
@@ -111,25 +104,6 @@
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                     <i class="fe-user"></i>
                     <span>My Account</span>
-                </a>
-                <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <i class="fe-settings"></i>
-                    <span>Settings</span>
-                </a>
-
-                <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <i class="fe-lock"></i>
-                    <span>Lock Screen</span>
-                </a>
-
-                <div class="dropdown-divider"></div>
-
-                <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <i class="fe-log-out"></i>
-                    <span>Logout</span>
                 </a>
             </div>
         </li>
