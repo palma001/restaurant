@@ -47,4 +47,11 @@ class orders_model extends CI_Model{
               }
         }
 
+         public function count()
+      {
+            $query= $this->db->get('orders'); 
+            $numero_filas=$query->num_rows(); 
+             return $numero_filas;
+      }
+
 }
