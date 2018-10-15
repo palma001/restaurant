@@ -60,6 +60,9 @@
                     <li>
                         <a href="<?= base_url('index.php/settings/index/');?>"> <i class="fe-settings"></i> Settings </a>
                     </li>
+                    <li>
+                        <a href="<?= base_url('index.php/settings/index/');?>"> <i class="fe-globe"></i> Social Networks </a>
+                    </li>
                         
                 </ul>
             </div>
