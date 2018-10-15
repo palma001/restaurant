@@ -41,7 +41,14 @@
                     <li>
 
                         <a href="<?= base_url('index.php/settings/index/');?>"> <i class="fe-settings"></i> Settings </a>      
+                    </li>
+                    <li>
+                        <a href="<?= base_url();?>"> <i class="fe-globe"></i> Social Networks </a>
+                    </li>
 
+                    <li>
+                        <a href="<?= base_url('index.php/Sliders/index/');?>"> <i class="fe-sliders"></i> Sliders </a>
+                    </li>   
                 </ul>
             </div>
             <!-- End Sidebar -->

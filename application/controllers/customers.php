@@ -52,11 +52,11 @@ function __construct()
        redirect(base_url('/index.php/Customers/index/'));
 	}
 
- public function show()
- {
+    public function show()
+       {
       
- }
-
+       }
+   
       public function destroy($data)
         {
   

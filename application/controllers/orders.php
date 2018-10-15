@@ -20,7 +20,6 @@ function __construct()
 		$this->load->view('layouts/topnav');
 		$this->load->view('orders/orders',$data);
 	  	$this->load->view('layouts/footer');
-
 	}
 
 	public function create()
