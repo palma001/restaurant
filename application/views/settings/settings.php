@@ -80,8 +80,8 @@
                                                 <label class="col-sm-2 col-form-label" for="example-email">Currency</label>
                                                 <div class="col-sm-10">
                                                  <select class="form-control" name="currency">
-                                                      <option value="volvo">-- Select --</option>
-                                                      <option value="saab">    Dollar   </option>
+                                                      <option value="0">-- Select --</option>
+                                                      <option value="1">    Dollar   </option>
                                                  </select>
                                                 </div>
                                             </div>
@@ -89,8 +89,8 @@
                                                 <label class="col-sm-2 col-form-label">Language</label>
                                                 <div class="col-sm-10">
                                                    <select class="form-control" name="lenguage">
-                                             <option value="volvo">-- Select --</option>
-                                             <option value="saab">English</option>
+                                             <option value="0">-- Select --</option>
+                                             <option value="1">English</option>
                                         </select>
                                                 </div>
                                             </div>
