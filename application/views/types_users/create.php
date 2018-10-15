@@ -37,6 +37,8 @@
                                                     </div>
                                                 </div>
                                             </form>
+                                            <h3>Permissions</h3>
+                                            <hr>
                                         </div> <!-- end card-body-->
                                     </div> <!-- end card-->
                                 </div>

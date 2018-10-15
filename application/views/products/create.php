@@ -19,7 +19,7 @@
     			<div class="col-lg-12">
     			    <div class="card">
     			        <div class="card-body">
-                            <form class="form-horizontal" method="post" action="create">
+                            <form class="form-horizontal" method="post" action="add_products">
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Title</label>
                                     <div class="col-sm-10">
@@ -33,7 +33,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label" for="example-email">Price</label>
+                                    <label class="col-sm-2 col-form-label" for="example-email">Price(USD)</label>
                                     <div class="col-sm-10">
                                         <input type="text" id="example-email" name="price" class="form-control" placeholder="Price" required>
                                     </div>

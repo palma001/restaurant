@@ -84,17 +84,18 @@ class customer_model extends CI_Model{
 
       public function count_customer()
       {
-            $this->db->where('user_type_id','2');
-            $query= $this->db->get('users'); 
-            $numero_filas_customer=$query->num_rows(); 
-             return $numero_filas_customer;
+        $this->db->where('user_type_id','2');
+        $query= $this->db->get('users'); 
+        $numero_filas_customer = $query->num_rows(); 
+        return $numero_filas_customer;
       }
+
       public function delete($data)
       {
-          $this->db->where('user_id',$data);
-          $this->db->delete('users');
-          $this->session->set_flashdata('message','delete data');
-          redirect(base_url('/index.php/Customers/index/')); 
+        $this->db->where('user_id',$data);
+        $this->db->delete('users');
+        $this->session->set_flashdata('message','delete data');
+        redirect(base_url('/index.php/Customers/index/')); 
       }
 	
 

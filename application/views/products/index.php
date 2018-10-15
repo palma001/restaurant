@@ -19,7 +19,7 @@
     			    <div class="card">
                         <div class="card-body">
                             <p class="text-muted font-13 mb-4">
-                                <a href="<?= base_url().'index.php/products/add_products'?>" class="btn btn-dark">Add</a>
+                                <a href="<?= base_url().'index.php/products/create'?>" class="btn btn-dark">Add</a>
                             </p>
                              <?php 
                                  $message=$this->session->flashdata('message');
