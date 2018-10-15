@@ -89,7 +89,7 @@ class customer_model extends CI_Model{
         $numero_filas_customer = $query->num_rows(); 
         return $numero_filas_customer;
       }
-
+      
       public function delete($data)
       {
         $this->db->where('user_id',$data);
