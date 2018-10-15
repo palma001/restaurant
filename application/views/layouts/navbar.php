@@ -34,7 +34,7 @@
                         </a>
                     </li>
                     <li>
-                       <a href="<?= base_url().'index.php/typeUser';?>">
+                       <a href="<?= base_url().'index.php/TypesUsers';?>">
                             <i class="fe-folder-plus"></i> Types of Users
                         </a>
                     </li>

@@ -36,7 +36,6 @@
 
                                  }
                             ?>
-                            <h4 class="mb-3">List Products</h4>
                             <table id="basic-datatable" class="table table-sm table-striped nowrap text-center">
                                 <thead>
                                     <tr>
