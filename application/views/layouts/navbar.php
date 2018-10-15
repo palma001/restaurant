@@ -65,7 +65,7 @@
                     </li>
 
                     <li>
-                        <a href="<?= base_url('index.php/settings/index/');?>"> <i class="fe-sliders"></i> Sliders </a>
+                        <a href="<?= base_url('index.php/Sliders/index/');?>"> <i class="fe-sliders"></i> Sliders </a>
                     </li>   
                 </ul>
             </div>

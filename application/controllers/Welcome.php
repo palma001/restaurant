@@ -16,6 +16,7 @@ class Welcome extends CI_Controller {
 		$data=$this->orders_model->count();
 		$count_customer=$this->customer_model->count_customer();
 		$this->load->view('layouts/headers');
+		$this->load->view('layouts/topnav');
 		$this->load->view('layouts/body',array('rows'=>$data,'customer'=>$count_customer));
 		$this->load->view('layouts/navbar');
 		$this->load->view('layouts/footer');
@@ -24,7 +25,7 @@ class Welcome extends CI_Controller {
 	public function create()
 	{
 		$this->load->view('layouts/headers');
-		 $this->load->view('layouts/topnav');
+		$this->load->view('layouts/topnav');
 		$this->load->view('customers/usercreate');
 		$this->load->view('layouts/navbar');
 	    $this->load->view('layouts/footer');
