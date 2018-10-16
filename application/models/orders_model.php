@@ -10,17 +10,6 @@ class orders_model extends CI_Model{
          $var="0";
      }
 
-
-     public function inserte($data)
-     {
-      
-     }
-
-     public  function read($data)
-     {
-           
-     }
-
       public  function all_orders()
       {
          $this->db->join('users','users.user_id=orders.user_id');

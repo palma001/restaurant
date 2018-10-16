@@ -1,5 +1,4 @@
-<script type="text/javascript">
-      $(document).ready(function (e) {
+ $(document).ready(function (e) {
             $('#client').click(function () {
                 var data_id = '';
                 var full_name='';
@@ -18,4 +17,7 @@
                 document.getElementById("table1").rows[1].cells[3].innerHTML = date   
             })
          });
-</script>
+ 
+
+
+

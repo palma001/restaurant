@@ -43,8 +43,8 @@
                              <thead>
                                 <tr>
                                    <th>Id</th>
-                                    <th>Full Name </th>
-                                    <th>Email</th>
+                                    <th>Slider</th>
+                                    <th>Image</th>
                                     <th></th>
                                 </tr>
                                 </thead>
