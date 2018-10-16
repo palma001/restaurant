@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-
-  <div id="wrapper">
+ <div id="wrapper">
 
             <!-- ========== Left Sidebar Start ========== -->
             <div class="left-side-menu">
@@ -32,12 +30,7 @@
                                         </ol>
                                     </div>
                                     <h4 class="page-title">Clients</h4>
-
-   
-
-
-=======
-<div id="wrapper">
+    <div id="wrapper">
     <div class="content-page">
         <div class="content">
           <!-- Start Content-->
@@ -51,7 +44,7 @@
                                   <li class="breadcrumb-item"><a href="#">Binfrix</a></li>
                                 <li class="breadcrumb-item"><a href="#">Clients</a></li>       
                                  </ol>
->>>>>>> williams
+
                                 </div>
                                     <h4 class="page-title">Clients</h4>
                                </div>

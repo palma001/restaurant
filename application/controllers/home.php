@@ -15,10 +15,10 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$data=$this->orders_model->count();
-		$count_customers= $this->customers_model->count_customer();
+		$count_customer= $this->customers_model->count_customer();
 		$views = $this->products_model->count_views();
 		$this->load->view('layouts/headers');
-		//$this->load->view('layouts/navbar');
+		$this->load->view('layouts/navbar');
 		$this->load->view('layouts/topnav');
 		$this->load->view('home/index',array('rows'=>$data,'customer'=>$count_customer,'views' => $views));	
 		$this->load->view('layouts/footer');

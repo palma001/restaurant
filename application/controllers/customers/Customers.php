@@ -17,7 +17,7 @@ function __construct()
 
 	public function index()
 	{
-	    $data['obtener'] = $this->customer_model->all_customer();
+	    $data['obtener'] = $this->customers_model->all_customer();
 	    $this->load->view('layouts/headers');
 	    $this->load->view('layouts/topnav');
 	    $this->load->view('customers/Clients',$data);
