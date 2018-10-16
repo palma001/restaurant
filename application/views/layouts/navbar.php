@@ -1,7 +1,7 @@
 <div class="left-side-menu">
         <div class="slimscroll-menu">
             <!-- LOGO -->
-            <a href="<?= base_url('')?>" class="logo text-center mb-4">
+            <a href="index.html" class="logo text-center mb-4">
                 <span class="logo-lg">
                     <img src="<?= base_url('admin_template/assets/images/logo.png') ?>" alt="" height="60">
                 </span>
@@ -13,13 +13,12 @@
             <div id="sidebar-menu">
                 <ul class="metismenu" id="side-menu">
                    <li class="menu-title">Navigation</li>
-                   <li><a href="<?= base_url();?>" title=""><i class="fe-home"></i> Home</a></li>
                    <li>
-                        <a href="<?= base_url().'index.php/products';?>" aria-expanded="false">
-                            <i class="fe-clipboard"></i> Products
+                        <a href="javascript: void(0);">
+                            <i class="fe-clipboard"></i>
+                            <span> Products </span>
+                            <span class="menu-arrow"></span>
                         </a>
-                    </li>
-                    <li>
                         <ul class="nav-second-level nav" aria-expanded="false">
                             <li>
                                 <a href="<?= base_url().'index.php/products/products/add_products'?>">Add Products</a>
@@ -33,7 +32,6 @@
                     </li>
                     <li>
                         <a href="<?= base_url('index.php/customers/Customers/index/');?>">
-
                             <i class="fe-user"></i> 
                             <span> Clients </span>
                         </a>
@@ -46,12 +44,12 @@
                         </a>
                     </li>
                     <li>
-                       <a href="<?= base_url().'index.php/TypesUsers';?>">
-                            <i class="fe-folder-plus"></i> Types of Users
+                        <a href="javascript: void(0);">
+                            <i class="fe-folder-plus"></i>
+                            <span> Type of User </span>
+                            <span class="menu-arrow"></span>
                         </a>
-
-                    </li>
-                <ul class="nav-second-level nav" aria-expanded="false">
+                        <ul class="nav-second-level nav" aria-expanded="false">
                             <li>
                                 <a href="<?= base_url().'index.php/typeuser/typeUser';?>">
                                     Type of User
@@ -62,23 +60,22 @@
                      <li>
                         <a href="<?= base_url('index.php/sliders/Sliders/index/');?>"> <i class="fe-sliders"></i> Sliders </a>
                     </li>   
-
                     <li>
                         <a href="<?= base_url();?>"> <i class="fe-globe"></i> Social Networks </a>
                     </li>
 
                     <li>
-
-                        <a href="<?= base_url('index.php/Sliders/index/');?>"> <i class="fe-sliders"></i> Sliders </a>
-        
                         <a href="<?= base_url('index.php/settings/settings/index/');?>"> <i class="fe-settings"></i> Settings </a>
                     </li>
                     <li>
                         <a href="<?php  echo base_url().'/index.php/login/Login/destroy/';?>"> <i class="fe-log-in"></i> Exit </a>
                     </li>
+                    
+                   
                 </ul>
             </div>
             <!-- End Sidebar -->
+
             <div class="clearfix"></div>
 
         </div>

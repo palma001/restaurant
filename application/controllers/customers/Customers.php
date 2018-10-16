@@ -8,22 +8,15 @@ function __construct()
 		parent::__construct();
 		$this->load->helper('form');
 		$this->load->helper('url');
-<<<<<<< HEAD:application/controllers/customers.php
-		$this->load->model('customer_model');
-    	$this->load->library('session');
-    	$Type="0";
-=======
 		$this->load->model('customers_model');
-    $this->load->library('session');
-    $Type="0";
->>>>>>> williams:application/controllers/customers/Customers.php
-		
+        $this->load->library('session');
+         $Type="0";
+
 	}
 
 
 	public function index()
 	{
-<<<<<<< HEAD:application/controllers/customers.php
 	    $data['obtener'] = $this->customer_model->all_customer();
 	    $this->load->view('layouts/headers');
 	    $this->load->view('layouts/topnav');
@@ -31,15 +24,6 @@ function __construct()
 	    $this->load->view('layouts/navbar');
 	    $this->load->view('customers/viewmodal');
 	    $this->load->view('layouts/footer');  
-=======
-    $data['obtener'] = $this->customers_model->all_customer();
-    $this->load->view('layouts/headers');
-    $this->load->view('layouts/topnav');
-    $this->load->view('customers/clients',$data);
-    $this->load->view('layouts/navbar');
-    $this->load->view('customers/viewmodal');
-    $this->load->view('layouts/footer');  
->>>>>>> williams:application/controllers/customers/Customers.php
 	}
 
 	public function create()
@@ -67,24 +51,10 @@ function __construct()
        $this->session->set_flashdata('message','modification made successfully');
        redirect(base_url('/index.php/Customers/index/'));
 	}
-<<<<<<< HEAD:application/controllers/customers.php
-
-
-   
-=======
->>>>>>> williams:application/controllers/customers/Customers.php
       public function destroy($data)
         {
              $this->customer_model->delete($data);
         }
-<<<<<<< HEAD:application/controllers/customers.php
-	public function show()
-	{
-	  
-	}
-=======
->>>>>>> williams:application/controllers/customers/Customers.php
-
 }
 
 
