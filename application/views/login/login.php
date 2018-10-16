@@ -27,7 +27,7 @@
 
                                 </div>
 
-                                <form method="post" action="<?php echo base_url()."index.php/login/login/authenticated";?> ">
+                                <form method="post" action="<?php echo base_url()."index.php/login/authenticated";?> ">
 
                                     <div class="form-group mb-3">
                                         <label for="emailaddress">Email address</label>

@@ -68,7 +68,7 @@
                         <a href="<?= base_url('index.php/settings/settings/index/');?>"> <i class="fe-settings"></i> Settings </a>
                     </li>
                     <li>
-                        <a href="<?php  echo base_url().'/index.php/login/Login/destroy/';?>"> <i class="fe-log-in"></i> Exit </a>
+                        <a href="<?php  echo base_url().'/index.php/login/destroy/';?>"> <i class="fe-log-in"></i> Exit </a>
                     </li>
                     
                    
