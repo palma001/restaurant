@@ -30,7 +30,7 @@ class TypesUsers extends CI_Controller {
 		$this->load->view('layouts/footer');
 	}
 
-	public function add_types()
+	public function store()
 	{
 		$data = array(
 			'type_user' => $this->input->post('type_user')
