@@ -21,7 +21,7 @@ class TypesUsers extends CI_Controller {
 
 	}
 
-	public function add_types()
+	public function create()
 	{
 		$this->load->view('layouts/headers');
 		$this->load->view('layouts/navbar');
@@ -30,7 +30,7 @@ class TypesUsers extends CI_Controller {
 		$this->load->view('layouts/footer');
 	}
 
-	public function create()
+	public function add_types()
 	{
 		$data = array(
 			'type_user' => $this->input->post('type_user')
