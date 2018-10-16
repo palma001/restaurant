@@ -73,8 +73,7 @@
                                                
                                 </tbody>
                             </table>
-                                        <br>
-
+                          <br>
                    </div> <!-- end card body-->
                  </div> <!-- end card -->
                 </div><!-- end col-->
