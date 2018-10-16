@@ -1,36 +1,4 @@
- <div id="wrapper">
-
-            <!-- ========== Left Sidebar Start ========== -->
-            <div class="left-side-menu">
-
-               
-                <!-- Sidebar -left -->
-
-            </div>
-            <!-- Left Sidebar End -->
-
-            <!-- ============================================================== -->
-            <!-- Start Page Content here -->
-            <!-- ============================================================== -->
-
-            <div class="content-page">
-                <div class="content">
-                    <!-- Start Content-->
-                    <div class="container-fluid">
-                        
-                        <!-- start page title -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="page-title-box">
-                                    <div class="page-title-right">
-                                        <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="<?= base_url();?>">Binfrix</a></li>
-                                            <li class="breadcrumb-item"><a>Clients</a></li>
-                                         
-                                        </ol>
-                                    </div>
-                                    <h4 class="page-title">Clients</h4>
-    <div id="wrapper">
+<div id="wrapper">
     <div class="content-page">
         <div class="content">
           <!-- Start Content-->
@@ -44,7 +12,6 @@
                                   <li class="breadcrumb-item"><a href="#">Binfrix</a></li>
                                 <li class="breadcrumb-item"><a href="#">Clients</a></li>       
                                  </ol>
-
                                 </div>
                                     <h4 class="page-title">Clients</h4>
                                </div>
