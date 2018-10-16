@@ -7,7 +7,7 @@
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="#">Binfrix</a></li>
-                                <li class="breadcrumb-item"><a href="<?=base_url()."index.php/products";?>" title="">Products</a></li>
+                                <li class="breadcrumb-item"><a href="<?php echo base_url()."index.php/products";?>" title="">Products</a></li>
                                 <li class="breadcrumb-item active">Update Products</li>
                             </ol>
                         </div>
@@ -20,23 +20,23 @@
     			    <div class="card">
     			        <div class="card-body">
                             <?php if ($product){?>
-                                <form class="form-horizontal" method="post" action="<?= base_url()."index.php/products/update/".$product->product_id;?>">
+                                <form class="form-horizontal" method="post" action="<?php echo base_url()."index.php/products/update/".$product->product_id;?>">
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Title</label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="title" class="form-control" value="<?= $product->title;?>" required>
+                                            <input type="text" name="title" class="form-control" value="<?php echo $product->title;?>" required>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Description</label>
                                         <div class="col-sm-10">
-                                            <textarea class="form-control" rows="5" name="description" required><?= $product->description;?></textarea>
+                                            <textarea class="form-control" rows="5" name="description" required><?php echo $product->description;?></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label" for="example-email">Price</label>
                                         <div class="col-sm-10">
-                                            <input type="text" id="example-email" name="price" class="form-control" value="<?= $product->price;?>" required>
+                                            <input type="text" id="example-email" name="price" class="form-control" value="<?php echo $product->price;?>" required>
                                         </div>
                                     </div>
                                     <div class="form-group row">

@@ -7,7 +7,7 @@
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="#">Binfrix</a></li>
-                                <li class="breadcrumb-item"><a href="<?= base_url()."index.php/TypesUsers";?>">Types of Users</a></li>
+                                <li class="breadcrumb-item"><a href="<?php echo base_url()."index.php/TypesUsers";?>">Types of Users</a></li>
                                 <li class="breadcrumb-item active">Create Type of User</li>
                             </ol>
                         </div>
@@ -23,7 +23,7 @@
                                 <div class="col-lg-12">
                                     <div class="card">
                                         <div class="card-body">
-                                            <form class="form-horizontal" method="post" action="<?=base_url().'index.php/TypesUsers/add_types';?>">
+                                            <form class="form-horizontal" method="post" action="<?php echo base_url().'index.php/TypesUsers/add_types';?>">
                                                 <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label">Type of User</label>
                                                     <div class="col-sm-10">

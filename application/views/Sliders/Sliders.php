@@ -17,7 +17,6 @@
                 <div class="content">
                     <!-- Start Content-->
                     <div class="container-fluid">
-                        
                         <!-- start page title -->
                         <div class="row">
                             <div class="col-12">
@@ -30,16 +29,10 @@
                                         </ol>
                                     </div>
                                     <h4 class="page-title">Sliders</h4>
-
-   
-
-
                                 </div>
                             </div>
                         </div>     
                         <!-- end page title --> 
-
-
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
