@@ -63,7 +63,7 @@
                                                     data-fullname="<?php echo $obten->full_name; ?>" 
                                                     data-email="<?php echo $obten->email;?>" data-date="<?php echo $obten->date;?>"
                                                     href="#"> <i class="fe-eye"></i></a>
-                                             <a href="<?php  echo  base_url()."index.php/customers/destroy/".$obten->user_id;?>"><i class="fe-x"></i></a>
+                                             <a href="<?php  echo  base_url()."index.php/customers/customers/destroy/".$obten->user_id;?>"><i class="fe-x"></i></a>
                                         </td>
                                     </tr>
                                         <?php 

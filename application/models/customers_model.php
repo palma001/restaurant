@@ -23,7 +23,7 @@ class customers_model extends CI_Model{
            $this->db->insert('users',array('full_name'=>$data['fullname'],'email'=>$data['email'],
           'password'=>$data['password'],'user_type_id'=>$data['usertype'],'date'=>$fecha_actual));
           $this->session->set_flashdata('message','Registration Done With Exist');
-          redirect(base_url('/index.php/Customers/index/')); 
+          redirect(base_url('/index.php/customers/Customers/index/')); 
       }
      }
 
@@ -94,7 +94,7 @@ class customers_model extends CI_Model{
           $this->db->where('user_id',$data);
           $this->db->delete('users');
           $this->session->set_flashdata('message','delete data');
-          redirect(base_url('/index.php/Customers/index/')); 
+          redirect(base_url('/index.php/customers/Customers/index/')); 
       }
   
 

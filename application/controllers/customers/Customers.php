@@ -30,7 +30,7 @@ function __construct()
 	{
        $data=array('fullname'=>$this->input->post('fullname'),'usertype'=>'2',
       'email'=>$this->input->post('email'),'password'=>$this->input->post('password')); 
-       $this->customer_model->inserte($data);
+       $this->customers_model->inserte($data);
 	}
 
 	public function edit()
@@ -47,13 +47,13 @@ function __construct()
        $data=array('fullname'=>$this->input->post('fullname'),
       'email'=>$this->input->post('email'),'password'=>$this->input->post('password')
        ,$this->input->post('user_id')); 
-       $this->customer_model->update_customer($data);
+       $this->customers_model->update_customer($data);
        $this->session->set_flashdata('message','modification made successfully');
        redirect(base_url('/index.php/Customers/index/'));
 	}
       public function destroy($data)
         {
-             $this->customer_model->delete($data);
+             $this->customers_model->delete($data);
         }
 }
 
