@@ -51,7 +51,7 @@ class TypesUsers extends CI_Controller {
 		if (!$id) {
 			redirect('TypesUsers');
 		}else{
-			$this->load->view('types_users/show',$data);
+			$this->load->view('types_users/edit',$data);
 		}
 		
 		$this->load->view('layouts/footer');
