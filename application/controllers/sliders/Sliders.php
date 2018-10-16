@@ -71,7 +71,7 @@ class Sliders extends CI_Controller {
         $config['create_thumb'] = TRUE;
         $config['maintain_ratio'] = TRUE;
         $config['new_image']='uploads/imagenes/thumbs/';
-        $config['thumb_marker']='';//captura_thumb.png
+        $config['thumb_marker']='';
         $config['width'] = 150;
         $config['height'] = 150;
         $this->load->library('image_lib', $config); 

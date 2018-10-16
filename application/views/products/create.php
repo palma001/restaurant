@@ -8,7 +8,7 @@
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="#">Binfrix</a></li>
                                 <li class="breadcrumb-item"><a href="<?=base_url()."index.php/products";?>" title="">Products</a></li>
-                                <li class="breadcrumb-item active">Create Products</li>
+                                <li class="breadcrumb-item active">Create Product</li>
                             </ol>
                         </div>
                         <h4 class="page-title">Create Products</h4>
@@ -19,7 +19,7 @@
     			<div class="col-lg-12">
     			    <div class="card">
     			        <div class="card-body">
-                            <form class="form-horizontal" method="post" action="add_products">
+                            <form class="form-horizontal" method="post" action="store">
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Title</label>
                                     <div class="col-sm-10">
@@ -42,7 +42,7 @@
                                     <label class="col-sm-2 col-form-label">Outstanding</label>
                                     <div class="col-sm-10">
                                         <select name="out" class="form-control">
-                                            <option value="">--Select--</option>
+                                            <option value="">-- Select -- </option>
                                             <option value="yes">Yes</option>
                                             <option value="no">No</option>
                                         </select>

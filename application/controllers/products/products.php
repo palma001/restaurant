@@ -34,7 +34,7 @@ class Products extends CI_Controller {
 		$this->load->view('layouts/footer');
 	}
 
-	public function add_products()
+	public function store()
 	{
 		$data = array(
 			'title' => $this->input->post('title'),

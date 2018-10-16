@@ -19,7 +19,7 @@
     			    <div class="card">
                         <div class="card-body">
                             <p class="text-muted font-13 mb-4">
-                                <a href="<?= base_url().'index.php/products/create'?>" class="btn btn-dark">Add</a>
+                                <a href="<?php echo base_url().'index.php/products/create'?>" class="btn btn-dark">Add</a>
                             </p>
                              <?php 
                                  $message=$this->session->flashdata('message');
@@ -29,7 +29,7 @@
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
-                                  <?= $message ?>
+                                  <?php echo $message ?>
                                   </div>
                                   <?php 
                                  }else {
