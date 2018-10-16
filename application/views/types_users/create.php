@@ -8,7 +8,7 @@
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="#">Binfrix</a></li>
                                 <li class="breadcrumb-item"><a href="<?= base_url()."index.php/TypesUsers";?>">Types of Users</a></li>
-                                <li class="breadcrumb-item active">Create Create Type of User</li>
+                                <li class="breadcrumb-item active">Create Type of User</li>
                             </ol>
                         </div>
                         <h4 class="page-title">Create Create Type of User</h4>
