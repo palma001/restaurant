@@ -1,14 +1,3 @@
- <?PHP  
-  
-                 $Slidername=array('name'=>'Slidername','class'=>'form-control','required'=>'required','type'=>'text',
-                    'placeholder'=>'Slider');
-                   $image=array('name'=>'fileImagen','class'=>'form-control','required'=>'required','type'=>'file',
-                 'id'=>'uploader','accept'=>'image/*');
-                   $sub=array('value'=>'Save','type'=>'submit',
-                    'class'=>'btn btn-success btn-flat m-b-30 m-t-30');
-                 $form=array('class'=>'form-horizontal','enctype'=>'multipart/form-data');
-    ?>
-
   <div class="content-page">
                 <div class="content">
 
@@ -40,54 +29,36 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="header-title"></h4>
-
-                                    <?php 
-                                      //   $message=$this->session->flashdata('message');
-                                  //  if ($message) {?>
-
-                                        <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"  role="alert">
-                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                             </button>
-                                          <? //$message ?>
-                                        </div>
-                                          <?php 
-                                  //  }else {
-
-                                       //  }
-
-                                    ?>
-
-                                       <?=form_open('sliders/Sliders/edit',$form);?>
+                                      <form class="form-horizontal" enctype="multipart/form-data" method="post"  action="<?php echo base_url()."index.php/sliders/sliders/uploadd";?> ">
                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">Slider</label>
                                                 <div class="col-sm-10">
-                                                    <?= form_input($Slidername); ?>
+                                                  <input type="text" name="Slidername" class="form-control" placeholder="Slider" required>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">Image</label>
                                                 <div class="col-sm-10">
-                                                     <?=form_input($image) ?>
+                                                    <input type="file" name="fileImagen" class="form-control" placeholder="Slider"  id"uploader" accept="image/*" required>
                                                 </div>
                                             </div>
                                              <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label"></label>
                                                 <div class="col-sm-10">
-                                                    <?= form_submit($sub)?>
+                                                    <input type="submit" class="btn btn-success btn-flat m-b-30 m-t-30" value="Save">
                                                 </div>
                                             </div>
             
-                                          <?=form_close();?>
+                                      </form>
             
                                     </div> <!-- end card-box -->
                                 </div> <!-- end card-->
                             </div><!-- end col -->
                         </div>
                         
-                    </div> <!-- container -->
+                  </div> <!-- container -->
 
-                </div> <!-- content -->
-            </div>
+             </div> <!-- content -->
+      </div>
 
     

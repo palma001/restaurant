@@ -30,9 +30,8 @@ class Sliders extends CI_Controller {
 		$this->load->view('layouts/footer');
 	}
 
-	public function edit()
+	public function uploadd()
 	{
-
 		$config['upload_path'] = './uploads/imagenes/';
         $config['allowed_types'] = 'gif|jpg|png';
         $config['max_size'] = '2048';
@@ -42,21 +41,24 @@ class Sliders extends CI_Controller {
         $this->load->library('upload',$config);
 
         if (!$this->upload->do_upload("fileImagen")) {
+        	echo "no cargo";
         } else {
             $file_info = $this->upload->data();
 
-            $this->crearMiniatura($file_info['file_name']);
+            $this->Miniature($file_info['file_name']);
             $titulo = $this->input->post('Slidername');
             $imagen = $file_info['file_name'];
             $subir = $this->multipleuploads_model->upload($titulo,$imagen);      
             $data['titulo'] = $titulo;
             $data['imagen'] = $imagen;
+            $this->session->set_flashdata('message','Registration Done With Exist');
+            redirect(base_url('/index.php/sliders/sliders/index/')); 
         }
        
-
 	}
 
-	public function crearMiniatura($filename){
+	public function Miniature($filename)
+	{
 
         $config['image_library'] = 'gd2';
         $config['source_image'] = 'uploads/imagenes/'.$filename;
@@ -70,4 +72,8 @@ class Sliders extends CI_Controller {
         $this->image_lib->resize();
 
 	}
+	 public function destroy($data)
+        {
+             $this->multipleuploads_model->delete($data);
+        }
 }

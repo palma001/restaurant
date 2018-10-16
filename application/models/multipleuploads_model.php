@@ -30,4 +30,12 @@ class multipleuploads_model extends CI_Model{
          }
      }
 
+      public function delete($data)
+      {
+          $this->db->where('slider_id',$data);
+          $this->db->delete('sliders');
+          $this->session->set_flashdata('message','delete data');
+          redirect(base_url('/index.php/sliders/sliders/index/')); 
+      }
+
 }
