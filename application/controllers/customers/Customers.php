@@ -20,7 +20,7 @@ function __construct()
     $data['obtener'] = $this->customers_model->all_customer();
     $this->load->view('layouts/headers');
     $this->load->view('layouts/topnav');
-    $this->load->view('customers/Clients',$data);
+    $this->load->view('customers/clients',$data);
     $this->load->view('layouts/navbar');
     $this->load->view('customers/viewmodal');
     $this->load->view('layouts/footer');  
@@ -51,18 +51,10 @@ function __construct()
        $this->session->set_flashdata('message','modification made successfully');
        redirect(base_url('/index.php/Customers/index/'));
 	}
-
-    public function show()
-       {
-      
-       }
-   
       public function destroy($data)
         {
              $this->customer_model->delete($data);
         }
-
-
 
 }
 

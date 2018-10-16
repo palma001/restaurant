@@ -21,7 +21,7 @@
                         </a>
                         <ul class="nav-second-level nav" aria-expanded="false">
                             <li>
-                                <a href="<?= base_url().'index.php/products/add_products'?>">Add Products</a>
+                                <a href="<?= base_url().'index.php/products/products/add_products'?>">Add Products</a>
                             </li>
                             <li>
                                 <a href="<?= base_url().'index.php/products';?>" aria-expanded="false">
@@ -31,14 +31,14 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="<?= base_url('index.php/Customers/index/');?>">
+                        <a href="<?= base_url('index.php/customers/Customers/index/');?>">
                             <i class="fe-user"></i> 
                             <span> Clients </span>
                         </a>
                        
                     </li>
                     <li>
-                        <a href="<?= base_url('index.php/orders/index/');?>">
+                        <a href="<?= base_url('index.php/orders/orders/index/');?>">
                             <i class="fe-edit"></i>
                             <span> Orders </span>
                         </a>
@@ -51,21 +51,21 @@
                         </a>
                         <ul class="nav-second-level nav" aria-expanded="false">
                             <li>
-                                <a href="<?= base_url().'index.php/typeUser';?>">
+                                <a href="<?= base_url().'index.php/typeuser/typeUser';?>">
                                     Type of User
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="<?= base_url('index.php/settings/index/');?>"> <i class="fe-settings"></i> Settings </a>
+                        <a href="<?= base_url('index.php/settings/settings/index/');?>"> <i class="fe-settings"></i> Settings </a>
                     </li>
                     <li>
                         <a href="<?= base_url();?>"> <i class="fe-globe"></i> Social Networks </a>
                     </li>
 
                     <li>
-                        <a href="<?= base_url('index.php/Sliders/index/');?>"> <i class="fe-sliders"></i> Sliders </a>
+                        <a href="<?= base_url('index.php/sliders/Sliders/index/');?>"> <i class="fe-sliders"></i> Sliders </a>
                     </li>   
                 </ul>
             </div>
