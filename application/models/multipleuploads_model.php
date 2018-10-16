@@ -14,10 +14,11 @@ class multipleuploads_model extends CI_Model{
      {
       $data = array(
             'slider' => $titulo,
-            'image' => $imagen
+            'image' => $imagen,
+            'user_id'=>$this->session->userdata['user_id']
         );
+
        $this->db->insert('sliders', $data);
-    
      }
 
      public function get(){
