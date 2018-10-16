@@ -40,7 +40,7 @@ class TypesUsers extends CI_Controller {
 		redirect('TypesUsers');
 	}
 
-	public function show()
+	public function edit()
 	{
 		$id = $this->uri->segment(3);
 		$data['user_types'] = $this->types_users_model->view_user($id);
@@ -56,7 +56,8 @@ class TypesUsers extends CI_Controller {
 		
 		$this->load->view('layouts/footer');
 	}
-	public function edit($id)
+
+	public function update($id)
 	{
 		$data = array(
 			'type_user' => $this->input->post('type_user'),
