@@ -14,11 +14,11 @@ function __construct()
 	public function index()
 	{
 		$this->load->view('layouts/headers');
+
 		$this->load->view('layouts/navbar');
 		$this->load->view('layouts/topnav');
 		$this->load->view('Settings/settings');
 	    $this->load->view('layouts/footer');
-		
 	}
 
 	public function create()

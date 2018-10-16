@@ -52,17 +52,17 @@ function __construct()
        redirect(base_url('/index.php/Customers/index/'));
 	}
 
+
+   
+      public function destroy($data)
+        {
+  
+             $this->customer_model->delete($data);
+        }
 	public function show()
 	{
 	  
 	}
-
-	public function destroy($data)
-	{ 
-	    $this->customer_model->delete($data);
-	}
-
-
 
 }
 
