@@ -84,10 +84,10 @@ class customers_model extends CI_Model{
 
       public function count_customer()
       {
-            $this->db->where('user_type_id','2');
+             $this->db->where('user_type_id','2');
             $query= $this->db->get('users'); 
             $numero_filas_customer=$query->num_rows(); 
-             return $numero_filas_customer;
+            return $numero_filas_customer;
       }
       public function delete($data)
       {
