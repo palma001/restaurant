@@ -11,7 +11,7 @@
                                 <li class="breadcrumb-item active">Create Type of User</li>
                             </ol>
                         </div>
-                        <h4 class="page-title">Create Create Type of User</h4>
+                        <h4 class="page-title">Create Type of User</h4>
                     </div>
                 </div>
             </div> 
