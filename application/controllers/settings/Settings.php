@@ -21,24 +21,4 @@ function __construct()
 	    $this->load->view('layouts/footer');
 	}
 
-	public function create()
-	{
-		
-   
-	}
-
-	public function edit()
-	{
-		
-
-	}
-
-	public function show()
-	{
-     
-	}
-	public function destroy()
-	{
-		
-	}
 }

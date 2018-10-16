@@ -9,13 +9,14 @@ class Sliders extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->helper('url');
 		$this->load->helper('download');
-		$this->load->model('mupload');
+		$this->load->model('multipleuploads_model');
 	}
 	public function index()
 	{
+		 $data['obtener'] = $this->multipleuploads_model->get();
 		$this->load->view('layouts/headers');
 		$this->load->view('layouts/topnav');
-		$this->load->view('Sliders/Sliders');
+		$this->load->view('Sliders/Sliders',$data);
 		$this->load->view('layouts/navbar');
 		$this->load->view('layouts/footer');
 	}
@@ -32,7 +33,6 @@ class Sliders extends CI_Controller {
 	public function edit()
 	{
 
-
 		$config['upload_path'] = './uploads/imagenes/';
         $config['allowed_types'] = 'gif|jpg|png';
         $config['max_size'] = '2048';
@@ -42,22 +42,17 @@ class Sliders extends CI_Controller {
         $this->load->library('upload',$config);
 
         if (!$this->upload->do_upload("fileImagen")) {
-           // $data['error'] = $this->upload->display_errors();
-			//$this->load->view('layout/header');
-			//$this->load->view('layout/menu');
-			//$this->load->view('vupload',$data);
-			//$this->load->view('layout/footer');
         } else {
-
             $file_info = $this->upload->data();
 
             $this->crearMiniatura($file_info['file_name']);
             $titulo = $this->input->post('Slidername');
             $imagen = $file_info['file_name'];
-            $subir = $this->mupload->upload($titulo,$imagen);      
+            $subir = $this->multipleuploads_model->upload($titulo,$imagen);      
             $data['titulo'] = $titulo;
             $data['imagen'] = $imagen;
         }
+       
 
 	}
 
@@ -73,7 +68,6 @@ class Sliders extends CI_Controller {
         $config['height'] = 150;
         $this->load->library('image_lib', $config); 
         $this->image_lib->resize();
-
 
 	}
 }

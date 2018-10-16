@@ -58,7 +58,7 @@
 
                                     ?>
 
-                                       <?=form_open('Sliders/edit',$form);?>
+                                       <?=form_open('sliders/Sliders/edit',$form);?>
                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label">Slider</label>
                                                 <div class="col-sm-10">
@@ -90,6 +90,4 @@
                 </div> <!-- content -->
             </div>
 
-    <script type="text/javascript">
-        $('#uploader').fileUploader({activeColor:'green', baseColor: '#ccc'});
-    </script>
+    
