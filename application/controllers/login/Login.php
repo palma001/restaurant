@@ -17,7 +17,8 @@ class Login extends CI_Controller {
 		 $this->load->view('login/login');
 		$this->load->view('layouts/footer');
 	}
-	public function authenticated(){
+	public function authenticated()
+	{
 
 		$email = $this->input->post('email');
         $pass = $this->input->post('password');
@@ -33,7 +34,7 @@ class Login extends CI_Controller {
             	}else 
 
             	{
-
+            		
             	}
            
             }else {
@@ -41,5 +42,11 @@ class Login extends CI_Controller {
             	 redirect(base_url('/index.php/login/Login/index/')); 
             }
 
+	}
+
+	public function destroy()
+	{
+     $this->session->sess_destroy();
+	 redirect(base_url('/index.php/login/Login/index/'));
 	}
 }

@@ -57,16 +57,21 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="<?= base_url('index.php/settings/settings/index/');?>"> <i class="fe-settings"></i> Settings </a>
-                    </li>
+                     <li>
+                        <a href="<?= base_url('index.php/sliders/Sliders/index/');?>"> <i class="fe-sliders"></i> Sliders </a>
+                    </li>   
                     <li>
                         <a href="<?= base_url();?>"> <i class="fe-globe"></i> Social Networks </a>
                     </li>
 
                     <li>
-                        <a href="<?= base_url('index.php/sliders/Sliders/index/');?>"> <i class="fe-sliders"></i> Sliders </a>
-                    </li>   
+                        <a href="<?= base_url('index.php/settings/settings/index/');?>"> <i class="fe-settings"></i> Settings </a>
+                    </li>
+                    <li>
+                        <a href="<?php  echo base_url().'/index.php/login/Login/destroy/';?>"> <i class="fe-log-in"></i> Exit </a>
+                    </li>
+                    
+                   
                 </ul>
             </div>
             <!-- End Sidebar -->
