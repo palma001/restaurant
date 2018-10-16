@@ -8,7 +8,7 @@ function __construct()
 		parent::__construct();
 		$this->load->helper('form');
 		$this->load->helper('url');
-		$this->load->model('customer_model');
+		$this->load->model('customers_model');
     $this->load->library('session');
     $Type="0";
 		
@@ -17,7 +17,7 @@ function __construct()
 
 	public function index()
 	{
-    $data['obtener'] = $this->customer_model->all_customer();
+    $data['obtener'] = $this->customers_model->all_customer();
     $this->load->view('layouts/headers');
     $this->load->view('layouts/topnav');
     $this->load->view('customers/Clients',$data);
@@ -59,7 +59,6 @@ function __construct()
    
       public function destroy($data)
         {
-  
              $this->customer_model->delete($data);
         }
 
