@@ -10,6 +10,12 @@ class Sliders extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->helper('download');
 		$this->load->model('multipleuploads_model');
+		$this->load->library('session');
+		 if (!$this->session->userdata['user_id']){
+            redirect(base_url());
+			}else {
+             
+			}
 	}
 	public function index()
 	{

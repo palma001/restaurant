@@ -9,6 +9,11 @@ function __construct()
 		$this->load->helper('form');
 		$this->load->helper('url');
 		$this->load->model('orders_model');
+		$this->load->library('session');
+		 if (!$this->session->userdata['user_id']){
+            redirect(base_url());
+			}else {      
+		}
 	}
 
 	public function index()

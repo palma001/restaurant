@@ -10,6 +10,12 @@ class Home extends CI_Controller {
 		 $this->load->model('orders_model');
 		 $this->load->model('customers_model');
 		 $this->load->model('products_model');	
+		 $this->load->library('session'); 
+		  if (!$this->session->userdata['user_id']){
+            redirect(base_url());
+			}else {
+             
+			}
 	}
 
 	public function index()

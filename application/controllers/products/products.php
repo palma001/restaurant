@@ -7,6 +7,11 @@ class Products extends CI_Controller {
 		parent::__construct();
 		$this->load->library('session');
 		$this->load->model('products_model');
+		 if (!$this->session->userdata['user_id']){
+            redirect(base_url());
+			}else {
+             
+			}
 	}
 
 	public function index()

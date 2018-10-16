@@ -6,6 +6,12 @@ class TypeUser extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('type_user_model');
+		$this->load->library('session');
+		 if (!$this->session->userdata['user_id']){
+            redirect(base_url());
+			}else {
+             
+			}
 	}
 
 	function index()

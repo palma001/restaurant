@@ -11,7 +11,11 @@ function __construct()
 		$this->load->model('customers_model');
         $this->load->library('session');
          $Type="0";
-
+         if (!$this->session->userdata['user_id']){
+            redirect(base_url());
+			}else {
+             
+			}
 	}
 
 
