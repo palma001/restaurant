@@ -44,7 +44,7 @@
                                       
                                           <tr>
                                              <th>Id</th>
-                                             <th>Elider</th>
+                                             <th>Sliders</th>
                                               <th>Image</th>
                                               <th></th>
                                             </tr>
