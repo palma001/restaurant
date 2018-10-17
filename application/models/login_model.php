@@ -10,19 +10,13 @@ class login_model extends CI_Model{
          $this->load->library('session');
      }
 
- public function  validate($email,$pass){
-       $this->db->where('email', $email);
+    public function  validate($email,$pass){
+        $this->db->where('email', $email);
         $this->db->where('password',$pass);
         $query = $this->db->get('users');
         if ($query->num_rows() == 1) {
             return $query->row();
-        } else {
-           
         }
-
- }
-     
-	
-
+    }
 }
 
