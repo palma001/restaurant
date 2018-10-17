@@ -9,7 +9,11 @@ function __construct()
 		$this->load->helper('form');
 		$this->load->helper('url');
 		$this->load->model('orders_model');
-		
+		$this->load->library('session');
+		 if (!$this->session->userdata['user_id']){
+            redirect(base_url());
+			}else {      
+		}
 	}
 
 	public function index()
@@ -22,14 +26,6 @@ function __construct()
 	  	$this->load->view('layouts/footer');
 	}
 
-	public function create()
-	{
-	}
-
-	public function edit()
-	{
-	}
-
 	public function show($data)
 	{
         $datos['obtener']=$this->orders_model->orderss($data);
@@ -38,9 +34,5 @@ function __construct()
 		$this->load->view('layouts/topnav');
 		$this->load->view('orders/details',$datos);
 	  	$this->load->view('layouts/footer');  
-	}
-	public function destroy()
-	{
-		
 	}
 }

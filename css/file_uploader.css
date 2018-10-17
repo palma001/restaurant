@@ -9,9 +9,9 @@
   cursor: pointer;
   display: -webkit-flex;
   display: flex;
-  height: 100px;
+  height: 150px;
   justify-content: center;
-  outline: 1px dashed #ccc;
+  outline: 3px dashed #ccc;
   outline-offset: 5px;
   position: relative;
   width: 100%;

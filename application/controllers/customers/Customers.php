@@ -8,16 +8,20 @@ function __construct()
 		parent::__construct();
 		$this->load->helper('form');
 		$this->load->helper('url');
-		$this->load->model('customer_model');
-    	$this->load->library('session');
-    	$Type="0";
-		
+		$this->load->model('customers_model');
+        $this->load->library('session');
+         $Type="0";
+         if (!$this->session->userdata['user_id']){
+            redirect(base_url());
+			}else {
+             
+			}
 	}
 
 
 	public function index()
 	{
-	    $data['obtener'] = $this->customer_model->all_customer();
+	    $data['obtener'] = $this->customers_model->all_customer();
 	    $this->load->view('layouts/headers');
 	    $this->load->view('layouts/topnav');
 	    $this->load->view('customers/Clients',$data);
@@ -30,7 +34,7 @@ function __construct()
 	{
        $data=array('fullname'=>$this->input->post('fullname'),'usertype'=>'2',
       'email'=>$this->input->post('email'),'password'=>$this->input->post('password')); 
-       $this->customer_model->inserte($data);
+       $this->customers_model->inserte($data);
 	}
 
 	public function edit()
@@ -47,23 +51,14 @@ function __construct()
        $data=array('fullname'=>$this->input->post('fullname'),
       'email'=>$this->input->post('email'),'password'=>$this->input->post('password')
        ,$this->input->post('user_id')); 
-       $this->customer_model->update_customer($data);
+       $this->customers_model->update_customer($data);
        $this->session->set_flashdata('message','modification made successfully');
        redirect(base_url('/index.php/Customers/index/'));
 	}
-
-
-   
       public function destroy($data)
         {
-  
-             $this->customer_model->delete($data);
+             $this->customers_model->delete($data);
         }
-	public function show()
-	{
-	  
-	}
-
 }
 
 

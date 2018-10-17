@@ -8,6 +8,12 @@ function __construct()
 		parent::__construct();
 		$this->load->helper('form');
 		$this->load->helper('url');
+		 $this->load->library('session');
+		 if (!$this->session->userdata['user_id']){
+            redirect(base_url());
+			}else {
+             
+			}
 		
 	}
 
@@ -21,24 +27,4 @@ function __construct()
 	    $this->load->view('layouts/footer');
 	}
 
-	public function create()
-	{
-		
-   
-	}
-
-	public function edit()
-	{
-		
-
-	}
-
-	public function show()
-	{
-     
-	}
-	public function destroy()
-	{
-		
-	}
 }

@@ -105,7 +105,7 @@
                                     </div>
 
                                     <!-- item-->
-                                    <a href="<?php echo base_url()."index.php/My_Account/MyAccount"?>" class="dropdown-item notify-item">
+                                    <a href="<?php echo base_url()."index.php/myAccount/MyAccount"?>" class="dropdown-item notify-item">
                                         <i class="fe-user"></i>
                                         <span>My Account</span>
                                     </a>

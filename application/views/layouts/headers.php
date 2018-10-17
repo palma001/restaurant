@@ -17,15 +17,15 @@
 		<link rel="shortcut icon" href="<?= base_url('admin_template/assets/images/favicon.ico');?>">
         <!-- third party css -->
         <link href="<?= base_url('admin_template/css/vendor/dataTables.bootstrap4.css');?>" rel="stylesheet" type="text/css" />
-
+        
         <link href="<?= base_url('admin_template/css/vendor/responsive.bootstrap4.css');?>" rel="stylesheet" type="text/css" />
 
         <link href="<?= base_url('admin_template/css/vendor/buttons.bootstrap4.css');?>" rel="stylesheet" type="text/css" />
         <link href="https://file.myfontastic.com/SLzQsLcd7FmmzjBYTcyVW3/icons.css" rel="stylesheet">
         <link href="<?= base_url('css/vendor/select.bootstrap4.css');?>" rel="stylesheet" type="text/css" />
 		<script src="<?= base_url('admin_template/js/vendor.min.js')?>"></script>
-		<link href="<?= base_url('css/file-uploader.css');?>" rel="stylesheet" type="text/css" />
-	   
+		
+		
 	</head>
 	<body>
 
