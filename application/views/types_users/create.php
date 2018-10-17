@@ -23,7 +23,7 @@
                                 <div class="col-lg-12">
                                     <div class="card">
                                         <div class="card-body">
-                                            <form class="form-horizontal" method="post" action="<?php echo base_url().'index.php/TypesUsers/add_types';?>">
+                                            <form class="form-horizontal" method="post" action="<?php echo base_url().'index.php/TypesUsers/store';?>">
                                                 <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label">Type of User</label>
                                                     <div class="col-sm-10">

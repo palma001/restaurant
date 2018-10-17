@@ -50,7 +50,7 @@
                                                         <td>'.$key.'</td>
                                                         <td>'.ucwords(strtolower($user_types->user_type)).'</td>
                                                         <td>
-                                                            <a href="'.base_url()."index.php/TypesUsers/show/".$user_types->user_type_id.'"><i class="fe-edit-2"></i> </a>
+                                                            <a href="'.base_url()."index.php/TypesUsers/edit/".$user_types->user_type_id.'"><i class="fe-edit-2"></i> </a>
                                                             <a href="'.base_url()."index.php/TypesUsers/destroy/".$user_types->user_type_id.'"> <i class="fe-x"></i></a>
 
                                                         </td>
