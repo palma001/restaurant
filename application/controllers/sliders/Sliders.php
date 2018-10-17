@@ -47,7 +47,8 @@ class Sliders extends CI_Controller {
         $this->load->library('upload',$config);
 
         if (!$this->upload->do_upload("fileImagen")) {
-        	echo "no cargo";
+        	$this->session->set_flashdata('message','unsupported format');
+            redirect(base_url('/index.php/sliders/sliders/create/')); 
         } else {
             $file_info = $this->upload->data();
 

@@ -17,6 +17,8 @@
                 document.getElementById("table1").rows[1].cells[3].innerHTML = date   
             })
          });
+
+ 
  
 
 
