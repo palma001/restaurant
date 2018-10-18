@@ -20,6 +20,7 @@ class TypesUsers extends CI_Controller {
 		$data['user_types'] = $this->types_users_model->view_users();
 		$this->load->view('layouts/headers');
 		$this->load->view('layouts/navbar');
+		$this->load->view('layouts/topnav');
 		$this->load->view('types_users/index',$data);	
 		$this->load->view('layouts/footer');
 
@@ -29,6 +30,7 @@ class TypesUsers extends CI_Controller {
 	{
 		$this->load->view('layouts/headers');
 		$this->load->view('layouts/navbar');
+		$this->load->view('layouts/topnav');
 		$this->load->view('types_users/create');	
 		$this->load->view('layouts/footer');
 	}
@@ -48,6 +50,7 @@ class TypesUsers extends CI_Controller {
 		$data['users_types'] = $this->types_users_model->view_user($id);
 		$this->load->view('layouts/headers');
 		$this->load->view('layouts/navbar');
+		$this->load->view('layouts/topnav');
 
 		if (!$id) {
 			redirect(base_url('index.php/typesUsers/TypesUsers/'));
@@ -64,12 +67,15 @@ class TypesUsers extends CI_Controller {
 			'type_user' => $this->input->post('type_user'),
 		);
 		$this->types_users_model->update($id,$data);
+
+		$this->session->set_flashdata('message','Modification made successfully');
 		redirect(base_url('index.php/typesUsers/TypesUsers/'));
 	}
 
 	public function destroy(){
 		$id = $this->uri->segment(4);
 		$this->types_users_model->destroy($id);
+		$this->session->set_flashdata('message','Delete made successfully');
 		redirect(base_url('index.php/typesUsers/TypesUsers/'));
 	}
 }

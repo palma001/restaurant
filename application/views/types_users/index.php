@@ -22,16 +22,19 @@
                                 <a href="<?php echo base_url('index.php/typesUsers/TypesUsers/create');?>" class="btn btn-dark">Add</a>
                             </p>
                             <?php 
-                                $message=$this->session->flashdata('message');
-                                if ($message) {?>
-                                    <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert">
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                 $message=$this->session->flashdata('message');
+                                  if ($message) {?>
+
+                                <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
-                                        </button>
-                                        <?php echo $message ?>
-                                    </div>
+                                    </button>
+                                  <?php echo $message ?>
+                                  </div>
                                   <?php 
-                                }
+                                 }else {
+
+                                 }
                             ?>
                             <table id="basic-datatable" class="table table-sm table-striped nowrap text-center">
                                 <thead>
