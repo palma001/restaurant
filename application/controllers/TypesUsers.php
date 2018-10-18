@@ -51,7 +51,7 @@ class TypesUsers extends CI_Controller {
 		$this->load->view('layouts/topnav');
 
 		if (!$id) {
-			redirect(base_url('index.php/typesUsers/TypesUsers/'));
+			redirect(base_url('index.php/typesusers/'));
 		}else{
 			$this->load->view('types_users/edit',$data);
 		}
