@@ -44,7 +44,7 @@ class Products extends CI_Controller {
 		);
 		$this->products_model->add_menu($data);	
 		$this->session->set_flashdata('message','Add made successfully');
-		redirect('products');
+		redirect(base_url('index.php/products/products/'));
 	}
 
 	public function show()
