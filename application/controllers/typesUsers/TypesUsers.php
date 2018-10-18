@@ -7,11 +7,9 @@ class TypesUsers extends CI_Controller {
 		parent::__construct();
 		$this->load->model('types_users_model');
 		$this->load->library('session');
-		 if (!$this->session->userdata['user_id']){
+		if (!$this->session->userdata['user_id']){
             redirect(base_url());
-			}else {
-             
-			}
+		}
 	}
 
 	function index()
@@ -73,6 +71,7 @@ class TypesUsers extends CI_Controller {
 	}
 
 	public function destroy(){
+
 		$id = $this->uri->segment(4);
 		$this->types_users_model->destroy($id);
 		$this->session->set_flashdata('message','Delete made successfully');
