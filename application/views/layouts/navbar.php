@@ -13,7 +13,7 @@
             <div id="sidebar-menu">
                 <ul class="metismenu" id="side-menu">
                    <li class="menu-title">Navigation</li>
-                   <li><a href="<?php echo base_url();?>" title=""><i class="fe-home"></i> Home</a></li>
+                   <li><a href="<?php echo base_url("index.php/home");?>" title=""><i class="fe-home"></i> Home</a></li>
                    <li>
                         <a href="<?= base_url().'index.php/products/products'?>">
                             <i class="fe-clipboard"></i>
