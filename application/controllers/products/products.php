@@ -57,13 +57,13 @@ class Products extends CI_Controller {
 
 	public function edit()
 	{
-		$id = $this->uri->segment(3);
+		$id = $this->uri->segment(4);
 		$data['product'] = $this->products_model->view_product($id);
 		$this->load->view('layouts/headers');
 		$this->load->view('layouts/navbar');
 		$this->load->view('layouts/topnav');
 		if (!$id) {
-			redirect('products');
+			redirect(base_url('index.php/products/products/'));
 		}else{
 			$this->load->view('products/edit',$data);
 		}
@@ -83,16 +83,16 @@ class Products extends CI_Controller {
 
 		$this->products_model->update_products($id,$data);
 		$this->session->set_flashdata('message','Modification made successfully');
-		redirect('products');
+		redirect(base_url('index.php/products/products/'));
 	}
 
 
 	public function destroy()
 	{
-		$id = $this->uri->segment(3);
+		$id = $this->uri->segment(4);
 		$this->products_model->destroy($id);
 		$this->session->set_flashdata('message','Delete made successfully');
-		redirect('products');
+		redirect(base_url('index.php/products/products/'));
 	}
 	
 }

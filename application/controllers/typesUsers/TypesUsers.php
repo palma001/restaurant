@@ -44,8 +44,8 @@ class TypesUsers extends CI_Controller {
 
 	public function edit()
 	{
-		$id = $this->uri->segment(3);
-		$data['user_types'] = $this->types_users_model->view_user($id);
+		$id = $this->uri->segment(4);
+		$data['users_types'] = $this->types_users_model->view_user($id);
 		$this->load->view('layouts/headers');
 		$this->load->view('layouts/navbar');
 
@@ -68,8 +68,8 @@ class TypesUsers extends CI_Controller {
 	}
 
 	public function destroy(){
-		$id = $this->uri->segment(3);
+		$id = $this->uri->segment(4);
 		$this->types_users_model->destroy($id);
-		redirect('typeUser');
+		redirect(base_url('index.php/typesUsers/TypesUsers/'));
 	}
 }

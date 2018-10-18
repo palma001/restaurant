@@ -23,11 +23,11 @@
                                 <div class="col-lg-12">
                                     <div class="card">
                                         <div class="card-body">
-                                            <form class="form-horizontal" method="post" action="<?php echo base_url().'index.php/typesUsers/update/'.$user_types->user_type_id; ?>">
+                                            <form class="form-horizontal" method="post" action="<?php echo base_url('index.php/typesUsers/TypesUsers/update/'.$users_types->user_type_id); ?>">
                                                 <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label">Type of User</label>
                                                     <div class="col-sm-10">
-                                                        <input name="type_user" name="type_user" value="<?php echo ucwords($user_types->user_type);?>"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                                                        <input name="type_user" name="type_user" value="<?php echo ucwords($users_types->user_type);?>"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
