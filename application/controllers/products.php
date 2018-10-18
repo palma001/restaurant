@@ -42,7 +42,7 @@ class Products extends CI_Controller {
 			'price' => $this->input->post('price'),
 			'outstanding' => $this->input->post('out'),
 		);
-		$this->products_model->add_menu($data);	
+		$this->products_model->add_products($data);	
 		$this->session->set_flashdata('message','Add made successfully');
 		redirect(base_url('index.php/products/'));
 	}

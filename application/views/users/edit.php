@@ -19,27 +19,30 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
+                            <?php echo "<strong>".validation_errors()."</strong>"; ?>
                             <form class="form-horizontal" method="post" action="<?php echo base_url('index.php/users/update/'.$users->user_id); ?>">
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Full Name</label>
                                     <div class="col-sm-10">
-                                        <input name="type_user" name="full_name" value="<?php echo ucwords($users->full_name);?>"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                                        <input type="text" name="full_name" value="<?php echo ucwords($users->full_name);?>"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Email</label>
                                     <div class="col-sm-10">
-                                        <input  name="full_name" value="<?php echo ucwords($users->email);?>"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                                        <input type="email" name="email" value="<?php echo ucwords($users->email);?>"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Type User</label>
                                     <div class="col-sm-10">
-                                        <select name="type_user" class="form-control">
-                                            <option value="<?php echo $users->user_type_id; ?>"><?php echo $users->user_type; ?></option>
+                                        <select name="user_type_id" class="form-control">
+                                            <option value="<?php echo $users->user_type_id; ?>"><?php echo ucwords($users->user_type); ?></option>
                                             <?php  
-                                                foreach ($users_types->result() as $key => $users_types) {
-                                                   echo '<option value="'.$users_types->user_type_id.'">'.$users_types->user_type.'</option>';
+                                                if ($users_types) {
+                                                   foreach ($users_types->result() as $key => $users_types) {
+                                                       echo '<option value="'.$users_types->user_type_id.'">'.ucwords($users_types->user_type).'</option>';
+                                                    }
                                                 }
                                             ?>
                                         </select>
@@ -48,13 +51,13 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Password</label>
                                     <div class="col-sm-10">
-                                        <input type="password" name="password"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                                        <input type="password" value="<?php echo $users->password; ?>" name="password"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Confirm Password</label>
                                     <div class="col-sm-10">
-                                        <input type="password" name="cpassword"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                                        <input type="password" name="passconf" value = "<?php echo $users->password; ?>"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">

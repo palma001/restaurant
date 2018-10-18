@@ -30,7 +30,7 @@ class Products_model extends CI_Model {
 		}
 	}
 
-	public function add_menu($data)
+	public function add_products($data)
 	{
 		$fecha = date('Y/m/d');
 		$this->db->insert('products',array('title'=>$data['title'], 'description'=>$data['description'], 'price'=>$data['price'], 'outstanding'=>$data['outstanding'], 'date' => $fecha));
