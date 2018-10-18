@@ -15,27 +15,27 @@
                    <li class="menu-title">Navigation</li>
                    <li><a href="<?php echo base_url("index.php/home");?>" title=""><i class="fe-home"></i> Home</a></li>
                    <li>
-                        <a href="<?= base_url().'index.php/products/products'?>">
+                        <a href="<?= base_url().'index.php/products'?>">
                             <i class="fe-clipboard"></i>
                             <span> Products </span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo  base_url('index.php/customers/Customers/index/');?>">
+                        <a href="<?php echo  base_url('index.php/customers/');?>">
                             <i class="fe-user"></i> 
                             <span> Clients </span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('index.php/orders/Orders/');?>">
+                        <a href="<?php echo base_url('index.php/orders/');?>">
                             <i class="fe-edit"></i>
                             <span> Orders </span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('index.php/typesUsers/TypesUsers/');?>">
+                        <a href="<?php echo base_url('index.php/typesusers/');?>">
                             <i class="fe-user-check"></i>
-                            <span>Type of User</span>
+                            <span>Types of Users</span>
                         </a>
                     </li>  
                     <li>
@@ -43,10 +43,10 @@
                     </li>
 
                     <li>
-                        <a href="<?php echo base_url('index.php/sliders/Sliders/');?>"> <i class="fe-sliders"></i> Sliders </a>
+                        <a href="<?php echo base_url('index.php/sliders/');?>"> <i class="fe-sliders"></i> Sliders </a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('index.php/settings/settings/index/');?>"> <i class="fe-settings"></i> Settings </a>
+                        <a href="<?php echo base_url('index.php/settings/');?>"> <i class="fe-settings"></i> Settings </a>
                     </li>
                     <li>
                         <a href="<?php  echo base_url().'/index.php/login/destroy/';?>"> <i class="fe-log-in"></i> Exit </a>

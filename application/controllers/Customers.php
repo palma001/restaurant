@@ -53,7 +53,7 @@ function __construct()
        ,$this->input->post('user_id')); 
        $this->customers_model->update_customer($data);
        $this->session->set_flashdata('message','modification made successfully');
-       redirect(base_url('/index.php/Customers/index/'));
+       redirect(base_url('/index.php/customers/'));
 	}
       public function destroy($data)
         {

@@ -39,12 +39,12 @@ class TypesUsers extends CI_Controller {
 			'type_user' => $this->input->post('type_user')
 		);
 		$this->types_users_model->add_type_user($data);	
-		redirect(base_url('index.php/typesUsers/TypesUsers/'));
+		redirect(base_url('index.php/TypesUsers/'));
 	}
 
 	public function edit()
 	{
-		$id = $this->uri->segment(4);
+		$id = $this->uri->segment(3);
 		$data['users_types'] = $this->types_users_model->view_user($id);
 		$this->load->view('layouts/headers');
 		$this->load->view('layouts/navbar');
@@ -67,14 +67,14 @@ class TypesUsers extends CI_Controller {
 		$this->types_users_model->update($id,$data);
 
 		$this->session->set_flashdata('message','Modification made successfully');
-		redirect(base_url('index.php/typesUsers/TypesUsers/'));
+		redirect(base_url('index.php/TypesUsers/'));
 	}
 
 	public function destroy(){
 
-		$id = $this->uri->segment(4);
+		$id = $this->uri->segment(3);
 		$this->types_users_model->destroy($id);
 		$this->session->set_flashdata('message','Delete made successfully');
-		redirect(base_url('index.php/typesUsers/TypesUsers/'));
+		redirect(base_url('index.php/TypesUsers/'));
 	}
 }

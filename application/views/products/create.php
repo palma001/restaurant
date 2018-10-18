@@ -7,7 +7,7 @@
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="<?php echo base_url('index.php/home/');?>">Binfrix</a></li>
-                                <li class="breadcrumb-item"><a href="<?php echo base_url()."index.php/products/products";?>" title="">Products</a></li>
+                                <li class="breadcrumb-item"><a href="<?php echo base_url()."index.php/products";?>" title="">Products</a></li>
                                 <li class="breadcrumb-item active">Create Product</li>
                             </ol>
                         </div>
@@ -19,7 +19,7 @@
     			<div class="col-lg-12">
     			    <div class="card">
     			        <div class="card-body">
-                            <form class="form-horizontal" method="post" action="<?php echo base_url('index.php/products/products/store') ?>">
+                            <form class="form-horizontal" method="post" action="<?php echo base_url('index.php/products/store') ?>">
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Title</label>
                                     <div class="col-sm-10">

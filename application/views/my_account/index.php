@@ -18,7 +18,7 @@
     			<div class="col-lg-12">
     			    <div class="card">
     			        <div class="card-body">
-                            <form class="form-horizontal" method="post" action="<?php echo base_url("myAccount/MyAccount/update") ?>">
+                            <form class="form-horizontal" method="post" action="<?php echo base_url("/MyAccount/update") ?>">
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Full Name</label>
                                     <div class="col-sm-10">

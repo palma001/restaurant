@@ -48,7 +48,7 @@ class Sliders extends CI_Controller {
 
         if (!$this->upload->do_upload("fileImagen")) {
         	$this->session->set_flashdata('message','unsupported format');
-            redirect(base_url('/index.php/sliders/sliders/create/')); 
+            redirect(base_url('/index.php/sliders/create/')); 
         } else {
             $file_info = $this->upload->data();
 
@@ -59,7 +59,7 @@ class Sliders extends CI_Controller {
             $data['titulo'] = $titulo;
             $data['imagen'] = $imagen;
             $this->session->set_flashdata('message','Registration Done With Exist');
-            redirect(base_url('/index.php/sliders/sliders/index/')); 
+            redirect(base_url('/index.php/sliders/')); 
         }
        
 	}

@@ -23,7 +23,7 @@
                      <div class="card">
                          <div class="card-body">
                                 <p class="text-muted font-13 mb-4">
-                                 <a href="<?= base_url('index.php/sliders/Sliders/create/')?>" class="btn btn-dark">Add</a>
+                                 <a href="<?= base_url('index.php/sliders/create/')?>" class="btn btn-dark">Add</a>
                                  </p>
                                  <?php 
                               $message=$this->session->flashdata('message');
@@ -58,7 +58,7 @@
                                             <td><?php echo $obten->slider;?></td>
                                             <td><img src="<?php echo base_url()?>uploads/imagenes/thumbs/<?php echo  $obten->image;?>" /></td>
                                             <td>
-                                             <a href="<?php  echo  base_url()."index.php/sliders/Sliders/destroy/".$obten->slider_id;?>"><i class="fe-x"></i></a>
+                                             <a href="<?php  echo  base_url()."index.php/sliders/destroy/".$obten->slider_id;?>"><i class="fe-x"></i></a>
                                             </td>
                                              </tr>
                                         </tbody>
