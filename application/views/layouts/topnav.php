@@ -105,7 +105,11 @@
                                     </div>
 
                                     <!-- item-->
+<<<<<<< HEAD
+                                    <a href="<?php echo base_url()."index.php/myAccount/MyAccount"?>" class="dropdown-item notify-item">
+=======
                                     <a href="<?php echo base_url()."index.php/myaccount"?>" class="dropdown-item notify-item">
+>>>>>>> master
                                         <i class="fe-user"></i>
                                         <span>My Account</span>
                                     </a>

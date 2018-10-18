@@ -21,8 +21,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo  base_url('index.php/customers/');?>">
-                            <i class="fe-user"></i> 
+                        <a href="<?php echo  base_url('index.php/customers/');?>">   <i class="fe-user"></i> 
                             <span> Clients </span>
                         </a>
                     </li>
@@ -34,26 +33,27 @@
                     </li>
                     <li>
                         <a href="<?php echo base_url('index.php/users/');?>">
-                            <i class="fe-edit"></i>
+                            <i class="fe-user"></i>
                             <span> Users </span>
                         </a>
+                    </li> 
+                    <li>
+                        <a href="<?php echo base_url('index.php/sliders/');?>"> <i class="fe-sliders"></i> Sliders </a>
+                    </li> 
+                    <li>
+                        <a href="<?php echo base_url("index.php/home/");?>"> <i class="fe-globe"></i> Social Networks </a>
                     </li>
                     <li>
                         <a href="<?php echo base_url('index.php/typesusers/');?>">
                             <i class="fe-user-check"></i>
                             <span>Types of Users</span>
                         </a>
-                    </li>  
-                    <li>
-                        <a href="<?php echo base_url("index.php/home/");?>"> <i class="fe-globe"></i> Social Networks </a>
-                    </li>
-
+                    </li> 
                     <li>
                         <a href="<?php echo base_url('index.php/sliders/');?>"> <i class="fe-sliders"></i> Sliders </a>
                     </li>
                     <li>
                         <a href="<?php echo base_url('index.php/settings/');?>"> <i class="fe-settings"></i> Settings </a>
-                    </li>
                     <li>
                         <a href="<?php  echo base_url().'/index.php/login/destroy/';?>"> <i class="fe-log-in"></i> Exit </a>
                     </li>
