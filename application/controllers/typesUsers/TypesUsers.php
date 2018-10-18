@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class TypeUser extends CI_Controller {
+class TypesUsers extends CI_Controller {
 
 	function __construct()
 	{
@@ -20,21 +20,29 @@ class TypeUser extends CI_Controller {
 		$data['user_types'] = $this->types_users_model->view_users();
 		$this->load->view('layouts/headers');
 		$this->load->view('layouts/navbar');
-		$this->load->view('type_user/index',$data);	
+		$this->load->view('types_users/index',$data);	
 		$this->load->view('layouts/footer');
 
 	}
 
 	public function create()
 	{
+		$this->load->view('layouts/headers');
+		$this->load->view('layouts/navbar');
+		$this->load->view('types_users/create');	
+		$this->load->view('layouts/footer');
+	}
+
+	public function store()
+	{
 		$data = array(
 			'type_user' => $this->input->post('type_user')
 		);
 		$this->types_users_model->add_type_user($data);	
-		redirect('typeUser');
+		redirect(base_url('index.php/typesUsers/TypesUsers/'));
 	}
 
-	public function show()
+	public function edit()
 	{
 		$id = $this->uri->segment(3);
 		$data['user_types'] = $this->types_users_model->view_user($id);
@@ -42,20 +50,21 @@ class TypeUser extends CI_Controller {
 		$this->load->view('layouts/navbar');
 
 		if (!$id) {
-			redirect('typeUser');
+			redirect(base_url('index.php/typesUsers/TypesUsers/'));
 		}else{
-			$this->load->view('type_user/show',$data);
+			$this->load->view('types_users/edit',$data);
 		}
 		
 		$this->load->view('layouts/footer');
 	}
-	public function edit($id)
+
+	public function update($id)
 	{
 		$data = array(
 			'type_user' => $this->input->post('type_user'),
 		);
 		$this->types_users_model->update($id,$data);
-		redirect('typeUser');
+		redirect(base_url('index.php/typesUsers/TypesUsers/'));
 	}
 
 	public function destroy(){

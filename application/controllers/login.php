@@ -15,7 +15,7 @@ class Login extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('layouts/headers');
-		 $this->load->view('login/login');
+		 $this->load->view('login/index');
 		$this->load->view('layouts/footer');
 	}
 	public function authenticated()
@@ -26,26 +26,19 @@ class Login extends CI_Controller {
         $login=$this->login_model->validate($email,$pass);
        $user=array('user_id'=>$login->user_id,'user_type_id'=>$login->user_type_id,'full_name'=>$login->full_name,'email'=>$login->email);
         if ($login)
-            {
-            	if ($login->user_type_id=="1"){
-            	   $this->session->set_userdata($user); 
-                   redirect(base_url('index.php/home/index'));  
-            	}else 
-
-            	{
-            		
-            	}
-           
-            }else {
-            	$this->session->set_flashdata('message','wrong email or password');
-            	 redirect(base_url('/index.php/Login/index/')); 
-            }
-
+        {
+        	if ($login->user_type_id=="1"){
+        	   $this->session->set_userdata($user); 
+               redirect(base_url('index.php/home/'));  
+        	}
+        }else {
+        	$this->session->set_flashdata('message','wrong email or password');
+        	 redirect(base_url('/index.php/Login/')); 
+        }
 	}
-
 	public function destroy()
 	{
      $this->session->sess_destroy();
-	 redirect(base_url('/index.php/Login/index/'));
+	 redirect(base_url('/index.php/Login/'));
 	}
 }

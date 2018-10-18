@@ -23,7 +23,7 @@ function __construct()
 
 		$this->load->view('layouts/navbar');
 		$this->load->view('layouts/topnav');
-		$this->load->view('Settings/settings');
+		$this->load->view('Settings/index');
 	    $this->load->view('layouts/footer');
 	}
 

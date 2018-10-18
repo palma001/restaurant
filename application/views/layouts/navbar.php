@@ -33,13 +33,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('index.php/typesUsers/TypesUsers');?>">
+                        <a href="<?php echo base_url('index.php/typesUsers/TypesUsers/');?>">
                             <i class="fe-user-check"></i>
                             <span>Type of User</span>
                         </a>
                     </li>  
                     <li>
-                        <a href="<?php echo base_url();?>"> <i class="fe-globe"></i> Social Networks </a>
+                        <a href="<?php echo base_url("index.php/home/");?>"> <i class="fe-globe"></i> Social Networks </a>
                     </li>
 
                     <li>

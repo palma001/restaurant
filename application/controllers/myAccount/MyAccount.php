@@ -5,7 +5,11 @@
 		function __construct()
 		{
 			parent::__construct();
+			$this->load->library('form_validation'); 
 			$this->load->library('session');
+			if (!$this->session->userdata['user_id']){
+            redirect(base_url());
+			}
 		}
 
 		public function index()
@@ -24,9 +28,18 @@
 		{
 			# code...
 		}
-		public function update($id)
+		public function update()
 		{
-			# code...
+
+            $data = array(
+				'full_name' => $this->input->post('full_name'),
+				'email' => $this->input->post('email'),
+				'password' => $this->input->post('password'),
+			);
+			$this->products_model->update_products($id,$data);
+			$this->session->set_flashdata('message','Modification made successfully');
+			redirect('MyAccount');
+           
 		}
 		public function destroy($id)
 		{

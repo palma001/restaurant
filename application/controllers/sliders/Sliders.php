@@ -22,7 +22,7 @@ class Sliders extends CI_Controller {
 		 $data['obtener'] = $this->multipleuploads_model->get();
 		$this->load->view('layouts/headers');
 		$this->load->view('layouts/topnav');
-		$this->load->view('Sliders/Sliders',$data);
+		$this->load->view('Sliders/index',$data);
 		$this->load->view('layouts/navbar');
 		$this->load->view('layouts/footer');
 	}

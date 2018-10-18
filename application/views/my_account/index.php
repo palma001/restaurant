@@ -18,17 +18,17 @@
     			<div class="col-lg-12">
     			    <div class="card">
     			        <div class="card-body">
-                            <form class="form-horizontal" method="post" action="#">
+                            <form class="form-horizontal" method="post" action="<?php echo base_url("myAccount/MyAccount/update") ?>">
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Full Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="full_name" class="form-control" placeholder="Full Name" required>
+                                        <input type="text" value="<?php echo $this->session->userdata['full_name']; ?>" name="full_name" class="form-control" placeholder="Full Name" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Email</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="email" class="form-control" placeholder="Email" required>
+                                        <input type="text" value="<?php echo $this->session->userdata['email']; ?>" name="email" class="form-control" placeholder="Email" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -40,7 +40,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label" for="example-email">Confirm Password</label>
                                     <div class="col-sm-10">
-                                        <input type="password" id="example-email" name="Cpassword" class="form-control" placeholder="Confirm Password" required>
+                                        <input type="password" id="example-email" name="passconf" class="form-control" placeholder="Confirm Password" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
