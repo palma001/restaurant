@@ -33,6 +33,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="<?php echo base_url('index.php/users/');?>">
+                            <i class="fe-edit"></i>
+                            <span> Users </span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="<?php echo base_url('index.php/typesusers/');?>">
                             <i class="fe-user-check"></i>
                             <span>Types of Users</span>
