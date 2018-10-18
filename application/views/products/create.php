@@ -6,7 +6,7 @@
                     <div class="page-title-box">
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="#">Binfrix</a></li>
+                                <li class="breadcrumb-item"><a href="<?php echo base_url('index.php/home/');?>">Binfrix</a></li>
                                 <li class="breadcrumb-item"><a href="<?php echo base_url()."index.php/products/products";?>" title="">Products</a></li>
                                 <li class="breadcrumb-item active">Create Product</li>
                             </ol>
