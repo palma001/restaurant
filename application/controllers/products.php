@@ -35,6 +35,7 @@ class Products extends CI_Controller {
 	public function store()
 	{
 		$data = array(
+			'user_id' => $this->session->userdata['user_id'],
 			'title' => $this->input->post('title'),
 			'description' => $this->input->post('description'),
 			'price' => $this->input->post('price'),
