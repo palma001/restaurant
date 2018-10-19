@@ -8,7 +8,7 @@ class Users extends CI_Controller {
 		$this->load->model('users_model');
 		$this->load->model('types_users_model');
 		$this->load->library('session');
-		 $this->load->library('form_validation');
+		$this->load->library('form_validation');
 		if (!$this->session->userdata['user_id']){
             redirect(base_url());
 		}
@@ -40,7 +40,7 @@ class Users extends CI_Controller {
 			'full_name' => $this->input->post('full_name'),
 			'email' => $this->input->post('email'),
 			'user_type_id' => $this->input->post('user_type_id'),
-			'password' => $this->input->post('password'),
+			'password' => md5($this->input->post('password')),
 		);
 
 		$config = array(
@@ -112,7 +112,7 @@ class Users extends CI_Controller {
 			'full_name' => $this->input->post('full_name'),
 			'email' => $this->input->post('email'),
 			'user_type_id' => $this->input->post('user_type_id'),
-			'password' => $this->input->post('password'),
+			'password' => md5($this->input->post('password')),
 		);
 
 		$config = array(

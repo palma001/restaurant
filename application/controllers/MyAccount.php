@@ -41,7 +41,7 @@
             $data = array(
 				'full_name' => $this->input->post('full_name'),
 				'email' => $this->input->post('email'),
-				'password' => $this->input->post('password'),
+				'password' => md5($this->input->post('password')),
 			);
 
 			$this->my_account_model->update_myAccount($id,$data);
