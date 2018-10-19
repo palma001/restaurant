@@ -38,15 +38,18 @@
                         </a>
                     </li> 
                     <li>
-                        <a href="<?php echo base_url('index.php/sliders/');?>"> <i class="fe-sliders"></i> Sliders </a>
-                    </li> 
-                    <li>
                         <a href="<?php echo base_url("index.php/home/");?>"> <i class="fe-globe"></i> Social Networks </a>
                     </li>
                     <li>
                         <a href="<?php echo base_url('index.php/typesusers/');?>">
                             <i class="fe-user-check"></i>
                             <span>Types of Users</span>
+                        </a>
+                    </li> 
+                    <li>
+                        <a href="<?php echo base_url('index.php/blogs/');?>">
+                            <i class="fe-book-open"></i>
+                            <span>Blogs</span>
                         </a>
                     </li> 
                     <li>

@@ -10,13 +10,14 @@
 	         $this->load->library('session');
 	    }
 
-	    public function update_products($id,$data){
+	    public function update_myAccount($id,$data){
 			$datos = array(
 				'full_name' => $data['full_name'],
 				'email' => $data['email'],
 				'password' => $data['password']
 			);
-			$this->db->where('product_id',$id);
+
+			$this->db->where('user_id',$id);
 			$query = $this->db->update('users',$datos);
 		}
 	}

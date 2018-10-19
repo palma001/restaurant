@@ -50,6 +50,7 @@ class Sliders extends CI_Controller {
         	$this->session->set_flashdata('message','unsupported format');
             redirect(base_url('/index.php/sliders/create/')); 
         } else {
+        	
             $file_info = $this->upload->data();
 
             $this->Miniature($file_info['file_name']);
@@ -79,8 +80,8 @@ class Sliders extends CI_Controller {
         $this->image_lib->resize();
 
 	}
-	 public function destroy($data)
-        {
-             $this->multipleuploads_model->delete($data);
-        }
+	public function destroy($data)
+	{
+	    $this->multipleuploads_model->delete($data);
+	}
 }
