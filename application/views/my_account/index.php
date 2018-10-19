@@ -27,18 +27,20 @@
                                     </button>
                                         <?php echo $message ?>
                                     </div>
-                                <?php }  ?>
+                            <?php }  ?>
+
+                            <?php echo '<strong>'.validation_errors().'</strong>'; ?>
                             <form class="form-horizontal" method="post" action="<?php echo base_url("index.php/MyAccount/update/".$this->session->userdata['user_id'])?>">
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Full Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" value="<?php echo ucwords($this->session->userdata['full_name']); ?>" name="full_name" class="form-control" placeholder="Full Name" required>
+                                        <input type="text" value="<?php echo ucwords($this->session->userdata['full_name']); ?>" name="full_name" class="form-control" placeholder="Full Name">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Email</label>
                                     <div class="col-sm-10">
-                                        <input type="text" value="<?php echo $this->session->userdata['email']; ?>" name="email" class="form-control" placeholder="Email" required>
+                                        <input type="text" value="<?php echo $this->session->userdata['email']; ?>" name="email" class="form-control" placeholder="Email">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -60,13 +62,13 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label" for="example-email">Password</label>
                                     <div class="col-sm-10">
-                                        <input type="password" value="<?php echo $this->session->userdata['password']; ?>" id="example-email" name="password" class="form-control" placeholder="Password" required>
+                                        <input type="password" id="example-email" name="password" class="form-control" placeholder="Password">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label" for="example-email">Confirm Password</label>
                                     <div class="col-sm-10">
-                                        <input type="password" value="<?php echo $this->session->userdata['password']; ?>" id="example-email" name="passconf" class="form-control" placeholder="Confirm Password" required>
+                                        <input type="password" id="example-email" name="passconf" class="form-control" placeholder="Confirm Password">
                                     </div>
                                 </div>
                                 <div class="form-group row">

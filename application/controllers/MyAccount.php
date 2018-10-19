@@ -38,17 +38,56 @@
 		public function update($id)
 		{
 
-            $data = array(
-				'full_name' => $this->input->post('full_name'),
-				'email' => $this->input->post('email'),
-				'password' => md5($this->input->post('password')),
-			);
+			if (empty($this->input->post('password'))) {
 
-			$this->my_account_model->update_myAccount($id,$data);
-			 $this->session->set_userdata($data); 
-			$this->session->set_flashdata('message','Modification made successfully');
-			redirect('MyAccount');
-           
+				$data = array(
+					'full_name' => $this->input->post('full_name'),
+					'email' => $this->input->post('email'),
+					'user_type_id' => $this->input->post('user_type_id'),
+					'password' => false,
+				);
+
+			}else{
+
+				$data = array(
+					'full_name' => $this->input->post('full_name'),
+					'email' => $this->input->post('email'),
+					'user_type_id' => $this->input->post('user_type_id'),
+					'password' => md5($this->input->post('password')),
+				);
+			}
+            
+			$config = array(
+		        array(
+	                'field' => 'full_name',
+	                'label' => 'Full_Name',
+	                'rules' => 'required|min_length[5]'
+		        ),
+		        array(
+	                'field' => 'email',
+	                'label' => 'Email',
+	                'rules' => 'required|valid_email'
+		        ),
+		        array(
+	                'field' => 'password',
+	                'label' => 'Password',
+	                'rules' => 'min_length[8]',
+		        ),
+		        array(
+	                'field' => 'passconf',
+	                'label' => 'Password Confirmation',
+	                'rules' => 'matches[password]'
+		        ),   
+			);
+			$this->form_validation->set_rules($config);
+			if ($this->form_validation->run() == FALSE){
+			 	$this->index();
+			}else{
+			 	$this->my_account_model->update_myAccount($id,$data);
+				$this->session->set_userdata($data); 
+				$this->session->set_flashdata('message','Modification made successfully');
+				redirect('MyAccount');
+			}
 		}
 		public function destroy($id)
 		{

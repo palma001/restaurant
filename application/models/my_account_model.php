@@ -11,14 +11,27 @@
 	    }
 
 	    public function update_myAccount($id,$data){
-			$datos = array(
-				'full_name' => $data['full_name'],
-				'email' => $data['email'],
-				'password' => $data['password']
-			);
 
-			$this->db->where('user_id',$id);
-			$query = $this->db->update('users',$datos);
+	    	if ($data['password']) {
+
+	    		$datos = array(
+					'user_type_id' => $data['user_type_id'],
+					'full_name' => $data['full_name'],
+					'email' => $data['email'],
+					'password' => $data['password']
+				);
+				$this->db->where('user_id',$id);
+				$query = $this->db->update('users',$datos);
+	    	}else{
+	    		
+	    		$datos = array(
+	    			'user_type_id' => $data['user_type_id'],
+					'full_name' => $data['full_name'],
+					'email' => $data['email'],
+				);
+				$this->db->where('user_id',$id);
+				$query = $this->db->update('users',$datos);
+	    	}
 		}
 	}
 ?>

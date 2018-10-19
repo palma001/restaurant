@@ -108,17 +108,26 @@ class Users extends CI_Controller {
 
 	public function update($id)
 	{
-		$data = array(
-			'full_name' => $this->input->post('full_name'),
-			'email' => $this->input->post('email'),
-			'user_type_id' => $this->input->post('user_type_id'),
-			'password' => md5($this->input->post('password')),
-		);
+		if (empty($this->input->post('password'))) {
+			$data = array(
+				'full_name' => $this->input->post('full_name'),
+				'email' => $this->input->post('email'),
+				'user_type_id' => $this->input->post('user_type_id'),
+				'password' => false,
+			);
+		}else{
+			$data = array(
+				'full_name' => $this->input->post('full_name'),
+				'email' => $this->input->post('email'),
+				'user_type_id' => $this->input->post('user_type_id'),
+				'password' => md5($this->input->post('password')),
+			);
+		}
 
 		$config = array(
 	        array(
                 'field' => 'full_name',
-                'label' => 'Full_name',
+                'label' => 'Full_Name',
                 'rules' => 'required|min_length[5]'
 	        ),
 	        array(
@@ -134,12 +143,12 @@ class Users extends CI_Controller {
 	        array(
                 'field' => 'password',
                 'label' => 'Password',
-                'rules' => 'required|min_length[8]',
+                'rules' => 'min_length[8]',
 	        ),
 	        array(
                 'field' => 'passconf',
                 'label' => 'Password Confirmation',
-                'rules' => 'required|matches[password]'
+                'rules' => 'matches[password]'
 	        ),   
 		);
 
@@ -150,19 +159,14 @@ class Users extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE){
 
-        	$this->load->view('layouts/headers');
-			$this->load->view('layouts/navbar');
-			$this->load->view('layouts/topnav');
-            $this->load->view('users/edit',array('users'=>$users,'users_types'=>$users_types));
-            $this->load->view('layouts/footer');
+        	$this->index();
         }
         else{
 
 			$this->users_model->update_user($id,$data);
 			$this->session->set_flashdata('message','Modification made successfully');
 			redirect(base_url('index.php/users/'));
-        }
-		
+        }	
 	}
 
 	public function show()

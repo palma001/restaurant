@@ -39,15 +39,25 @@
 		}
 		
 		public function update_user($id,$data){
-			$datos = array(
-				'full_name' => $data['full_name'],
-				'email' =>  $data['email'],
-				'user_type_id' =>  $data['user_type_id'],
-				'password' =>  $data['password'],
-			);
 
-			$this->db->where('user_id',$id);
-			$query = $this->db->update('users',$datos);
+			if ($data['password']) {
+				$datos = array(
+					'full_name' => $data['full_name'],
+					'email' =>  $data['email'],
+					'user_type_id' =>  $data['user_type_id'],
+					'password' =>  $data['password'],
+				);
+				$this->db->where('user_id',$id);
+				$query = $this->db->update('users',$datos);
+			}else{
+				$datos = array(
+					'full_name' => $data['full_name'],
+					'email' =>  $data['email'],
+					'user_type_id' =>  $data['user_type_id'],
+				);
+				$this->db->where('user_id',$id);
+				$query = $this->db->update('users',$datos);
+			}
 		}
 
 		public function destroy($id){
