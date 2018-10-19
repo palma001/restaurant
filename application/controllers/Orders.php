@@ -32,7 +32,7 @@ function __construct()
 		$this->load->view('layouts/headers');
 		$this->load->view('layouts/navbar');
 		$this->load->view('layouts/topnav');
-		$this->load->view('orders/details',$datos);
+		$this->load->view('orders/show',$datos);
 	  	$this->load->view('layouts/footer');  
 	}
 }

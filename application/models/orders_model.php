@@ -6,41 +6,40 @@ class orders_model extends CI_Model{
 
 	function  __construct()
 	{
-         parent::__construct();
-         $this->load->database();
-         $var="0";
-     }
+     parent::__construct();
+     $this->load->database();
+     $var="0";
+  }
 
-      public  function all_orders()
-      {
-         $this->db->join('users','users.user_id=orders.user_id');
-         $query=$this->db->get('orders');  
-     	 if ($query->num_rows()>0) {
-             return $query;
-     	 }else {
-
-              return false;
-     	 }
-      }
-      public function orderss($data)
-      {
-        $this->db->join('products','products.product_id=orders_products.products_id');
-        $this->db->join('users','users.user_id=products.user_id');
-        $this->db->join('orders','orders.order_id=orders_products.orders_id');
-        $this->db->where('orders_id',$data);
-          $query= $this->db->get('orders_products');
-          if ($query->num_rows()>0){ 
-            return $query;
-             } else {
-              return false;
-              }
+  public  function all_orders()
+  {
+      $this->db->join('users','users.user_id=orders.user_id');
+      $query=$this->db->get('orders');  
+     	if ($query->num_rows()>0) {
+          return $query;
+     	}else{
+        return false;
+     	}
+  }
+  public function orderss($data)
+  {
+      $this->db->join('products','products.product_id=orders_products.products_id');
+      $this->db->join('users','users.user_id=products.user_id');
+      $this->db->join('orders','orders.order_id=orders_products.orders_id');
+      $this->db->where('orders_id',$data);
+        $query= $this->db->get('orders_products');
+        if ($query->num_rows()>0){ 
+          return $query;
+        }else{
+          return false;
         }
+  }
 
-         public function count()
-      {
-            $query= $this->db->get('orders'); 
-            $numero_filas=$query->num_rows(); 
-             return $numero_filas;
-      }
+  public function count()
+  {
+    $query= $this->db->get('orders'); 
+    $numero_filas=$query->num_rows(); 
+     return $numero_filas;
+  }
 
 }

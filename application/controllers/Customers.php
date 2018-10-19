@@ -3,22 +3,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Customers extends CI_Controller {
 
-function __construct()
+	function __construct()
 	{
 		parent::__construct();
 		$this->load->helper('form');
 		$this->load->helper('url');
 		$this->load->model('customers_model');
         $this->load->library('session');
-         $Type="0";
-         if (!$this->session->userdata['user_id']){
+        $Type="0";
+        if (!$this->session->userdata['user_id']){
             redirect(base_url());
-			}else {
-             
-			}
+		}
 	}
-
-
 	public function index()
 	{
 	    $data['obtener'] = $this->customers_model->all_customer();
@@ -55,10 +51,10 @@ function __construct()
        $this->session->set_flashdata('message','modification made successfully');
        redirect(base_url('/index.php/customers/'));
 	}
-      public function destroy($data)
-        {
-             $this->customers_model->delete($data);
-        }
+	public function destroy($data)
+	{
+		$this->customers_model->delete($data);
+	}
 }
 
 

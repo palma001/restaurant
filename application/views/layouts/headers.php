@@ -24,9 +24,7 @@
         <link href="https://file.myfontastic.com/SLzQsLcd7FmmzjBYTcyVW3/icons.css" rel="stylesheet">
         <link href="<?= base_url('css/vendor/select.bootstrap4.css');?>" rel="stylesheet" type="text/css" />
 		 <link href="<?= base_url('css/file_uploader.css');?>" rel="stylesheet" type="text/css" />
-		<script src="<?= base_url('admin_template/js/vendor.min.js')?>"></script>
-		
-		
+		<script src="<?= base_url('admin_template/js/vendor.min.js')?>"></script>¡
 	</head>
 	<body>
 

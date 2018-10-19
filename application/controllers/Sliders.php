@@ -5,21 +5,19 @@ class Sliders extends CI_Controller {
 
  function __construct()
 	{
-		 parent::__construct();
+		parent::__construct();
 		$this->load->helper('form');
 		$this->load->helper('url');
 		$this->load->helper('download');
 		$this->load->model('multipleuploads_model');
 		$this->load->library('session');
-		 if (!$this->session->userdata['user_id']){
+		if (!$this->session->userdata['user_id']){
             redirect(base_url());
-			}else {
-             
-			}
+		}
 	}
 	public function index()
 	{
-		 $data['obtener'] = $this->multipleuploads_model->get();
+		$data['obtener'] = $this->multipleuploads_model->get();
 		$this->load->view('layouts/headers');
 		$this->load->view('layouts/topnav');
 		$this->load->view('Sliders/index',$data);
