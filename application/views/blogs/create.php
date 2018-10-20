@@ -20,21 +20,34 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                             <?php 
+                            <?php 
                                 $message=$this->session->flashdata('message');
-                                if ($message) {?>
-                                    <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                        <?php echo $message ?>
-                                    </div>
-                            <?php }  ?>
+                                $error = validation_errors();
+                                if ($message) {
+                                    echo '
+                                        <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                            '.$message.'
+                                        </div>
+                                    ';
+                                }
+                                if ($error) {
+                                   echo '
+                                        <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                            '.$error.'
+                                        </div>
+                                    ';
+                                }
+                            ?>
                             <div class="row justify-content-md-center">
                                 <div class="col-lg-12">
                                     <div class="card">
                                         <div class="card-body">
-                                            <?php echo "<strong>".validation_errors()."</strong>"; ?>
                                             <form class="form-horizontal" method="post" action="<?php echo base_url('index.php/blogs/store');?>" enctype="multipart/form-data">
                                                 <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label">Title</label>

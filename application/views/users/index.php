@@ -23,14 +23,17 @@
                             </p>
                             <?php 
                                 $message=$this->session->flashdata('message');
-                                if ($message) {?>
-                                    <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                        <?php echo $message ?>
-                                    </div>
-                                <?php }  ?>
+                                if ($message) {
+                                   echo ' 
+                                        <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                            '.$message.'
+                                        </div>
+                                    ';
+                                }
+                            ?>
                             <table id="basic-datatable" class="table table-sm table-striped nowrap text-center">
                                 <thead>
                                     <tr>
@@ -42,29 +45,36 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php if ($users) {
-                                       foreach ($users->result() as $key => $users) {
-                                        echo '
-                                            <tr>
-                                                <td>'.$key.'</td>
-                                                <td>'.ucwords(strtolower($users->full_name)).'</td>
-                                                <td>'.$users->email.'</td>
-                                                 <td>'.ucwords($users->user_type).'</td>
-                                                <td>
-                                                    <a href="'.base_url('index.php/users/edit/'.$users->user_id).'"><i class="fe-edit-2"></i> </a>
+                                    <?php 
+                                        if ($users) {
+                                           foreach ($users->result() as $key => $users) {
+                                                echo '
+                                                    <tr>
+                                                        <td>'.$key.'</td>
+                                                        <td>
+                                                            '.ucwords(strtolower($users->full_name)).'
+                                                        </td>
+                                                        <td>
+                                                            '.$users->email.'
+                                                        </td>
+                                                         <td>
+                                                            '.ucwords($users->user_type).'
+                                                        </td>
+                                                        <td>
+                                                            <a href="'.base_url('index.php/users/edit/'.$users->user_id).'"><i class="fe-edit-2"></i> </a>
 
-                                                    <a href="'.base_url('index.php/users/destroy/'.$users->user_id).'"> <i class="fe-x"></i></a>
-                                                </td>
-                                            </tr>
-                                        ';
-                                       }
-                                    } ?>
+                                                            <a href="'.base_url('index.php/users/destroy/'.$users->user_id).'"> <i class="fe-x"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                ';
+                                            }
+                                        } 
+                                    ?>
                                 </tbody>                            
                             </table>
-                        </div> <!-- end card body-->
-    			         <!-- end card-body -->
-    			    </div>  <!-- end card -->
-    			</div>  <!-- end col -->
+                        </div> 
+    			    </div>  
+    			</div> 
             </div>
         </div>
     </div>

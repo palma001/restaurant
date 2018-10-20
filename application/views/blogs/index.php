@@ -23,14 +23,17 @@
                             </p>
                             <?php 
                                 $message=$this->session->flashdata('message');
-                                if ($message) {?>
-                                    <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                        <?php echo $message ?>
-                                    </div>
-                            <?php }  ?> 
+                                if ($message) {
+                                   echo ' 
+                                        <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                            '.$message.'
+                                        </div>
+                                    ';
+                                }
+                            ?>
                             <table id="basic-datatable" class="table table-sm table-striped nowrap text-center">
                                 <thead>
                                     <tr>
@@ -43,16 +46,24 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                   <?php 
+                                    <?php 
                                         if ($blogs) {
                                             foreach ($blogs->result() as $key => $blogs) {
                                                 echo '
                                                     <tr>
                                                         <td>'.$key.'</td>
-                                                        <td>'.ucwords(strtolower($blogs->full_name)).'</td>
-                                                        <td>'.ucfirst (strtolower($blogs->title)).'</td>
-                                                        <td>'.ucfirst(strtolower(substr($blogs->description,0,70))).'...</td>
-                                                        <td>'.$blogs->date.'</td>
+                                                        <td>
+                                                            '.ucwords(strtolower(substr($blogs->full_name,0,20))).'
+                                                        </td>
+                                                        <td>
+                                                            '.ucfirst(strtolower(substr($blogs->title,0,20))).'
+                                                        </td>
+                                                        <td>
+                                                            '.ucfirst(strtolower(substr($blogs->description,0,50))).'
+                                                        </td>
+                                                        <td>
+                                                            '.$blogs->date.'
+                                                        </td>
                                                         <td>
                                                             <a href="'.base_url('index.php/blogs/edit/'.$blogs->blog_id).'"><i class="fe-edit-2"></i>
                                                             </a>
@@ -63,7 +74,7 @@
                                                 ';
                                             }
                                         }
-                                   ?>
+                                    ?>
                                 </tbody>                            
                             </table>
                         </div> <!-- end card body-->
