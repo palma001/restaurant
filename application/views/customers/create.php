@@ -36,13 +36,13 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Full Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="full_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        <input type="text" placeholder="Full Name" name="full_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Email</label>
                                     <div class="col-sm-10">
-                                        <input  name="email"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        <input  name="email" placeholder="Email"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -66,13 +66,13 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Password</label>
                                     <div class="col-sm-10">
-                                        <input type="password" name="password"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        <input type="password" placeholder="Password" name="password"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Confirm Password</label>
                                     <div class="col-sm-10">
-                                        <input type="password" name="passconf"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        <input type="password" placeholder="Confirm Password" name="passconf"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                     </div>
                                 </div>
                                 <div class="form-group row">

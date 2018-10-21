@@ -8,7 +8,7 @@
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="<?php echo base_url('index.php/home/');?>">Binfrix</a></li>
 
-                                <li class="breadcrumb-item"><a href="<?php echo base_url('index.php/typesusers/');?>">Blogs</a></li>
+                                <li class="breadcrumb-item"><a href="<?php echo base_url('index.php/blogs/');?>">Blogs</a></li>
                                 <li class="breadcrumb-item active">Create Blog</li>
                             </ol>
                         </div>
@@ -64,7 +64,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label">Image</label>
                                                     <div class="col-sm-10">
-                                                        <input type="file" name="image" class="form-control">
+                                                        <input type="file" name="images" class="form-control">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">

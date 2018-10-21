@@ -62,7 +62,7 @@
 		        array(
 	                'field' => 'password',
 	                'label' => 'Password',
-	                'rules' => 'required|min_length[8]',
+	                'rules' => 'required|min_length[5]',
 		        ),
 		        array(
 	                'field' => 'passconf',
@@ -83,7 +83,7 @@
 	        }
 	        else{
 				$this->users_model->store($data);	
-				$this->session->set_flashdata('message','Add made successfully');
+				$this->session->set_flashdata('message','Saved successfully');
 				redirect(base_url('index.php/users/'));
 	        }
 		}
@@ -143,7 +143,7 @@
 		        array(
 	                'field' => 'password',
 	                'label' => 'Password',
-	                'rules' => 'min_length[8]',
+	                'rules' => 'min_length[5]',
 		        ),
 		        array(
 	                'field' => 'passconf',
@@ -164,7 +164,7 @@
 	        else{
 
 				$this->users_model->update($id,$data);
-				$this->session->set_flashdata('message','Modification made successfully');
+				$this->session->set_flashdata('message','Modification Made Successfully');
 				redirect(base_url('index.php/users/'));
 	        }	
 		}
@@ -172,7 +172,7 @@
 
 			$id = $this->uri->segment(3);
 			$this->users_model->destroy($id);
-			$this->session->set_flashdata('message','Delete made successfully');
+			$this->session->set_flashdata('message','Deleted Successfully');
 			redirect(base_url('index.php/Users/'));
 		}
 	}

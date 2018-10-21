@@ -22,7 +22,7 @@
                 </li>
                 <li>
                     <a href="<?php echo  base_url('index.php/customers/');?>">   <i class="fe-user"></i> 
-                        <span> Clients </span>
+                        <span> Customers </span>
                     </a>
                 </li>
                 <li>

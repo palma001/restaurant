@@ -59,7 +59,7 @@
 		        array(
 	                'field' => 'password',
 	                'label' => 'Password',
-	                'rules' => 'min_length[8]',
+	                'rules' => 'min_length[5]',
 		        ),
 		        array(
 	                'field' => 'passconf',
@@ -74,7 +74,7 @@
 			}else{
 			 	$this->my_account_model->update($id,$data);
 				$this->session->set_userdata($data); 
-				$this->session->set_flashdata('message','Modification made successfully');
+				$this->session->set_flashdata('message','Modification Made Successfully');
 				redirect(base_url('index.php/myaccount'));
 			}
 		}

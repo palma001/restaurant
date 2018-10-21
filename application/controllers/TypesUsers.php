@@ -38,6 +38,7 @@
 				'type_user' => $this->input->post('type_user')
 			);
 			$this->types_users_model->store($data);	
+			$this->session->set_flashdata('message','Saved Successfully');
 			redirect(base_url('index.php/typesusers/'));
 		}
 
@@ -65,7 +66,7 @@
 			);
 			$this->types_users_model->update($id,$data);
 
-			$this->session->set_flashdata('message','Modification made successfully');
+			$this->session->set_flashdata('message','Modification Made Successfully');
 			redirect(base_url('index.php/typesusers/'));
 		}
 
@@ -73,7 +74,7 @@
 
 			$id = $this->uri->segment(3);
 			$this->types_users_model->destroy($id);
-			$this->session->set_flashdata('message','Delete made successfully');
+			$this->session->set_flashdata('message','Deleted Successfully');
 			redirect(base_url('index.php/typesusers/'));
 		}
 	}

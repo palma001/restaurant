@@ -9,7 +9,7 @@
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="<?php echo base_url('index.php/home/');?>">Binfrix</a></li>
-                                        <li class="breadcrumb-item"><a href="#">Orders</a></li>
+                                        <li class="breadcrumb-item active">Orders</li>
                                     </ol>
                                 </div>
                                 <h4 class="page-title">Orders</h4>

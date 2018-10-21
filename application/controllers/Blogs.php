@@ -9,6 +9,8 @@
 			$this->load->model('blogs_model');
 			$this->load->library('session');
 			$this->load->library('form_validation');
+			$this->load->helper('file');
+
 			if (!$this->session->userdata['user_id']){
 	            redirect(base_url());
 			}
@@ -44,7 +46,7 @@
 			if (!$this->upload->do_upload('image')) {
 				$error = array('error' => $this->upload->display_errors());
 				$this->create();
-	            $this->session->set_flashdata('message','Unable to upload the file');
+	            $this->session->set_flashdata('message','Unable to Upload the File');
 			}else{
 
 				$image_info = $this->upload->data();
@@ -78,7 +80,7 @@
 		        }
 		        else{
 					$this->blogs_model->store($data);	
-					$this->session->set_flashdata('message','Add made successfully');
+					$this->session->set_flashdata('message','Saved Successfully');
 					redirect(base_url('index.php/blogs/'));
 		        }
 			}		
@@ -101,64 +103,61 @@
 
 		public function update($id)
 		{
-			$config['upload_path']   = './uploads/blogs/';
-			$config['allowed_types'] = 'jpg|jpeg|gif|png';
 			
-			$this->load->library('upload',$config);
+			$config = array(
+		        array(
+	                'field' => 'title',
+	                'label' => 'Title',
+	                'rules' => 'required|min_length[10]'
+		        ), 
+		        array(
+	                'field' => 'description',
+	                'label' => 'Description',
+	                'rules' => 'required|min_length[10]'
+		        ),
+		    );
 
-			if (!$this->upload->do_upload('image')) {
-				$error = array('error' => $this->upload->display_errors());
-				$this->edit();
+			$this->form_validation->set_rules($config);
 
-	            $this->session->set_flashdata('message','Unable to upload the file');
+	        if ($this->form_validation->run() == FALSE){
+	        	$this->edit();
+	        }else{
 
-			}else{
+				$config['upload_path']   = './uploads/blogs/';
+				$config['allowed_types'] = 'jpg|jpeg|gif|png';
+				$this->load->library('upload',$config);
 
 				$image_info = $this->upload->data();
-
 				$images = $image_info['file_name'];
 
-				$data = array(
-					'user_id'     => $this->session->userdata['user_id'],
-					'title'       => $this->input->post('title'),
-					'description' => $this->input->post('description'),
-					'image'       => $images,
-				);
+				if (!$this->upload->do_upload('img')) {
 
-				$config = array(
-			        array(
-		                'field' => 'title',
-		                'label' => 'Title',
-		                'rules' => 'required|min_length[10]'
-			        ), 
-			        array(
-		                'field' => 'description',
-		                'label' => 'Description',
-		                'rules' => 'required|min_length[10]'
-			        ),
-			    );
+					$error = array('error' => $this->upload->display_errors());
+					$this->edit();
+		            $this->session->set_flashdata('message','Unable to Upload the File');
+					redirect(base_url('index.php/blogs/edit/'.$id));
 
-				$this->form_validation->set_rules($config);
+				}else{
 
-		        if ($this->form_validation->run() == FALSE){
-		        	$this->create();
-		        }
-		        else{
+					$data = array(
+						'user_id'     => $this->session->userdata['user_id'],
+						'title'       => $this->input->post('title'),
+						'description' => $this->input->post('description'),
+						'image'       => $images,
+					);
+
 					$this->blogs_model->update($id,$data);	
-					$this->session->set_flashdata('message','Modification made successfully');
+					$this->session->set_flashdata('message','Modification Made Successfully');
 					redirect(base_url('index.php/blogs/'));
-		        }
-		   	}
+				}
+	        }
 		}
 
-		public function show()
-		{		
-		}
 		public function destroy(){
 
 			$id = $this->uri->segment(3);
 			$this->blogs_model->destroy($id);
-			$this->session->set_flashdata('message','Delete made successfully');
+			$this->session->set_flashdata('message','Deleted Successfully');
 			redirect(base_url('index.php/blogs/'));
 		}
 	}

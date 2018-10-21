@@ -42,7 +42,7 @@
 				'outstanding' => $this->input->post('out'),
 			);
 			$this->products_model->store($data);	
-			$this->session->set_flashdata('message','Add made successfully');
+			$this->session->set_flashdata('message','Saved Successfully');
 			redirect(base_url('index.php/products/'));
 		}
 
@@ -81,7 +81,7 @@
 			);
 
 			$this->products_model->update($id,$data);
-			$this->session->set_flashdata('message','Modification made successfully');
+			$this->session->set_flashdata('message','Modification Made Successfully');
 			redirect(base_url('index.php/products/'));
 		}
 
@@ -90,7 +90,7 @@
 		{
 			$id = $this->uri->segment(3);
 			$this->products_model->destroy($id);
-			$this->session->set_flashdata('message','Delete made successfully');
+			$this->session->set_flashdata('message','Deleted Successfully');
 			redirect(base_url('index.php/products/'));
 		}	
 	}

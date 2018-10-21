@@ -11,7 +11,7 @@
                                 <li class="breadcrumb-item active">Create Product</li>
                             </ol>
                         </div>
-                        <h4 class="page-title">Create Products</h4>
+                        <h4 class="page-title">Create Product</h4>
                     </div>
                 </div>
             </div> 

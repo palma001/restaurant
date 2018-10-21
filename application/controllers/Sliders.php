@@ -44,7 +44,7 @@
 	        $this->load->library('upload',$config);
 
 	        if (!$this->upload->do_upload("fileImagen")) {
-	        	$this->session->set_flashdata('message','unsupported format');
+	        	$this->session->set_flashdata('message','Unsupported Format');
 	            redirect(base_url('/index.php/sliders/create/')); 
 	        }else {
 	        	
@@ -55,7 +55,7 @@
 				$subir          = $this->multipleuploads_model->store($titulo,$imagen);
 				$data['titulo'] = $titulo;
 				$data['imagen'] = $imagen;
-				$this->session->set_flashdata('message','Registration Done With Exist');
+				$this->session->set_flashdata('message','Saved Successfully');
 				redirect(base_url('/index.php/sliders/')); 
 	        }   
 		}

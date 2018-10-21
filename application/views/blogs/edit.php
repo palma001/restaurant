@@ -63,15 +63,13 @@
                                                     <div class="form-group row">
                                                         <label class="col-sm-2 col-form-label">Description</label>
                                                         <div class="col-sm-10">
-                                                            <textarea class="form-control" rows="5" placeholder="Description" name="description">
-                                                                <?php echo $blogs->description; ?>
-                                                            </textarea>
+                                                            <textarea class="form-control" rows="5" placeholder="Description" name="description"><?php echo $blogs->description; ?></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <label class="col-sm-2 col-form-label">Image</label>
                                                         <div class="col-sm-10">
-                                                            <input type="file" name="image" class="form-control">
+                                                            <input type="file" name="img" class="form-control">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">

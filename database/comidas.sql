@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-10-2018 a las 01:06:24
--- Versión del servidor: 10.1.30-MariaDB
--- Versión de PHP: 7.2.2
+-- Tiempo de generación: 21-10-2018 a las 06:44:50
+-- Versión del servidor: 10.1.34-MariaDB
+-- Versión de PHP: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -43,7 +43,9 @@ CREATE TABLE `alerts` (
 CREATE TABLE `blogs` (
   `blog_id` int(12) NOT NULL,
   `user_id` int(12) NOT NULL,
-  `description` varchar(120) NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `description` text NOT NULL,
+  `image` text NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -159,21 +161,12 @@ CREATE TABLE `products` (
   `product_id` int(30) NOT NULL,
   `user_id` int(12) NOT NULL,
   `title` varchar(30) NOT NULL,
-  `description` varchar(60) NOT NULL,
+  `description` text NOT NULL,
   `price` double NOT NULL,
   `outstanding` varchar(30) NOT NULL,
   `views` varchar(120) NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `products`
---
-
-INSERT INTO `products` (`product_id`, `user_id`, `title`, `description`, `price`, `outstanding`, `views`, `date`) VALUES
-(1, 1, '1', '1', 1, '1', '1', '2018-10-13'),
-(3, 0, 'Hola como estan 2', 'ddddddd', 2222222, '3333333', '2222222222', '2018-10-14'),
-(4, 0, 'Hola como estan 2', 'ddddd', 0, 'yes', 'ssssssssssssss', '2018-10-15');
 
 -- --------------------------------------------------------
 
@@ -243,7 +236,7 @@ CREATE TABLE `users` (
   `user_type_id` int(12) NOT NULL,
   `full_name` varchar(60) NOT NULL,
   `email` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL,
+  `password` varchar(60) NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -252,13 +245,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_type_id`, `full_name`, `email`, `password`, `date`) VALUES
-(2, 1, 'cvxv', 'w@gmail.com', '1111', '0000-00-00'),
-(3, 0, 'dfsfsfsfs', '', 'sadadadad', '0000-00-00'),
-(5, 0, 'jesus', '', 'dffs', '0000-00-00'),
-(6, 1, 'williams01010', 'pepxcxcxcxcxep@hotmail.com', '00111001', '0000-00-00'),
-(8, 2, 'jose', 'williamst02@hotmail.com', 'sdsd', '0000-00-00'),
-(14, 2, 'jesus  pacheco dsfsfsfgfhfh', 'willieeeams@hotmail.com', 'eeeee', '0000-00-00'),
-(16, 2, 'cvxv', 'wddd@gmail.com', 'asasas', '0000-00-00');
+(1, 1, 'admin', 'admin@binfrix.com', '5ebe2294ecd0e0f08eab7690d2a6ee69', '2018-10-21');
 
 -- --------------------------------------------------------
 
@@ -278,9 +265,7 @@ CREATE TABLE `user_types` (
 
 INSERT INTO `user_types` (`user_type_id`, `user_type`, `data`) VALUES
 (1, 'Adminstrador', '2018-10-01'),
-(2, 'Customer', '2018-10-02'),
-(81, 'Admin', '2018-10-14'),
-(82, 'admin', '2018-10-15');
+(2, 'Customer', '2018-10-02');
 
 -- --------------------------------------------------------
 
@@ -440,7 +425,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `product_id` int(30) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `products_images`
@@ -464,19 +449,19 @@ ALTER TABLE `shops`
 -- AUTO_INCREMENT de la tabla `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `slider_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `slider_id` int(12) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `user_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `user_types`
 --
 ALTER TABLE `user_types`
-  MODIFY `user_type_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `user_type_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
