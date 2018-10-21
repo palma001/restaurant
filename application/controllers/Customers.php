@@ -34,12 +34,7 @@
 		}
 		public function store()
 		{
-			$data = array(
-				'full_name'    => $this->input->post('full_name'),
-				'email'        => $this->input->post('email'),
-				'user_type_id' => $this->input->post('user_type_id'),
-				'password'     => md5($this->input->post('password')),
-			);
+			
 
 			$config = array(
 		        array(
@@ -75,6 +70,12 @@
 	        	$this->create();
 	        }
 	        else{
+	        	$data = array(
+					'full_name'    => $this->input->post('full_name'),
+					'email'        => $this->input->post('email'),
+					'user_type_id' => $this->input->post('user_type_id'),
+					'password'     => md5($this->input->post('password')),
+				);
 				$this->customers_model->store($data);	
 				$this->session->set_flashdata('message','Saved Successfully');
 				redirect(base_url('index.php/customers/'));
@@ -146,7 +147,7 @@
 			);
 
 			$this->form_validation->set_rules($config);
-			$users_types = $this->types_users_model->view_users();
+			$users_types = $this->types_users_model->read();
 
 			if ($this->form_validation->run() == FALSE){
 	        	$this->edit();

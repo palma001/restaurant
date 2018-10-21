@@ -12,23 +12,33 @@ class Products_model extends CI_Model {
 	public function store($data)
 	{
 		$fecha = date('Y/m/d');
-		$this->db->insert('products',array('user_id'=>$data['user_id'],'title'=>$data['title'], 'description'=>$data['description'], 'price'=>$data['price'], 'outstanding'=>$data['outstanding'], 'date' => $fecha));
+		$this->db->insert('products',array(
+			'user_id'     => $data['user_id'],
+			'title'       => $data['title'], 
+			'description' => $data['description'], 
+			'price'       => $data['price'], 
+			'outstanding' => $data['outstanding'], 
+			'date'        => $fecha
+			)
+		);
 	}
 
-	public function update($id,$data){
+	public function update($id,$data)
+	{
 		$datos = array(
-			'title' => $data['title'],
+			'title'       => $data['title'],
 			'description' => $data['description'],
-			'price' => $data['price'],
+			'price'       => $data['price'],
 			'outstanding' => $data['outstanding'],
-			'views' => $data['views']
+			'views'       => $data['views']
 		);
 
 		$this->db->where('product_id',$id);
 		$query = $this->db->update('products',$datos);
 	}
 	
-	public function read(){
+	public function read()
+	{
 		$this->db->order_by('product_id','Desc');
 		$query = $this->db->get('products');
 		if ($query->num_rows() > 0){
@@ -48,8 +58,9 @@ class Products_model extends CI_Model {
 			return false;
 		}
 	}
-
-	public function destroy($id){
+	
+	public function destroy($id)
+	{
 		$this->db->delete('products',array('product_id' => $id));	
 	}
 

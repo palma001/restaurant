@@ -8,7 +8,6 @@
             $this->load->library('session');
         }
 
-
         public function store($data)
         {
             $fecha = date('Y/m/d');
@@ -27,16 +26,16 @@
             if ($data['password']) {
 
                 $datos = array(
-                    'full_name' => $data['full_name'],
-                    'email' =>  $data['email'],
+                    'full_name'    => $data['full_name'],
+                    'email'        =>  $data['email'],
                     'user_type_id' =>  $data['user_type_id'],
-                    'password' =>  $data['password'],
+                    'password'     =>  $data['password'],
                 );
             }else{
 
                 $datos = array(
-                    'full_name' => $data['full_name'],
-                    'email' =>  $data['email'],
+                    'full_name'    => $data['full_name'],
+                    'email'        =>  $data['email'],
                     'user_type_id' =>  $data['user_type_id'],
                 );
             }
@@ -69,7 +68,6 @@
                 return false;
             }
         }
-
         
         public function destroy($id)
         {

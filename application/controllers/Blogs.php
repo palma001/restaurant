@@ -38,52 +38,52 @@
 
 		public function store()
 		{
-			$config['upload_path']   = './uploads/blogs/';
-			$config['allowed_types'] = 'jpg|jpeg|gif|png';
-			
-			$this->load->library('upload',$config);
+			$config = array(
+		        array(
+	                'field' => 'title',
+	                'label' => 'Title',
+	                'rules' => 'required|min_length[10]'
+		        ), 
+		        array(
+	                'field' => 'description',
+	                'label' => 'Description',
+	                'rules' => 'required|min_length[10]'
+		        ),
+		    );
 
-			if (!$this->upload->do_upload('image')) {
-				$error = array('error' => $this->upload->display_errors());
-				$this->create();
-	            $this->session->set_flashdata('message','Unable to Upload the File');
-			}else{
+			$this->form_validation->set_rules($config);
+
+	        if ($this->form_validation->run() == FALSE){
+	        	$this->create();
+	        }else{
+
+				$config['upload_path']   = './uploads/blogs/';
+				$config['allowed_types'] = 'jpg|jpeg|gif|png';
+				$this->load->library('upload',$config);
 
 				$image_info = $this->upload->data();
-
 				$images = $image_info['file_name'];
 
-				$data = array(
-					'user_id'     => $this->session->userdata['user_id'],
-					'title'       => $this->input->post('title'),
-					'description' => $this->input->post('description'),
-					'image'       => $images,
-				);
+				if (!$this->upload->do_upload('img')) {
 
-				$config = array(
-			        array(
-		                'field' => 'title',
-		                'label' => 'Title',
-		                'rules' => 'required|min_length[10]'
-			        ), 
-			        array(
-		                'field' => 'description',
-		                'label' => 'Description',
-		                'rules' => 'required|min_length[10]'
-			        ),
-			    );
+					$error = array('error' => $this->upload->display_errors());
+		            $this->session->set_flashdata('message','Unable to Upload the File');
+		            redirect(base_url('index.php/blogs/create'));
 
-				$this->form_validation->set_rules($config);
+				}else{
 
-		        if ($this->form_validation->run() == FALSE){
-		        	$this->create();
-		        }
-		        else{
+					$data = array(
+						'user_id'     => $this->session->userdata['user_id'],
+						'title'       => $this->input->post('title'),
+						'description' => $this->input->post('description'),
+						'image'       => $images,
+					);
+
 					$this->blogs_model->store($data);	
 					$this->session->set_flashdata('message','Saved Successfully');
 					redirect(base_url('index.php/blogs/'));
-		        }
-			}		
+				}
+	        }
 		}
 		public function edit()
 		{

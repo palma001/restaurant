@@ -1,5 +1,4 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Types_users_model extends CI_Model {
 
@@ -48,7 +47,6 @@ class Types_users_model extends CI_Model {
 			return false;
 		}
 	}
-
 
 	public function destroy($id){
 		$this->db->delete('user_types',array('user_type_id' => $id));	

@@ -8,23 +8,23 @@
 		<meta content="Coderthemes" name="author" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<!-- App favicon -->
-		<link href="<?= base_url('admin_template/assets/images/favicon.ico')?>" rel="stylesheet" type="text/css" />
+		<link href="<?php echo base_url('admin_template/assets/images/favicon.ico')?>" rel="stylesheet" type="text/css" />
 		<!-- App css -->
-		<link href="<?= base_url('admin_template/css/bootstrap.min.css')?>" rel="stylesheet" type="text/css" />
-		<link href="<?= base_url('admin_template/css/icons.min.css')?>" rel="stylesheet" type="text/css" />
-		<link href="<?= base_url('admin_template/css/app.min.css')?>" rel="stylesheet" type="text/css" />
+		<link href="<?php echo base_url('admin_template/css/bootstrap.min.css')?>" rel="stylesheet" type="text/css" />
+		<link href="<?php echo base_url('admin_template/css/icons.min.css')?>" rel="stylesheet" type="text/css" />
+		<link href="<?php echo base_url('admin_template/css/app.min.css')?>" rel="stylesheet" type="text/css" />
 
-		<link rel="shortcut icon" href="<?= base_url('admin_template/assets/images/favicon.ico');?>">
+		<link rel="shortcut icon" href="<?php echo base_url('admin_template/assets/images/favicon.ico');?>">
         <!-- third party css -->
-        <link href="<?= base_url('admin_template/css/vendor/dataTables.bootstrap4.css');?>" rel="stylesheet" type="text/css" />
-        <script src="<?=  base_url('js/js_core.js')?>"></script> 
-        <link href="<?= base_url('admin_template/css/vendor/responsive.bootstrap4.css');?>" rel="stylesheet" type="text/css" />
-        <link href="<?= base_url('css/file_up');?>" rel="stylesheet" type="text/css" />
-        <link href="<?= base_url('admin_template/css/vendor/buttons.bootstrap4.css');?>" rel="stylesheet" type="text/css" />
+        <link href="<?php echo base_url('admin_template/css/vendor/dataTables.bootstrap4.css');?>" rel="stylesheet" type="text/css" />
+        <script src="<?php echo  base_url('js/js_core.js')?>"></script> 
+        <link href="<?php echo base_url('admin_template/css/vendor/responsive.bootstrap4.css');?>" rel="stylesheet" type="text/css" />
+        <link href="<?php echo base_url('css/file_up');?>" rel="stylesheet" type="text/css" />
+        <link href="<?php echo base_url('admin_template/css/vendor/buttons.bootstrap4.css');?>" rel="stylesheet" type="text/css" />
         <link href="https://file.myfontastic.com/SLzQsLcd7FmmzjBYTcyVW3/icons.css" rel="stylesheet">
-        <link href="<?= base_url('css/vendor/select.bootstrap4.css');?>" rel="stylesheet" type="text/css" />
-		 <link href="<?= base_url('css/file_uploader.css');?>" rel="stylesheet" type="text/css" />
-		<script src="<?= base_url('admin_template/js/vendor.min.js')?>"></script>¡
+        <link href="<?php echo base_url('css/vendor/select.bootstrap4.css');?>" rel="stylesheet" type="text/css" />
+		 <link href="<?php echo base_url('css/file_uploader.css');?>" rel="stylesheet" type="text/css" />
+		<script src="<?php echo base_url('admin_template/js/vendor.min.js')?>"></script>¡
 	</head>
 	<body>
 

@@ -36,12 +36,6 @@
 
 		public function store()
 		{
-			$data = array(
-				'full_name'    => $this->input->post('full_name'),
-				'email'        => $this->input->post('email'),
-				'user_type_id' => $this->input->post('user_type_id'),
-				'password'     => md5($this->input->post('password')),
-			);
 
 			$config = array(
 		        array(
@@ -82,6 +76,13 @@
 	            $this->load->view('layouts/footer');
 	        }
 	        else{
+	        	
+				$data = array(
+					'full_name'    => $this->input->post('full_name'),
+					'email'        => $this->input->post('email'),
+					'user_type_id' => $this->input->post('user_type_id'),
+					'password'     => md5($this->input->post('password')),
+				);
 				$this->users_model->store($data);	
 				$this->session->set_flashdata('message','Saved successfully');
 				redirect(base_url('index.php/users/'));

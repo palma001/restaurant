@@ -19,7 +19,19 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <?php echo "<strong>".validation_errors()."</strong>"; ?>
+                            <?php
+                                $error = validation_errors();
+                                if ($error) {
+                                   echo '
+                                        <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                            '.$error.'
+                                        </div>
+                                    ';
+                                }  
+                            ?>
                             <form class="form-horizontal" method="post" action="<?php echo base_url('index.php/users/store/'); ?>">
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Full Name</label>

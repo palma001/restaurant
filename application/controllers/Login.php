@@ -37,7 +37,7 @@
 	        if ($login == false)
 	        {
 	        	$this->session->set_flashdata('message','Invalid email/password combination');
-	        	redirect(base_url()); 
+	        	redirect(base_url('index.php/login')); 
 	        }else {
 
 				if ($login->user_type_id == "1"){

@@ -1,5 +1,4 @@
-<?php 
-    if (! defined('BASEPATH')) exit ('No direct script access allowed');
+<?php  if (! defined('BASEPATH')) exit ('No direct script access allowed');
 
     class multipleuploads_model extends CI_Model{
 
@@ -13,14 +12,15 @@
         public function store($titulo,$imagen)
         {
             $data = array(
-              'slider' => $titulo,
-              'image' => $imagen,
-              'user_id'=>$this->session->userdata['user_id']
+                'slider'  => $titulo,
+                'image'   => $imagen,
+                'user_id' =>$this->session->userdata['user_id']
             );
             $this->db->insert('sliders', $data);
         }
 
-        public function read(){
+        public function read()
+        {
 
             $query=$this->db->get('sliders');  
             if ($query->num_rows()>0) {

@@ -44,41 +44,33 @@
                                     ';
                                 }
                             ?>
-                            <div class="row justify-content-md-center">
-                                <div class="col-lg-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <form class="form-horizontal" method="post" action="<?php echo base_url('index.php/blogs/store');?>" enctype="multipart/form-data">
-                                                <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label">Title</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="text" name="title" class="form-control" placeholder="Title">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label">Description</label>
-                                                        <div class="col-sm-10">
-                                                            <textarea class="form-control" rows="5" placeholder="Description" name="description"></textarea>
-                                                        </div>
-                                                    </div>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label">Image</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="file" name="images" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-sm-2 col-form-label"></label>
-                                                    <div class="col-sm-10">
-                                                        <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Save</button>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                            <hr>
-                                        </div> <!-- end card-body-->
-                                    </div> <!-- end card-->
+                            <form class="form-horizontal" method="post" action="<?php echo base_url('index.php/blogs/store/');?>" enctype="multipart/form-data">
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Title</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" value="<?php echo $this->input->post('title');?>" name="title" class="form-control" placeholder="Title">
+                                    </div>
                                 </div>
-                            </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Description</label>
+                                        <div class="col-sm-10">
+                                            <textarea class="form-control" rows="5" placeholder="Description" name="description"></textarea>
+                                        </div>
+                                    </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Image</label>
+                                    <div class="col-sm-10">
+                                        <input type="file" name="img" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label"></label>
+                                    <div class="col-sm-10">
+                                        <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Save</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <hr>
                         </div> <!-- end card body-->
                     </div> <!-- end card -->
                 </div><!-- end col-->

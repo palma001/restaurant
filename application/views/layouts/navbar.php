@@ -1,7 +1,7 @@
 <div class="left-side-menu">
     <div class="slimscroll-menu">
-        <a href="<?php echo base_url('')?>" class="logo text-center mb-4">
-        <a href="index.html" class="logo text-center mb-4">
+        <a href="<?php echo base_url('index.php/home')?>" class="logo text-center mb-4">
+        <a href="<?php echo base_url('index.php/home')?>" class="logo text-center mb-4">
             <span class="logo-lg">
                 <img src="<?php echo base_url('admin_template/assets/images/logo.png') ?>" alt="" height="60">
             </span>

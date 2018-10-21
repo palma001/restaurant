@@ -7,6 +7,7 @@
 			parent::__construct();
 			$this->load->library('session');
 			$this->load->model('products_model');
+			$this->load->library('form_validation');
 			if (!$this->session->userdata['user_id']){
 	            redirect(base_url());
 			}
@@ -34,16 +35,47 @@
 
 		public function store()
 		{
-			$data = array(
-				'user_id'     => $this->session->userdata['user_id'],
-				'title'       => $this->input->post('title'),
-				'description' => $this->input->post('description'),
-				'price'       => $this->input->post('price'),
-				'outstanding' => $this->input->post('out'),
+
+			$config = array(
+		        array(
+	                'field' => 'title',
+	                'label' => 'Title',
+	                'rules' => 'required|min_length[5]'
+		        ),
+		        array(
+	                'field' => 'description',
+	                'label' => 'Description',
+	                'rules' => 'required|min_length[10]'
+		        ),
+		        array(
+	                'field' => 'price',
+	                'label' => 'Price',
+	                'rules' => 'required|numeric'
+		        ),
+		        array(
+	                'field' => 'out',
+	                'label' => 'Outstanding',
+	                'rules' => 'required',
+		        )  
 			);
-			$this->products_model->store($data);	
-			$this->session->set_flashdata('message','Saved Successfully');
-			redirect(base_url('index.php/products/'));
+
+			$this->form_validation->set_rules($config);
+
+	        if ($this->form_validation->run() == FALSE){
+	        	$this->create();
+	        }else{
+
+				$data = array(
+					'user_id'     => $this->session->userdata['user_id'],
+					'title'       => $this->input->post('title'),
+					'description' => $this->input->post('description'),
+					'price'       => $this->input->post('price'),
+					'outstanding' => $this->input->post('out'),
+				);
+				$this->products_model->store($data);	
+				$this->session->set_flashdata('message','Saved Successfully');
+				redirect(base_url('index.php/products/'));
+	        }
 		}
 
 		public function show()
@@ -51,7 +83,6 @@
 			$id = $this->input->post("id");
 			$data =  $this->products_model->get($id);
 			echo json_encode($data);
-
 		}
 
 		public function edit()
@@ -72,19 +103,47 @@
 
 		public function update($id)
 		{
-			$data = array(
-				'title'       => $this->input->post('title'),
-				'description' => $this->input->post('description'),
-				'price'       => $this->input->post('price'),
-				'outstanding' => $this->input->post('out'),
-				'views'       => $this->input->post('views')
+			$config = array(
+		        array(
+	                'field' => 'title',
+	                'label' => 'Title',
+	                'rules' => 'required|min_length[5]'
+		        ),
+		        array(
+	                'field' => 'description',
+	                'label' => 'Description',
+	                'rules' => 'required|min_length[10]'
+		        ),
+		        array(
+	                'field' => 'price',
+	                'label' => 'Price',
+	                'rules' => 'required|numeric'
+		        ),
+		        array(
+	                'field' => 'out',
+	                'label' => 'Outstanding',
+	                'rules' => 'required',
+		        )  
 			);
 
-			$this->products_model->update($id,$data);
-			$this->session->set_flashdata('message','Modification Made Successfully');
-			redirect(base_url('index.php/products/'));
-		}
+			$this->form_validation->set_rules($config);
 
+	        if ($this->form_validation->run() == FALSE){
+	        	$this->edit();
+	        }else{
+
+				$data = array(
+					'user_id'     => $this->session->userdata['user_id'],
+					'title'       => $this->input->post('title'),
+					'description' => $this->input->post('description'),
+					'price'       => $this->input->post('price'),
+					'outstanding' => $this->input->post('out'),
+				);
+				$this->products_model->update($id,$data);	
+				$this->session->set_flashdata('message','Modification Made Successfully');
+				redirect(base_url('index.php/products/'));
+	        }
+		}
 
 		public function destroy()
 		{

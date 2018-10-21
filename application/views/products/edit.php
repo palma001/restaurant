@@ -8,10 +8,10 @@
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="<?php echo base_url('index.php/home/');?>">Binfrix</a></li>
                                 <li class="breadcrumb-item"><a href="<?php echo base_url()."index.php/products";?>" title="">Products</a></li>
-                                <li class="breadcrumb-item active">Update Products</li>
+                                <li class="breadcrumb-item active">Modify Product</li>
                             </ol>
                         </div>
-                        <h4 class="page-title">Update Products</h4>
+                        <h4 class="page-title">Modify Product</h4>
                     </div>
                 </div>
             </div> 
@@ -19,45 +19,61 @@
     			<div class="col-lg-12">
     			    <div class="card">
     			        <div class="card-body">
-                            <?php if ($product){?>
-                                <form class="form-horizontal" method="post" action="<?php echo base_url()."index.php/products/update/".$product->product_id;?>">
-                                    
+                            <?php
+                                $error = validation_errors();
+                                if ($error) {
+                                   echo '
+                                        <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                            '.$error.'
+                                        </div>
+                                    ';
+                                }  
+                            ?>
+                            <?php 
+                                if ($product){
+                            ?>
+                                <form class="form-horizontal" method="post" action="<?php echo base_url()."index.php/products/update/".$product->product_id;?>">  
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Title</label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="title" class="form-control" value="<?php echo $product->title;?>" required>
+                                            <input type="text" name="title" class="form-control" value="<?php echo $product->title;?>">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Description</label>
                                         <div class="col-sm-10">
-                                            <textarea class="form-control" rows="5" name="description" required><?php echo $product->description;?></textarea>
+                                            <textarea class="form-control" rows="5" name="description"><?php echo $product->description;?></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label" for="example-email">Price</label>
                                         <div class="col-sm-10">
-                                            <input type="text" id="example-email" name="price" class="form-control" value="<?php echo $product->price;?>" required>
+                                            <input type="text" id="example-email" name="price" class="form-control" value="<?php echo $product->price;?>">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Outstanding</label>
                                         <div class="col-sm-10">
                                             <select name="out" class="form-control">
-
+                                               
                                                 <?php  
-                                                    if ($product->outstanding == "yes") 
+                                                    if ($product->outstanding == "1") 
                                                     {
                                                         echo '
                                                             <option value="'.$product->outstanding.'">
-                                                            '.ucwords($product->outstanding).'
+                                                            Yes
                                                             </option>
                                                         ';
-                                                        echo " <option value= 'no'>No</option>";
-                                                    }else{
-                                                        echo '<option value="'.$product->outstanding.'">'.ucwords($product->outstanding).'</option>';
+                                                        echo " <option value= '2'>No</option>";
+
+                                                    }else if ($product->outstanding == "2"){
+
+                                                        echo '<option value="'.$product->outstanding.'">No</option>';
                                                             
-                                                        echo " <option value= 'no'>Yes</option>";
+                                                        echo " <option value= '1'>Yes</option>";
                                                     }
 
                                                 ?>

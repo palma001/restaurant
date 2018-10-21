@@ -8,10 +8,10 @@
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="<?php echo base_url('index.php/home/');?>">Binfrix</a></li>
                                 <li class="breadcrumb-item"><a href="<?php echo base_url()."index.php/customers";?>" title="">Customers</a></li>
-                                <li class="breadcrumb-item active">Update Customer</li>
+                                <li class="breadcrumb-item active">Modify Customer</li>
                             </ol>
                         </div>
-                        <h4 class="page-title">Update Customer</h4>
+                        <h4 class="page-title">Modify Customer</h4>
                     </div>
                 </div>
             </div>  
