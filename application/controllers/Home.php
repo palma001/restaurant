@@ -17,13 +17,13 @@
 
 		public function index()
 		{
-			$data           = $this->orders_model->count();
-			$count_customer = $this->customers_model->count_customer();
-			$views          = $this->products_model->count_views();
+			$data           = $this->orders_model->read();
+			$count_customer = $this->customers_model->read();
+			$views          = $this->products_model->count();
 			$this->load->view('layouts/headers');
 			$this->load->view('layouts/navbar');
 			$this->load->view('layouts/topnav');
-			$this->load->view('home/index',array('rows'=>$data,'customer'=>$count_customer,'views' => $views));	
+			$this->load->view('home/index',array('rows' => $data,'customer'=>$count_customer,'views' => $views));	
 			$this->load->view('layouts/footer');
 		}
 	}

@@ -27,11 +27,12 @@
                                 <h5 class="text-muted font-weight-normal mt-0">Total Sales</h5>
                                 <h3 class="mt-2">
                                     <?php
-                                      if ($rows>0){
-                                          echo $rows;
-                                        }else {
-                                          echo "0";
-                                    }?>
+                                        if ($rows){
+                                              echo $rows->num_rows();
+                                        }else{
+                                              echo "0";
+                                        }
+                                    ?>
                                 </h3>
                             </div>
                             <div id="sparkline1"></div>
@@ -64,8 +65,8 @@
                                 <h5 class="text-muted font-weight-normal mt-0">Total Users</h5>
                                 <h3 class="mt-2">
                                     <?php
-                                        if ($customer>0){
-                                           echo $customer;
+                                        if($customer){
+                                           echo $customer->num_rows();
                                         }else {
                                             echo "0";
                                         }

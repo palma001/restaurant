@@ -7,17 +7,17 @@
             $this->load->database();
             $var="0";
         }
-        public  function all_orders()
+        public  function read()
         {
             $this->db->join('users','users.user_id=orders.user_id');
             $query=$this->db->get('orders');  
-           	if ($query->num_rows()>0) {
+           	if ($query->num_rows() > 0) {
                 return $query;
            	}else{
               return false;
            	}
         }
-        public function orderss($data)
+        public function get($data)
         {
             $this->db->join('products','products.product_id=orders_products.products_id');
             $this->db->join('users','users.user_id=products.user_id');
@@ -29,12 +29,6 @@
             }else{
               return false;
             }
-        }
-        public function count()
-        {
-            $query= $this->db->get('orders'); 
-            $numero_filas=$query->num_rows(); 
-            return $numero_filas;
         }
     }
 ?>

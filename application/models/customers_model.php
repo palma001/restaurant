@@ -74,8 +74,9 @@
         public function destroy($id)
         {
             $this->db->delete('users',array('user_id' => $id)); 
-        }     
+        }
     }
+
 ?>
 
 

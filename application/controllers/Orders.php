@@ -17,7 +17,7 @@
 
 		public function index()
 		{
-			$data['obtener'] = $this->orders_model->all_orders();
+			$data['obtener'] = $this->orders_model->read();
 			$this->load->view('layouts/headers');
 			$this->load->view('layouts/navbar');
 			$this->load->view('layouts/topnav');
@@ -27,7 +27,7 @@
 
 		public function show($data)
 		{
-			$datos['obtener'] = $this->orders_model->orderss($data);
+			$datos['obtener'] = $this->orders_model->get($data);
 			$this->load->view('layouts/headers');
 			$this->load->view('layouts/navbar');
 			$this->load->view('layouts/topnav');
