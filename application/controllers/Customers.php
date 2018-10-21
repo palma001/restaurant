@@ -84,7 +84,7 @@
 		{
 			$id          = $this->uri->segment(3);
 			$customers   = $this->customers_model->get($id);
-			$users_types = $this->types_users_model->view_users();
+			$users_types = $this->types_users_model->read();
 			
 			$this->load->view('layouts/headers');
 			$this->load->view('layouts/navbar');
