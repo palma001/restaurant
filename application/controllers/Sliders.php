@@ -8,7 +8,7 @@
 			$this->load->helper('form');
 			$this->load->helper('url');
 			$this->load->helper('download');
-			$this->load->model('multipleuploads_model');
+			$this->load->model('sliders_model');
 			$this->load->library('session');
 			if (!$this->session->userdata['user_id']){
 		        redirect(base_url());
@@ -16,7 +16,7 @@
 		}
 		public function index()
 		{
-			$data['obtener'] = $this->multipleuploads_model->read();
+			$data['obtener'] = $this->sliders_model->read();
 			$this->load->view('layouts/headers');
 			$this->load->view('layouts/topnav');
 			$this->load->view('Sliders/index',$data);
@@ -52,12 +52,17 @@
 				$this->Miniature($file_info['file_name']);
 				$titulo         = $this->input->post('Slidername');
 				$imagen         = $file_info['file_name'];
-				$subir          = $this->multipleuploads_model->store($titulo,$imagen);
+				$subir          = $this->sliders_model->store($titulo,$imagen);
 				$data['titulo'] = $titulo;
 				$data['imagen'] = $imagen;
 				$this->session->set_flashdata('message','Saved Successfully');
 				redirect(base_url('/index.php/sliders/')); 
 	        }   
+		}
+
+		public function destroy($id)
+		{
+		    $this->sliders_model->destroy($id);
 		}
 
 		public function Miniature($filename)
@@ -73,10 +78,6 @@
 			$config['height']         = 150;
 			$this->load->library('image_lib', $config); 
 			$this->image_lib->resize();
-		}
-		public function destroy($id)
-		{
-		    $this->multipleuploads_model->destroy($id);
 		}
 	}
 ?>

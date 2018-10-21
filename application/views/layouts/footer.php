@@ -1,8 +1,5 @@
 
 
-	<script src="<?php echo base_url('admin_template/js/app.min.js')?>"></script>
-	<script src="<?php echo base_url('js/products.js')?>"></script>
-    <script src="<?php echo base_url('admin_template/js/app.min.js')?>"></script>
     <script src="<?php echo base_url('admin_template/js/app.min.js')?>"></script>
     <script src="<?php echo base_url('js/products.js')?>"></script>
      <script src="<?php echo base_url('admin_template/js/vendor/jquery.dataTables.js')?>"></script>
@@ -17,6 +14,7 @@
     <script src="<?php echo base_url('admin_template/js/vendor/dataTables.keyTable.min.js')?>"></script>
     <script src="<?php echo base_url('admin_template/js/vendor/dataTables.select.min.js')?>"></script>
     <script src="<?php echo base_url('admin_template/js/pages/datatables.init.js')?>"></script>
+    <script src="<?php echo base_url('admin_template/js/pages/form-advanced.init.js')?>"></script>
     <script src="<?php echo  base_url('js/js_core.js')?>"></script> 
 </body>
 </html>

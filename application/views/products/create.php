@@ -36,7 +36,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Title</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="title" class="form-control" placeholder="Title" value="<?php echo $this->input->post('title'); ?>">
+                                        <input type="text" id="alloptions" name="title" class="form-control" placeholder="Title" value="<?php echo $this->input->post('title'); ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">
