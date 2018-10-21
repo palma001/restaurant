@@ -1,62 +1,172 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
+	class Customers extends CI_Controller {
 
-class Customers extends CI_Controller {
+		function __construct()
+		{
+			parent::__construct();
+			$this->load->model('customers_model');
+			$this->load->model('types_users_model');
+			$this->load->library('form_validation');
+	        $this->load->library('session');
+	        if (!$this->session->userdata['user_id']){
+	            redirect(base_url());
+			}
+		}
 
-	function __construct()
-	{
-		parent::__construct();
-		$this->load->helper('form');
-		$this->load->helper('url');
-		$this->load->model('customers_model');
-        $this->load->library('session');
-        $Type="0";
-        if (!$this->session->userdata['user_id']){
-            redirect(base_url());
+		public function index()
+		{
+			$data['customers'] = $this->customers_model->read();
+			$this->load->view('layouts/headers');
+			$this->load->view('layouts/navbar');
+			$this->load->view('layouts/topnav');
+			$this->load->view('customers/index',$data);
+			$this->load->view('layouts/footer');
+		}
+
+		public function create()
+		{
+			$data['users_types'] = $this->types_users_model->read();
+			$this->load->view('layouts/headers');
+			$this->load->view('layouts/navbar');
+			$this->load->view('layouts/topnav');
+			$this->load->view('customers/create',$data);
+	    	$this->load->view('layouts/footer');
+		}
+		public function store()
+		{
+			$data = array(
+				'full_name'    => $this->input->post('full_name'),
+				'email'        => $this->input->post('email'),
+				'user_type_id' => $this->input->post('user_type_id'),
+				'password'     => md5($this->input->post('password')),
+			);
+
+			$config = array(
+		        array(
+	                'field' => 'full_name',
+	                'label' => 'Full_Name',
+	                'rules' => 'required|min_length[5]'
+		        ),
+		        array(
+	                'field' => 'email',
+	                'label' => 'Email',
+	                'rules' => 'required|valid_email|is_unique[users.email]'
+		        ),
+		        array(
+	                'field' => 'user_type_id',
+	                'label' => 'Type Users',
+	                'rules' => 'required'
+		        ),
+		        array(
+	                'field' => 'password',
+	                'label' => 'Password',
+	                'rules' => 'required|min_length[8]',
+		        ),
+		        array(
+	                'field' => 'passconf',
+	                'label' => 'Password Confirmation',
+	                'rules' => 'required|matches[password]'
+		        ),   
+			);
+
+			$this->form_validation->set_rules($config);
+
+	        if ($this->form_validation->run() == FALSE){
+	        	$this->create();
+	        }
+	        else{
+				$this->customers_model->store($data);	
+				$this->session->set_flashdata('message','Add made successfully');
+				redirect(base_url('index.php/customers/'));
+	        }
+		}
+		public function edit()
+		{
+			$id          = $this->uri->segment(3);
+			$customers   = $this->customers_model->get($id);
+			$users_types = $this->types_users_model->view_users();
+			
+			$this->load->view('layouts/headers');
+			$this->load->view('layouts/navbar');
+			$this->load->view('layouts/topnav');
+
+			if (!$id) {
+				redirect(base_url('index.php/customers'));
+			}else{
+				$this->load->view('customers/edit',array('customers'=>$customers,'users_types'=>$users_types));
+			}
+			$this->load->view('layouts/footer');
+		}
+
+		public function update($id)
+		{
+			if (empty($this->input->post('password'))) {
+				$data = array(
+					'full_name'    => $this->input->post('full_name'),
+					'email'        => $this->input->post('email'),
+					'user_type_id' => $this->input->post('user_type_id'),
+					'password'     => false,
+				);
+			}else{
+				$data = array(
+					'full_name'    => $this->input->post('full_name'),
+					'email'        => $this->input->post('email'),
+					'user_type_id' => $this->input->post('user_type_id'),
+					'password'     => md5($this->input->post('password')),
+				);
+			}
+
+			$config = array(
+		        array(
+	                'field' => 'full_name',
+	                'label' => 'Full_Name',
+	                'rules' => 'required|min_length[5]'
+		        ),
+		        array(
+	                'field' => 'email',
+	                'label' => 'Email',
+	                'rules' => 'required|valid_email'
+		        ),
+		        array(
+		        	
+	                'field' => 'user_type_id',
+	                'label' => 'Type Users',
+	                'rules' => 'required'
+		        ),
+		        array(
+	                'field' => 'password',
+	                'label' => 'Password',
+	                'rules' => 'min_length[8]',
+		        ),
+		        array(
+	                'field' => 'passconf',
+	                'label' => 'Password Confirmation',
+	                'rules' => 'matches[password]'
+		        ),   
+			);
+
+			$this->form_validation->set_rules($config);
+			$users_types = $this->types_users_model->view_users();
+
+			if ($this->form_validation->run() == FALSE){
+	        	$this->edit();
+	        }else{
+
+				$this->customers_model->update($id,$data);
+				$this->session->set_flashdata('message','Modification made successfully');
+				redirect(base_url('index.php/customers/'));
+	        }	
+		}
+
+		public function destroy($id)
+		{
+			$id = $this->uri->segment(3);
+			$this->customers_model->destroy($id);
+			$this->session->set_flashdata('message','Delete made successfully');
+			redirect(base_url('index.php/customers/'));
 		}
 	}
-	public function index()
-	{
-	    $data['obtener'] = $this->customers_model->all_customer();
-	    $this->load->view('layouts/headers');
-	    $this->load->view('layouts/topnav');
-	    $this->load->view('customers/Clients',$data);
-	    $this->load->view('layouts/navbar');
-	    $this->load->view('customers/viewmodal');
-	    $this->load->view('layouts/footer');  
-	}
-
-	public function create()
-	{
-       $data=array('fullname'=>$this->input->post('fullname'),'usertype'=>'2',
-      'email'=>$this->input->post('email'),'password'=>$this->input->post('password')); 
-       $this->customers_model->inserte($data);
-	}
-
-	public function edit()
-	{
-        $data=array('Email'=>$this->input->post('Email'));
-		$datos=$this->customer_model->read($data);
-		if($datos) {
-		  	
-		}
-	}
-
-	public function update()
-	{
-       $data=array('fullname'=>$this->input->post('fullname'),
-      'email'=>$this->input->post('email'),'password'=>$this->input->post('password')
-       ,$this->input->post('user_id')); 
-       $this->customers_model->update_customer($data);
-       $this->session->set_flashdata('message','modification made successfully');
-       redirect(base_url('/index.php/customers/'));
-	}
-	public function destroy($data)
-	{
-		$this->customers_model->delete($data);
-	}
-}
-
+?>
 
 
                                    

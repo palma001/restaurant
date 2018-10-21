@@ -9,15 +9,27 @@ class Types_users_model extends CI_Model {
 		$this->load->database();
 	}
 
-	public function add_type_user($data)
+	public function store($data)
 	{
 		$fecha = date('Y/m/d');
-		$this->db->insert('user_types',array('user_type'=>$data['type_user'], 'data' => $fecha));
+		$this->db->insert('user_types',array(
+			'user_type' => $data['type_user'], 
+			'data'      => $fecha
+			)
+		);
+	}
+
+	public function update($id,$data){
+
+		$datos = array(
+			'user_type' => $data['type_user'] 
+		);
+		$this->db->where('user_type_id',$id);
+		$query = $this->db->update('user_types',$datos);
 	}
 	
-	//ver lista de type user 
-	public function view_users(){
-		$this->db->order_by('user_type_id','Desc');
+	public function read(){
+
 		$query = $this->db->get('user_types');
 		if ($query->num_rows() > 0){
 			return $query;
@@ -26,8 +38,8 @@ class Types_users_model extends CI_Model {
 		}
 	}
 
-	//consulta induvidual de type user 
-	public function view_user($id){
+	public function get($id){
+
 		$this->db->where('user_type_id',$id);
 		$query = $this->db->get('user_types');
 		if ($query->num_rows() > 0){
@@ -37,13 +49,6 @@ class Types_users_model extends CI_Model {
 		}
 	}
 
-	public function update($id,$data){
-		$datos = array(
-			'user_type' => $data['type_user'] 
-		);
-		$this->db->where('user_type_id',$id);
-		$query = $this->db->update('user_types',$datos);
-	}
 
 	public function destroy($id){
 		$this->db->delete('user_types',array('user_type_id' => $id));	

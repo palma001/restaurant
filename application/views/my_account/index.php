@@ -18,18 +18,31 @@
     			<div class="col-lg-12">
     			    <div class="card">
     			        <div class="card-body">
-                            <?php 
-                                $message=$this->session->flashdata('message');
-                                if ($message) {?>
-                                    <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                        <?php echo $message ?>
-                                    </div>
-                            <?php }  ?>
+                            <?php  
+                                $message = $this->session->flashdata('message');
+                                $errors  = validation_errors();
+                                if ($message) {
+                                    echo '  
+                                        <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                            '.$message.'
+                                        </div>
+                                    ';
+                                }
 
-                            <?php echo '<strong>'.validation_errors().'</strong>'; ?>
+                                if ($errors) {
+                                    echo '  
+                                        <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                            '.$errors.'
+                                        </div>
+                                    ';
+                                }
+                            ?>
                             <form class="form-horizontal" method="post" action="<?php echo base_url("index.php/MyAccount/update/".$this->session->userdata['user_id'])?>">
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Full Name</label>
@@ -43,22 +56,6 @@
                                         <input type="text" value="<?php echo $this->session->userdata['email']; ?>" name="email" class="form-control" placeholder="Email">
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Type User</label>
-                                    <div class="col-sm-10">
-                                        <select name="user_type_id" class="form-control">
-                                            <option value="<?php echo $users->user_type_id; ?>"><?php echo ucwords($users->user_type); ?></option>
-                                            <?php  
-                                                if ($users_types) {
-                                                   foreach ($users_types->result() as $key => $users_types) {
-                                                       echo '<option value="'.$users_types->user_type_id.'">'.ucwords($users_types->user_type).'</option>';
-                                                    }
-                                                }
-                                            ?>
-                                        </select>
-                                    </div>
-                                </div>
-
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label" for="example-email">Password</label>
                                     <div class="col-sm-10">

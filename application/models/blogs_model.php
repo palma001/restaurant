@@ -9,7 +9,7 @@
 			$this->load->database();
 		}
 
-		public function table_blogs()
+		public function read()
 		{
 			$this->db->join('blogs','blogs.user_id = users.user_id');
 			$query= $this->db->get('users');
@@ -20,13 +20,13 @@
 			}
 		}
 
-		public function add_blogs($data)
+		public function store($data)
 		{
 			$fecha = date('Y/m/d');
 			$this->db->insert('blogs',array('user_id'=>$data['user_id'],'title'=>$data['title'] ,'description'=>$data['description'],'image'=>$data['image'] ,'date' => $fecha));
 		}
 
-		public function blogs_edit($id)
+		public function get($id)
 		{
 			$this->db->join('blogs','blogs.user_id = users.user_id');
 			$this->db->where('blog_id',$id);
@@ -38,7 +38,7 @@
 			}
 		}
 		
-		public function update_blogs($id,$data)
+		public function update($id,$data)
 		{
 			$fecha = date('Y/m/d');
 			$datos = array(
@@ -53,7 +53,7 @@
 			$query = $this->db->update('blogs',$datos);
 		}
 
-		public function destroy_blogs($id)
+		public function destroy($id)
 		{
 			$this->db->delete('blogs',array('blog_id' => $id));	
 		}

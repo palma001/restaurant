@@ -13,9 +13,13 @@ class login_model extends CI_Model{
     public function  validate($email,$pass){
         $this->db->where('email', $email);
         $this->db->where('password',md5($pass));
+        
         $query = $this->db->get('users');
+
         if ($query->num_rows() == 1) {
             return $query->row();
+        }else{
+            return false;
         }
     }
 }

@@ -9,20 +9,20 @@
                                 <span><img src="<?php echo base_url('admin_template/assets/images/logo.png'); ?> " alt="" height="60"></span>
                             </a>
                             <p class="text-muted mb-4 mt-3">Enter your email address and password to access admin panel.</p>
-                            <?php 
-                                $message=$this->session->flashdata('message');
-                                if ($message) {
-                                    echo '  
-                                        <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"  role="alert">
-                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                            "'.$message.'"
-                                        </div>
-                                    ';
-                                }
-                            ?>
                         </div>
+                         <?php 
+                            $message=$this->session->flashdata('message');
+                            if ($message) {
+                                echo '  
+                                    <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"  role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        "'.$message.'"
+                                    </div>
+                                ';
+                            }
+                        ?>
                         <form method="post" action="<?php echo base_url()."index.php/login/authenticated";?> ">
                             <div class="form-group mb-3">
                                 <label for="emailaddress">Email address</label>

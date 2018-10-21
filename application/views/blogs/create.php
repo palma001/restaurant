@@ -57,10 +57,10 @@
                                                 </div>
                                                 <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label">Description</label>
-                                                    <div class="col-sm-10">
-                                                        <textarea class="form-control"  name="description" placeholder="Description"></textarea>
+                                                        <div class="col-sm-10">
+                                                            <textarea class="form-control" rows="5" placeholder="Description" name="description"></textarea>
+                                                        </div>
                                                     </div>
-                                                </div>
                                                 <div class="form-group row">
                                                     <label class="col-sm-2 col-form-label">Image</label>
                                                     <div class="col-sm-10">
@@ -90,3 +90,4 @@
         <!-- end Footer -->
     </div>
 </div>
+
