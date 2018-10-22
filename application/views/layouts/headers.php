@@ -17,14 +17,14 @@
 		<link rel="shortcut icon" href="<?php echo base_url('admin_template/assets/images/favicon.ico');?>">
         <!-- third party css -->
         <link href="<?php echo base_url('admin_template/css/vendor/dataTables.bootstrap4.css');?>" rel="stylesheet" type="text/css" />
-        <script src="<?php echo  base_url('js/js_core.js')?>"></script> 
         <link href="<?php echo base_url('admin_template/css/vendor/responsive.bootstrap4.css');?>" rel="stylesheet" type="text/css" />
-        <link href="<?php echo base_url('css/file_up');?>" rel="stylesheet" type="text/css" />
+        
         <link href="<?php echo base_url('admin_template/css/vendor/buttons.bootstrap4.css');?>" rel="stylesheet" type="text/css" />
         <link href="https://file.myfontastic.com/SLzQsLcd7FmmzjBYTcyVW3/icons.css" rel="stylesheet">
         <link href="<?php echo base_url('css/vendor/select.bootstrap4.css');?>" rel="stylesheet" type="text/css" />
 		 <link href="<?php echo base_url('css/file_uploader.css');?>" rel="stylesheet" type="text/css" />
 		<script src="<?php echo base_url('admin_template/js/vendor.min.js')?>"></script>¡
+        <script src="<?php echo  base_url('js/js_core.js')?>"></script> 
 	</head>
 	<body>
 

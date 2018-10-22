@@ -88,11 +88,12 @@
                                 <h5 class="text-muted font-weight-normal mt-0">Total Visits</h5>
                                 <h3 class="mt-2">
                                     <?php
-                                        if ($views){
+                                        if ($views->views != "") {
                                             echo $views->views;
-                                        }else {
+                                        }else{
                                             echo "0";
-                                    }?>   
+                                        }
+                                    ?>   
                                 </h3>
                             </div>
                             <div id="sparkline4"></div>

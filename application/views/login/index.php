@@ -4,13 +4,14 @@
             <div class="col-lg-5">
                 <div class="card">
                     <div class="card-body p-4">
+                        
                         <div class="text-center w-75 m-auto">
                             <a href="index.html">
-                                <span><img src="<?php echo base_url('admin_template/assets/images/logo.png'); ?> " alt="" height="60"></span>
+                                <span><img src="<?php echo base_url('admin_template/assets/images/logo.png') ?>" alt="" height="60"></span>
                             </a>
                             <p class="text-muted mb-4 mt-3">Enter your email address and password to access admin panel.</p>
                         </div>
-                         <?php 
+                        <?php 
                             $message=$this->session->flashdata('message');
                             if ($message) {
                                 echo '  
@@ -18,17 +19,19 @@
                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
-                                        "'.$message.'"
+                                        '.$message.'
                                     </div>
                                 ';
                             }
                         ?>
-                        <form method="post" action="<?php echo base_url()."index.php/login/authenticated";?> ">
+                        <form method="post" action="<?php echo base_url('index.php/login/authenticated');?>">
                             <div class="form-group mb-3">
                                 <label for="emailaddress">Email address</label>
-                                <input class="form-control" type="email" id="emailaddress" name="email" required="" placeholder="Enter your email">
+                                 <input class="form-control" type="email" id="emailaddress" name="email" required="" placeholder="Enter your email">
                             </div>
+
                             <div class="form-group mb-3">
+                                <a href="pages-recoverpw.html" class="text-muted float-right"><small></small></a>
                                 <label for="password">Password</label>
                                 <input class="form-control" type="password" id="password" name="password" placeholder="Enter your password" required>
                             </div>
@@ -46,8 +49,9 @@
                         </form>
                     </div> <!-- end card-body -->
                 </div>
-            </div> <!-- end card-body -->
+            </div> <!-- end col -->
         </div>
-    </div> <!-- end col -->
+        <!-- end row -->
+    </div>
+    <!-- end container -->
 </div>
-             

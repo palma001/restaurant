@@ -47,8 +47,28 @@
                                             <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Save</button>
                                         </div>
                                     </div>
+                                    <hr>
+                                    <h3>Permissions</h3>
+                                    <hr>
+                                    <ol style="list-style: none; padding: 0px;">
+                                        <?php  
+                                            if ($permissions) {
+                                                foreach ($permissions->result() as $key => $permission) {
+                                                    echo '
+                                                        <li style="border-bottom:solid black 2px; padding: 10px;">
+                                                            <div>
+                                                                <label style="width: 100%; margin-top:7px;">
+                                                                    '.$permission->permission.'
+                                                                    <input type="checkbox" id="customCheck1" style="float: right; margin-top: 7px" value="'.$permission->permission_id.'" name="permissions[]">
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                    ';
+                                                }
+                                            }
+                                        ?>
+                                    </ol>
                                 </form>
-                                <hr>
                             </div> <!-- end card-body-->
                         </div> <!-- end card-->
                     </div>

@@ -38,9 +38,8 @@
                                 <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Users</th>
+                                        <th>User</th>
                                         <th>Title</th>
-                                        <th>Description</th>
                                         <th>Date</th>
                                         <th></th>
                                     </tr>
@@ -57,9 +56,6 @@
                                                         </td>
                                                         <td>
                                                             '.ucfirst(strtolower(substr($blogs->title,0,20))).'
-                                                        </td>
-                                                        <td>
-                                                            '.ucfirst(strtolower(substr($blogs->description,0,50))).'
                                                         </td>
                                                         <td>
                                                             '.$blogs->date.'

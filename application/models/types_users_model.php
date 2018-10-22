@@ -51,4 +51,10 @@ class Types_users_model extends CI_Model {
 	public function destroy($id){
 		$this->db->delete('user_types',array('user_type_id' => $id));	
 	}
+
+	public function max_id()
+	{
+		$query = $this->db->query('SELECT MAX(user_type_id) as id from user_types');
+		return $query->row();
+	}
 }

@@ -67,10 +67,6 @@ class Products_model extends CI_Model {
 	public function count()
 	{
 		$query = $this->db->query("SELECT SUM(views) as views from products");
-		if ($query->num_rows() > 0){
-			return $query->row();
-		}else{
-			return false;
-		}
+		return $query->row();
 	}
 }

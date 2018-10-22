@@ -1,7 +1,6 @@
 
 
     <script src="<?php echo base_url('admin_template/js/app.min.js')?>"></script>
-    <script src="<?php echo base_url('js/products.js')?>"></script>
      <script src="<?php echo base_url('admin_template/js/vendor/jquery.dataTables.js')?>"></script>
     <script src="<?php echo base_url('admin_template/js/vendor/dataTables.bootstrap4.js')?>"></script>
     <script src="<?php echo base_url('admin_template/js/vendor/dataTables.responsive.min.js')?>"></script>

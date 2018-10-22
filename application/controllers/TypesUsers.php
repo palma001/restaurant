@@ -6,6 +6,7 @@
 		{
 			parent::__construct();
 			$this->load->model('types_users_model');
+			$this->load->model('permissions_model');
 			$this->load->library('session');
 			$this->load->library('form_validation');
 			if (!$this->session->userdata['user_id']){
@@ -16,7 +17,9 @@
 		function index()
 		{
 
-			$data['user_types'] = $this->types_users_model->read();
+			$data = array(
+				'user_types' => $this->types_users_model->read(), 
+			);
 			$this->load->view('layouts/headers');
 			$this->load->view('layouts/navbar');
 			$this->load->view('layouts/topnav');
@@ -26,10 +29,13 @@
 
 		public function create()
 		{
+			$data = array( 
+				'permissions' => $this->permissions_model->read()
+			);
 			$this->load->view('layouts/headers');
 			$this->load->view('layouts/navbar');
 			$this->load->view('layouts/topnav');
-			$this->load->view('types_users/create');	
+			$this->load->view('types_users/create',$data);	
 			$this->load->view('layouts/footer');
 		}
 
@@ -49,12 +55,28 @@
 	        if ($this->form_validation->run() == FALSE){
 	        	$this->create();
 	        }else{
+
+	        	//SELECIONA EL ID MAXIMO DE CADA TIPO DE USUARIO
+	        	$type_user_id = $this->types_users_model->max_id();
+	        	//END
+	        	//FOR QUE RECORREO LOS CHECKBOX SELECIONADO
+				foreach ($this->input->post('permissions') as $key => $permissions) {
+					//FUNCION PARA AGREGAR LOS PERMISSIONS
+					$this->permissions_model->store($permissions,$type_user_id);
+					//END
+				}
+				//END
+				//DATOS PARA AGREGAR EL TIPO DE USUARIO
 				$data = array(
-					'type_user' => $this->input->post('type_user')
+					'type_user' => $this->input->post('type_user'),
 				);
+				//END
+			
+				//FUNCION PARA AGREGAR EL TIPO DE USUARIO
 				$this->types_users_model->store($data);	
 				$this->session->set_flashdata('message','Saved Successfully');
 				redirect(base_url('index.php/typesusers/'));
+				//END FUNCION
 	        }
 		}
 

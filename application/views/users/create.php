@@ -36,13 +36,13 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Full Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="full_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        <input type="text" name="full_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?php echo $this->input->post('full_name');?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Email</label>
                                     <div class="col-sm-10">
-                                        <input  name="email"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        <input  name="email"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?php echo $this->input->post('email');?>>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -54,7 +54,7 @@
                                                 if ($users_types) {
                                                    foreach ($users_types->result() as $key => $users_types) {
                                                        echo '<option value="'.$users_types->user_type_id.'">'.ucwords($users_types->user_type).'</option>';
-                                                   }
+                                                    }
                                                 }
                                             ?>
                                         </select>

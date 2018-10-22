@@ -39,7 +39,6 @@
                                       <thead>
                                           <tr>
                                               <th>Id</th>
-                                              <th>Slider</th>
                                               <th>Image</th>
                                               <th></th>
                                           </tr>
@@ -51,9 +50,6 @@
                                                 <tr>
                                                     <td>
                                                         <?php echo $obten->slider_id;?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $obten->slider;?>
                                                     </td>
                                                     <td>
                                                         <img src="<?php echo base_url()?>uploads/imagenes/thumbs/<?php echo  $obten->image;?>">

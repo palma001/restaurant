@@ -19,7 +19,6 @@
               <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="header-title"></h4>
                         <?php 
                             $message=$this->session->flashdata('message');
                             if ($message) {
@@ -33,17 +32,20 @@
                                 ';
                             }
                         ?>
-                        <form class="form-horizontal" enctype="multipart/form-data" method="post"  action="<?php echo base_url()."index.php/sliders/store";?> ">
-                            <div class="form-group row">
+                        <form class="form-horizontal uploader" enctype="multipart/form-data" method="post"  action="<?php echo base_url()."index.php/sliders/store";?> ">
+                            <!--<div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Slider</label>
                                 <div class="col-sm-10">
                                     <input type="text" name="Slidername" class="form-control" placeholder="Slider" required>
                                 </div>
-                            </div>
+                            </div>-->
+                            <img src="<?php echo base_url("admin_template/assets/images/logo.png"); ?>" alt="">
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Image</label>
+                                <label class="col-sm-2 col-form-label label" for="file">
+                                    Image
+                                </label>
                                 <div class="col-sm-10">
-                                    <input type="file" name="fileImagen" class="form-control" placeholder="Slider"  id"uploader" accept="image/*" required>
+                                    <input type="file" name="fileImagen" class="form-control loaded" placeholder="Slider"  accept="image/*" required>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -60,7 +62,7 @@
         </div>
     </div> <!-- content -->
 </div>
-<script src="<?=  base_url('js/js_core.js')?>"></script> 
+<script src="<?php echo base_url('js/js_core.js')?>"></script> 
 <script type="text/javascript">
   $('#uploader').fileUploader({activeColor:'green', baseColor: '#ccc'});
 </script>

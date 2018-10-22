@@ -14,7 +14,7 @@
             $data = array(
                 'slider'  => $titulo,
                 'image'   => $imagen,
-                'user_id' =>$this->session->userdata['user_id']
+                'user_id' => $this->session->userdata['user_id']
             );
             $this->db->insert('sliders', $data);
         }

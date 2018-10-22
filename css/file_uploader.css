@@ -1,7 +1,3 @@
-.uploader input {
-  display: none;
-}
- 
 .uploader {
   align-items: center;
   background-color: #efefef;
@@ -17,7 +13,7 @@
   width: 100%;
 }
 .label {
-  padding-top:150 px;
+  padding-top: 150px;
 }
  
 .uploader img,
