@@ -1,4 +1,4 @@
-<div class="navbar-custom navbar-custom-light">
+<div class="navbar-custom navbar-custom-light" style="margin-top: -21px;">
     <ul class="list-unstyled topbar-right-menu float-right mb-0">
         <li class="dropdown notification-list">
             <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
