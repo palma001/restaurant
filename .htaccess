@@ -11,5 +11,6 @@
 
     #en casi de no existir redirecionamos
     RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+    
 </IfModule>
 

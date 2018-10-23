@@ -50,9 +50,8 @@
 	        	
 	            $file_info = $this->upload->data();
 				$this->Miniature($file_info['file_name']);
-				$titulo         = $this->input->post('Slidername');
 				$imagen         = $file_info['file_name'];
-				$subir          = $this->sliders_model->store($titulo,$imagen);
+				$subir          = $this->sliders_model->store($imagen);
 				$data['titulo'] = $titulo;
 				$data['imagen'] = $imagen;
 				$this->session->set_flashdata('message','Saved Successfully');

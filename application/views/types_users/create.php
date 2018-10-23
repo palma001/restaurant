@@ -41,12 +41,6 @@
                                             <input name="type_user" placeholder="Type of User"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label"></label>
-                                        <div class="col-sm-10">
-                                            <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Save</button>
-                                        </div>
-                                    </div>
                                     <hr>
                                     <h3>Permissions</h3>
                                     <hr>
@@ -68,6 +62,11 @@
                                             }
                                         ?>
                                     </ol>
+                                    <div class="form-group row">
+                                        <div class="col-sm-10">
+                                            <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Save</button>
+                                        </div>
+                                    </div>
                                 </form>
                             </div> <!-- end card-body-->
                         </div> <!-- end card-->

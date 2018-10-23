@@ -9,10 +9,9 @@
             $this->load->library('session');
         }
 
-        public function store($titulo,$imagen)
+        public function store($imagen)
         {
             $data = array(
-                'slider'  => $titulo,
                 'image'   => $imagen,
                 'user_id' => $this->session->userdata['user_id']
             );
