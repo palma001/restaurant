@@ -31,7 +31,6 @@
                             </div>
 
                             <div class="form-group mb-3">
-                                <a href="pages-recoverpw.html" class="text-muted float-right"><small></small></a>
                                 <label for="password">Password</label>
                                 <input class="form-control" type="password" id="password" name="password" placeholder="Enter your password" required>
                             </div>

@@ -1,4 +1,4 @@
-<div class="navbar-custom navbar-custom-light" style="margin-top: -21px;">
+<div class="navbar-custom navbar-custom-light">
     <ul class="list-unstyled topbar-right-menu float-right mb-0">
         <li class="dropdown notification-list">
             <a class="nav-link dropdown-toggle nav-user mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
@@ -11,13 +11,10 @@
                 <div class="dropdown-header noti-title">
                     <h6 class="text-overflow m-0">Welcome !</h6>
                 </div>
-
-                <!-- item-->
-                <a href="<?php echo base_url("myaccount")?>" class="dropdown-item notify-item">
+                <a href="<?php echo base_url("myaccount");?>" class="dropdown-item notify-item">
                     <i class="fe-user"></i>
                     <span>My Account</span>
                 </a>
-
             </div>
         </li>
 
