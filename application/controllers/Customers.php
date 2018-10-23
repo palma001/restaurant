@@ -78,7 +78,7 @@
 				);
 				$this->customers_model->store($data);	
 				$this->session->set_flashdata('message','Saved Successfully');
-				redirect(base_url('index.php/customers/'));
+				redirect(base_url('customers/'));
 	        }
 		}
 		public function edit()
@@ -92,7 +92,7 @@
 			$this->load->view('layouts/topnav');
 
 			if (!$id) {
-				redirect(base_url('index.php/customers'));
+				redirect(base_url('customers'));
 			}else{
 				$this->load->view('customers/edit',array('customers'=>$customers,'users_types'=>$users_types));
 			}
@@ -155,7 +155,7 @@
 
 				$this->customers_model->update($id,$data);
 				$this->session->set_flashdata('message','Modification Made Successfully');
-				redirect(base_url('index.php/customers/'));
+				redirect(base_url('customers/'));
 	        }	
 		}
 
@@ -164,7 +164,7 @@
 			$id = $this->uri->segment(3);
 			$this->customers_model->destroy($id);
 			$this->session->set_flashdata('message','Deleted Successfully');
-			redirect(base_url('index.php/customers/'));
+			redirect(base_url('customers/'));
 		}
 	}
 ?>

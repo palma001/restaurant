@@ -75,7 +75,7 @@
 			 	$this->my_account_model->update($id,$data);
 				$this->session->set_userdata($data); 
 				$this->session->set_flashdata('message','Modification Made Successfully');
-				redirect(base_url('index.php/myaccount'));
+				redirect(base_url('myaccount'));
 			}
 		}
 	}

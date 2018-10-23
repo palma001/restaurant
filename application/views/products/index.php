@@ -6,7 +6,7 @@
                     <div class="page-title-box">
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="<?php echo base_url('index.php/home/');?>">Binfrix</a></li>
+                                <li class="breadcrumb-item"><a href="<?php echo base_url('home/');?>">Binfrix</a></li>
                                 <li class="breadcrumb-item active">Products</li>
                             </ol>
                         </div>
@@ -19,7 +19,7 @@
     			    <div class="card">
                         <div class="card-body">
                             <p class="text-muted font-13 mb-4">
-                                <a href="<?php echo base_url().'index.php/products/create'?>" class="btn btn-dark">Add</a>
+                                <a href="<?php echo base_url().'products/create'?>" class="btn btn-dark">Add</a>
                             </p>
                              <?php 
                                  $message=$this->session->flashdata('message');
@@ -63,12 +63,12 @@
                                                         <td>'.ucwords(strtolower($products->date)).'
                                                         </td>
                                                         <td>
-                                                            <a href="'.base_url().'index.php/products/edit/'.$products->product_id.'"><i class="fe-edit-2"></i>
+                                                            <a href="'.base_url().'products/edit/'.$products->product_id.'"><i class="fe-edit-2"></i>
                                                             </a>
 
                                                             <a href="#" data-toggle="modal" onclick="show_products('.$products->product_id.')" data-target="#modal_products"><i class="fe-eye"></i></a>
 
-                                                            <a href="'.base_url().'index.php/products/destroy/'.$products->product_id.'"><i class="fe-x"></i>
+                                                            <a href="'.base_url().'products/destroy/'.$products->product_id.'"><i class="fe-x"></i>
                                                             </a>
                                                         </td>
                                                     </tr>

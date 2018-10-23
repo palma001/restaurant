@@ -75,7 +75,7 @@
 				//FUNCION PARA AGREGAR EL TIPO DE USUARIO
 				$this->types_users_model->store($data);	
 				$this->session->set_flashdata('message','Saved Successfully');
-				redirect(base_url('index.php/typesusers/'));
+				redirect(base_url('typesusers/'));
 				//END FUNCION
 	        }
 		}
@@ -89,7 +89,7 @@
 			$this->load->view('layouts/topnav');
 
 			if (!$id) {
-				redirect(base_url('index.php/typesusers/'));
+				redirect(base_url('typesusers/'));
 			}else{
 				$this->load->view('types_users/edit',$data);
 			}
@@ -118,7 +118,7 @@
 				$this->types_users_model->update($id,$data);
 
 				$this->session->set_flashdata('message','Modification Made Successfully');
-				redirect(base_url('index.php/typesusers/'));
+				redirect(base_url('typesusers/'));
 	        }			
 		}
 
@@ -127,7 +127,7 @@
 			$id = $this->uri->segment(3);
 			$this->types_users_model->destroy($id);
 			$this->session->set_flashdata('message','Deleted Successfully');
-			redirect(base_url('index.php/typesusers/'));
+			redirect(base_url('typesusers/'));
 		}
 	}
 ?>

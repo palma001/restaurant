@@ -19,7 +19,7 @@
     			    <div class="card">
                         <div class="card-body">
                             <p class="text-muted font-13 mb-4">
-                                <a href="<?php echo base_url('index.php/customers/create');?>" class="btn btn-dark">Add</a>
+                                <a href="<?php echo base_url('customers/create');?>" class="btn btn-dark">Add</a>
                             </p>
                             <?php 
                                 $message=$this->session->flashdata('message');
@@ -61,9 +61,9 @@
                                                             '.ucwords($customers->user_type).'
                                                         </td>
                                                         <td>
-                                                            <a href="'.base_url('index.php/customers/edit/'.$customers->user_id).'"><i class="fe-edit-2"></i> </a>
+                                                            <a href="'.base_url('customers/edit/'.$customers->user_id).'"><i class="fe-edit-2"></i> </a>
 
-                                                            <a href="'.base_url('index.php/customers/destroy/'.$customers->user_id).'"> <i class="fe-x"></i></a>
+                                                            <a href="'.base_url('customers/destroy/'.$customers->user_id).'"> <i class="fe-x"></i></a>
                                                         </td>
                                                     </tr>
                                                 ';

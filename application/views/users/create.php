@@ -6,8 +6,8 @@
                     <div class="page-title-box">
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="<?php echo base_url('index.php/home/');?>">Binfrix</a></li>
-                                <li class="breadcrumb-item"><a href="<?php echo base_url()."index.php/users";?>" title="">Users</a></li>
+                                <li class="breadcrumb-item"><a href="<?php echo base_url('home/');?>">Binfrix</a></li>
+                                <li class="breadcrumb-item"><a href="<?php echo base_url()."users";?>" title="">Users</a></li>
                                 <li class="breadcrumb-item active">Create User</li>
                             </ol>
                         </div>

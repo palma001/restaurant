@@ -85,7 +85,7 @@
 				);
 				$this->users_model->store($data);	
 				$this->session->set_flashdata('message','Saved successfully');
-				redirect(base_url('index.php/users/'));
+				redirect(base_url('users/'));
 	        }
 		}
 
@@ -100,7 +100,7 @@
 			$this->load->view('layouts/topnav');
 
 			if (!$id) {
-				redirect(base_url('index.php/users'));
+				redirect(base_url('users'));
 			}else{
 				$this->load->view('users/edit',array('users'=>$users,'users_types'=>$users_types));
 			}
@@ -166,7 +166,7 @@
 
 				$this->users_model->update($id,$data);
 				$this->session->set_flashdata('message','Modification Made Successfully');
-				redirect(base_url('index.php/users/'));
+				redirect(base_url('users/'));
 	        }	
 		}
 		public function destroy(){
@@ -174,7 +174,7 @@
 			$id = $this->uri->segment(3);
 			$this->users_model->destroy($id);
 			$this->session->set_flashdata('message','Deleted Successfully');
-			redirect(base_url('index.php/Users/'));
+			redirect(base_url('Users/'));
 		}
 	}
 ?>
