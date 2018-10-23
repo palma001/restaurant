@@ -6,7 +6,7 @@
                     <div class="page-title-box">
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="<?php echo base_url('index.php/home/');?>">Binfrix</a></li>
+                                <li class="breadcrumb-item"><a href="<?php echo base_url('home/');?>">Binfrix</a></li>
                                 <li class="breadcrumb-item active">Types of Users</li>
                             </ol>
                         </div>
@@ -19,7 +19,7 @@
                     <div class="card">
                         <div class="card-body">
                             <p class="text-muted font-13 mb-4">
-                                <a href="<?php echo base_url('index.php/typesusers/create');?>" class="btn btn-dark">Add</a>
+                                <a href="<?php echo base_url('typesusers/create');?>" class="btn btn-dark">Add</a>
                             </p>
 
                             <?php  
@@ -53,9 +53,9 @@
                                                         <td>'.$key.'</td>
                                                         <td>'.ucwords(strtolower($user_types->user_type)).'</td>
                                                         <td>
-                                                            <a href="'.base_url('index.php/typesusers/edit/'.$user_types->user_type_id).'"><i class="fe-edit-2"></i>
+                                                            <a href="'.base_url('typesusers/edit/'.$user_types->user_type_id).'"><i class="fe-edit-2"></i>
                                                             </a>
-                                                            <a href="'.base_url('index.php/typesusers/destroy/'.$user_types->user_type_id).'"> <i class="fe-x"></i>
+                                                            <a href="'.base_url('typesusers/destroy/'.$user_types->user_type_id).'"> <i class="fe-x"></i>
                                                             </a>
                                                         </td>
                                                     </tr>

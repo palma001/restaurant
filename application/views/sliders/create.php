@@ -6,8 +6,8 @@
                     <div class="page-title-box">
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="<?php echo base_url('index.php/home/');?>">Binfrix</a></li>
-                                <li class="breadcrumb-item"><a href="<?php echo base_url('index.php/sliders/');?>">Binfrix</a></li>
+                                <li class="breadcrumb-item"><a href="<?php echo base_url('home/');?>">Binfrix</a></li>
+                                <li class="breadcrumb-item"><a href="<?php echo base_url('sliders/');?>">Binfrix</a></li>
                                 <li class="breadcrumb-item active">Create Slider</li>
                             </ol>
                         </div>
@@ -32,20 +32,19 @@
                                 ';
                             }
                         ?>
-                        <form class="form-horizontal uploader" enctype="multipart/form-data" method="post"  action="<?php echo base_url()."index.php/sliders/store";?> ">
-                            <!--<div class="form-group row">
+                        <form class="form-horizontal" enctype="multipart/form-data" method="post"  action="<?php echo base_url()."index.php/sliders/store";?> ">
+                            <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Slider</label>
                                 <div class="col-sm-10">
                                     <input type="text" name="Slidername" class="form-control" placeholder="Slider" required>
                                 </div>
-                            </div>-->
-                            <img src="<?php echo base_url("admin_template/assets/images/logo.png"); ?>" alt="">
+                            </div>
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label label" for="file">
+                                <label class="col-sm-2 col-form-label" for="file">
                                     Image
                                 </label>
                                 <div class="col-sm-10">
-                                    <input type="file" name="fileImagen" class="form-control loaded" placeholder="Slider"  accept="image/*" required>
+                                    <input type="file" name="fileImagen" class="form-control" placeholder="Slider"  accept="image/*" required>
                                 </div>
                             </div>
                             <div class="form-group row">

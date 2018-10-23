@@ -10,7 +10,7 @@
                                     <li class="breadcrumb-item">
                                         <a href="<?php echo base_url('index.php/home/');?>">Binfrix</a>
                                     </li>
-                                    <li class="breadcrumb-item"><a href="<?php echo base_url('index.php/orders/');?>">Orders</a></li>
+                                    <li class="breadcrumb-item"><a href="<?php echo base_url('orders/');?>">Orders</a></li>
                                     <li class="breadcrumb-item active">Details</li>
                                 </ol>
                             </div>

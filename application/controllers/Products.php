@@ -74,7 +74,7 @@
 				);
 				$this->products_model->store($data);	
 				$this->session->set_flashdata('message','Saved Successfully');
-				redirect(base_url('index.php/products/'));
+				redirect(base_url('products/'));
 	        }
 		}
 
@@ -93,7 +93,7 @@
 			$this->load->view('layouts/navbar');
 			$this->load->view('layouts/topnav');
 			if (!$id) {
-				redirect(base_url('index.php/products/'));
+				redirect(base_url('products/'));
 			}else{
 				$this->load->view('products/edit',$data);
 			}
@@ -141,7 +141,7 @@
 				);
 				$this->products_model->update($id,$data);	
 				$this->session->set_flashdata('message','Modification Made Successfully');
-				redirect(base_url('index.php/products/'));
+				redirect(base_url('products/'));
 	        }
 		}
 
@@ -150,7 +150,7 @@
 			$id = $this->uri->segment(3);
 			$this->products_model->destroy($id);
 			$this->session->set_flashdata('message','Deleted Successfully');
-			redirect(base_url('index.php/products/'));
+			redirect(base_url('products/'));
 		}	
 	}
 ?>

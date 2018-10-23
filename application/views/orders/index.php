@@ -8,7 +8,7 @@
                             <div class="page-title-box">
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="<?php echo base_url('index.php/home/');?>">Binfrix</a></li>
+                                        <li class="breadcrumb-item"><a href="<?php echo base_url('home/');?>">Binfrix</a></li>
                                         <li class="breadcrumb-item active">Orders</li>
                                     </ol>
                                 </div>
@@ -39,7 +39,7 @@
                                                     <td><?=$obten->total;?></td>
                                                     <td>
                                                     <i class="fe-edit-2"></i> 
-                                                    <a  href="<?=base_url('index.php/orders/show/'.$obten->order_id);?>">
+                                                    <a  href="<?=base_url('orders/show/'.$obten->order_id);?>">
                                                         <i class="fe-eye"></i>
                                                     </a>
                                                     <i class="fe-x"></i>

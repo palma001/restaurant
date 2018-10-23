@@ -7,7 +7,7 @@
                         <div class="page-title-box">
                             <div class="page-title-right">
                                 <ol class="breadcrumb m-0">
-                                    <li class="breadcrumb-item"><a href="<?php echo base_url('index.php/home/');?>">Binfrix</a></li>
+                                    <li class="breadcrumb-item"><a href="<?php echo base_url('home/');?>">Binfrix</a></li>
                                     <li class="breadcrumb-item"><a>Sliders</a></li>
                                 </ol>
                             </div>
@@ -20,7 +20,7 @@
                         <div class="card">
                             <div class="card-body">
                                   <p class="text-muted font-13 mb-4">
-                                      <a href="<?= base_url('index.php/sliders/create/')?>" class="btn btn-dark">Add</a>
+                                      <a href="<?= base_url('sliders/create/')?>" class="btn btn-dark">Add</a>
                                   </p>
                                   <?php 
                                     $message=$this->session->flashdata('message');
@@ -31,7 +31,7 @@
                                             <span aria-hidden="true">&times;</span>
                                              </button>
 
-                                            "'.$message.'" 
+                                            '.$message.'
                                         </div>';
                                     }    
                                   ?>
@@ -55,7 +55,7 @@
                                                         <img src="<?php echo base_url()?>uploads/imagenes/thumbs/<?php echo  $obten->image;?>">
                                                     </td>
                                                     <td>
-                                                        <a href="<?php echo base_url('index.php/sliders/destroy/'.$obten->slider_id) ?>">
+                                                        <a href="<?php echo base_url('sliders/destroy/'.$obten->slider_id) ?>">
                                                             <i class="fe-x"></i>
                                                         </a>
                                                     </td>

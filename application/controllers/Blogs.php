@@ -68,7 +68,7 @@
 
 					$error = array('error' => $this->upload->display_errors());
 		            $this->session->set_flashdata('message','Unable to Upload the File');
-		            redirect(base_url('index.php/blogs/create'));
+		            redirect(base_url('blogs/create'));
 
 				}else{
 
@@ -81,7 +81,7 @@
 
 					$this->blogs_model->store($data);	
 					$this->session->set_flashdata('message','Saved Successfully');
-					redirect(base_url('index.php/blogs/'));
+					redirect(base_url('blogs/'));
 				}
 	        }
 		}
@@ -94,7 +94,7 @@
 			$this->load->view('layouts/topnav');
 
 			if (!$id) {
-				redirect(base_url('index.php/blogs'));
+				redirect(base_url('blogs'));
 			}else{
 				$this->load->view('blogs/edit',array('blogs'=>$blogs));
 			}
@@ -135,7 +135,7 @@
 					$error = array('error' => $this->upload->display_errors());
 					$this->edit();
 		            $this->session->set_flashdata('message','Unable to Upload the File');
-					redirect(base_url('index.php/blogs/edit/'.$id));
+					redirect(base_url('blogs/edit/'.$id));
 
 				}else{
 
@@ -148,7 +148,7 @@
 
 					$this->blogs_model->update($id,$data);	
 					$this->session->set_flashdata('message','Modification Made Successfully');
-					redirect(base_url('index.php/blogs/'));
+					redirect(base_url('blogs/'));
 				}
 	        }
 		}
@@ -158,7 +158,7 @@
 			$id = $this->uri->segment(3);
 			$this->blogs_model->destroy($id);
 			$this->session->set_flashdata('message','Deleted Successfully');
-			redirect(base_url('index.php/blogs/'));
+			redirect(base_url('blogs/'));
 		}
 	}
 ?>

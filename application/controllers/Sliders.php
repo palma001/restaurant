@@ -45,7 +45,7 @@
 
 	        if (!$this->upload->do_upload("fileImagen")) {
 	        	$this->session->set_flashdata('message','Unsupported Format');
-	            redirect(base_url('/index.php/sliders/create/')); 
+	            redirect(base_url('sliders/create/')); 
 	        }else {
 	        	
 	            $file_info = $this->upload->data();
@@ -56,7 +56,7 @@
 				$data['titulo'] = $titulo;
 				$data['imagen'] = $imagen;
 				$this->session->set_flashdata('message','Saved Successfully');
-				redirect(base_url('/index.php/sliders/')); 
+				redirect(base_url('sliders/')); 
 	        }   
 		}
 

@@ -6,7 +6,7 @@
                     <div class="page-title-box">
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="<?php echo base_url('index.php/home/');?>">Binfrix</a></li>
+                                <li class="breadcrumb-item"><a href="<?php echo base_url('home/');?>">Binfrix</a></li>
                                 <li class="breadcrumb-item active">Blogs</li>
                             </ol>
                         </div>
@@ -19,7 +19,7 @@
     			    <div class="card">
                         <div class="card-body">
                             <p class="text-muted font-13 mb-4">
-                                <a href="<?php echo base_url('index.php/blogs/create');?>" class="btn btn-dark">Add</a>
+                                <a href="<?php echo base_url('blogs/create');?>" class="btn btn-dark">Add</a>
                             </p>
                             <?php 
                                 $message=$this->session->flashdata('message');
@@ -61,9 +61,9 @@
                                                             '.$blogs->date.'
                                                         </td>
                                                         <td>
-                                                            <a href="'.base_url('index.php/blogs/edit/'.$blogs->blog_id).'"><i class="fe-edit-2"></i>
+                                                            <a href="'.base_url('blogs/edit/'.$blogs->blog_id).'"><i class="fe-edit-2"></i>
                                                             </a>
-                                                            <a href="'.base_url('index.php/blogs/destroy/'.$blogs->blog_id).'"> <i class="fe-x"></i>
+                                                            <a href="'.base_url('blogs/destroy/'.$blogs->blog_id).'"> <i class="fe-x"></i>
                                                             </a>
                                                         </td>
                                                     </tr>
