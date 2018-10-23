@@ -31,7 +31,7 @@
                                             <span aria-hidden="true">&times;</span>
                                              </button>
 
-                                            "'.$message.'" 
+                                            '.$message.'
                                         </div>';
                                     }    
                                   ?>
