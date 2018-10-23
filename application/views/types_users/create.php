@@ -49,7 +49,7 @@
                                             if ($permissions) {
                                                 foreach ($permissions->result() as $key => $permission) {
                                                     echo '
-                                                        <li style="border-bottom:solid black 2px; padding: 10px;">
+                                                        <li style="border-bottom:solid black 1px; padding: 10px;">
                                                             <div>
                                                                 <label style="width: 100%; margin-top:7px;">
                                                                     '.$permission->permission.'
