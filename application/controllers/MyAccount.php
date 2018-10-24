@@ -32,7 +32,6 @@
 				$data = array(
 					'full_name'    => $this->input->post('full_name'),
 					'email'        => $this->input->post('email'),
-					'user_type_id' => $this->input->post('user_type_id'),
 					'password'     => false,
 				);
 			}else{
@@ -40,7 +39,6 @@
 				$data = array(
 					'full_name'    => $this->input->post('full_name'),
 					'email'        => $this->input->post('email'),
-					'user_type_id' => $this->input->post('user_type_id'),
 					'password'     => md5($this->input->post('password')),
 				);
 			}

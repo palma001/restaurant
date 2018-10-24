@@ -15,7 +15,6 @@
 	    	if ($data['password']) {
 
 	    		$datos = array(
-					'user_type_id' => $data['user_type_id'],
 					'full_name'    => $data['full_name'],
 					'email'        => $data['email'],
 					'password'     => $data['password']
@@ -26,7 +25,6 @@
 	    	}else{
 	    		
 	    		$datos = array(
-					'user_type_id' => $data['user_type_id'],
 					'full_name'    => $data['full_name'],
 					'email'        => $data['email'],
 				);

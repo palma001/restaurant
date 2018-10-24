@@ -13,7 +13,7 @@
         <div id="sidebar-menu">
             <ul class="metismenu" id="side-menu">
                <li class="menu-title">Navigation</li>
-               <li><a href="<?php echo base_url("home");?>" title=""><i class="fe-home"></i> Home</a></li>
+               <li><a href="<?php echo base_url("admin/");?>" title=""><i class="fe-home"></i> Home</a></li>
                <li>
                     <a href="<?= base_url().'products'?>">
                         <i class="fe-clipboard"></i>
@@ -53,7 +53,7 @@
                     <a href="<?php echo base_url('sliders/');?>"> <i class="fe-sliders"></i> Sliders </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url("home/");?>"> <i class="fe-globe"></i> Social Networks </a>
+                    <a href="<?php echo base_url("admin/");?>"> <i class="fe-globe"></i> Social Networks </a>
                 </li>
                 <li>
                     <a href="<?php echo base_url('settings/');?>"> <i class="fe-settings"></i> Settings </a>
