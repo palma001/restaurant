@@ -174,7 +174,7 @@
 			$id = $this->uri->segment(3);
 			$this->users_model->destroy($id);
 			$this->session->set_flashdata('message','Deleted Successfully');
-			redirect(base_url('Users/'));
+			redirect(base_url('users/'));
 		}
 	}
 ?>

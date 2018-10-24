@@ -45,10 +45,22 @@
                 </li> 
                 <li>
                     <a href="<?php echo base_url('blogs/');?>">
-                        <i class="fe-book-open"></i>
+                        <i class="fe-book"></i>
                         <span>Blogs</span>
                     </a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url('categories/');?>">
+                        <i class="fe-archive"></i>
+                        <span>Categories</span>
+                    </a>
                 </li> 
+                <li>
+                    <a href="<?php echo base_url('reservations/');?>">
+                        <i class="fe-book-open"></i>
+                        <span>Reservations</span>
+                    </a>
+                </li>
                 <li>
                     <a href="<?php echo base_url('sliders/');?>"> <i class="fe-sliders"></i> Sliders </a>
                 </li>

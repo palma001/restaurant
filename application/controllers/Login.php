@@ -43,10 +43,10 @@
 
 				if ($login->user_type_id == "1"){
 	        	   $this->session->set_userdata($user); 
-	               redirect(base_url('home/'));  
+	               redirect(base_url('admin/'));  
 	        	}else{
 		        	$this->session->set_userdata($user); 
-		            redirect(base_url('home/'));  
+		            redirect(base_url('admin/'));  
 	        	}
 	        }
 		}

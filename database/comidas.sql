@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-10-2018 a las 06:44:50
+-- Tiempo de generación: 24-10-2018 a las 20:51:55
 -- Versión del servidor: 10.1.34-MariaDB
 -- Versión de PHP: 7.2.7
 
@@ -47,6 +47,17 @@ CREATE TABLE `blogs` (
   `description` text NOT NULL,
   `image` text NOT NULL,
   `date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `categories`
+--
+
+CREATE TABLE `categories` (
+  `category_id` int(11) NOT NULL,
+  `category` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -185,6 +196,22 @@ CREATE TABLE `products_images` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `reservations`
+--
+
+CREATE TABLE `reservations` (
+  `reservation_id` int(11) NOT NULL,
+  `people_quantity` varchar(30) NOT NULL,
+  `entrance_date` date NOT NULL,
+  `entrance_hour` varchar(8) NOT NULL,
+  `full_name` varchar(30) NOT NULL,
+  `phone` varchar(30) NOT NULL,
+  `date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `settings`
 --
 
@@ -196,7 +223,14 @@ CREATE TABLE `settings` (
   `language` varchar(30) NOT NULL,
   `vision` varchar(30) NOT NULL,
   `tax` varchar(30) NOT NULL,
-  `tax_name` varchar(30) NOT NULL
+  `tax_name` varchar(30) NOT NULL,
+  `address` varchar(30) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `facebook` text NOT NULL,
+  `twitter` text NOT NULL,
+  `instagram` text NOT NULL,
+  `pinterest` text NOT NULL,
+  `logo` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -225,6 +259,15 @@ CREATE TABLE `sliders` (
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `sliders`
+--
+
+INSERT INTO `sliders` (`slider_id`, `slider`, `user_id`, `image`, `date`) VALUES
+(4, '', 3, 'Chrysanthemum.jpg', '0000-00-00'),
+(5, '', 3, 'Desert2.jpg', '0000-00-00'),
+(6, '', 3, 'Hydrangeas3.jpg', '0000-00-00');
+
 -- --------------------------------------------------------
 
 --
@@ -245,7 +288,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_type_id`, `full_name`, `email`, `password`, `date`) VALUES
-(1, 1, 'admin', 'admin@binfrix.com', '5ebe2294ecd0e0f08eab7690d2a6ee69', '2018-10-21');
+(3, 5, 'Binfrix', 'admin@binfrix.com', '5ebe2294ecd0e0f08eab7690d2a6ee69', '2018-10-09');
 
 -- --------------------------------------------------------
 
@@ -258,14 +301,6 @@ CREATE TABLE `user_types` (
   `user_type` varchar(30) NOT NULL,
   `data` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `user_types`
---
-
-INSERT INTO `user_types` (`user_type_id`, `user_type`, `data`) VALUES
-(1, 'Adminstrador', '2018-10-01'),
-(2, 'Customer', '2018-10-02');
 
 -- --------------------------------------------------------
 
@@ -296,6 +331,12 @@ ALTER TABLE `alerts`
 --
 ALTER TABLE `blogs`
   ADD PRIMARY KEY (`blog_id`) USING HASH;
+
+--
+-- Indices de la tabla `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`category_id`);
 
 --
 -- Indices de la tabla `messages`
@@ -345,6 +386,12 @@ ALTER TABLE `products_images`
   ADD KEY `user_id` (`user_id`);
 
 --
+-- Indices de la tabla `reservations`
+--
+ALTER TABLE `reservations`
+  ADD PRIMARY KEY (`reservation_id`);
+
+--
 -- Indices de la tabla `settings`
 --
 ALTER TABLE `settings`
@@ -376,6 +423,15 @@ ALTER TABLE `user_types`
   ADD PRIMARY KEY (`user_type_id`) USING BTREE;
 
 --
+-- Indices de la tabla `user_types_permissions`
+--
+ALTER TABLE `user_types_permissions`
+  ADD PRIMARY KEY (`user_type_permission_id`),
+  ADD KEY `user_type_id` (`user_type_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `permission_id` (`permission_id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -390,6 +446,12 @@ ALTER TABLE `alerts`
 --
 ALTER TABLE `blogs`
   MODIFY `blog_id` int(12) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `messages`
@@ -434,6 +496,12 @@ ALTER TABLE `products_images`
   MODIFY `product_image_id` int(12) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `reservations`
+--
+ALTER TABLE `reservations`
+  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `settings`
 --
 ALTER TABLE `settings`
@@ -449,19 +517,35 @@ ALTER TABLE `shops`
 -- AUTO_INCREMENT de la tabla `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `slider_id` int(12) NOT NULL AUTO_INCREMENT;
+  MODIFY `slider_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `user_types`
 --
 ALTER TABLE `user_types`
-  MODIFY `user_type_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_type_id` int(12) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `user_types_permissions`
+--
+ALTER TABLE `user_types_permissions`
+  MODIFY `user_type_permission_id` int(12) NOT NULL AUTO_INCREMENT;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `user_types_permissions`
+--
+ALTER TABLE `user_types_permissions`
+  ADD CONSTRAINT `user_types_permissions_ibfk_3` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`permission_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

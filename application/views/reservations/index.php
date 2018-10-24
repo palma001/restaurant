@@ -7,10 +7,10 @@
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="<?php echo base_url('admin/');?>">Binfrix</a></li>
-                                <li class="breadcrumb-item active">Products</li>
+                                <li class="breadcrumb-item active">Reservations</li>
                             </ol>
                         </div>
-                        <h4 class="page-title">Products</h4>
+                        <h4 class="page-title">Reservations</h4>
                     </div>
                 </div>
             </div> 
@@ -18,9 +18,6 @@
     			<div class="col-12">
     			    <div class="card">
                         <div class="card-body">
-                            <p class="text-muted font-13 mb-4">
-                                <a href="<?php echo base_url().'products/create'?>" class="btn btn-dark">Add</a>
-                            </p>
                             <?php 
                                 $message=$this->session->flashdata('message');
                                 if ($message) {
@@ -38,35 +35,36 @@
                                 <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Title</th>
-                                        <th>Description</th>
-                                        <th>Price</th>
-                                        <th>Date</th>
+                                        <th>Full Name</th>
+                                        <th>Phone</th>
+                                        <th>People</th>
+                                        <th>Entrance Date</th>
+                                        <th>Entrance Hours</th>
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                    <?php 
-                                        if ($products) {
-                                           foreach ($products->result() as $key => $products) {
+                                        if ($reservations) {
+                                           foreach ($reservations->result() as $key => $reservations) {
                                                 echo '
                                                     <tr>
                                                         <td>'.$key.'</td>
-                                                        <td>'.ucwords(strtolower($products->title)).'
+                                                        <td>'.ucwords(strtolower($reservations->full_name)).'
                                                         </td>
-                                                        <td>'. substr(ucwords(strtolower($products->description)),0,60).'
+                                                        <td>'.$reservations->phone.'
                                                         </td>
-                                                        <td>'.ucwords(strtolower($products->price)).'
+                                                        <td>'.ucwords(strtolower($reservations->people_quantity)).'
                                                         </td>
-                                                        <td>'.ucwords(strtolower($products->date)).'
+                                                        <td>'.$reservations->entrance_date.'
+                                                        </td>
+                                                        <td>'.$reservations->entrance_hour.'
                                                         </td>
                                                         <td>
-                                                            <a href="'.base_url().'products/edit/'.$products->product_id.'"><i class="fe-edit-2"></i>
+                                                            <a href="'.base_url('reservations/edit/'.$reservations->reservation_id).'"><i class="fe-edit-2"></i>
                                                             </a>
 
-                                                            <a href="#" data-toggle="modal" onclick="show_products('.$products->product_id.')" data-target="#modal_products"><i class="fe-eye"></i></a>
-
-                                                            <a href="'.base_url().'products/destroy/'.$products->product_id.'"><i class="fe-x"></i>
+                                                            <a href="'.base_url('reservations/destroy/'.$reservations->reservation_id).'"><i class="fe-x"></i>
                                                             </a>
                                                         </td>
                                                     </tr>
