@@ -9,27 +9,6 @@
 	        $this->load->library('session');
 	    }
 
-	    public function store($data)
-		{
-			//insert
-		}
-		
-
-	    public function update($id,$data)
-	    {
-
-	    	$datos = array(
-				'full_name'       => $data['full_name'],
-				'phone'           => $data['phone'],
-				'people_quantity' => $data['people'],
-				'entrance_date'   => $data['entrance_date'],
-				'entrance_hour'   => $data['entrance_hour'],
-			);
-			
-			$this->db->where('reservation_id',$id);
-			$query = $this->db->update('reservations',$datos);
-		}
-
 		public function read()
 		{
 			$query= $this->db->get('reservations');

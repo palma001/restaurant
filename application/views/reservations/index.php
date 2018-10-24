@@ -61,9 +61,6 @@
                                                         <td>'.$reservations->entrance_hour.'
                                                         </td>
                                                         <td>
-                                                            <a href="'.base_url('reservations/edit/'.$reservations->reservation_id).'"><i class="fe-edit-2"></i>
-                                                            </a>
-
                                                             <a href="'.base_url('reservations/destroy/'.$reservations->reservation_id).'"><i class="fe-x"></i>
                                                             </a>
                                                         </td>
