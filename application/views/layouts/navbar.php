@@ -33,7 +33,7 @@
                 </li>
                 <li>
                     <a href="<?php echo base_url('users/');?>">
-                        <i class="fe-user"></i>
+                        <i class="fe-users"></i>
                         <span> Users </span>
                     </a>
                 </li> 

@@ -21,6 +21,12 @@
                     <div class="card-body">
                         <form class="form-horizontal" method="post" action="">
                             <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Address</label>
+                                <div class="col-sm-10">
+                                    <textarea name="textarea"  required placeholder="Address" name="address" rows="4" cols="40" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Mission</label>
                                 <div class="col-sm-10">
                                     <textarea name="textarea"  required placeholder="Mission" name="mission" rows="4" cols="40" class="form-control"></textarea>
@@ -31,6 +37,42 @@
                                  <div class="col-sm-10">
                                       <textarea name="textarea" required  placeholder="Vision" name="vision" rows="4" cols="40" class="form-control"></textarea>
                                  </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Phone</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="phone" class="form-control" placeholder="Phone" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Facebook</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="facebook" class="form-control" placeholder="Facebook" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Twitter</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="twitter" class="form-control" placeholder="Twitter" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Instagram</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="instagram" class="form-control" placeholder="Instagram" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Pinterest</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="pinterest" class="form-control" placeholder="Pinterest" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Logo</label>
+                                <div class="col-sm-10">
+                                    <input type="file" name="logo" class="form-control" required>
+                                </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Tax</label>
