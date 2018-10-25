@@ -3,7 +3,9 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Granny | Elegant Restaurant & Cafe Html5 Template</title>
+		<title>
+			<?php if ($settings){ echo ucwords(strtolower($settings->title));} ?>
+		</title>
 		 <!--IE Compatibility Meta-->
 	    <meta name="author" content="zytheme" />
 	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">

@@ -35,11 +35,9 @@
                                 <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Full Name</th>
-                                        <th>Phone</th>
-                                        <th>People</th>
+                                        <th>Client</th>
+                                        <th>Quantity</th>
                                         <th>Entrance Date</th>
-                                        <th>Entrance Hours</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -52,15 +50,12 @@
                                                         <td>'.$key.'</td>
                                                         <td>'.ucwords(strtolower($reservations->full_name)).'
                                                         </td>
-                                                        <td>'.$reservations->phone.'
-                                                        </td>
                                                         <td>'.ucwords(strtolower($reservations->people_quantity)).'
                                                         </td>
                                                         <td>'.$reservations->entrance_date.'
                                                         </td>
-                                                        <td>'.$reservations->entrance_hour.'
-                                                        </td>
                                                         <td>
+                                                            <a href="#" data-toggle="modal" onclick="show_reservations('.$reservations->reservation_id.')" data-target="#modal_reservations"><i class="fe-eye"></i></a>
                                                             <a href="'.base_url('reservations/destroy/'.$reservations->reservation_id).'"><i class="fe-x"></i>
                                                             </a>
                                                         </td>
@@ -80,22 +75,19 @@
     </div>
 </div>
 <script>
-    function show_products(id){
+    function show_reservations(id){
         $.ajax({
-            url: '<?= base_url()?>/index.php/products/show/',
+            url: '<?php echo base_url()?>/index.php/reservations/show/',
             type: 'POST',
             data: {id:id},
             dataType:'JSON',
             success:function(data){
                var html = "";
-               html = "<h5>"+data.title+"</h5><p><strong class='float-right'>"+data.date+"</strong></p>"+
-                      "<h6>User: </h6>"+      
-                      "<h6>Price : "+data.price+"</h6>"+
-                      "<p class='mt-3'>Description:</p>"+
-                      "<p class='mt-1'>"+data.description+"</p><hr>"+
-                      "<p class='mt-3'>Outstanding: "+data.outstanding+"</p>"+
-                      "<p>Views: "+data.views+"</p>";
-               $('.products').html(html);
+               html = "<h4>"+data.full_name+"</h4>"+
+                "<h4 class='mt-3'>"+data.entrance_date+" : "+data.entrance_hour+"</h4>"+   
+                "<h4 class='mt-3'>Quantity : "+data.people_quantity+"</h4>"+
+                "<h4 class='mt-3'>Phone: "+data.phone+"</h4>";
+               $('.reservations').html(html);
             }
         })
     }

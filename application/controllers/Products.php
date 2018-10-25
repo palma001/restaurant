@@ -9,7 +9,7 @@
 			$this->load->model('products_model');
 			$this->load->library('form_validation');
 			if (!$this->session->userdata['user_id']){
-	            redirect(base_url());
+	            redirect(base_url('login'));
 			}
 		}
 

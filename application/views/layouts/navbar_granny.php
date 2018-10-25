@@ -27,7 +27,12 @@
                     <div class="module-container pull-right">
                         <!-- Module Reservation  -->
                         <div class="module module-reservation">
-                            <a class="btn-popup" data-toggle="modal" data-target="#reservationModule"><i class="lnr lnr-users"></i>Reservation</a>
+                            <?php if ($settings){ ?>
+                                
+                               <?php if ($settings->active_reservations == 1){ ?>
+                                <a class="btn-popup" data-toggle="modal" data-target="#reservationModule"><i class="lnr lnr-users"></i>Reservation</a>
+                            <?php } ?>
+                           <?php } ?>
                             <div class="modal fade reservation-popup" tabindex="-1" role="dialog" id="reservationModule">
                                 <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content">

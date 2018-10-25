@@ -62,6 +62,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label" for="example-email">Image</label>
+                                    <div class="col-sm-10">
+                                        <input type="file" id="example-email" name="image" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
                                     <label class="col-sm-2 col-form-label"></label>
                                     <div class="col-sm-10">
                                         <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Save</button>

@@ -9,7 +9,7 @@
 			$this->load->helper('url');
 			$this->load->library('session');
 			if (!$this->session->userdata['user_id']){
-	            redirect(base_url());
+	            redirect(base_url('login'));
 			}
 		}
 

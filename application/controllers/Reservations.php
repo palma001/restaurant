@@ -9,7 +9,7 @@
 			$this->load->library('session');
 			$this->load->library('form_validation');
 			if (!$this->session->userdata['user_id']){
-	            redirect(base_url());
+	            redirect(base_url('login'));
 			}
 		}
 
@@ -19,8 +19,16 @@
 			$this->load->view('layouts/headers');
 			$this->load->view('layouts/navbar');
 			$this->load->view('layouts/topnav');
+			$this->load->view('modals/modal_reservations');
 			$this->load->view('reservations/index',$data);
 			$this->load->view('layouts/footer');
+		}
+
+		public function show()
+		{
+			$id = $this->input->post("id");
+			$data =  $this->reservations_model->get($id);
+			echo json_encode($data);
 		}
 
 		public function destroy(){
