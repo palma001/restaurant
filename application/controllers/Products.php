@@ -7,6 +7,7 @@
 			parent::__construct();
 			$this->load->library('session');
 			$this->load->model('products_model');
+			$this->load->model('settings_model');
 			$this->load->library('form_validation');
 			$this->load->helper('file');
 			if (!$this->session->userdata['user_id']){
@@ -27,10 +28,11 @@
 
 		public function create()
 		{
+			$settings = $this->settings_model->max_id();
 			$this->load->view('layouts/headers');
 			$this->load->view('layouts/navbar');
 			$this->load->view('layouts/topnav');
-			$this->load->view('products/create');
+			$this->load->view('products/create',array("settings" => $settings));
 			$this->load->view('layouts/footer');
 		}
 

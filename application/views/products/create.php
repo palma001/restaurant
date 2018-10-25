@@ -58,7 +58,9 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label" for="example-email">Price(USD)</label>
+                                    <label class="col-sm-2 col-form-label" for="example-email">Price(<?php if ($settings->currency == 1) {
+                                        echo "USD";
+                                    } ?>)</label>
                                     <div class="col-sm-10">
                                         <input type="text" id="example-email" name="price" class="form-control" placeholder="Price" value="<?php echo $this->input->post('price'); ?>">
                                     </div>
