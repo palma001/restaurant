@@ -172,5 +172,14 @@
 			$this->session->set_flashdata('message','Deleted Successfully');
 			redirect(base_url('products/'));
 		}	
+
+		public function pagination()
+		{
+			$data = array(
+				'total' => count($this->products_model->read()), 
+				'quantity' => $quantity,
+			);
+			echo json_encode($data);
+		}
 	}
 ?>

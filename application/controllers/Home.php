@@ -38,5 +38,12 @@
                 );
             $this->load->view('layouts/footer_granny');
         }
+
+        public function pagination()
+        {
+            
+            $data = array('products' => $this->products_model->pagination());
+            echo json_encode($data);
+        }
     }
 ?>

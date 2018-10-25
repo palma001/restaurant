@@ -84,7 +84,7 @@
 <script>
     function show_products(id){
         $.ajax({
-            url: '<?= base_url()?>/index.php/products/show/',
+            url: '<?php echo base_url()?>/index.php/products/show/',
             type: 'POST',
             data: {id:id},
             dataType:'JSON',

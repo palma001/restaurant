@@ -87,43 +87,8 @@
                         <!-- .col-md-12 end -->
                     </div>
                     <!-- .row end -->
-                    <div class="row">
-                        <!-- Product #1 -->
-                         <?php
-                            foreach ($products->result() as $key => $product) { ?>
-                                <div class="col-xs-12 col-sm-6 col-md-4">
-                                    <div class="product-item">
-                                        <div class="product--img">
-                                            <img src="assets/images/shop/grid/1.jpg" alt="Product" />
-                                            <div class="product--hover">
-                                                <div class="product--action">
-                                                    <a href="#">Add To Cart</a>
-                                                </div>
-                                            </div>
-                                            <!-- .product-overlay end -->
-                                            <div class="divider--shape-1down"></div>
-                                        </div>
-                                        <!-- .product-img end -->
-                                        <div class="product--content">
-                                            <div class="product--type">
-                                                <span>Light</span> - <span>Mexican</span> - <span>Organic</span>
-                                            </div>
-                                            <div class="product--title">
-                                                <h3><a href="#"><?php echo ucwords(strtolower($product->title ))?></a></h3>
-                                            </div>
-                                            <!-- .product-title end -->
-                                            <div class="product--price">
-                                                <span>$<?php echo $product->price ?></span>
-                                            </div>
-                                            <!-- .product-price end -->
-                                        </div>
-                                        <!-- .product-bio end -->
-                                    </div>
-                                </div>
-
-                        <?php         
-                            }
-                        ?> 
+                    <div class="row products">
+                        
                     </div>
                     <!-- .row end -->
                     <!-- .row end -->
@@ -218,3 +183,48 @@
 <!-- #blog end -->
 <!-- footer#1
 ============================================= -->
+
+<script>
+    $(document).ready(function(){
+        pagination();
+    });
+
+
+    function pagination(){
+        $.ajax({
+            url: '<?php echo base_url()?>/index.php/home/pagination/',
+            type: 'POST',
+            dataType:'JSON',
+            success:function(data){
+                var product = "";
+                $.each(data.products,function(key,item){
+                    product +='<div class="col-xs-12 col-sm-6 col-md-4">'+
+                        '<div class="product-item">'+
+                            '<div class="product--img">'+
+                                '<img src="http://localhost/comida/uploads/products/'+item.image+'" alt="Product" />'+
+                                '<div class="product--hover">'+
+                                    '<div class="product--action">'+
+                                        '<a href="#">Add To Cart</a>'+
+                                    '</div>'+
+                                '</div>'+
+                                '<div class="divider--shape-1down"></div>'+
+                            '</div>'+
+                            '<div class="product--content">'+
+                                '<div class="product--type">'+
+                                    '<span>Light</span> - <span>Mexican</span> - <span>Organic</span>'+
+                                '</div>'+
+                                '<div class="product--title">'+
+                                     '<h3><a href="#">'+item.title+'</a></h3>'+
+                                '</div>'+
+                                '<div class="product--price">'+
+                                    '<span>$'+item.price+'</span>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>'+
+                    '</div>';
+                })
+            $('.products').html(product);
+            }
+        })
+    }
+</script>   
