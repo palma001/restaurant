@@ -65,6 +65,12 @@
                     <a href="<?php echo base_url('sliders/');?>"> <i class="fe-sliders"></i> Sliders </a>
                 </li>
                 <li>
+                    <a href="<?php echo base_url('galleries/');?>">
+                        <i class="fe-image"></i>
+                        <span>Galleries</span>
+                    </a>
+                </li>
+                <li>
                     <a href="<?php echo base_url("admin/");?>"> <i class="fe-globe"></i> Social Networks </a>
                 </li>
                 <li>

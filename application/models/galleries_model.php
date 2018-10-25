@@ -14,13 +14,13 @@
             $data = array(
                 'gallery'   => $imagen,
             );
-            $this->db->insert('gallaries', $data);
+            $this->db->insert('galleries', $data);
         }
 
         public function read()
         {
 
-            $query = $this->db->get('gallaries');  
+            $query = $this->db->get('galleries');  
             if ($query->num_rows()>0) {
                 return $query;
             }else {
@@ -32,9 +32,9 @@
         public function destroy($id)
         {
             $this->db->where('gallery_id',$id);
-            $this->db->delete('gallaries');
+            $this->db->delete('galleries');
             $this->session->set_flashdata('message','Deleted Successfully');
-            redirect(base_url('gallaries/')); 
+            redirect(base_url('galleries/')); 
         }
     }
 

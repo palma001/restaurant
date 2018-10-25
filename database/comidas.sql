@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-10-2018 a las 20:51:55
+-- Tiempo de generación: 25-10-2018 a las 22:46:35
 -- Versión del servidor: 10.1.34-MariaDB
 -- Versión de PHP: 7.2.7
 
@@ -59,6 +59,24 @@ CREATE TABLE `categories` (
   `category_id` int(11) NOT NULL,
   `category` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `galleries`
+--
+
+CREATE TABLE `galleries` (
+  `gallery_id` int(11) NOT NULL,
+  `gallery` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `galleries`
+--
+
+INSERT INTO `galleries` (`gallery_id`, `gallery`) VALUES
+(2, 'Desert.jpg');
 
 -- --------------------------------------------------------
 
@@ -176,7 +194,8 @@ CREATE TABLE `products` (
   `price` double NOT NULL,
   `outstanding` varchar(30) NOT NULL,
   `views` varchar(120) NOT NULL,
-  `date` date NOT NULL
+  `date` date NOT NULL,
+  `image` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -209,6 +228,13 @@ CREATE TABLE `reservations` (
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `reservations`
+--
+
+INSERT INTO `reservations` (`reservation_id`, `people_quantity`, `entrance_date`, `entrance_hour`, `full_name`, `phone`, `date`) VALUES
+(1, '5', '2018-10-02', '12:50', 'Luis Palma', '04249502755', '2018-10-02');
+
 -- --------------------------------------------------------
 
 --
@@ -230,8 +256,19 @@ CREATE TABLE `settings` (
   `twitter` text NOT NULL,
   `instagram` text NOT NULL,
   `pinterest` text NOT NULL,
-  `logo` text NOT NULL
+  `logo` text NOT NULL,
+  `active_reservations` int(11) NOT NULL,
+  `title` varchar(30) NOT NULL,
+  `favicon` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `settings`
+--
+
+INSERT INTO `settings` (`setting_id`, `goals`, `mission`, `currency`, `language`, `vision`, `tax`, `tax_name`, `address`, `phone`, `facebook`, `twitter`, `instagram`, `pinterest`, `logo`, `active_reservations`, `title`, `favicon`) VALUES
+(1, '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', ''),
+(2, '', '', '1', '', '', '', '', '', '', '', '', '', '', 'Chrysanthemum.jpg', 0, 'hola', 'Chrysanthemum.jpg');
 
 -- --------------------------------------------------------
 
@@ -264,9 +301,10 @@ CREATE TABLE `sliders` (
 --
 
 INSERT INTO `sliders` (`slider_id`, `slider`, `user_id`, `image`, `date`) VALUES
-(4, '', 3, 'Chrysanthemum.jpg', '0000-00-00'),
 (5, '', 3, 'Desert2.jpg', '0000-00-00'),
-(6, '', 3, 'Hydrangeas3.jpg', '0000-00-00');
+(6, '', 3, 'Hydrangeas3.jpg', '0000-00-00'),
+(9, '', 3, 'Tulips1.jpg', '0000-00-00'),
+(10, '', 3, 'Desert3.jpg', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -337,6 +375,12 @@ ALTER TABLE `blogs`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`category_id`);
+
+--
+-- Indices de la tabla `galleries`
+--
+ALTER TABLE `galleries`
+  ADD PRIMARY KEY (`gallery_id`);
 
 --
 -- Indices de la tabla `messages`
@@ -445,13 +489,19 @@ ALTER TABLE `alerts`
 -- AUTO_INCREMENT de la tabla `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `blog_id` int(12) NOT NULL AUTO_INCREMENT;
+  MODIFY `blog_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `galleries`
+--
+ALTER TABLE `galleries`
+  MODIFY `gallery_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `messages`
@@ -487,7 +537,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `products_images`
@@ -499,13 +549,13 @@ ALTER TABLE `products_images`
 -- AUTO_INCREMENT de la tabla `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `setting_id` int(12) NOT NULL AUTO_INCREMENT;
+  MODIFY `setting_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `shops`
@@ -517,7 +567,7 @@ ALTER TABLE `shops`
 -- AUTO_INCREMENT de la tabla `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `slider_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `slider_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
