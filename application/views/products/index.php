@@ -39,7 +39,6 @@
                                     <tr>
                                         <th>Id</th>
                                         <th>Title</th>
-                                        <th>Description</th>
                                         <th>Price</th>
                                         <th>Date</th>
                                         <th></th>
@@ -53,8 +52,6 @@
                                                     <tr>
                                                         <td>'.$key.'</td>
                                                         <td>'.ucwords(strtolower($products->title)).'
-                                                        </td>
-                                                        <td>'. substr(ucwords(strtolower($products->description)),0,60).'
                                                         </td>
                                                         <td>'.ucwords(strtolower($products->price)).'
                                                         </td>

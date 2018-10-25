@@ -8,6 +8,7 @@
 			$this->load->library('session');
 			$this->load->model('products_model');
 			$this->load->library('form_validation');
+			$this->load->helper('file');
 			if (!$this->session->userdata['user_id']){
 	            redirect(base_url('login'));
 			}
@@ -65,16 +66,33 @@
 	        	$this->create();
 	        }else{
 
-				$data = array(
-					'user_id'     => $this->session->userdata['user_id'],
-					'title'       => $this->input->post('title'),
-					'description' => $this->input->post('description'),
-					'price'       => $this->input->post('price'),
-					'outstanding' => $this->input->post('out'),
-				);
-				$this->products_model->store($data);	
-				$this->session->set_flashdata('message','Saved Successfully');
-				redirect(base_url('products/'));
+	        	$config['upload_path']   = './uploads/products/';
+				$config['allowed_types'] = 'jpg|jpeg|gif|png';
+				$this->load->library('upload',$config);
+
+
+				if (!$this->upload->do_upload('image')) {
+
+					$error = array('error' => $this->upload->display_errors());
+		            $this->session->set_flashdata('message','Unable to Upload the File');
+		            redirect(base_url('products/create'));
+
+				}else{
+
+					$image_info = $this->upload->data();
+					$images = $image_info['file_name'];
+					$data = array(
+						'user_id'     => $this->session->userdata['user_id'],
+						'title'       => $this->input->post('title'),
+						'description' => $this->input->post('description'),
+						'price'       => $this->input->post('price'),
+						'outstanding' => $this->input->post('out'),
+						'image'       => $images
+					);
+					$this->products_model->store($data);	
+					$this->session->set_flashdata('message','Saved Successfully');
+					redirect(base_url('products/'));
+				}
 	        }
 		}
 

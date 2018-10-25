@@ -17,10 +17,10 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         </button>
-                        <a class="logo" href="index.html">
-                            <img class="logo-light" src="<?php echo base_url('granny/assets/images/logo/logo-light.png') ?>" alt="granny Logo">
+                        <a class="logo" href="<?php echo base_url(); ?>">
+                            <img class="logo-light" width="100" src="<?php echo base_url('uploads/logo/'.$settings->logo); ?>"  alt="granny Logo" >
 
-                            <img class="logo-dark" src="<?php echo base_url('granny/assets/images/logo/logo-dark.png') ?>" alt="granny Logo">
+                            <img class="logo-dark" width="100" src="<?php echo base_url('uploads/logo/'.$settings->logo); ?>" alt="granny Logo">
                         </a>
                     </div>
 
@@ -144,9 +144,15 @@
                             </li>
                             <!-- li end -->
                             <!-- Blog Menu-->
-                            <li class="has-dropdown">
-                                <a href="#" class="menu-item">Blog</a>
-                            </li>
+                            <?php 
+                                if ($blogs) {
+                            ?>
+                                <li class="has-dropdown">
+                                    <a href="#" class="menu-item">Blog</a>
+                                </li>
+                            <?php
+                                } 
+                            ?>
                             <!-- li end -->
                         </ul>
                     </div>

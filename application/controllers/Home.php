@@ -9,16 +9,33 @@
             $this->load->model('sliders_model');
             $this->load->model('types_users_model');
             $this->load->model('settings_model');
+            $this->load->model('products_model');
+            $this->load->model('blogs_model');
             $this->load->library('session');
         }
 
         public function index()
         {
             $slider  = $this->sliders_model->read();
+            $products  = $this->products_model->read();
             $settings = $this->settings_model->max_id();
+            $blogs = $this->blogs_model->read();
+
             $this->load->view('layouts/headers_granny',array('settings' => $settings));
-            $this->load->view('layouts/navbar_granny',array('settings' => $settings));
-            $this->load->view('home/index', array('slider' => $slider));
+            $this->load->view('layouts/navbar_granny',
+                    array(
+                        'settings' => $settings,
+                        'blogs'    => $blogs
+                    )
+                );
+            $this->load->view('home/index', 
+                    array(
+                        'slider'   => $slider, 
+                        'products' => $products, 
+                        'settings' => $settings , 
+                        'blogs'    => $blogs
+                    )
+                );
             $this->load->view('layouts/footer_granny');
         }
     }

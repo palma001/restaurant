@@ -13,12 +13,13 @@ class Products_model extends CI_Model {
 	{
 		$fecha = date('Y/m/d');
 		$this->db->insert('products',array(
-			'user_id'     => $data['user_id'],
-			'title'       => $data['title'], 
-			'description' => $data['description'], 
-			'price'       => $data['price'], 
-			'outstanding' => $data['outstanding'], 
-			'date'        => $fecha
+				'user_id'     => $data['user_id'],
+				'title'       => $data['title'], 
+				'description' => $data['description'], 
+				'price'       => $data['price'], 
+				'outstanding' => $data['outstanding'], 
+				'date'        => $fecha,
+				'image'       => $data['image'],
 			)
 		);
 	}
@@ -30,7 +31,7 @@ class Products_model extends CI_Model {
 			'description' => $data['description'],
 			'price'       => $data['price'],
 			'outstanding' => $data['outstanding'],
-			'views'       => $data['views']
+			'views'       => $data['views'],
 		);
 
 		$this->db->where('product_id',$id);
@@ -39,7 +40,6 @@ class Products_model extends CI_Model {
 	
 	public function read()
 	{
-		$this->db->order_by('product_id','Desc');
 		$query = $this->db->get('products');
 		if ($query->num_rows() > 0){
 			return $query;

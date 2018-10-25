@@ -1,4 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
+
 	class Blogs extends CI_Controller {
 
 		function __construct()
@@ -61,8 +62,6 @@
 				$config['allowed_types'] = 'jpg|jpeg|gif|png';
 				$this->load->library('upload',$config);
 
-				$image_info = $this->upload->data();
-				$images = $image_info['file_name'];
 
 				if (!$this->upload->do_upload('img')) {
 
@@ -72,6 +71,9 @@
 
 				}else{
 
+					$image_info = $this->upload->data();
+					$images = $image_info['file_name'];
+					
 					$data = array(
 						'user_id'     => $this->session->userdata['user_id'],
 						'title'       => $this->input->post('title'),
