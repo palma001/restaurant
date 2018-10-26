@@ -7,6 +7,7 @@
 			parent::__construct();
 			$this->load->helper('form');
 			$this->load->helper('url');
+			$this->load->model('settings_model');
 			$this->load->library('session');
 			if (!$this->session->userdata['user_id']){
 	            redirect(base_url('login'));
@@ -15,11 +16,39 @@
 
 		public function index()
 		{
+			$settings = $this->settings_model->read();
 			$this->load->view('layouts/headers');
 			$this->load->view('layouts/navbar');
 			$this->load->view('layouts/topnav');
-			$this->load->view('Settings/index');
+			$this->load->view('Settings/index',array('settings' =>$settings));
 		    $this->load->view('layouts/footer');
+		}
+
+		public function update()
+		{
+			$config['upload_path']   = './uploads/blogs/';
+			$config['allowed_types'] = 'jpg|jpeg|gif|png';
+			$this->load->library('upload',$config);
+
+
+			$data = array(
+				'title'        =>  $this->input->post('title'),
+				'address'      =>  $this->input->post('address'),
+				'mission'      =>  $this->input->post('mission'),
+				'vision'       =>  $this->input->post('vision'),
+				'facebook'     =>  $this->input->post('facebook'),
+				'twitter'      =>  $this->input->post('twitter'),
+				'instagram'    =>  $this->input->post('instagram'),
+				'pinterest'    =>  $this->input->post('pinterest'),
+				'phone'        =>  $this->input->post('phone'),
+				'tax'          =>  $this->input->post('tax'),
+				'taxname'      =>  $this->input->post('taxname'),
+				'currency'     =>  $this->input->post('currency'),
+				'lenguage'     =>  $this->input->post('lenguage'),
+				'reservations' =>  $this->input->post('reservations'),
+			);
+
+			$this->settings_model->update($data);
 		}
 	}
 ?>

@@ -87,61 +87,13 @@
                         <!-- .col-md-12 end -->
                     </div>
                     <!-- .row end -->
-                    <div class="row">
-                        <!-- Product #1 -->
-                         <?php
-                            foreach ($products->result() as $key => $product) { ?>
-                                <div class="col-xs-12 col-sm-6 col-md-4">
-                                    <div class="product-item">
-                                        <div class="product--img">
-                                            <img src="assets/images/shop/grid/1.jpg" alt="Product" />
-                                            <div class="product--hover">
-                                                <div class="product--action">
-                                                    <a href="#">Add To Cart</a>
-                                                </div>
-                                            </div>
-                                            <!-- .product-overlay end -->
-                                            <div class="divider--shape-1down"></div>
-                                        </div>
-                                        <!-- .product-img end -->
-                                        <div class="product--content">
-                                            <div class="product--type">
-                                                <span>Light</span> - <span>Mexican</span> - <span>Organic</span>
-                                            </div>
-                                            <div class="product--title">
-                                                <h3><a href="#"><?php echo ucwords(strtolower($product->title ))?></a></h3>
-                                            </div>
-                                            <!-- .product-title end -->
-                                            <div class="product--price">
-                                                <span>$<?php echo $product->price ?></span>
-                                            </div>
-                                            <!-- .product-price end -->
-                                        </div>
-                                        <!-- .product-bio end -->
-                                    </div>
-                                </div>
-
-                        <?php         
-                            }
-                        ?> 
+                    <div class="row products">
+                        
                     </div>
                     <!-- .row end -->
                     <!-- .row end -->
                     <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12 clearfix text--center">
-                            <ul class="pagination mt-20">
-                                <li class="active"><a href="#">1</a>
-                                </li>
-                                <li><a href="#">2</a>
-                                </li>
-                                <li><a href="#">3</a>
-                                </li>
-                                <li>
-                                    <a href="#" aria-label="Next">
-                                      <span aria-hidden="true"><i class="fa fa-angle-right"></i></span>
-                                  </a>
-                                </li>
-                            </ul>
+                        <div class="col-xs-12 col-sm-12 col-md-12 clearfix text--center pagination">
                         </div>
                         <!-- .col-md-12 end -->
                     </div>
@@ -218,3 +170,4 @@
 <!-- #blog end -->
 <!-- footer#1
 ============================================= -->
+<script src="<?php echo base_url('js/pagination.js') ?>"></script>   

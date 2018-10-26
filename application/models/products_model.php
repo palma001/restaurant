@@ -69,4 +69,13 @@ class Products_model extends CI_Model {
 		$query = $this->db->query("SELECT SUM(views) as views from products");
 		return $query->row();
 	}
+
+	public function pagination($inicio = FALSE,$quantity = FALSE)
+	{
+		if ($inicio !== FALSE && $quantity !== FALSE) {
+			$this->db->limit($quantity,$inicio);
+		}
+		$query = $this->db->get('products');
+		return $query->result();
+	}
 }

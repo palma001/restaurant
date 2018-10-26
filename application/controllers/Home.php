@@ -18,7 +18,7 @@
         {
             $slider  = $this->sliders_model->read();
             $products  = $this->products_model->read();
-            $settings = $this->settings_model->max_id();
+            $settings = $this->settings_model->read();
             $blogs = $this->blogs_model->read();
 
             $this->load->view('layouts/headers_granny',array('settings' => $settings));
@@ -37,6 +37,19 @@
                     )
                 );
             $this->load->view('layouts/footer_granny');
+        }
+
+        public function pagination()
+        {
+            $nropage = $this->input->post('nropage');
+            $quantity = 6;
+            $inicio  = ($nropage -1)*$quantity;
+            $data = array(
+                'products' => $this->products_model->pagination($inicio,$quantity),
+                'total' => count($this->products_model->pagination()),
+                'quantity' => $quantity,
+            );
+            echo json_encode($data);
         }
     }
 ?>

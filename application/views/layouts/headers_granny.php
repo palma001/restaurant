@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>
-			<?php if ($settings){ echo ucwords(strtolower($settings->title));} ?>
+			<?php if ($settings){ echo $settings->title; } ?>
 		</title>
 		 <!--IE Compatibility Meta-->
 	    <meta name="author" content="zytheme" />
@@ -24,5 +24,6 @@
 	    <link rel="stylesheet" type="text/css" href="<?php echo base_url('granny/assets/revolution/css/settings.css'); ?>">
 	    <link rel="stylesheet" type="text/css" href="<?php echo base_url('granny/assets/revolution/css/layers.css'); ?>">
 	    <link rel="stylesheet" type="text/css" href="<?php echo base_url('granny/assets/revolution/css/navigation.css'); ?>">
+	    <script src="<?php echo base_url('granny/assets/js/jquery-2.2.4.min.js'); ?>"></script>
 	</head>
 	<body>

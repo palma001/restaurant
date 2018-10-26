@@ -182,7 +182,6 @@
 				    <!-- .footer-copyright end -->
 			</footer>
 		</div>	
-		<script src="<?php echo base_url('granny/assets/js/jquery-2.2.4.min.js'); ?>"></script>
 		<script src="<?php echo base_url('granny/assets/js/plugins.js'); ?>"></script>
 		<script src="<?php echo base_url('granny/assets/js/functions.js'); ?>"></script>
 		<!-- RS5.0 Core JS Files -->
