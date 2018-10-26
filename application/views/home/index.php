@@ -4,7 +4,6 @@
 		<div id="slider1" class="rev_slider" data-version="5.0">
 			<ul>
 				<!-- slide 1 -->
-
 				<?php  
 					if ($slider) {
 						foreach ($slider->result() as $key => $slider) {

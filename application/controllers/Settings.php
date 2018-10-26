@@ -26,10 +26,15 @@
 
 		public function update()
 		{
-			$config['upload_path']   = './uploads/blogs/';
+			$config['upload_path']   = './uploads/logo/';
 			$config['allowed_types'] = 'jpg|jpeg|gif|png';
 			$this->load->library('upload',$config);
 
+			$this->upload->do_upload('logo');
+			$this->upload->do_upload('favicon');
+
+			$logo = $_FILES['logo']['name'];
+			$favicon = $_FILES['favicon']['name'];
 
 			$data = array(
 				'title'        =>  $this->input->post('title'),
@@ -46,8 +51,9 @@
 				'currency'     =>  $this->input->post('currency'),
 				'lenguage'     =>  $this->input->post('lenguage'),
 				'reservations' =>  $this->input->post('reservations'),
+				'logo'         => $logo,
+				'favicon'      => $favicon
 			);
-
 			$this->settings_model->update($data);
 		}
 	}
