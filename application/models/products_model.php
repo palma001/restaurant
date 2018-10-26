@@ -70,8 +70,11 @@ class Products_model extends CI_Model {
 		return $query->row();
 	}
 
-	public function pagination()
+	public function pagination($inicio = FALSE,$quantity = FALSE)
 	{
+		if ($inicio !== FALSE && $quantity !== FALSE) {
+			$this->db->limit($quantity,$inicio);
+		}
 		$query = $this->db->get('products');
 		return $query->result();
 	}

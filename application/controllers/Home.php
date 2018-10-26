@@ -41,9 +41,11 @@
 
         public function pagination()
         {
-            $quantity = 5;
+            $nropage = $this->input->post('nropage');
+            $quantity = 6;
+            $inicio  = ($nropage -1)*$quantity;
             $data = array(
-                'products' => $this->products_model->pagination(),
+                'products' => $this->products_model->pagination($inicio,$quantity),
                 'total' => count($this->products_model->pagination()),
                 'quantity' => $quantity,
             );
