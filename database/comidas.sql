@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-10-2018 a las 00:59:36
+-- Tiempo de generación: 26-10-2018 a las 04:39:02
 -- Versión del servidor: 10.1.34-MariaDB
 -- Versión de PHP: 7.2.7
 
@@ -197,6 +197,17 @@ CREATE TABLE `products` (
   `date` date NOT NULL,
   `image` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `products`
+--
+
+INSERT INTO `products` (`product_id`, `user_id`, `title`, `description`, `price`, `outstanding`, `views`, `date`, `image`) VALUES
+(1, 3, 'Hola como estan 2', 'Hola como estan 2 Hola como estan 2 Hola como estan 2', 100000, '1', '', '2018-10-26', 'descarga_(1).jpg'),
+(2, 3, 'Hola como estam', 'Hola como estamHola como estamHola como estamHola como estamHola como estam', 100, '1', '', '2018-10-26', 'Chrysanthemum.jpg'),
+(3, 3, 'Hola como estan 2', 'Hola como estan 2Hola como estan 2Hola como estan 2Hola como estan 2', 100000, '1', '', '2018-10-26', 'Jellyfish.jpg'),
+(4, 3, 'Hola como estan 2', 'Hola como estan 2Hola como estan 2 Hola como estan 2Hola como estan 2', 100000, '1', '', '2018-10-26', 'Desert.jpg'),
+(5, 3, 'Confirm PasswordConfirm Passwo', 'Confirm PasswordConfirm PasswordConfirm PasswordConfirm Password', 100000, '1', '', '2018-10-26', 'Lighthouse.jpg');
 
 -- --------------------------------------------------------
 
@@ -537,7 +548,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `products_images`
