@@ -93,20 +93,7 @@
                     <!-- .row end -->
                     <!-- .row end -->
                     <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12 clearfix text--center">
-                            <ul class="pagination mt-20">
-                                <li class="active"><a href="#">1</a>
-                                </li>
-                                <li><a href="#">2</a>
-                                </li>
-                                <li><a href="#">3</a>
-                                </li>
-                                <li>
-                                    <a href="#" aria-label="Next">
-                                      <span aria-hidden="true"><i class="fa fa-angle-right"></i></span>
-                                  </a>
-                                </li>
-                            </ul>
+                        <div class="col-xs-12 col-sm-12 col-md-12 clearfix text--center pagination">
                         </div>
                         <!-- .col-md-12 end -->
                     </div>
@@ -222,8 +209,21 @@
                             '</div>'+
                         '</div>'+
                     '</div>';
-                })
-            $('.products').html(product);
+                });
+
+                $('.products').html(product);
+                //total registros 
+                totalRegistro = data.total;
+                //cantidad de registros
+                cantidad = data.quantity;
+                numeroLink = Math.ceil(totalRegistro/cantidad);
+
+                paginador = '<ul class="pagination mt-20">';
+                for (var i = 1; i <= numeroLink; i++) {
+                   paginador += '<li class="active"><a href="'+i+'">'+i+'</a></li>';
+                }
+                paginador += '</ul>';
+                $('.pagination').html(paginador);
             }
         })
     }

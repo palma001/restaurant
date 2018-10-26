@@ -41,8 +41,12 @@
 
         public function pagination()
         {
-            
-            $data = array('products' => $this->products_model->pagination());
+            $quantity = 5;
+            $data = array(
+                'products' => $this->products_model->pagination(),
+                'total' => count($this->products_model->pagination()),
+                'quantity' => $quantity,
+            );
             echo json_encode($data);
         }
     }
