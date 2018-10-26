@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-10-2018 a las 04:39:02
+-- Tiempo de generación: 26-10-2018 a las 22:18:00
 -- Versión del servidor: 10.1.34-MariaDB
 -- Versión de PHP: 7.2.7
 
@@ -48,6 +48,13 @@ CREATE TABLE `blogs` (
   `image` text NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `blogs`
+--
+
+INSERT INTO `blogs` (`blog_id`, `user_id`, `title`, `description`, `image`, `date`) VALUES
+(1, 3, 'Hola como estan 2', 'Hola como estan 2Hola como estan 2Hola como estan 2Hola como estan 2Hola como estan 2', 'Desert.jpg', '2018-10-26');
 
 -- --------------------------------------------------------
 
@@ -198,17 +205,6 @@ CREATE TABLE `products` (
   `image` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `products`
---
-
-INSERT INTO `products` (`product_id`, `user_id`, `title`, `description`, `price`, `outstanding`, `views`, `date`, `image`) VALUES
-(1, 3, 'Hola como estan 2', 'Hola como estan 2 Hola como estan 2 Hola como estan 2', 100000, '1', '', '2018-10-26', 'descarga_(1).jpg'),
-(2, 3, 'Hola como estam', 'Hola como estamHola como estamHola como estamHola como estamHola como estam', 100, '1', '', '2018-10-26', 'Chrysanthemum.jpg'),
-(3, 3, 'Hola como estan 2', 'Hola como estan 2Hola como estan 2Hola como estan 2Hola como estan 2', 100000, '1', '', '2018-10-26', 'Jellyfish.jpg'),
-(4, 3, 'Hola como estan 2', 'Hola como estan 2Hola como estan 2 Hola como estan 2Hola como estan 2', 100000, '1', '', '2018-10-26', 'Desert.jpg'),
-(5, 3, 'Confirm PasswordConfirm Passwo', 'Confirm PasswordConfirm PasswordConfirm PasswordConfirm Password', 100000, '1', '', '2018-10-26', 'Lighthouse.jpg');
-
 -- --------------------------------------------------------
 
 --
@@ -255,13 +251,13 @@ INSERT INTO `reservations` (`reservation_id`, `people_quantity`, `entrance_date`
 CREATE TABLE `settings` (
   `setting_id` int(12) NOT NULL,
   `goals` varchar(60) NOT NULL,
-  `mission` varchar(60) NOT NULL,
+  `mission` text NOT NULL,
   `currency` varchar(30) NOT NULL,
   `language` varchar(30) NOT NULL,
-  `vision` varchar(30) NOT NULL,
+  `vision` text NOT NULL,
   `tax` varchar(30) NOT NULL,
   `tax_name` varchar(30) NOT NULL,
-  `address` varchar(30) NOT NULL,
+  `address` text NOT NULL,
   `phone` varchar(20) NOT NULL,
   `facebook` text NOT NULL,
   `twitter` text NOT NULL,
@@ -278,8 +274,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`setting_id`, `goals`, `mission`, `currency`, `language`, `vision`, `tax`, `tax_name`, `address`, `phone`, `facebook`, `twitter`, `instagram`, `pinterest`, `logo`, `active_reservations`, `title`, `favicon`) VALUES
-(1, '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', ''),
-(2, '', '', '1', '', '', '', '', '', '', '', '', '', '', 'Chrysanthemum.jpg', 0, 'hola', 'Chrysanthemum.jpg');
+(1, '', 'mission', '1', '1', 'vision', 'https://www.facebook.com/?ref=', 'https://www.facebook.com/?ref=', 'address', '04249502755', 'https://www.facebook.com/?ref=tn_tnmn', 'https://www.facebook.com/?ref=tn_tnmn', 'https://www.facebook.com/?ref=tn_tnmn', 'https://www.facebook.com/?ref=tn_tnmn', 'Desert.jpg', 1, '.::Donde Cueche::.', 'Desert.jpg');
 
 -- --------------------------------------------------------
 
@@ -312,10 +307,7 @@ CREATE TABLE `sliders` (
 --
 
 INSERT INTO `sliders` (`slider_id`, `slider`, `user_id`, `image`, `date`) VALUES
-(5, '', 3, 'Desert2.jpg', '0000-00-00'),
-(6, '', 3, 'Hydrangeas3.jpg', '0000-00-00'),
-(9, '', 3, 'Tulips1.jpg', '0000-00-00'),
-(10, '', 3, 'Desert3.jpg', '0000-00-00');
+(11, '', 3, 'Desert.jpg', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -500,7 +492,7 @@ ALTER TABLE `alerts`
 -- AUTO_INCREMENT de la tabla `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `blog_id` int(12) NOT NULL AUTO_INCREMENT;
+  MODIFY `blog_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `categories`
@@ -548,7 +540,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `product_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `products_images`
@@ -578,7 +570,7 @@ ALTER TABLE `shops`
 -- AUTO_INCREMENT de la tabla `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `slider_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `slider_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `users`

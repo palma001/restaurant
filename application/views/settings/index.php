@@ -19,7 +19,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <form class="form-horizontal" method="post" action="<?php echo base_url("settings/update/") ?>">
+                        <form class="form-horizontal" method="post" action="<?php echo base_url("settings/update/") ?>" enctype="multipart/form-data">
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Title</label>
                                 <div class="col-sm-10">
