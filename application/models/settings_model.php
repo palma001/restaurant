@@ -40,6 +40,8 @@
 					'language'            =>  $data['lenguage'],
 					'active_reservations' =>  $data['reservations'], 
 				);
+				$this->db->update('settings',$datos);
+				redirect(base_url('settings'));
 			}else if (empty($data['logo'])) {
 			
 				$datos = array(
@@ -58,8 +60,9 @@
 					'language'            =>  $data['lenguage'],
 					'active_reservations' =>  $data['reservations'], 
 					'favicon'             =>  $data['favicon'],
-
 				);
+				$this->db->update('settings',$datos);
+				redirect(base_url('settings'));
 			}else if (empty($data['favicon'])){
 				$datos = array(
 					'title'               =>  $data['title'],
@@ -78,10 +81,31 @@
 					'active_reservations' =>  $data['reservations'], 
 					'logo'                =>  $data['logo'],
 				);
-			}
+				$this->db->update('settings',$datos);
+				redirect(base_url('settings'));
+			}else{
 
-			$this->db->update('settings',$datos);
-			redirect(base_url('settings'));
+				$datos = array(
+					'title'               =>  $data['title'],
+					'address'             =>  'address',
+					'mission'             =>  'mission',
+					'vision'              =>  'vision',
+					'facebook'            =>  $data['facebook'],
+					'twitter'             =>  $data['twitter'],
+					'instagram'           =>  $data['instagram'],
+					'pinterest'           =>  $data['pinterest'],
+					'phone'               =>  $data['phone'],
+					'tax'                 =>  $data['tax'],
+					'tax_name'            =>  $data['taxname'],
+					'currency'            =>  $data['currency'],
+					'language'            =>  $data['lenguage'],
+					'active_reservations' =>  $data['reservations'], 
+					'logo'                =>  $data['logo'],
+					'favicon'             =>  $data['favicon'],
+				);
+				$this->db->update('settings',$datos);
+				redirect(base_url('settings'));
+			}
 		}
 
 		public function get($id)
