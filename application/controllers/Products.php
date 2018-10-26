@@ -28,7 +28,7 @@
 
 		public function create()
 		{
-			$settings = $this->settings_model->max_id();
+			$settings = $this->settings_model->read();
 			$this->load->view('layouts/headers');
 			$this->load->view('layouts/navbar');
 			$this->load->view('layouts/topnav');

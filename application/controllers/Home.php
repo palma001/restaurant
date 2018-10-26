@@ -18,7 +18,7 @@
         {
             $slider  = $this->sliders_model->read();
             $products  = $this->products_model->read();
-            $settings = $this->settings_model->max_id();
+            $settings = $this->settings_model->read();
             $blogs = $this->blogs_model->read();
 
             $this->load->view('layouts/headers_granny',array('settings' => $settings));

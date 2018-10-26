@@ -11,12 +11,36 @@
 
 		public function read()
 		{
+			$this->db->limit(1);
 			$query = $this->db->get('settings');
 			if ($query->num_rows() > 0){
 				return $query->row();
 			}else{
 				return false;
 			}
+		}
+
+		public function update($data)
+		{
+			$datos = array(
+				'title'               =>  $data['title'],
+				'address'             =>  'address',
+				'mission'             =>  'mission',
+				'vision'              =>  'vision',
+				'facebook'            =>  $data['facebook'],
+				'twitter'             =>  $data['twitter'],
+				'instagram'           =>  $data['instagram'],
+				'pinterest'           =>  $data['pinterest'],
+				'phone'               =>  $data['phone'],
+				'tax'                 =>  $data['tax'],
+				'tax_name'            =>  $data['taxname'],
+				'currency'            =>  $data['currency'],
+				'language'            =>  $data['lenguage'],
+				'active_reservations' =>  $data['reservations'], 
+			);
+
+			$this->db->update('settings',$datos);
+			redirect(base_url('settings'));
 		}
 
 		public function get($id)
@@ -33,12 +57,6 @@
 		public function destroy($id)
 		{
 			$this->db->delete('settings',array('settings_id' => $id));	
-		}
-
-		public function max_id()
-		{
-			$query = $this->db->query('SELECT * from settings ORDER BY setting_id  DESC LIMIT 1');
-			return $query->row();
 		}
 	}
 ?>

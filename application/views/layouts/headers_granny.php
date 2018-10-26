@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>
-			<?php if ($settings){ echo ucwords(strtolower($settings->title));} ?>
+			<?php if ($settings){ echo $settings->title; } ?>
 		</title>
 		 <!--IE Compatibility Meta-->
 	    <meta name="author" content="zytheme" />
