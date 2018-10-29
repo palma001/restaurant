@@ -132,7 +132,7 @@
                                 </div>
                                 <div class="entry--content">
                                     <div class="entry--title">
-                                        <h4><a href="#"><?php echo ucwords(strtolower(substr($blogs->title,0,20))) ?></a></h4>
+                                        <h4><a href="<?php echo base_url('blogs/show/'.$blogs->blog_id); ?>"><?php echo ucwords(strtolower(substr($blogs->title,0,20))) ?></a></h4>
                                     </div>
                                     <div class="entry--bio">
                                         <?php echo ucwords(strtolower(substr($blogs->description,0,100))) ?>
