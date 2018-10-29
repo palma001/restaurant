@@ -32,7 +32,7 @@
 ============================================= -->
 <section id="page-title" class="page-title bg-overlay bg-parallax bg-overlay-gradient">
     <div class="bg-section">
-        <img src="assets/images/page-title/6.jpg" alt="Background" />
+        <img src="<?php echo base_url('frontend_template/assets/images/page-title/6.jpg') ?>" alt="Background" />
     </div>
     <div class="container">
         <div class="row">
@@ -45,11 +45,6 @@
                         </div>
                     </div>
                     <div class="clearfix"></div>
-                    <ol class="breadcrumb">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html">shop</a></li>
-                        <li class="active">Shop Products</li>
-                    </ol>
                     <div class="divider--shape-1down divider--shape-gray"></div>
                 </div>
                 <!-- .title end -->
@@ -136,9 +131,6 @@
         							</a>
                                 </div>
                                 <div class="entry--content">
-                                    <div class="entry--meta">
-                                        <span><a href="#">Fall</a> , <a href="#">Side Dish</a></span>
-                                    </div>
                                     <div class="entry--title">
                                         <h4><a href="#"><?php echo ucwords(strtolower(substr($blogs->title,0,20))) ?></a></h4>
                                     </div>

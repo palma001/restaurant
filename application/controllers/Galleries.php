@@ -5,9 +5,9 @@
 		function __construct()
 		{
 			parent::__construct();
-			$this->load->helper('form');
-			$this->load->helper('url');
-			$this->load->helper('download');
+            $this->load->model('types_users_model');
+            $this->load->model('settings_model');
+            $this->load->model('blogs_model');
 			$this->load->model('galleries_model');
 			$this->load->library('session');
 			if (!$this->session->userdata['user_id']){
@@ -77,6 +77,26 @@
 			$config['height']         = 150;
 			$this->load->library('image_lib', $config); 
 			$this->image_lib->resize();
+		}
+
+		public function gallery()
+		{
+
+           
+            $settings = $this->settings_model->read();
+            $blogs = $this->blogs_model->read();
+
+			$data['galleries'] = $this->galleries_model->read();
+			$this->load->view('layouts/headers_granny',array('settings' => $settings));
+			$this->load->view('galleries/gallery',$data);
+			
+			$this->load->view('layouts/navbar_granny',
+                array(
+                    'settings' => $settings,
+                    'blogs' => $blogs,
+                )
+            );
+			 $this->load->view('layouts/footer_granny',array('settings' => $settings));
 		}
 	}
 ?>
