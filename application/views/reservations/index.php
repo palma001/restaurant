@@ -45,6 +45,7 @@
                                    <?php 
                                         if ($reservations) {
                                            foreach ($reservations->result() as $key => $reservations) {
+                                                $key = $key + 1;
                                                 echo '
                                                     <tr>
                                                         <td>'.$key.'</td>

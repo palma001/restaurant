@@ -45,7 +45,9 @@
                                       </thead>
                                       <?php
                                         if ($galleries) {
-                                          foreach ($galleries->result() as $galleries) { ?>
+                                          foreach ($galleries->result() as $galleries) { 
+                                          $key = $key + 1;
+                                      ?>
                                             <tbody>
                                                 <tr>
                                                     <td>

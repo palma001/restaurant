@@ -48,6 +48,7 @@
                                    <?php 
                                         if ($products) {
                                            foreach ($products->result() as $key => $products) {
+                                                $key = $key + 1;
                                                 echo '
                                                     <tr>
                                                         <td>'.$key.'</td>

@@ -48,6 +48,7 @@
                                     <?php 
                                         if ($users) {
                                            foreach ($users->result() as $key => $users) {
+                                                $key = $key + 1;
                                                 echo '
                                                     <tr>
                                                         <td>'.$key.'</td>

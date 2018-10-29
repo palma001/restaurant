@@ -45,7 +45,9 @@
                                       </thead>
                                       <?php
                                         if ($obtener) {
-                                          foreach ($obtener->result() as $obten) { ?>
+                                          foreach ($obtener->result() as $obten) { 
+                                            $key = $key + 1;
+                                      ?>
                                             <tbody>
                                                 <tr>
                                                     <td>
