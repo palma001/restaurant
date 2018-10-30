@@ -41,19 +41,19 @@
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Address</label>
                                 <div class="col-sm-10">
-                                    <textarea name="textarea"  placeholder="Address" name="address" rows="4" cols="40" class="form-control"><?php echo $settings->address; ?></textarea>
+                                    <textarea  placeholder="Address" name="address" rows="4" cols="40" class="form-control"><?php echo $settings->address; ?></textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Mission</label>
                                 <div class="col-sm-10">
-                                    <textarea name="textarea"  placeholder="Mission" name="mission" rows="4" cols="40" class="form-control"><?php echo $settings->mission; ?></textarea>
+                                    <textarea  placeholder="Mission" name="mission" rows="4" cols="40" class="form-control"><?php echo $settings->mission; ?></textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label" for="example-email">Vision</label>
                                  <div class="col-sm-10">
-                                      <textarea name="textarea"  placeholder="Vision" name="vision" rows="4" cols="40" class="form-control"><?php echo $settings->vision; ?></textarea>
+                                      <textarea  placeholder="Vision" name="vision" rows="4" cols="40" class="form-control"><?php echo $settings->vision; ?></textarea>
                                  </div>
                             </div>
                             <div class="form-group row">
@@ -110,7 +110,6 @@
                                             ?> 
                                         </option>
                                         <option value="0">-- Select --</option>
-                                        <option value="1">    Dollar   </option>
                                     </select>
                                 </div>
                             </div>
@@ -126,7 +125,6 @@
                                             ?> 
                                         </option>
                                           <option value="0">-- Select --</option>
-                                          <option value="1">English</option>
                                     </select>
                                 </div>
                             </div>
@@ -134,18 +132,22 @@
                                 <label class="col-sm-2 col-form-label">Would you like to activate the reservation module?</label>
                                 <div class="col-sm-10">
                                      <select class="form-control" name="reservations">
-                                        <option value="<?php echo $settings->active_reservations; ?>"> 
                                             <?php  
                                                 if ($settings->active_reservations == 1) {
-                                                    echo "Yes";
+                                                    echo "<option value='1'>Yes</option>";
+                                                    echo '
+                                                        <option value="0">-- Select --</option>
+                                                        <option value="2">No</option>
+                                                    ';
+
                                                 }else if ($settings->active_reservations == 2) {
-                                                    echo 'No';
+                                                    echo "<option value='2'>No</option>";
+                                                    echo '
+                                                        <option value="0">-- Select --</option>
+                                                        <option value="1">Yes</option>
+                                                    ';
                                                 }
                                             ?> 
-                                        </option>
-                                          <option value="0">-- Select --</option>
-                                          <option value="1">Yes</option>
-                                          <option value="2">No</option>
                                     </select>
                                 </div>
                             </div>
