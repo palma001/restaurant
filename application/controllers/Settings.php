@@ -31,11 +31,11 @@
 			$this->load->library('upload',$config);
 
 			$this->upload->do_upload('logo');
-			$this->upload->do_upload('favicon');
+			$this->upload->do_upload('favicon');      
 
 			$logo = $_FILES['logo']['name'];
 			$favicon = $_FILES['favicon']['name'];
-
+                 
 			$data = array(
 				'title'        =>  $this->input->post('title'),
 				'address'      =>  $this->input->post('address'),
@@ -58,3 +58,4 @@
 		}
 	}
 ?>
+             

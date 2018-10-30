@@ -7,6 +7,7 @@
 			parent::__construct();
 			$this->load->model('users_model');
 			$this->load->model('types_users_model');
+			$this->load->model('settings_model');
 			$this->load->model('blogs_model');
 			$this->load->library('session');
 			$this->load->library('form_validation');
@@ -36,6 +37,26 @@
 	    	$this->load->view('layouts/footer');
 		}
 
+		public function show()
+		{
+			$id = $this->uri->segment(3);
+            $settings = $this->settings_model->read();
+			$blogs = $this->blogs_model->get($id);
+			$this->load->view('layouts/headers_granny',array('settings' => $settings));
+			$this->load->view('layouts/navbar_granny',
+				array(
+                    'settings' => $settings,
+                    'blogs'    => $blogs
+                )
+			);
+
+			if (!$id) {
+				redirect(base_url('home'));
+			}else{
+				$this->load->view('blogs/show',array('blogs'=>$blogs));
+			}
+			$this->load->view('layouts/footer_granny',array('settings' => $settings));
+		}
 
 		public function store()
 		{
@@ -87,6 +108,7 @@
 				}
 	        }
 		}
+
 		public function edit()
 		{
 	       	$id = $this->uri->segment(3);
@@ -102,6 +124,7 @@
 			}
 			$this->load->view('layouts/footer');
 		}
+
 
 		public function update($id)
 		{

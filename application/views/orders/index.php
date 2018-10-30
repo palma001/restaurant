@@ -30,9 +30,11 @@
                                             </tr>
                                          </thead>
                                         <tbody>
-                                            <?php  
+                                        <?php  
                                             if ($obtener) {
-                                            foreach ($obtener->result() as $obten) { ?>
+                                            foreach ($obtener->result() as $obten) { 
+                                                $key = $key + 1;
+                                        ?>
                                             <tr> 
                                                 <td><?=$obten->order_id;?></td>
                                                     <td><?=$obten->full_name;?></td>

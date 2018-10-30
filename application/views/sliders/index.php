@@ -45,11 +45,13 @@
                                       </thead>
                                       <?php
                                         if ($obtener) {
-                                          foreach ($obtener->result() as $obten) { ?>
+                                          foreach ($obtener->result() as $key => $obten) { 
+                                            $key = $key + 1;
+                                      ?>
                                             <tbody>
                                                 <tr>
                                                     <td>
-                                                        <?php echo $obten->slider_id;?>
+                                                        <?php echo $key;?>
                                                     </td>
                                                     <td>
                                                         <img src="<?php echo base_url()?>uploads/imagenes/thumbs/<?php echo  $obten->image;?>">

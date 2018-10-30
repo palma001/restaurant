@@ -45,14 +45,16 @@
                                       </thead>
                                       <?php
                                         if ($galleries) {
-                                          foreach ($galleries->result() as $galleries) { ?>
+                                          foreach ($galleries->result() as $key => $galleries) { 
+                                          $key = $key + 1;
+                                      ?>
                                             <tbody>
                                                 <tr>
                                                     <td>
-                                                        <?php echo $galleries->gallery_id;?>
+                                                        <?php echo $key;?>
                                                     </td>
                                                     <td>
-                                                        <img src="<?php echo base_url()?>uploads/imagenes/thumbs/<?php echo  $galleries->gallery;?>">
+                                                        <img src="<?php echo base_url()?>uploads/galleries/thumbs/<?php echo  $galleries->gallery;?>">
                                                     </td>
                                                     <td>
                                                         <a href="<?php echo base_url('galleries/destroy/'.$galleries->gallery_id) ?>">

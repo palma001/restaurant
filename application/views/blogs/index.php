@@ -48,6 +48,7 @@
                                     <?php 
                                         if ($blogs) {
                                             foreach ($blogs->result() as $key => $blogs) {
+                                            	$key = $key + 1;
                                                 echo '
                                                     <tr>
                                                         <td>'.$key.'</td>

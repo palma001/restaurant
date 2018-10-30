@@ -45,7 +45,9 @@
                                 <tbody>
                                     <?php 
                                         if ($categories) {
-                                            foreach ($categories->result() as $key => $categories) {
+                                            foreach ($categories->result() as $key => $categories) 
+                                            {
+                                                $key = $key + 1;
                                                 echo '
                                                     <tr>
                                                         <td>'.$key.'</td>

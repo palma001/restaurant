@@ -130,8 +130,8 @@
                     <div class="collapse navbar-collapse text-dark pull-right" id="navbar-collapse-1">
                         <ul class="nav navbar-nav nav-pos-right navbar-left">
                             <!-- Home Menu -->
-                            <li class="has-dropdown mega-dropdown active">
-                                <a href="#" class="menu-item">home</a>
+                            <li class="has-dropdown mega-dropdown">
+                                <a href="<?php echo base_url('home') ?>" class="menu-item">home</a>
                             </li>
                             <!-- li end -->
                             <!-- About Menu -->
@@ -140,7 +140,7 @@
                             </li>
                             <!-- li end -->
                             <li>
-                                <a class="menu-item" href="page-gallery.html">gallery</a>
+                                <a class="menu-item" href="<?php echo base_url('galleries/gallery'); ?>">gallery</a>
                             </li>
                             <!-- li end -->
                             <!-- Blog Menu-->

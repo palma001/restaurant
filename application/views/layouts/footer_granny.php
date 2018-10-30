@@ -7,7 +7,7 @@
 				                <div class="col-xs-12 col-sm-3 col-md-4">
 				                    <div class="footer--widget-content">
 				                        <h3>Our address</h3>
-				                        <p>22 Alnahas Building, 2 AlBahr St, Tanta<br> Al-Gharbia Governorate, Egypt</p>
+				                        <p><?php echo $settings->address ?></p>
 				                        <a class="link--styled" href="#">View On Map</a>
 				                    </div>
 				                </div>
@@ -125,8 +125,7 @@
 				                <div class="col-xs-12 col-sm-3 col-md-4">
 				                    <div class="footer--widget-content">
 				                        <h3>Contact us</h3>
-				                        <p class="mb-0">Main Email: 7oroof@7oroof.com</p>
-				                        <p class="mb-0">Phone: 02 01065370701</p>
+				                        <p class="mb-0">Phone: <?php echo $settings->phone ?></p>
 				                        <a class="link--styled" href="#">Send A Message</a>
 				                    </div>
 				                </div>
@@ -143,11 +142,10 @@
 				            <div class="row">
 				                <div class="col-xs-12 col-sm-6 col-md-6 text-right">
 				                    <div class="footer--social-icons">
-				                        <a href="#"><i class="fa fa-facebook"></i></a>
-				                        <a href="#"><i class="fa fa-twitter"></i></a>
-				                        <a href="#"><i class="fa fa-instagram"></i></a>
-				                        <a href="#"><i class="fa fa-pinterest"></i></a>
-				                        <a href="#"><i class="fa fa-tripadvisor"></i></a>
+				                        <a href="<?php echo $settings->facebook; ?>"><i class="fa fa-facebook"></i></a>
+				                        <a href="<?php echo $settings->twitter; ?>"><i class="fa fa-twitter"></i></a>
+				                        <a href="<?php echo $settings->instagram; ?>"><i class="fa fa-instagram"></i></a>
+				                        <a href="<?php echo $settings->pinterest; ?>"><i class="fa fa-pinterest"></i></a>
 				                    </div>
 				                    <!-- .social-icons end -->
 				                </div>

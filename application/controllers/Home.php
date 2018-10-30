@@ -23,20 +23,20 @@
 
             $this->load->view('layouts/headers_granny',array('settings' => $settings));
             $this->load->view('layouts/navbar_granny',
-                    array(
-                        'settings' => $settings,
-                        'blogs'    => $blogs
-                    )
-                );
+                array(
+                    'settings' => $settings,
+                    'blogs'    => $blogs
+                )
+            );
             $this->load->view('home/index', 
-                    array(
-                        'slider'   => $slider, 
-                        'products' => $products, 
-                        'settings' => $settings , 
-                        'blogs'    => $blogs
-                    )
-                );
-            $this->load->view('layouts/footer_granny');
+                array(
+                    'slider'   => $slider, 
+                    'products' => $products, 
+                    'settings' => $settings , 
+                    'blogs'    => $blogs
+                )
+            );
+            $this->load->view('layouts/footer_granny',array('settings' => $settings));
         }
 
         public function pagination()
