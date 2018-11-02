@@ -26,9 +26,9 @@
 			if (empty($data['logo']) && empty($data['favicon'])) {
 				$datos = array(
 					'title'               =>  $data['title'],
-					'address'             =>  'address',
-					'mission'             =>  'mission',
-					'vision'              =>  'vision',
+					'address'             =>  $data['address'],
+					'mission'             =>  $data['mission'],
+					'vision'              =>  $data['vision'],
 					'facebook'            =>  $data['facebook'],
 					'twitter'             =>  $data['twitter'],
 					'instagram'           =>  $data['instagram'],
