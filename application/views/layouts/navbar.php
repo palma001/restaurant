@@ -12,14 +12,20 @@
          <!--- Sidemenu -->
         <div id="sidebar-menu">
             <ul class="metismenu" id="side-menu">
-               <li class="menu-title">Navigation</li>
                <li><a href="<?php echo base_url("admin/");?>" title=""><i class="fe-home"></i> Home</a></li>
+               <li class="menu-title">Shop</li>
                <li>
                     <a href="<?= base_url().'products'?>">
                         <i class="fe-clipboard"></i>
                         <span> Products </span>
                     </a>
                 </li>
+                <li>
+                    <a href="<?php echo base_url('categories/');?>">
+                        <i class="fe-archive"></i>
+                        <span>Categories</span>
+                    </a>
+                </li> 
                 <li>
                     <a href="<?php echo  base_url('customers/');?>">   <i class="fe-user"></i> 
                         <span> Customers </span>
@@ -31,6 +37,7 @@
                         <span> Orders </span>
                     </a>
                 </li>
+                <li class="menu-title">Accounts</li>
                 <li>
                     <a href="<?php echo base_url('users/');?>">
                         <i class="fe-users"></i>
@@ -40,9 +47,16 @@
                 <li>
                     <a href="<?php echo base_url('typesusers/');?>">
                         <i class="fe-user-check"></i>
-                        <span>Types of Users</span>
+                        <span>Role</span>
                     </a>
-                </li> 
+                </li>
+                <li class="menu-title">Performance</li>
+                <li>
+                    <a href="<?php echo base_url('blogs/');?>">
+                        <i class="fe-book"></i>
+                        <span>Pages</span>
+                    </a>
+                </li>
                 <li>
                     <a href="<?php echo base_url('blogs/');?>">
                         <i class="fe-book"></i>
@@ -50,24 +64,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url('categories/');?>">
-                        <i class="fe-archive"></i>
-                        <span>Categories</span>
-                    </a>
-                </li> 
-                <li>
                     <a href="<?php echo base_url('reservations/');?>">
                         <i class="fe-book-open"></i>
                         <span>Reservations</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url('sliders/');?>"> <i class="fe-sliders"></i> Sliders </a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url('galleries/');?>">
-                        <i class="fe-image"></i>
-                        <span>Galleries</span>
                     </a>
                 </li>
                 <li>
@@ -75,8 +74,6 @@
                 </li>
                 <li>
                     <a href="<?php echo base_url('settings/');?>"> <i class="fe-settings"></i> Settings </a>
-                <li>
-                    <a href="<?php  echo base_url().'/login/destroy/';?>"> <i class="fe-log-in"></i> Exit </a>
                 </li>
             </ul>
         </div>

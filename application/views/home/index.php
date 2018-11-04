@@ -39,9 +39,8 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="title title-4 text-center">
                     <div class="title--content">
-                        <div class="title--subtitle">Products</div>
                         <div class="title--heading">
-                            <h1>Shop Products</h1>
+                            <h1>Products</h1>
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -65,22 +64,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12  col-md-12">
-                            <div class="shop-options">
-                                <!-- .product-options end -->
-                                <div class="product-view-mode text-right pull-none-xs">
-                                    <span>View as:</span>
-                                    <a class="active" href="#"><i class="fa fa-th-large"></i></a>
-                                    <a href="#"><i class="fa fa-th-list"></i></a>
-                                </div>
-                                <!-- .product-num end -->
-                            </div>
-                            <!-- .shop-options end -->
-                        </div>
-                        <!-- .col-md-12 end -->
-                    </div>
-                    <!-- .row end -->
                     <div class="row products">
                         
                     </div>
@@ -108,10 +91,7 @@
             <div class="row clearfix">
                 <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
                     <div class="heading heading-1 mb-50 text--center">
-                        <p class="heading--subtitle">Don’t miss</p>
-                        <h2 class="heading--title mb-0">Our News & Events</h2>
-                        <div class="divider--shape-4"></div>
-                        <p class="heading--desc">Follow our latest news updates to know about our offers, recipes and events. One cannot think well, love well, sleep well, if one has not dined well. </p>
+                        <h2>Our News</h2>
                     </div>
                 </div>
                 <!-- .col-md-8 end -->

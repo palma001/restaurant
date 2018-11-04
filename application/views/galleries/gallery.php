@@ -30,19 +30,7 @@
 ============================================= -->
 <section id="portfolio" class="portfolio portfolio-gallery portfolio-5col pt-80 bg-white">
     <div class="container-fluid pr-0 pl-0">
-        <div class="row">
-            <!-- Portfolio Filter
-            ============================================= -->
-            <div class="col-xs-12 col-sm-12 col-md-12 portfolio-filter">
-                <ul class="list-inline mb-0">
-                    <li><a class="active-filter" href="#" data-filter="*">All</a></li>
-                    <li><a href="#" data-filter=".filter-restaurant">restaurant</a></li>
-                    <li><a href="#" data-filter=".filter-staff">staff</a></li>
-                    <li><a href="#" data-filter=".filter-clients">clients</a></li>
-                </ul>
-            </div>
-            <!-- .Portfolio-filter end -->
-        </div>
+
 
         <div id="portfolio-all" class="row-no-padding">
             <!-- Portfolio #1 -->

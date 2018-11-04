@@ -9,7 +9,7 @@ $(document).ready(function(){
     });
     function pagination(page){
         $.ajax({
-            url: 'http://localhost/comida/home/pagination/',
+            url: 'http://localhost:8085/delivery_fast/home/pagination/',
             type: 'POST',
             data:{nropage:page},
             dataType:'JSON',
@@ -19,7 +19,7 @@ $(document).ready(function(){
                     product +='<div class="col-xs-12 col-sm-6 col-md-4">'+
                         '<div class="product-item">'+
                             '<div class="product--img">'+
-                                '<img src="http://localhost/comida/uploads/products/'+item.image+'" alt="Product" />'+
+                                '<img src="http://localhost:8085/delivery_fast/uploads/products/'+item.image+'" alt="Product" />'+
                                 '<div class="product--hover">'+
                                     '<div class="product--action">'+
                                         '<a href="#">Add To Cart</a>'+
@@ -28,9 +28,6 @@ $(document).ready(function(){
                                 '<div class="divider--shape-1down"></div>'+
                             '</div>'+
                             '<div class="product--content">'+
-                                '<div class="product--type">'+
-                                    '<span>Light</span> - <span>Mexican</span> - <span>Organic</span>'+
-                                '</div>'+
                                 '<div class="product--title">'+
                                      '<h3><a href="#">'+item.title+'</a></h3>'+
                                 '</div>'+
