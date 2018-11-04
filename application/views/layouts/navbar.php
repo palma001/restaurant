@@ -47,7 +47,7 @@
                 <li>
                     <a href="<?php echo base_url('typesusers/');?>">
                         <i class="fe-user-check"></i>
-                        <span>Role</span>
+                        <span>Roles</span>
                     </a>
                 </li>
                 <li class="menu-title">Performance</li>
@@ -55,6 +55,15 @@
                     <a href="<?php echo base_url('blogs/');?>">
                         <i class="fe-book"></i>
                         <span>Pages</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url('sliders/');?>"> <i class="fe-sliders"></i> Sliders </a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url('galleries/');?>">
+                        <i class="fe-image"></i>
+                        <span>Galleries</span>
                     </a>
                 </li>
                 <li>
