@@ -6,7 +6,7 @@
 				            <div class="row">
 				                <div class="col-xs-12 col-sm-3 col-md-4">
 				                    <div class="footer--widget-content">
-				                        <h3><home_footer_title>Our22 address</home_footer_title></h3>
+				                        <h3><home_footer_title>Our address</home_footer_title></h3>
 				                        <p><?php echo $settings->address ?></p>
 				                    </div>
 				                </div>
