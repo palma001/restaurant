@@ -16,21 +16,21 @@
 		public function index()
 		{
 			$data['customers'] = $this->customers_model->read();
-			$this->load->view('layouts/headers');
-			$this->load->view('layouts/navbar');
-			$this->load->view('layouts/topnav');
+			$this->load->view('layouts/header_admin');
+			$this->load->view('layouts/navbar_admin');
+			$this->load->view('layouts/topnav_admin');
 			$this->load->view('customers/index',$data);
-			$this->load->view('layouts/footer');
+			$this->load->view('layouts/footer_admin');
 		}
 
 		public function create()
 		{
 			$data['users_types'] = $this->types_users_model->read();
-			$this->load->view('layouts/headers');
-			$this->load->view('layouts/navbar');
-			$this->load->view('layouts/topnav');
+			$this->load->view('layouts/header_admin');
+			$this->load->view('layouts/navbar_admin');
+			$this->load->view('layouts/topnav_admin');
 			$this->load->view('customers/create',$data);
-	    	$this->load->view('layouts/footer');
+	    	$this->load->view('layouts/footer_admin');
 		}
 		public function store()
 		{
@@ -87,16 +87,16 @@
 			$customers   = $this->customers_model->get($id);
 			$users_types = $this->types_users_model->read();
 			
-			$this->load->view('layouts/headers');
-			$this->load->view('layouts/navbar');
-			$this->load->view('layouts/topnav');
+			$this->load->view('layouts/header_admin');
+			$this->load->view('layouts/navbar_admin');
+			$this->load->view('layouts/topnav_admin');
 
 			if (!$id) {
 				redirect(base_url('customers'));
 			}else{
 				$this->load->view('customers/edit',array('customers'=>$customers,'users_types'=>$users_types));
 			}
-			$this->load->view('layouts/footer');
+			$this->load->view('layouts/footer_admin');
 		}
 
 		public function update($id)

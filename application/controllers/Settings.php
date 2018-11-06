@@ -17,11 +17,11 @@
 		public function index()
 		{
 			$settings = $this->settings_model->read();
-			$this->load->view('layouts/headers');
-			$this->load->view('layouts/navbar');
-			$this->load->view('layouts/topnav');
+			$this->load->view('layouts/header_admin');
+			$this->load->view('layouts/navbar_admin');
+			$this->load->view('layouts/topnav_admin');
 			$this->load->view('Settings/index',array('settings' =>$settings));
-		    $this->load->view('layouts/footer');
+		    $this->load->view('layouts/footer_admin');
 		}
 
 		public function update()

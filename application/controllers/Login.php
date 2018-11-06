@@ -14,9 +14,9 @@
 
 		public function index()
 		{
-			$this->load->view('layouts/headers');
+			$this->load->view('layouts/header_admin');
 			$this->load->view('login/index');
-			$this->load->view('layouts/footer');
+			$this->load->view('layouts/footer_admin');
 		}
 
 		public function authenticated()

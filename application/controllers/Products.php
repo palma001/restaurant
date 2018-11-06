@@ -18,22 +18,22 @@
 		public function index()
 		{
 			$data['products'] = $this->products_model->read();
-			$this->load->view('layouts/headers');
-			$this->load->view('layouts/navbar');
-			$this->load->view('layouts/topnav');
+			$this->load->view('layouts/header_admin');
+			$this->load->view('layouts/navbar_admin');
+			$this->load->view('layouts/topnav_admin');
 			$this->load->view('modals/modal_products');
 			$this->load->view('products/index',$data);
-			$this->load->view('layouts/footer');
+			$this->load->view('layouts/footer_admin');
 		}
 
 		public function create()
 		{
 			$settings = $this->settings_model->read();
-			$this->load->view('layouts/headers');
-			$this->load->view('layouts/navbar');
-			$this->load->view('layouts/topnav');
+			$this->load->view('layouts/header_admin');
+			$this->load->view('layouts/navbar_admin');
+			$this->load->view('layouts/topnav_admin');
 			$this->load->view('products/create',array("settings" => $settings));
-			$this->load->view('layouts/footer');
+			$this->load->view('layouts/footer_admin');
 		}
 
 		public function store()
@@ -109,16 +109,16 @@
 		{
 			$id              = $this->uri->segment(3);
 			$data['product'] = $this->products_model->get($id);
-			$this->load->view('layouts/headers');
-			$this->load->view('layouts/navbar');
-			$this->load->view('layouts/topnav');
+			$this->load->view('layouts/header_admin');
+			$this->load->view('layouts/navbar_admin');
+			$this->load->view('layouts/topnav_admin');
 			if (!$id) {
 				redirect(base_url('products/'));
 			}else{
 				$this->load->view('products/edit',$data);
 			}
 			
-			$this->load->view('layouts/footer');
+			$this->load->view('layouts/footer_admin');
 		}
 
 		public function update($id)

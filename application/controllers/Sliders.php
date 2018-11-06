@@ -17,20 +17,20 @@
 		public function index()
 		{
 			$data['obtener'] = $this->sliders_model->read();
-			$this->load->view('layouts/headers');
-			$this->load->view('layouts/topnav');
+			$this->load->view('layouts/header_admin');
+			$this->load->view('layouts/topnav_admin');
 			$this->load->view('Sliders/index',$data);
-			$this->load->view('layouts/navbar');
-			$this->load->view('layouts/footer');
+			$this->load->view('layouts/navbar_admin');
+			$this->load->view('layouts/footer_admin');
 		}
 
 		public function create()
 		{
-			$this->load->view('layouts/headers');
-			$this->load->view('layouts/topnav');
+			$this->load->view('layouts/header_admin');
+			$this->load->view('layouts/topnav_admin');
 			$this->load->view('Sliders/create');
-			$this->load->view('layouts/navbar');
-			$this->load->view('layouts/footer');
+			$this->load->view('layouts/navbar_admin');
+			$this->load->view('layouts/footer_admin');
 		}
 
 		public function store()

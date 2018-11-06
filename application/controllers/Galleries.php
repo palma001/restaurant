@@ -17,20 +17,20 @@
 		public function index()
 		{
 			$data['galleries'] = $this->galleries_model->read();
-			$this->load->view('layouts/headers');
-			$this->load->view('layouts/topnav');
+			$this->load->view('layouts/header_admin');
+			$this->load->view('layouts/topnav_admin');
 			$this->load->view('galleries/index',$data);
-			$this->load->view('layouts/navbar');
-			$this->load->view('layouts/footer');
+			$this->load->view('layouts/navbar_admin');
+			$this->load->view('layouts/footer_admin');
 		}
 
 		public function create()
 		{
-			$this->load->view('layouts/headers');
-			$this->load->view('layouts/topnav');
+			$this->load->view('layouts/header_admin');
+			$this->load->view('layouts/topnav_admin');
 			$this->load->view('galleries/create');
-			$this->load->view('layouts/navbar');
-			$this->load->view('layouts/footer');
+			$this->load->view('layouts/navbar_admin');
+			$this->load->view('layouts/footer_admin');
 		}
 
 		public function store()
@@ -87,16 +87,16 @@
             $blogs = $this->blogs_model->read();
 
 			$data['galleries'] = $this->galleries_model->read();
-			$this->load->view('layouts/headers_granny',array('settings' => $settings));
+			$this->load->view('layouts/header_front',array('settings' => $settings));
 			$this->load->view('galleries/gallery',$data);
 			
-			$this->load->view('layouts/navbar_granny',
+			$this->load->view('layouts/navbar_front',
                 array(
                     'settings' => $settings,
                     'blogs' => $blogs,
                 )
             );
-			 $this->load->view('layouts/footer_granny',array('settings' => $settings));
+			 $this->load->view('layouts/footer_front',array('settings' => $settings));
 		}
 	}
 ?>

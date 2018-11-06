@@ -21,20 +21,20 @@
 		public function index()
 		{
 			$data['blogs'] = $this->blogs_model->read();
-			$this->load->view('layouts/headers');
-			$this->load->view('layouts/navbar');
-			$this->load->view('layouts/topnav');
+			$this->load->view('layouts/header_admin');
+			$this->load->view('layouts/navbar_admin');
+			$this->load->view('layouts/topnav_admin');
 			$this->load->view('blogs/index',$data);
-			$this->load->view('layouts/footer');
+			$this->load->view('layouts/footer_admin');
 		}
 
 		public function create()
 		{
-			$this->load->view('layouts/headers');
-			$this->load->view('layouts/navbar');
-			$this->load->view('layouts/topnav');
+			$this->load->view('layouts/header_admin');
+			$this->load->view('layouts/navbar_admin');
+			$this->load->view('layouts/topnav_admin');
 			$this->load->view('blogs/create');
-	    	$this->load->view('layouts/footer');
+	    	$this->load->view('layouts/footer_admin');
 		}
 
 		public function show()
@@ -42,8 +42,8 @@
 			$id = $this->uri->segment(3);
             $settings = $this->settings_model->read();
 			$blogs = $this->blogs_model->get($id);
-			$this->load->view('layouts/headers_granny',array('settings' => $settings));
-			$this->load->view('layouts/navbar_granny',
+			$this->load->view('layouts/header_front',array('settings' => $settings));
+			$this->load->view('layouts/navbar_front',
 				array(
                     'settings' => $settings,
                     'blogs'    => $blogs
@@ -55,7 +55,7 @@
 			}else{
 				$this->load->view('blogs/show',array('blogs'=>$blogs));
 			}
-			$this->load->view('layouts/footer_granny',array('settings' => $settings));
+			$this->load->view('layouts/footer_front',array('settings' => $settings));
 		}
 
 		public function store()
@@ -113,16 +113,16 @@
 		{
 	       	$id = $this->uri->segment(3);
 			$blogs = $this->blogs_model->get($id);
-			$this->load->view('layouts/headers');
-			$this->load->view('layouts/navbar');
-			$this->load->view('layouts/topnav');
+			$this->load->view('layouts/header_admin');
+			$this->load->view('layouts/navbar_admin');
+			$this->load->view('layouts/topnav_admin');
 
 			if (!$id) {
 				redirect(base_url('blogs'));
 			}else{
 				$this->load->view('blogs/edit',array('blogs'=>$blogs));
 			}
-			$this->load->view('layouts/footer');
+			$this->load->view('layouts/footer_admin');
 		}
 
 

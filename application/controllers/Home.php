@@ -21,8 +21,8 @@
             $settings = $this->settings_model->read();
             $blogs = $this->blogs_model->read();
 
-            $this->load->view('layouts/headers_granny',array('settings' => $settings));
-            $this->load->view('layouts/navbar_granny',
+            $this->load->view('layouts/header_front',array('settings' => $settings));
+            $this->load->view('layouts/navbar_front',
                 array(
                     'settings' => $settings,
                     'blogs'    => $blogs
@@ -36,7 +36,7 @@
                     'blogs'    => $blogs
                 )
             );
-            $this->load->view('layouts/footer_granny',array('settings' => $settings));
+            $this->load->view('layouts/footer_front',array('settings' => $settings));
         }
 
         public function pagination()

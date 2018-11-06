@@ -2,7 +2,7 @@
 ============================================= -->
 <section id="page-title" class="page-title bg-overlay bg-parallax bg-overlay-gradient">
     <div class="bg-section">
-        <img src="<?php echo base_url('granny/assets/images/page-title/7.jpg') ?>" alt="Background" />
+        <img src="<?php echo base_url('frontend_template/assets/images/page-title/7.jpg') ?>" alt="Background" />
     </div>
     <div class="container">
         <div class="row">

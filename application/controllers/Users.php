@@ -17,21 +17,21 @@
 		public function index()
 		{
 			$data['users'] = $this->users_model->read();
-			$this->load->view('layouts/headers');
-			$this->load->view('layouts/navbar');
-			$this->load->view('layouts/topnav');
+			$this->load->view('layouts/header_admin');
+			$this->load->view('layouts/navbar_admin');
+			$this->load->view('layouts/topnav_admin');
 			$this->load->view('users/index',$data);
-			$this->load->view('layouts/footer');
+			$this->load->view('layouts/footer_admin');
 		}
 
 		public function create()
 		{
 			$users_types = $this->types_users_model->read();
-			$this->load->view('layouts/headers');
-			$this->load->view('layouts/navbar');
-			$this->load->view('layouts/topnav');
+			$this->load->view('layouts/header_admin');
+			$this->load->view('layouts/navbar_admin');
+			$this->load->view('layouts/topnav_admin');
 			$this->load->view('users/create',array('users_types'=>$users_types));
-	    	$this->load->view('layouts/footer');
+	    	$this->load->view('layouts/footer_admin');
 		}
 
 		public function store()
@@ -69,9 +69,9 @@
 
 	        if ($this->form_validation->run() == FALSE){
 	        	$users_types = $this->types_users_model->read();
-	        	$this->load->view('layouts/headers');
-				$this->load->view('layouts/navbar');
-				$this->load->view('layouts/topnav');
+	        	$this->load->view('layouts/header_admin');
+				$this->load->view('layouts/navbar_admin');
+				$this->load->view('layouts/topnav_admin');
 	            $this->load->view('users/create',array('users_types'=>$users_types));
 	            $this->load->view('layouts/footer');
 	        }
@@ -95,16 +95,16 @@
 			$users       = $this->users_model->get($id);
 			$users_types = $this->types_users_model->read();
 			
-			$this->load->view('layouts/headers');
-			$this->load->view('layouts/navbar');
-			$this->load->view('layouts/topnav');
+			$this->load->view('layouts/header_admin');
+			$this->load->view('layouts/navbar_admin');
+			$this->load->view('layouts/topnav_admin');
 
 			if (!$id) {
 				redirect(base_url('users'));
 			}else{
 				$this->load->view('users/edit',array('users'=>$users,'users_types'=>$users_types));
 			}
-			$this->load->view('layouts/footer');
+			$this->load->view('layouts/footer_admin');
 		}
 
 		public function update($id)

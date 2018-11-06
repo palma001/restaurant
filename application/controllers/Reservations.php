@@ -16,12 +16,12 @@
 		public function index()
 		{
 			$data['reservations'] = $this->reservations_model->read();
-			$this->load->view('layouts/headers');
-			$this->load->view('layouts/navbar');
-			$this->load->view('layouts/topnav');
+			$this->load->view('layouts/header_admin');
+			$this->load->view('layouts/navbar_admin');
+			$this->load->view('layouts/topnav_admin');
 			$this->load->view('modals/modal_reservations');
 			$this->load->view('reservations/index',$data);
-			$this->load->view('layouts/footer');
+			$this->load->view('layouts/footer_admin');
 		}
 
 		public function show()

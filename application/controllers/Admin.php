@@ -21,11 +21,11 @@
 			$data           = $this->orders_model->read();
 			$count_customer = $this->customers_model->read();
 			$views          = $this->products_model->count();
-			$this->load->view('layouts/headers');
-			$this->load->view('layouts/navbar');
-			$this->load->view('layouts/topnav');
+			$this->load->view('layouts/header_admin');
+			$this->load->view('layouts/navbar_admin');
+			$this->load->view('layouts/topnav_admin');
 			$this->load->view('admin/index',array('rows' => $data,'customer'=>$count_customer,'views' => $views));	
-			$this->load->view('layouts/footer');
+			$this->load->view('layouts/footer_admin');
 		}
 	}
 

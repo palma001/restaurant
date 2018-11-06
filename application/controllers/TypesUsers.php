@@ -20,11 +20,11 @@
 			$data = array(
 				'user_types' => $this->types_users_model->read(), 
 			);
-			$this->load->view('layouts/headers');
-			$this->load->view('layouts/navbar');
-			$this->load->view('layouts/topnav');
+			$this->load->view('layouts/header_admin');
+			$this->load->view('layouts/navbar_admin');
+			$this->load->view('layouts/topnav_admin');
 			$this->load->view('types_users/index',$data);	
-			$this->load->view('layouts/footer');
+			$this->load->view('layouts/footer_admin');
 		}
 
 		public function create()
@@ -32,11 +32,11 @@
 			$data = array( 
 				'permissions' => $this->permissions_model->read()
 			);
-			$this->load->view('layouts/headers');
-			$this->load->view('layouts/navbar');
-			$this->load->view('layouts/topnav');
+			$this->load->view('layouts/header_admin');
+			$this->load->view('layouts/navbar_admin');
+			$this->load->view('layouts/topnav_admin');
 			$this->load->view('types_users/create',$data);	
-			$this->load->view('layouts/footer');
+			$this->load->view('layouts/footer_admin');
 		}
 
 		public function store()
@@ -84,9 +84,9 @@
 		{
 			$id                  = $this->uri->segment(3);
 			$data['users_types'] = $this->types_users_model->get($id);
-			$this->load->view('layouts/headers');
-			$this->load->view('layouts/navbar');
-			$this->load->view('layouts/topnav');
+			$this->load->view('layouts/header_admin');
+			$this->load->view('layouts/navbar_admin');
+			$this->load->view('layouts/topnav_admin');
 
 			if (!$id) {
 				redirect(base_url('typesusers/'));
@@ -94,7 +94,7 @@
 				$this->load->view('types_users/edit',$data);
 			}
 			
-			$this->load->view('layouts/footer');
+			$this->load->view('layouts/footer_admin');
 		}
 
 		public function update($id)
