@@ -34,8 +34,6 @@
         {
             $this->db->where('slider_id',$id);
             $this->db->delete('sliders');
-            $this->session->set_flashdata('message','Deleted Successfully');
-            redirect(base_url('sliders/')); 
         }
     }
 

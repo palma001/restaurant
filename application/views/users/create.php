@@ -24,10 +24,10 @@
                                 if ($error) {
                                    echo '
                                         <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert" style="padding-bottom:1px;">
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                            '.$error.'
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                                '.$error.'
                                         </div>
                                     ';
                                 }  
@@ -42,7 +42,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Email</label>
                                     <div class="col-sm-10">
-                                        <input  name="email"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?php echo $this->input->post('email');?>>
+                                        <input  name="email"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?php echo $this->input->post('email');?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">

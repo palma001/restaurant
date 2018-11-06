@@ -57,7 +57,8 @@
                                                         </td>
                                                         <td>
                                                             <a href="#" data-toggle="modal" onclick="show_reservations('.$reservations->reservation_id.')" data-target="#modal_reservations"><i class="fe-eye"></i></a>
-                                                            <a href="'.base_url('reservations/destroy/'.$reservations->reservation_id).'"><i class="fe-x"></i>
+
+                                                            <a href="'.$reservations->reservation_id.'" data-toggle="modal" data-target="#confirm" class="confir"> <i class="fe-x"></i>
                                                             </a>
                                                         </td>
                                                     </tr>
@@ -76,6 +77,29 @@
     </div>
 </div>
 <script>
+    $(document).ready(function() {
+        $(".confir").on('click', function(event) {
+            event.preventDefault();
+            var id = $(this).attr('href');
+            $('.accept').val(id);
+        }); 
+
+        $(document).on('click','.accept',function(){
+            var id = $(this).val();
+            destroy(id);
+        });
+    });
+
+    function destroy(id){
+         $.ajax({
+            url: '<?php echo base_url()?>/index.php/reservations/destroy/',
+            type: 'POST',
+            data: {id:id},
+            success:function(data){
+                window.location.href = "<?php echo base_url("reservations/");?>";
+            }
+        });
+    }
     function show_reservations(id){
         $.ajax({
             url: '<?php echo base_url()?>/index.php/reservations/show/',

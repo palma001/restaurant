@@ -64,7 +64,7 @@
 
                                                             <a href="#" data-toggle="modal" onclick="show_products('.$products->product_id.')" data-target="#modal_products"><i class="fe-eye"></i></a>
 
-                                                            <a href="'.base_url().'products/destroy/'.$products->product_id.'"><i class="fe-x"></i>
+                                                            <a href="'.$products->product_id.'" data-toggle="modal" data-target="#confirm" class="confir"> <i class="fe-x"></i>
                                                             </a>
                                                         </td>
                                                     </tr>
@@ -83,6 +83,29 @@
     </div>
 </div>
 <script>
+    $(document).ready(function() {
+        $(".confir").on('click', function(event) {
+            event.preventDefault();
+            var id = $(this).attr('href');
+            $('.accept').val(id);
+        }); 
+
+        $(document).on('click','.accept',function(){
+            var id = $(this).val();
+            destroy(id);
+        });
+    });
+
+    function destroy(id){
+         $.ajax({
+            url: '<?php echo base_url()?>/index.php/products/destroy/',
+            type: 'POST',
+            data: {id:id},
+            success:function(data){
+                window.location.href = "<?php echo base_url("products/");?>";
+            }
+        });
+    }
     function show_products(id){
         $.ajax({
             url: '<?php echo base_url()?>/index.php/products/show/',

@@ -33,8 +33,6 @@
         {
             $this->db->where('gallery_id',$id);
             $this->db->delete('galleries');
-            $this->session->set_flashdata('message','Deleted Successfully');
-            redirect(base_url('galleries/')); 
         }
     }
 

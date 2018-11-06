@@ -19,6 +19,7 @@
 			$this->load->view('layouts/header_admin');
 			$this->load->view('layouts/navbar_admin');
 			$this->load->view('layouts/topnav_admin');
+			$this->load->view('modals/modal_confirm');
 			$this->load->view('categories/index',$data);
 			$this->load->view('layouts/footer_admin');
 		}
@@ -104,10 +105,9 @@
 
 		public function destroy(){
 
-			$id = $this->uri->segment(3);
+			$id = $this->input->post("id");
 			$this->categories_model->destroy($id);
 			$this->session->set_flashdata('message','Deleted Successfully');
-			redirect(base_url('categories/'));
 		}
 	}
 ?>

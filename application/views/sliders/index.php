@@ -23,17 +23,17 @@
                                       <a href="<?= base_url('sliders/create/')?>" class="btn btn-dark">Add</a>
                                   </p>
                                   <?php 
-                                    $message=$this->session->flashdata('message');
-                                    if ($message) {
-                                      echo '
-                                        <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert">
-                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                             </button>
-
-                                            '.$message.'
-                                        </div>';
-                                    }    
+                                      $message=$this->session->flashdata('message');
+                                      if ($message) {
+                                         echo ' 
+                                              <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert">
+                                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                  <span aria-hidden="true">&times;</span>
+                                              </button>
+                                                  '.$message.'
+                                              </div>
+                                          ';
+                                      }
                                   ?>
                                   <table id="basic-datatable" class="table table-striped nowrap">
                                       <thead>
@@ -57,8 +57,8 @@
                                                         <img src="<?php echo base_url()?>uploads/imagenes/thumbs/<?php echo  $obten->image;?>">
                                                     </td>
                                                     <td>
-                                                        <a href="<?php echo base_url('sliders/destroy/'.$obten->slider_id) ?>">
-                                                            <i class="fe-x"></i>
+                                                        <a href="<?php echo $obten->slider_id ?>" data-toggle="modal" data-target="#confirm" class="confir"> 
+                                                          <i class="fe-x"></i>
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -76,3 +76,29 @@
         </div> <!-- content -->
     </div>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".confir").on('click', function(event) {
+            event.preventDefault();
+            var id = $(this).attr('href');
+            $('.accept').val(id);
+        }); 
+
+        $(document).on('click','.accept',function(){
+            var id = $(this).val();
+            destroy(id);
+        });
+    });
+
+    function destroy(id){
+         $.ajax({
+            url: '<?php echo base_url()?>/index.php/sliders/destroy/',
+            type: 'POST',
+            data: {id:id},
+            success:function(data){
+                window.location.href = "<?php echo base_url("sliders/");?>";
+            }
+        });
+    }
+</script>

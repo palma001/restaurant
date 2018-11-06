@@ -62,9 +62,11 @@
                                                             '.ucwords($customers->user_type).'
                                                         </td>
                                                         <td>
-                                                            <a href="'.base_url('customers/edit/'.$customers->user_id).'"><i class="fe-edit-2"></i> </a>
+                                                            <a href="'.base_url('customers/edit/'.$customers->user_id).'"><i class="fe-edit-2"></i> 
+                                                            </a>
 
-                                                            <a href="'.base_url('customers/destroy/'.$customers->user_id).'"> <i class="fe-x"></i></a>
+                                                            <a href="'.$customers->user_id.'" data-toggle="modal" data-target="#confirm" class="confir"> <i class="fe-x"></i>
+                                                            </a>
                                                         </td>
                                                     </tr>
                                                 ';
@@ -80,3 +82,29 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".confir").on('click', function(event) {
+            event.preventDefault();
+            var id = $(this).attr('href');
+            $('.accept').val(id);
+        }); 
+
+        $(document).on('click','.accept',function(){
+            var id = $(this).val();
+            destroy(id);
+        });
+    });
+
+    function destroy(id){
+         $.ajax({
+            url: '<?php echo base_url()?>/index.php/customers/destroy/',
+            type: 'POST',
+            data: {id:id},
+            success:function(data){
+                window.location.href = "<?php echo base_url("customers/");?>";
+            }
+        });
+    }
+</script>

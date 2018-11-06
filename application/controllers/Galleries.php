@@ -19,6 +19,7 @@
 			$data['galleries'] = $this->galleries_model->read();
 			$this->load->view('layouts/header_admin');
 			$this->load->view('layouts/topnav_admin');
+			$this->load->view('modals/modal_confirm');
 			$this->load->view('galleries/index',$data);
 			$this->load->view('layouts/navbar_admin');
 			$this->load->view('layouts/footer_admin');
@@ -59,9 +60,11 @@
 	        }   
 		}
 
-		public function destroy($id)
+		public function destroy()
 		{
+			$id = $this->input->post("id");
 		    $this->galleries_model->destroy($id);
+		    $this->session->set_flashdata('message','Deleted Successfully');
 		}
 
 		public function Miniature($filename)
@@ -81,8 +84,6 @@
 
 		public function gallery()
 		{
-
-           
             $settings = $this->settings_model->read();
             $blogs = $this->blogs_model->read();
 
@@ -96,7 +97,7 @@
                     'blogs' => $blogs,
                 )
             );
-			 $this->load->view('layouts/footer_front',array('settings' => $settings));
+			$this->load->view('layouts/footer_front',array('settings' => $settings));
 		}
 	}
 ?>

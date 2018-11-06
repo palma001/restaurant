@@ -56,7 +56,7 @@
                                                         <td>
                                                             <a href="'.base_url('typesusers/edit/'.$user_types->user_type_id).'"><i class="fe-edit-2"></i>
                                                             </a>
-                                                            <a href="'.base_url('typesusers/destroy/'.$user_types->user_type_id).'"> <i class="fe-x"></i>
+                                                            <a href="'.$user_types->user_type_id.'" data-toggle="modal" data-target="#confirm" class="confir"> <i class="fe-x"></i>
                                                             </a>
                                                         </td>
                                                     </tr>
@@ -77,3 +77,29 @@
         <!-- end Footer -->
     </div>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".confir").on('click', function(event) {
+            event.preventDefault();
+            var id = $(this).attr('href');
+            $('.accept').val(id);
+        }); 
+
+        $(document).on('click','.accept',function(){
+            var id = $(this).val();
+            destroy(id);
+        });
+    });
+
+    function destroy(id){
+         $.ajax({
+            url: '<?php echo base_url()?>/index.php/typesusers/destroy/',
+            type: 'POST',
+            data: {id:id},
+            success:function(data){
+                window.location.href = "<?php echo base_url("typesusers/");?>";
+            }
+        });
+    }
+</script>
