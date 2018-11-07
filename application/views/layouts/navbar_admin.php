@@ -52,7 +52,7 @@
                 </li>
                 <li class="menu-title">Performance</li>
                 <li>
-                    <a href="<?php echo base_url('blogs/');?>">
+                    <a href="<?php echo base_url('pages/');?>">
                         <i class="fe-book"></i>
                         <span>Pages</span>
                     </a>

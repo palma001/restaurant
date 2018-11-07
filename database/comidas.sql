@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-10-2018 a las 22:18:00
+-- Tiempo de generación: 07-11-2018 a las 16:40:49
 -- Versión del servidor: 10.1.34-MariaDB
 -- Versión de PHP: 7.2.7
 
@@ -54,7 +54,7 @@ CREATE TABLE `blogs` (
 --
 
 INSERT INTO `blogs` (`blog_id`, `user_id`, `title`, `description`, `image`, `date`) VALUES
-(1, 3, 'Hola como estan 2', 'Hola como estan 2Hola como estan 2Hola como estan 2Hola como estan 2Hola como estan 2', 'Desert.jpg', '2018-10-26');
+(2, 3, 'Confirm PasswordConfirm Password', 'Confirm PasswordConfirm PasswordConfirm PasswordConfirm PasswordConfirm PasswordConfirm Password', 'Chrysanthemum.jpg', '2018-10-29');
 
 -- --------------------------------------------------------
 
@@ -77,13 +77,6 @@ CREATE TABLE `galleries` (
   `gallery_id` int(11) NOT NULL,
   `gallery` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `galleries`
---
-
-INSERT INTO `galleries` (`gallery_id`, `gallery`) VALUES
-(2, 'Desert.jpg');
 
 -- --------------------------------------------------------
 
@@ -153,6 +146,19 @@ CREATE TABLE `orders_products` (
 INSERT INTO `orders_products` (`orders_products_id`, `orders_id`, `products_id`, `quantity`, `price`, `tax`, `total`, `date`) VALUES
 (1, 1, '1', 1, 10000, 1, 1000, '2018-10-12'),
 (2, 3, '3', 3, 3, 3, 3, '2018-10-05');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pages`
+--
+
+CREATE TABLE `pages` (
+  `page_id` int(11) NOT NULL,
+  `page_title` varchar(50) NOT NULL,
+  `page_description` text NOT NULL,
+  `date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -235,13 +241,6 @@ CREATE TABLE `reservations` (
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `reservations`
---
-
-INSERT INTO `reservations` (`reservation_id`, `people_quantity`, `entrance_date`, `entrance_hour`, `full_name`, `phone`, `date`) VALUES
-(1, '5', '2018-10-02', '12:50', 'Luis Palma', '04249502755', '2018-10-02');
-
 -- --------------------------------------------------------
 
 --
@@ -274,7 +273,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`setting_id`, `goals`, `mission`, `currency`, `language`, `vision`, `tax`, `tax_name`, `address`, `phone`, `facebook`, `twitter`, `instagram`, `pinterest`, `logo`, `active_reservations`, `title`, `favicon`) VALUES
-(1, '', 'mission', '1', '1', 'vision', 'https://www.facebook.com/?ref=', 'https://www.facebook.com/?ref=', 'address', '04249502755', 'https://www.facebook.com/?ref=tn_tnmn', 'https://www.facebook.com/?ref=tn_tnmn', 'https://www.facebook.com/?ref=tn_tnmn', 'https://www.facebook.com/?ref=tn_tnmn', 'Desert.jpg', 1, '.::Donde Cueche::.', 'Desert.jpg');
+(1, '', 'mision 001 ', '1', '1', 'vision 001', 'https://www.facebook.com/?ref=', 'https://www.facebook.com/?ref=', 'address 001', '04249502755', 'https://www.facebook.com/?ref=tn_tnmn', 'https://www.facebook.com/?ref=tn_tnmn', 'https://www.facebook.com/?ref=tn_tnmn', 'https://www.facebook.com/?ref=tn_tnmn', 'Tulips.jpg', 2, 'Dainiler Stilos', 'Desert.jpg');
 
 -- --------------------------------------------------------
 
@@ -307,7 +306,8 @@ CREATE TABLE `sliders` (
 --
 
 INSERT INTO `sliders` (`slider_id`, `slider`, `user_id`, `image`, `date`) VALUES
-(11, '', 3, 'Desert.jpg', '0000-00-00');
+(15, '', 3, 'Chrysanthemum1.jpg', '0000-00-00'),
+(16, '', 3, 'Hydrangeas.jpg', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -343,6 +343,13 @@ CREATE TABLE `user_types` (
   `data` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `user_types`
+--
+
+INSERT INTO `user_types` (`user_type_id`, `user_type`, `data`) VALUES
+(5, 'Admin', '2018-10-29');
+
 -- --------------------------------------------------------
 
 --
@@ -356,6 +363,17 @@ CREATE TABLE `user_types_permissions` (
   `user_id` int(12) NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `user_types_permissions`
+--
+
+INSERT INTO `user_types_permissions` (`user_type_permission_id`, `user_type_id`, `permission_id`, `user_id`, `date`) VALUES
+(1, 1, 1, 3, '2018-10-29'),
+(2, 1, 2, 3, '2018-10-29'),
+(3, 1, 3, 3, '2018-10-29'),
+(4, 6, 1, 3, '2018-11-06'),
+(5, 6, 2, 3, '2018-11-06');
 
 --
 -- Índices para tablas volcadas
@@ -410,6 +428,12 @@ ALTER TABLE `orders_products`
   ADD PRIMARY KEY (`orders_products_id`) USING HASH,
   ADD KEY `orders_id` (`orders_id`),
   ADD KEY `orders_id_2` (`orders_id`);
+
+--
+-- Indices de la tabla `pages`
+--
+ALTER TABLE `pages`
+  ADD PRIMARY KEY (`page_id`);
 
 --
 -- Indices de la tabla `permissions`
@@ -492,19 +516,19 @@ ALTER TABLE `alerts`
 -- AUTO_INCREMENT de la tabla `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `blog_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `blog_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `galleries`
 --
 ALTER TABLE `galleries`
-  MODIFY `gallery_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `gallery_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `messages`
@@ -531,6 +555,12 @@ ALTER TABLE `orders_products`
   MODIFY `orders_products_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT de la tabla `pages`
+--
+ALTER TABLE `pages`
+  MODIFY `page_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `permissions`
 --
 ALTER TABLE `permissions`
@@ -540,7 +570,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `product_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `products_images`
@@ -558,7 +588,7 @@ ALTER TABLE `reservations`
 -- AUTO_INCREMENT de la tabla `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `setting_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `setting_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `shops`
@@ -570,25 +600,25 @@ ALTER TABLE `shops`
 -- AUTO_INCREMENT de la tabla `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `slider_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `slider_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `user_types`
 --
 ALTER TABLE `user_types`
-  MODIFY `user_type_id` int(12) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_type_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `user_types_permissions`
 --
 ALTER TABLE `user_types_permissions`
-  MODIFY `user_type_permission_id` int(12) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_type_permission_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas

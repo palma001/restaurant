@@ -8,10 +8,10 @@
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="<?php echo base_url('admin/');?>">Binfrix</a></li>
-                                <li class="breadcrumb-item active">Home</li>
+                                <li class="breadcrumb-item active">Pages</li>
                             </ol>
                         </div>
-                        <h4 class="page-title">Home</h4>
+                        <h4 class="page-title">Pages</h4>
                     </div>
                 </div>
             </div>     
