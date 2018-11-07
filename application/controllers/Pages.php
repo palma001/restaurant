@@ -165,7 +165,8 @@
 				redirect(base_url('pages/'));
 	        }	
 		}
-		public function destroy(){
+		public function destroy()
+		{
 			$id = $this->input->post("id");
 			$this->pages_model->destroy($id);
 			$this->session->set_flashdata('message','Deleted Successfully');
