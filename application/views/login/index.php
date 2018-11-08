@@ -7,7 +7,7 @@
                         
                         <div class="text-center w-75 m-auto">
                             <a href="index.html">
-                                <span><img src="{{ asset('img/logo.png') }}" alt="" height="60"></span>
+                                <span><img src="<?php echo base_url('admin_template/assets/images/logo.png') ?>" alt="" height="60"></span>
                             </a>
                             <p class="text-muted mb-4 mt-3">Enter your email address and password to access admin panel.</p>
                         </div>
