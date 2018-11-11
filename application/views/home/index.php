@@ -22,44 +22,42 @@
 				?>
 			</ul>
 		</div>
-		<!-- END REVOLUTION SLIDER -->
-	</div><!-- END OF SLIDER WRAPPER -->
+        <!-- END REVOLUTION SLIDER -->
+    </div><!-- END OF SLIDER WRAPPER -->
 </section>
 <!-- tabs
 ============================================= -->
 
 <!-- Page Title #4
 ============================================= -->
-<section id="page-title" class="page-title bg-overlay bg-parallax bg-overlay-gradient">
-    <div class="bg-section">
-        <img src="<?php echo base_url('frontend_template/assets/images/page-title/6.jpg') ?>" alt="Background" />
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="title title-4 text-center">
-                    <div class="title--content">
-                        <div class="title--heading">
-                            <h1>Products</h1>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="divider--shape-1down divider--shape-gray"></div>
-                </div>
-                <!-- .title end -->
-            </div>
-            <!-- .col-md-12 end -->
+<?php  if ($products) { ?>
+    <section id="page-title" class="page-title bg-overlay bg-parallax bg-overlay-gradient">
+        <div class="bg-section">
+            <img src="<?php echo base_url('frontend_template/assets/images/page-title/6.jpg') ?>" alt="Background" />
         </div>
-        <!-- .row end -->
-    </div>
-    <!-- .container end -->
-</section>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="title title-4 text-center">
+                        <div class="title--content">
+                            <div class="title--heading">
+                                <h1>Products</h1>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="divider--shape-1down divider--shape-gray"></div>
+                    </div>
+                    <!-- .title end -->
+                </div>
+                <!-- .col-md-12 end -->
+            </div>
+            <!-- .row end -->
+        </div>
+        <!-- .container end -->
+    </section>
 <!-- #page-title end -->
-
 <!-- Shop #4
 ============================================= -->
-
-<?php  if ($products) { ?>
     <section id="shop" class="shop shop-3 bg-gray pb-90">
         <div class="container">
             <div class="row">
@@ -139,6 +137,4 @@
     </section>
 <?php } ?>
 <!-- #blog end -->
-<!-- footer#1
-============================================= -->
-<script src="<?php echo base_url('js/pagination.js') ?>"></script>   
+<script src="<?php echo base_url('admin_template/js/pagination.js') ?>"></script>   

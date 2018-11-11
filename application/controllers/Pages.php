@@ -17,10 +17,8 @@
 		{
 			$data['pages'] = $this->pages_model->read();
 			$this->load->view('layouts/header_admin');
-			$this->load->view('layouts/navbar_admin');
+			$this->load->view('layouts/navbar_pages',$data);
 			$this->load->view('layouts/topnav_admin');
-			$this->load->view('modals/modal_confirm');
-			$this->load->view('layouts/navbar_pages');
 			$this->load->view('pages/index',$data);
 			$this->load->view('layouts/footer_admin');
 		}

@@ -10,8 +10,8 @@
                 <p>Do you really want to delete it?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
                 <button type="button" class="btn btn-primary accept">Accept</button>
+                <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
