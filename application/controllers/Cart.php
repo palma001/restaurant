@@ -54,11 +54,7 @@
 
 		public function update()
 		{
-			$data = array(
-				'rowid'    => $this->input->post('rowid'),
-				'qty'   => $this->input->post('qty'),
-			);
-
+			$data = $this->input->post();
 			$this->cart->update($data);
 			redirect('cart');
 		}

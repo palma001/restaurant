@@ -15,36 +15,35 @@ function pagination(page){
         dataType:'JSON',
         success:function(data){
             var product = "";
-            $.each(data.products,function(key,item){
-                product +='<form action = "http://localhost/comida/cart/store/" method="post" name="form_cart">'+
-                    '<div class="col-xs-12 col-sm-6 col-md-4">'+
-                        '<div class="product-item">'+
-                            '<div class="product--img">'+
-                                '<img src="http://localhost/comida/uploads/products/'+item.image+'" alt="Product" />'+
-                                '<div class="product--hover">'+
-                                    '<div class="product--action">'+
-                                        '<button type ="submit">Add To Cart</button>'+
+                $.each(data.products,function(key,item){
+                    product +='<form action = "http://localhost/comida/cart/store/" method="post">';
+                        product += '<div class="col-xs-12 col-sm-6 col-md-4">'+
+                            '<div class="product-item">'+
+                                '<div class="product--img">'+
+                                    '<img src="http://localhost/comida/uploads/products/'+item.image+'" alt="Product" />'+
+                                    '<div class="product--hover">'+
+                                        '<div class="product--action">'+
+                                            '<button type ="submit">Add To Cart</button>'+
+                                        '</div>'+
+                                    '</div>'+
+                                    '<div class="divider--shape-1down"></div>'+
+                                '</div>'+
+                                '<div class="product--content">'+
+                                    '<div class="product--title">'+
+                                        '<input type="hidden" name="img" value="'+item.image+'">'+
+                                        '<input type="hidden" name="id" value="'+item.product_id+'">'+
+                                        '<h3><a href="'+item.product_id+'">'+item.title+'</a></h3>'+
+                                        '<input type="hidden" name="title" value="'+item.title+'">'+
+                                    '</div>'+
+                                    '<div class="product--price">'+
+                                        '<span>$'+item.price+'</span>'+
+                                        '<input type="hidden" name="price" value="'+item.price+'">'+
                                     '</div>'+
                                 '</div>'+
-                                '<div class="divider--shape-1down"></div>'+
                             '</div>'+
-                            '<div class="product--content">'+
-                                '<div class="product--title">'+
-                                    '<input type="hidden" name="img" value="'+item.image+'">'+
-                                    '<input type="hidden" name="id" value="'+item.product_id+'">'+
-                                    '<h3><a href="'+item.product_id+'">'+item.title+'</a></h3>'+
-                                    '<input type="hidden" name="title" value="'+item.title+'">'+
-                                '</div>'+
-                                '<div class="product--price">'+
-                                    '<span>$'+item.price+'</span>'+
-                                    '<input type="hidden" name="price" value="'+item.price+'">'+
-                                '</div>'+
-                            '</div>'+
-                        '</div>'+
-                    '</div>'+
-                '</form>';
-            });
-
+                        '</div>';
+                    product +=  '</form>';
+                });
             $('.products').html(product);
 
             linksolucionado = Number(page);

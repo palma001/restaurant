@@ -48,53 +48,54 @@
                                 <th class="cart-product-total">Total</th>
                             </tr>
                         </thead>
-                        <form action="<?php echo base_url('cart/update/'); ?>" method="post">
                         	<?php $i = 1; ?>
 	                        <tbody>
-	                        	<?php foreach ($this->cart->contents() as $items) {?>
-		                            <tr class="cart-product">
-		                                <td class="cart-product-item">
-	                                        <a href="<?php echo base_url('cart/destroy/'.$items['rowid']) ?>" title="">
-			                                    <div class="cart-product-remove">
-			                                        	<i class="fa fa-close"></i>
+                        		<form action="<?php echo base_url('cart/update/'); ?>" method="post">
+	                        		<?php foreach ($this->cart->contents() as $items) {?>
+			                            <input type="hidden" name="<?php echo $i."[rowid]"; ?>" value="<?php echo $items['rowid'] ?>">
+			                            <tr class="cart-product">
+			                                <td class="cart-product-item">
+		                                        <a href="<?php echo base_url('cart/destroy/'.$items['rowid']) ?>" title="">
+				                                    <div class="cart-product-remove">
+				                                        	<i class="fa fa-close"></i>
+				                                    </div>
+		                                        </a>
+			                                    <div class="cart-product-img">
+			                                        <img width="70" height="70" src="<?php echo base_url('uploads/products/' . $items['img']); ?>" alt="product" />
 			                                    </div>
-	                                        </a>
-		                                    <div class="cart-product-img">
-		                                        <img width="70" height="70" src="<?php echo base_url('uploads/products/' . $items['img']); ?>" alt="product" />
-		                                    </div>
-		                                    <div class="cart-product-name">
-		                                        <h6> <?php echo $items['name']; ?></h6>
-		                                    </div>
-		                                </td>
-		                                <td class="cart-product-price">$ <?php echo $this->cart->format_number($items['price']); ?></td>
-		                                <td class="cart-product-quantity">
-		                                    <div class="product-quantity">
-		                                        <a href="#"><i class="fa fa-minus"></i></a>
+			                                    <div class="cart-product-name">
+			                                        <h6> <?php echo $items['name']; ?></h6>
+			                                    </div>
+			                                </td>
+			                                <td class="cart-product-price">$ <?php echo $this->cart->format_number($items['price']); ?></td>
+			                                <td class="cart-product-quantity">
+			                                    <div class="product-quantity">
+			                                        <a href="#"><i class="fa fa-minus"></i></a>
 
-		                                        <input type="hidden" name="rowid" value="<?php echo $items['rowid']; ?>">
 
-		                                        <input type="number" value="<?php echo $items['qty'] ?>" name="qty" id="pro2-qunt">
+			                                        <input type="number" value="<?php echo $items['qty'] ?>" name="<?php echo $i.'[qty]' ?>" id="pro2-qunt">
 
-		                                        <a href="#"><i class="fa fa-plus"></i></a>
-		                                    </div>
-		                                </td>
-		                                <td class="cart-product-total">$ <?php echo $this->cart->format_number($items['subtotal']); ?></td>
-		                            </tr>
+			                                        <a href="#"><i class="fa fa-plus"></i></a>
+			                                    </div>
+			                                </td>
+			                                <td class="cart-product-total">$ <?php echo $this->cart->format_number($items['subtotal']); ?></td>
+			                        	</tr>
 		                            <?php $i++; ?>
-	                        	<?php }?>
-	                            <tr class="cart-product-action">
-	                                <td colspan="4">
-	                                    <div class="row clearfix">
-	                                        <div class="col-xs-12 col-sm-6 col-md-6">
-	                                            <button class="btn btn--secondary" type="submit">update cart</button>
-	                                            <a class="btn btn--primary" href="#">Checkout</a>
-	                                        </div>
-	                                        <!-- .col-md-6 end -->
-	                                    </div>
-	                                </td>
-	                            </tr>
+
+		                        	<?php }?>
+		                            <tr class="cart-product-action">
+		                                <td colspan="4">
+		                                    <div class="row clearfix">
+		                                        <div class="col-xs-12 col-sm-6 col-md-6">
+		                                            <button class="btn btn--secondary" type="submit">update cart</button>
+		                                            <a class="btn btn--primary" href="#">Checkout</a>
+		                                        </div>
+		                                        <!-- .col-md-6 end -->
+		                                    </div>
+		                                </td>
+		                            </tr>
+	                    		</form>
 	                        </tbody>
-	                    </form>
                     </table>
                 </div>
                 <!-- .cart-table end -->
