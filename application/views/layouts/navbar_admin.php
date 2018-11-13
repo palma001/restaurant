@@ -37,6 +37,12 @@
                         <span> Orders </span>
                     </a>
                 </li>
+                <li>
+                    <a href="<?php echo base_url('shippings/');?>">
+                        <i class="fe-shopping-cart"></i>
+                        <span> Shippings </span>
+                    </a>
+                </li>
                 <li class="menu-title">Accounts</li>
                 <li>
                     <a href="<?php echo base_url('users/');?>">

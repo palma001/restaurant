@@ -10,10 +10,9 @@ class States_model extends CI_Model {
 
 	public function store($data)
 	{
-		$fecha = date('Y/m/d');
 		$this->db->insert('states',array(
 				'state'      => $data['state'], 
-				'country_id' => $data['country_id']
+				'country_id' => $data['country']
 			)
 		);
 	}
@@ -22,7 +21,7 @@ class States_model extends CI_Model {
 
 		$datos = array(
 			'state'      => $data['state'], 
-			'country_id' => $data['country_id']
+			'country_id' => $data['country']
 		);
 		$this->db->where('state_id',$id);
 		$query = $this->db->update('states',$datos);
@@ -30,7 +29,8 @@ class States_model extends CI_Model {
 	
 	public function read(){
 
-		$query = $this->db->get('states');
+		$this->db->join('countries','countries.country_id = states.country_id');
+		$query= $this->db->get('states');
 		if ($query->num_rows() > 0){
 			return $query;
 		}else{
@@ -39,7 +39,7 @@ class States_model extends CI_Model {
 	}
 
 	public function get($id){
-
+		$this->db->join('countries','countries.country_id = states.country_id');
 		$this->db->where('state_id',$id);
 		$query = $this->db->get('states');
 		if ($query->num_rows() > 0){
@@ -51,5 +51,12 @@ class States_model extends CI_Model {
 
 	public function destroy($id){
 		$this->db->delete('states',array('state_id' => $id));	
+	}
+
+	public function serach_states($country_id)
+	{
+		$this->db->where('country_id',$country_id);
+		$query = $this->db->get('states');
+		return $query->result();
 	}
 }

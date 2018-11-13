@@ -34,17 +34,11 @@
                                         ';
                                     }  
                                 ?>
-                                <form class="form-horizontal" method="post" action="<?php echo base_url('index.php/States/store');?>">
-                                    <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">State</label>
-                                        <div class="col-sm-10">
-                                            <input name="state" placeholder="State"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                        </div>
-                                    </div>
+                                <form class="form-horizontal" method="post" action="<?php echo base_url('index.php/shippings/store');?>">
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Countries</label>
                                         <div class="col-sm-10">
-                                            <select name="country" class="form-control">
+                                            <select name="country" id="country" class="form-control">
                                                 <option value="">-- Select --</option>
                                                 <?php  
                                                     if ($countries) {
@@ -54,6 +48,26 @@
                                                     }
                                                 ?>
                                             </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">States</label>
+                                        <div class="col-sm-10">
+                                            <select name="state" id="states" class="form-control">
+                                                <option value="">-- Select --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Zip</label>
+                                        <div class="col-sm-10">
+                                            <input name="zip" placeholder="Zip"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Cost</label>
+                                        <div class="col-sm-10">
+                                            <input name="cost" placeholder="Cost"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -75,3 +89,27 @@
         <!-- end Footer -->
     </div>
 </div>
+<script>
+    $(document).ready(function(){
+        $('#country').change(function(){
+            var country_id = $(this).val();
+            states(country_id);
+        });
+    });
+
+    function states(country_id){
+        $.ajax({
+            url: 'http://localhost/comida/states/serach_states/',
+            type: 'POST',
+            data: {country_id:country_id},
+            dataType:'JSON',
+            success:function(data){
+                var state = "";
+                $.each(data.states,function(key,item){
+                    state +='<option value="'+item.state_id+'">'+item.state.charAt(0).toUpperCase() + item.state.slice(1);+'</option>';
+                });
+                $('#states').html(state);
+            }
+        });
+    }
+</script>

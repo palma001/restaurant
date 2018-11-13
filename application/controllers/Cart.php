@@ -10,17 +10,18 @@
             $this->load->model('settings_model');
             $this->load->model('products_model');
             $this->load->model('blogs_model');
+            $this->load->model('countries_model');
             $this->load->library('session');
 			$this->load->library('cart');
 		}
 
 		public function index()
 		{
-			$slider  = $this->sliders_model->read();
-            $products  = $this->products_model->read();
-            $settings = $this->settings_model->read();
-            $blogs = $this->blogs_model->read();
-
+			$slider    = $this->sliders_model->read();
+			$products  = $this->products_model->read();
+			$settings  = $this->settings_model->read();
+			$blogs     = $this->blogs_model->read();
+			$countries = $this->countries_model->read();
             $this->load->view('layouts/header_front',array('settings' => $settings));
             $this->load->view('layouts/navbar_front',
                 array(
@@ -30,10 +31,11 @@
             );
             $this->load->view('cart/index', 
                 array(
-                    'slider'   => $slider, 
-                    'products' => $products, 
-                    'settings' => $settings , 
-                    'blogs'    => $blogs
+					'slider'    => $slider, 
+					'products'  => $products, 
+					'settings'  => $settings , 
+					'blogs'     => $blogs,
+					'countries' => $countries,
                 )
             );
             $this->load->view('layouts/footer_front',array('settings' => $settings));

@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
-class States extends CI_Controller
+class Shippings extends CI_Controller
 {
 
     public function __construct()
@@ -8,23 +8,23 @@ class States extends CI_Controller
         parent::__construct();
         $this->load->library('session');
         $this->load->library('form_validation');
-        $this->load->model('states_model');
+        $this->load->model('shippings_model');
         $this->load->model('countries_model');
+        $this->load->model('states_model');
         if (!$this->session->userdata['user_id']) {
             redirect(base_url('login'));
         }
     }
     public function index()
     {
-
         $data = array(
-            'states' => $this->states_model->read(),
+            'shippings' => $this->shippings_model->read(),
         );
         $this->load->view('layouts/header_admin');
         $this->load->view('layouts/navbar_admin');
         $this->load->view('layouts/topnav_admin');
         $this->load->view('modals/modal_confirm');
-        $this->load->view('states/index', $data);
+        $this->load->view('shippings/index', $data);
         $this->load->view('layouts/footer_admin');
     }
 
@@ -32,11 +32,12 @@ class States extends CI_Controller
     {
         $data = array(
             'countries' => $this->countries_model->read(),
+            'states'    => $this->states_model->read(),
         );
         $this->load->view('layouts/header_admin');
         $this->load->view('layouts/navbar_admin');
         $this->load->view('layouts/topnav_admin');
-        $this->load->view('states/create', $data);
+        $this->load->view('shippings/create', $data);
         $this->load->view('layouts/footer_admin');
     }
 
@@ -54,6 +55,16 @@ class States extends CI_Controller
                 'label' => 'Country',
                 'rules' => 'required',
             ),
+            array(
+                'field' => 'zip',
+                'label' => 'Zip',
+                'rules' => 'required',
+            ),
+            array(
+                'field' => 'cost',
+                'label' => 'Cost',
+                'rules' => 'required',
+            ),
         );
 
         $this->form_validation->set_rules($config);
@@ -65,10 +76,12 @@ class States extends CI_Controller
             $data = array(
                 'state'   => $this->input->post('state'),
                 'country' => $this->input->post('country'),
+                'zip'     => $this->input->post('zip'),
+                'cost'    => $this->input->post('cost'),
             );
-            $this->states_model->store($data);
+            $this->shippings_model->store($data);
             $this->session->set_flashdata('message', 'Saved Successfully');
-            redirect(base_url('states/'));
+            redirect(base_url('shippings/'));
         }
     }
 
@@ -76,17 +89,18 @@ class States extends CI_Controller
     {
         $id   = $this->uri->segment(3);
         $data = array(
-			'states'    => $this->states_model->get($id), 
-			'countries' => $this->countries_model->read($id)
+            'shippings' => $this->shippings_model->get($id),
+			'states'    => $this->states_model->read(), 
+			'countries' => $this->countries_model->read()
         );
         $this->load->view('layouts/header_admin');
         $this->load->view('layouts/navbar_admin');
         $this->load->view('layouts/topnav_admin');
 
         if (!$id) {
-            redirect(base_url('states'));
+            redirect(base_url('shippings'));
         } else {
-            $this->load->view('states/edit', $data);
+            $this->load->view('shippings/edit', $data);
         }
         $this->load->view('layouts/footer_admin');
     }
@@ -104,6 +118,16 @@ class States extends CI_Controller
                 'label' => 'Country',
                 'rules' => 'required',
             ),
+            array(
+                'field' => 'zip',
+                'label' => 'Zip',
+                'rules' => 'required',
+            ),
+            array(
+                'field' => 'cost',
+                'label' => 'Cost',
+                'rules' => 'required',
+            ),
         );
 
         $this->form_validation->set_rules($config);
@@ -115,27 +139,19 @@ class States extends CI_Controller
             $data = array(
                 'state'   => $this->input->post('state'),
                 'country' => $this->input->post('country'),
+                'zip'     => $this->input->post('zip'),
+                'cost'    => $this->input->post('cost'),
             );
-            $this->states_model->update($id,$data);
+            $this->shippings_model->update($id,$data);
             $this->session->set_flashdata('message', 'Saved Successfully');
-            redirect(base_url('states/'));
+            redirect(base_url('shippings/'));
         }
     }
 
     public function destroy()
     {
         $id = $this->input->post("id");
-        $this->states_model->destroy($id);
+        $this->shippings_model->destroy($id);
         $this->session->set_flashdata('message', 'Deleted Successfully');
     }
-
-    public function serach_states()
-    {
-       $country = $this->input->post('country_id');
-        $data = array(
-            'states' => $this->states_model->serach_states($country)
-        );
-        echo json_encode($data);
-    }
-
 }
