@@ -14,7 +14,7 @@
 			}
 		}
 
-		function index()
+		public function index()
 		{
 
 			$data = array(

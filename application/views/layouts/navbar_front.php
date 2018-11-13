@@ -18,21 +18,21 @@
                     <span class="icon-bar"></span>
                     </button>
                     <a class="logo" href="<?php echo base_url(); ?>">
-                        <img class="logo-light" width="100" src="<?php echo base_url('uploads/logo/'.$settings->logo); ?>"  alt="granny Logo" >
+                        <img class="logo-light" width="100" src="<?php echo base_url('uploads/logo/' . $settings->logo); ?>"  alt="granny Logo" >
 
-                        <img class="logo-dark" width="100" src="<?php echo base_url('uploads/logo/'.$settings->logo); ?>" alt="granny Logo">
+                        <img class="logo-dark" width="100" src="<?php echo base_url('uploads/logo/' . $settings->logo); ?>" alt="granny Logo">
                     </a>
                 </div>
 
                 <div class="module-container pull-right">
                     <!-- Module Reservation  -->
                     <div class="module module-reservation">
-                        <?php if ($settings){ ?>
-                            
-                           <?php if ($settings->active_reservations == 1){ ?>
+                        <?php if ($settings) {?>
+
+                           <?php if ($settings->active_reservations == 1) {?>
                             <a class="btn-popup" data-toggle="modal" data-target="#reservationModule"><i class="lnr lnr-users"></i>Reservation</a>
-                        <?php } ?>
-                       <?php } ?>
+                        <?php }?>
+                       <?php }?>
 
 
                         <div class="modal fade reservation-popup" tabindex="-1" role="dialog" id="reservationModule">
@@ -151,18 +151,18 @@
                         </li>
                         <!-- li end -->
                         <!-- Blog Menu-->
-                        <?php 
-                            if ($blogs) {
-                        ?>
+                        <?php
+if ($blogs) {
+    ?>
                             <li class="has-dropdown">
                                 <a href="#" class="menu-item">Blog</a>
                             </li>
                         <?php
-                            } 
-                        ?>
+}
+?>
                         <!-- li end -->
                         <li>
-                            <a class="menu-item" href="<?php echo base_url('cart'); ?>">shop</a>
+                            <a class="menu-item" href="<?php echo base_url('cart'); ?>"><i class='fas fa-cart-arrow-down'></i></a>
                         </li>
                     </ul>
                 </div>

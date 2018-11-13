@@ -73,6 +73,18 @@
                     </a>
                 </li>
                 <li>
+                    <a href="<?php echo base_url('countries/');?>">
+                        <i class="fe-map"></i>
+                        <span>Countries</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url('states/');?>">
+                        <i class="fe-map-pin"></i>
+                        <span>States</span>
+                    </a>
+                </li>
+                <li>
                     <a href="<?php echo base_url('reservations/');?>">
                         <i class="fe-book-open"></i>
                         <span>Reservations</span>
