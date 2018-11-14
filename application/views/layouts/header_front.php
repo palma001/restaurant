@@ -25,8 +25,6 @@
 	    <link rel="stylesheet" type="text/css" href="<?php echo base_url('frontend_template/assets/revolution/css/settings.css'); ?>">
 	    <link rel="stylesheet" type="text/css" href="<?php echo base_url('frontend_template/assets/revolution/css/layers.css'); ?>">
 	    <link rel="stylesheet" type="text/css" href="<?php echo base_url('frontend_template/assets/revolution/css/navigation.css'); ?>">
-	    <link href="<?php echo base_url('admin_template/assets/images/favicon.ico')?>" rel="stylesheet" type="text/css" />
-	    <link rel="shortcut icon" href="<?php echo base_url('admin_template/assets/images/favicon.ico');?>">
 	    <link href="<?php echo base_url('admin_template/css/icons.min.css')?>" rel="stylesheet" type="text/css" />
 	    <script src="<?php echo base_url('frontend_template/assets/js/jquery-2.2.4.min.js'); ?>"></script>
 	</head>
