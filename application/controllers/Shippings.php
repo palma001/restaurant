@@ -154,4 +154,18 @@ class Shippings extends CI_Controller
         $this->shippings_model->destroy($id);
         $this->session->set_flashdata('message', 'Deleted Successfully');
     }
+
+    public function shippings_cost()
+    {
+        $country = $this->input->post('country');
+        $states  = $this->input->post('states');
+        $data = array(
+            'cost' => $this->shippings_model->shippings_cost($country,$states),
+        );
+        if ($data['cost'] == false) {
+            echo 1;
+        }else{
+            echo json_encode($data);
+        }
+    }
 }

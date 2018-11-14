@@ -110,7 +110,6 @@
 	                <div class="cart-shiping">
 	                    <h6>Shipping :</h6>
 	                    <div class="row">
-	                        <form>
 	                            <div class="col-xs-12 col-md-12">
 	                                <i class="fa fa-angle-down"></i>
 	                                <select class="form-control" id="country">
@@ -138,9 +137,8 @@
                                 </div>
 
 	                            <div class="col-md-12">
-	                                <button type="submit" class="btn btn--primary pull-right pull-none-xs">Add</button>
+	                                <button type="button" class="btn btn--primary pull-right pull-none-xs calcular">Add</button>
 	                            </div>
-	                        </form>
 	                    </div>
 	                </div>
 	                <!-- .cart-shiping end -->
@@ -150,9 +148,13 @@
 	                <div class="cart-total-amount">
 	                    <h6>Cart Totals :</h6>
 	                    <ul class="list-unstyled">
-	                        <li>Cart Subtotal :<span class="pull-right text-right">$ 200</span></li>
-	                        <li>Shipping :<span class="pull-right text-right">Free Shipping</span></li>
-	                        <li>Order Total :<span class="pull-right text-right">$ <?php echo $this->cart->format_number($this->cart->total()); ?></span></li>
+	                        <li>Cart Subtotal :<span class="pull-right text-right">$ <?php echo $this->cart->format_number($this->cart->total()); ?></span>
+								<input type="hidden" name="" id="subtotal" value="<?php echo $this->cart->format_number($this->cart->total()); ?>">
+	                        </li>
+	                        <li>Shipping :<span class="pull-right text-right shippings">Free Shipping</span>
+	                        	<input type="hidden" value="" id="cost">
+	                        </li>
+	                        <li>Order Total :<span class="pull-right text-right order-total">$ <?php echo $this->cart->format_number($this->cart->total()); ?> </span></li>
 	                    </ul>
 	                </div>
 	                <!-- .cart-total-amount end -->
@@ -172,6 +174,20 @@
 			var country_id = $(this).val();
 			states(country_id);
 		});
+		$('#states').change(function(){
+			var country = $("#country").val();
+			var states  = $("#states").val();
+			cost(country,states);
+		});
+		$('.calcular').click(function(){
+			var country = $("#country").val();
+			var states  = $("#states").val();
+			cost(country,states);
+			setTimeout(function(){
+				total();
+			},500)
+		});
+		
 	});
 
 	function states(country_id){
@@ -189,4 +205,34 @@
             }
         });
 	}
+
+	function cost(country,states){
+		$.ajax({
+            url: 'http://localhost/comida/shippings/shippings_cost/',
+            type: 'POST',
+            data: {country:country,states:states},
+            dataType:'JSON',
+            success:function(data){
+            	if (data != 1) {
+	                var state = "";
+	                $.each(data.cost,function(key,item){
+	                	state = item.cost;
+	                });
+	                $(".shippings").html('$ '+state);
+	                $('#cost').val(state);
+            	}else{
+            		$(".shippings").html('$ '+ 0);
+            		$('#cost').val(0)
+            	}
+            }	
+            
+        });
+	}
+
+	function total() {
+        var n1 = document.getElementById('subtotal').value;
+        var n2 = document.getElementById('cost').value;
+        var suma = parseInt(n1) + parseInt(n2);
+       	$(".order-total").html("$ " +suma);
+    }
 </script>

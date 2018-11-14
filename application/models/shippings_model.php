@@ -58,4 +58,18 @@ class Shippings_model extends CI_Model {
 	public function destroy($id){
 		$this->db->delete('shippings',array('shipping_id' => $id));	
 	}
+
+	public function shippings_cost($country,$states)
+	{
+		$this->db->join('countries','countries.country_id = shippings.country_id');
+		$this->db->join('states','states.state_id = shippings.state_id');
+		$this->db->where('shippings.country_id',$country);
+		$this->db->where('shippings.state_id',$states);
+		$query = $this->db->get('shippings');
+		if ($query->num_rows() > 0){
+			return $query->result();
+		}else{
+			return false;
+		}
+	}
 }

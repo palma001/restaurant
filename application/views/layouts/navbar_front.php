@@ -162,7 +162,9 @@ if ($blogs) {
 ?>
                         <!-- li end -->
                         <li>
-                            <a class="menu-item" href="<?php echo base_url('cart'); ?>"><i class='fas fa-cart-arrow-down'></i></a>
+                            <a class="menu-item" href="<?php echo base_url('cart'); ?>"> 
+                                <i class="fe-shopping-cart" style="font-size:20px ;"></i>
+                            </a>
                         </li>
                     </ul>
                 </div>
