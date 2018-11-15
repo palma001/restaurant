@@ -27,5 +27,6 @@
 	    <link rel="stylesheet" type="text/css" href="<?php echo base_url('frontend_template/assets/revolution/css/navigation.css'); ?>">
 	    <link href="<?php echo base_url('admin_template/css/icons.min.css')?>" rel="stylesheet" type="text/css" />
 	    <script src="<?php echo base_url('frontend_template/assets/js/jquery-2.2.4.min.js'); ?>"></script>
+	    <script src="<?php echo base_url('social_buttons/js/functions.js'); ?>"></script>
 	</head>
 	<body>

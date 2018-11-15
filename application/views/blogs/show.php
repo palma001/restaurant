@@ -1,5 +1,28 @@
 <!-- Page Title #4
 ============================================= -->
+ <!-- Some Open Graph tags -->
+<meta name="description"                content="<?php echo ucfirst($blogs->title); ?>">
+<meta name="author"                     content="Mahsource">
+<meta property="og:locale"              content="en_EN"/>
+<meta property="og:type"                content="article"/>
+<meta property="og:title"               content=" <?php echo ucfirst($blogs->description); ?>"/>
+<meta property="og:description"         content="The first thing Game Of Thrones released to tease its upcoming sixth season was a poster featuring Jon Snow."/>
+<meta property="og:url"                 content="<?php echo base_url(); ?>"/>
+<meta property="og:site_name"           content="mahcode.com"/>
+<meta property="article:publisher"      content="https://www.facebook.com/Mahcode-849841581779986"/>
+<meta property="article:published_time" content="2015-12-10T02:05:30Z"/>
+<meta property="og:image"               content="<?php echo base_url('uploads/blogs/'.$blogs->image)?>"/>
+  
+
+<meta name="twitter:title"              content="<?php echo ucfirst($blogs->title); ?>"/>
+<meta name="twitter:description"        content=" <?php echo ucfirst($blogs->description); ?>"/>
+<meta name="twitter:image"              content="<?php echo base_url('uploads/blogs/'.$blogs->image)?>"/>
+<meta name="twitter:site"               content="@itsmahcode"/>
+<meta name="twitter:creator"            content="@itsmahcode"/>
+<meta name="twitter:via"                content="itsmahcode"/>
+<meta name="twitter:card"               content="photo"/>
+<meta name="twitter:url"                content="<?php echo base_url(); ?>"/>
+
 <section id="page-title" class="page-title bg-overlay bg-parallax bg-overlay-gradient">
     <div class="bg-section">
         <img src="<?php echo base_url('frontend_template/assets/images/page-title/7.jpg') ?>" alt="Background" />
@@ -55,11 +78,11 @@
                             <div class="pull-left">
                                 <span class="share--title">share this article: </span>
                             </div>
-                            <div class="text-right">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-google-plus"></i></a>
-                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                            <div class="text-right share-buttons-row">
+                                <a href="#"><i class="fa fa-facebook share-fb"></i></a>
+                                <a href="#"><i class="fa fa-twitter share-twitter"></i></a>
+                                <a href="#"><i class="fa fa-google-plus share-google-plus"></i></a>
+                                <a href="#"><i class="fa fa-pinterest share-pinterest"></i></a>
                             </div>
                         </div>
                         <!-- .entry-share end -->
