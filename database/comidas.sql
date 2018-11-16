@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-11-2018 a las 16:40:49
+-- Tiempo de generación: 16-11-2018 a las 03:33:05
 -- Versión del servidor: 10.1.34-MariaDB
 -- Versión de PHP: 7.2.7
 
@@ -66,6 +66,25 @@ CREATE TABLE `categories` (
   `category_id` int(11) NOT NULL,
   `category` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `countries`
+--
+
+CREATE TABLE `countries` (
+  `country_id` int(11) NOT NULL,
+  `country` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `countries`
+--
+
+INSERT INTO `countries` (`country_id`, `country`) VALUES
+(1, 'venezuela'),
+(5, 'Colombia');
 
 -- --------------------------------------------------------
 
@@ -160,6 +179,13 @@ CREATE TABLE `pages` (
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `pages`
+--
+
+INSERT INTO `pages` (`page_id`, `page_title`, `page_description`, `date`) VALUES
+(1, 'hola', 'holadsdssssssssssss sf sfsf  sfsfsf`jas  sofjaofaf', '2018-11-06');
+
 -- --------------------------------------------------------
 
 --
@@ -210,6 +236,15 @@ CREATE TABLE `products` (
   `date` date NOT NULL,
   `image` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `products`
+--
+
+INSERT INTO `products` (`product_id`, `user_id`, `title`, `description`, `price`, `outstanding`, `views`, `date`, `image`) VALUES
+(4, 3, 'coca cola', 'coca colacoca colacoca cola', 100, '1', '', '2018-11-09', 'Koala.jpg'),
+(5, 3, 'pollo al horno', 'pollo al hornopollo al hornopollo al hornopollo al hornopollo al horno', 500, '1', '', '2018-11-11', 'Desert2.jpg'),
+(6, 3, 'refresco', 'persicola 2 y 3 litros asasasa', 200, '1', '', '2018-11-11', 'Hydrangeas.jpg');
 
 -- --------------------------------------------------------
 
@@ -273,7 +308,28 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`setting_id`, `goals`, `mission`, `currency`, `language`, `vision`, `tax`, `tax_name`, `address`, `phone`, `facebook`, `twitter`, `instagram`, `pinterest`, `logo`, `active_reservations`, `title`, `favicon`) VALUES
-(1, '', 'mision 001 ', '1', '1', 'vision 001', 'https://www.facebook.com/?ref=', 'https://www.facebook.com/?ref=', 'address 001', '04249502755', 'https://www.facebook.com/?ref=tn_tnmn', 'https://www.facebook.com/?ref=tn_tnmn', 'https://www.facebook.com/?ref=tn_tnmn', 'https://www.facebook.com/?ref=tn_tnmn', 'Tulips.jpg', 2, 'Dainiler Stilos', 'Desert.jpg');
+(1, '', 'mision 001 ', '1', '1', 'vision 001', 'https://www.facebook.com/?ref=', 'https://www.facebook.com/?ref=', 'address 001', '04249502755', 'https://www.facebook.com/?ref=tn_tnmn', 'https://www.facebook.com/?ref=tn_tnmn', 'https://www.facebook.com/?ref=tn_tnmn', 'https://www.facebook.com/?ref=tn_tnmn', 'Tulips.jpg', 1, 'Dainiler Stilos', 'Desert.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `shippings`
+--
+
+CREATE TABLE `shippings` (
+  `shipping_id` int(11) NOT NULL,
+  `country_id` int(11) NOT NULL,
+  `state_id` int(11) NOT NULL,
+  `zip` int(11) NOT NULL,
+  `cost` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `shippings`
+--
+
+INSERT INTO `shippings` (`shipping_id`, `country_id`, `state_id`, `zip`, `cost`) VALUES
+(1, 5, 6, 6004, 1000);
 
 -- --------------------------------------------------------
 
@@ -308,6 +364,28 @@ CREATE TABLE `sliders` (
 INSERT INTO `sliders` (`slider_id`, `slider`, `user_id`, `image`, `date`) VALUES
 (15, '', 3, 'Chrysanthemum1.jpg', '0000-00-00'),
 (16, '', 3, 'Hydrangeas.jpg', '0000-00-00');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `states`
+--
+
+CREATE TABLE `states` (
+  `state_id` int(11) NOT NULL,
+  `country_id` int(11) NOT NULL,
+  `state` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `states`
+--
+
+INSERT INTO `states` (`state_id`, `country_id`, `state`) VALUES
+(2, 1, 'maturin'),
+(4, 1, 'puerto la cruz'),
+(5, 5, 'bogota'),
+(6, 5, 'cucuta');
 
 -- --------------------------------------------------------
 
@@ -398,6 +476,12 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`category_id`);
 
 --
+-- Indices de la tabla `countries`
+--
+ALTER TABLE `countries`
+  ADD PRIMARY KEY (`country_id`);
+
+--
 -- Indices de la tabla `galleries`
 --
 ALTER TABLE `galleries`
@@ -469,6 +553,12 @@ ALTER TABLE `settings`
   ADD PRIMARY KEY (`setting_id`) USING HASH;
 
 --
+-- Indices de la tabla `shippings`
+--
+ALTER TABLE `shippings`
+  ADD PRIMARY KEY (`shipping_id`);
+
+--
 -- Indices de la tabla `shops`
 --
 ALTER TABLE `shops`
@@ -479,6 +569,12 @@ ALTER TABLE `shops`
 --
 ALTER TABLE `sliders`
   ADD PRIMARY KEY (`slider_id`) USING HASH;
+
+--
+-- Indices de la tabla `states`
+--
+ALTER TABLE `states`
+  ADD PRIMARY KEY (`state_id`);
 
 --
 -- Indices de la tabla `users`
@@ -516,19 +612,25 @@ ALTER TABLE `alerts`
 -- AUTO_INCREMENT de la tabla `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `blog_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `blog_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `countries`
+--
+ALTER TABLE `countries`
+  MODIFY `country_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `galleries`
 --
 ALTER TABLE `galleries`
-  MODIFY `gallery_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `gallery_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `messages`
@@ -558,7 +660,7 @@ ALTER TABLE `orders_products`
 -- AUTO_INCREMENT de la tabla `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `page_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `page_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `permissions`
@@ -570,7 +672,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `product_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `products_images`
@@ -582,13 +684,19 @@ ALTER TABLE `products_images`
 -- AUTO_INCREMENT de la tabla `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `settings`
 --
 ALTER TABLE `settings`
   MODIFY `setting_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `shippings`
+--
+ALTER TABLE `shippings`
+  MODIFY `shipping_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `shops`
@@ -603,16 +711,22 @@ ALTER TABLE `sliders`
   MODIFY `slider_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
+-- AUTO_INCREMENT de la tabla `states`
+--
+ALTER TABLE `states`
+  MODIFY `state_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `user_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `user_types`
 --
 ALTER TABLE `user_types`
-  MODIFY `user_type_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `user_type_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `user_types_permissions`

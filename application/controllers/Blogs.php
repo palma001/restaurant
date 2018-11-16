@@ -12,14 +12,13 @@
 			$this->load->library('session');
 			$this->load->library('form_validation');
 			$this->load->helper('file');
-
-			if (!$this->session->userdata['user_id']){
-	            redirect(base_url('login'));
-			}
 		}
 
 		public function index()
 		{
+			if (!$this->session->userdata['user_id']){
+	            redirect(base_url('login'));
+			}
 			$data['blogs'] = $this->blogs_model->read();
 			$this->load->view('layouts/header_admin');
 			$this->load->view('layouts/navbar_admin');
