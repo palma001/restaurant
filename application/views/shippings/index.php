@@ -43,7 +43,7 @@
                                         <th>State</th>
                                         <th>Countries</th>
                                         <th>Zip</th>
-                                        <th>Cost</th>
+                                        <th>Price</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -61,7 +61,7 @@
                                                         '</td>
                                                         <td>'.ucwords(strtolower($shippings->zip)).
                                                         '</td>
-                                                        <td>'.ucwords(strtolower($shippings->cost)).
+                                                        <td>'.ucwords(strtolower($shippings->price)).
                                                         '</td>
                                                         <td>
                                                             <a href="'.base_url('shippings/edit/'.$shippings->shipping_id).'"><i class="fe-edit-2"></i>

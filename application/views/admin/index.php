@@ -28,9 +28,9 @@
                                 <h3 class="mt-2">
                                     <?php
                                         if ($rows){
-                                              echo $rows->num_rows();
+                                            echo number_format($rows->num_rows(),'2',',','.');
                                         }else{
-                                              echo "0";
+                                            echo number_format("0",'2',',','.');
                                         }
                                     ?>
                                 </h3>
@@ -47,8 +47,16 @@
                                 <div class="float-right">
                                     <i class="mdi mdi-currency-usd text-danger widget-icon"></i>
                                 </div>
-                                <h5 class="text-muted font-weight-normal mt-0">Income amounts</h5>
-                                <h3 class="mt-2">21,287</h3>
+                                <h5 class="text-muted font-weight-normal mt-0">Income Amounts</h5>
+                                <h3 class="mt-2">
+                                    <?php
+                                        if ($total){
+                                            echo number_format($total->total,'2',',','.');
+                                        }else{
+                                            echo number_format("0",'2',',','.');
+                                        }
+                                    ?>
+                                </h3>
                             </div>
                             <div id="sparkline2"></div>
                         </div> <!-- end card-body-->
@@ -66,9 +74,9 @@
                                 <h3 class="mt-2">
                                     <?php
                                         if($customer){
-                                           echo $customer->num_rows();
+                                           echo number_format($customer->num_rows(),'2',',','.');
                                         }else {
-                                            echo "0";
+                                            echo number_format("0",'2',',','.');
                                         }
                                     ?>
                                 </h3>
@@ -89,9 +97,9 @@
                                 <h3 class="mt-2">
                                     <?php
                                         if ($views->views != "") {
-                                            echo $views->views;
+                                            echo number_format($views->views,'2',',','.');
                                         }else{
-                                            echo "0";
+                                             echo number_format("0",'2',',','.');
                                         }
                                     ?>   
                                 </h3>

@@ -17,10 +17,10 @@
 	    <link href="<?php echo base_url('frontend_template/assets/css/external.css'); ?>" rel="stylesheet">
 	    <link href="<?php echo base_url('frontend_template/assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
 	    <link href="<?php echo base_url('frontend_template/assets/css/style.css'); ?>" rel="stylesheet">
-	    <link href="<?php echo base_url('granny/assets/css/external.css'); ?>" rel="stylesheet">
-	    <link href="<?php echo base_url('granny/assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
-	    <link href="<?php echo base_url('granny/assets/css/style.css'); ?>" rel="stylesheet">
-	    <link href="<?php echo base_url('granny/assets/css/style_front.css'); ?>" rel="stylesheet">
+	    <link href="<?php echo base_url('frontend_template/assets/css/external.css'); ?>" rel="stylesheet">
+	    <link href="<?php echo base_url('frontend_template/assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
+	    <link href="<?php echo base_url('frontend_template/assets/css/style.css'); ?>" rel="stylesheet">
+	    <link href="<?php echo base_url('frontend_template/assets/css/style_front.css'); ?>" rel="stylesheet">
 	    <!-- RS5.0 Main Stylesheet -->
 	    <link rel="stylesheet" type="text/css" href="<?php echo base_url('frontend_template/assets/revolution/css/settings.css'); ?>">
 	    <link rel="stylesheet" type="text/css" href="<?php echo base_url('frontend_template/assets/revolution/css/layers.css'); ?>">

@@ -9,10 +9,10 @@
                                 <li class="breadcrumb-item"><a href="<?php echo base_url('admin/');?>">Binfrix</a></li>
 
                                 <li class="breadcrumb-item"><a href="<?php echo base_url('shippings/');?>">Shippings</a></li>
-                                <li class="breadcrumb-item active">Modify Shippings</li>
+                                <li class="breadcrumb-item active">Modify Shipping</li>
                             </ol>
                         </div>
-                        <h4 class="page-title">Modify Shippings</h4>
+                        <h4 class="page-title">Modify Shipping</h4>
                     </div>
                 </div>
             </div> 

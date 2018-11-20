@@ -9,10 +9,10 @@
                                 <li class="breadcrumb-item"><a href="<?php echo base_url('admin/');?>">Binfrix</a></li>
 
                                 <li class="breadcrumb-item"><a href="<?php echo base_url('shippings/');?>">Countries</a></li>
-                                <li class="breadcrumb-item active">Create Shippings</li>
+                                <li class="breadcrumb-item active">Create Shipping</li>
                             </ol>
                         </div>
-                        <h4 class="page-title">Create Shippings</h4>
+                        <h4 class="page-title">Create Shipping</h4>
                     </div>
                 </div>
             </div> 
@@ -65,9 +65,9 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">Cost</label>
+                                        <label class="col-sm-2 col-form-label">Price</label>
                                         <div class="col-sm-10">
-                                            <input name="cost" placeholder="Cost"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                            <input name="price" placeholder="Price"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                         </div>
                                     </div>
                                     <div class="form-group row">

@@ -43,9 +43,9 @@
 				                </div>
 				                <!-- .col-md-6 end -->
 				                <div class="col-xs-12 col-sm-6 col-md-6 widget--newsletter">
-				                    <form class="footer--social-newsletter mailchimp">
-				                        <input type="email" name="email" class="form-control" placeholder="Subscribe Our Newsletter">
-				                        <button type="submit"><i class="fa fa-long-arrow-right"></i></button>
+				                    <form class="footer--social-newsletter">
+				                        <input type="email" name="email" id="email" class="form-control" placeholder="Subscribe Our Newsletter">
+				                        <button type="button" id="add_newsletter"><i class="fa fa-long-arrow-right"></i></button>
 				                    </form>
 				                    <div class="subscribe-alert"></div>
 				                </div>
@@ -87,6 +87,36 @@
 		<script src="<?php echo base_url('frontend_template/assets/assets/revolution/js/extensions/revolution.extension.parallax.min.js'); ?>"></script>
 		<!-- RS Configration JS Files -->
 		<script src="<?php echo base_url('frontend_template/assets/js/rsconfig.js'); ?>"></script>
-    	<script src="<?php echo  base_url('admin_template/js/pagination.js')?>"></script> 
+    	<script src="<?php echo  base_url('admin_template/js/pagination.js')?>"></script>
+
+    	<script>
+    		$(document).ready(function(){
+    			$(document).on('click','#add_newsletter',function(){
+    				var email = $('#email').val();
+    				if ($.trim(email).length > 0) {
+    					newsletter(email);
+    				}else{
+    					$(".subscribe-alert").html('<h5 class="alert alert-danger">Empty Field</h5>');
+    				}
+    			})
+    		})
+    		function newsletter(email){
+
+		        $.ajax({
+		            url: '<?php echo base_url()?>/index.php/newsletters/store/',
+		            type: 'POST',
+		            data: {email:email},
+		            dataType:'JSON',
+		            success:function(data){
+		               var html = "";
+		               if (data == 1) {
+		               		$(".subscribe-alert").html('<h5 class="alert alert-success">Thank you for subscribing!</h5>');
+		               		$('#email').val('');
+		               }
+		            }
+		        })
+
+		    }
+    	</script> 
 	</body>
 </html>

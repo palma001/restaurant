@@ -8,7 +8,7 @@
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="<?php echo base_url('admin/');?>">Binfrix</a></li>
 
-                                <li class="breadcrumb-item"><a href="<?php echo base_url('countries/');?>">Countries</a></li>
+                                <li class="breadcrumb-item"><a href="<?php echo base_url('states/');?>">States</a></li>
                                 <li class="breadcrumb-item active">Create State</li>
                             </ol>
                         </div>
@@ -42,7 +42,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label">Countries</label>
+                                        <label class="col-sm-2 col-form-label">Country</label>
                                         <div class="col-sm-10">
                                             <select name="country" class="form-control">
                                                 <option value="">-- Select --</option>

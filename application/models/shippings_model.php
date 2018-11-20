@@ -14,7 +14,7 @@ class Shippings_model extends CI_Model {
 				'state_id'   => $data['state'], 
 				'country_id' => $data['country'],
 				'zip'        => $data['zip'], 
-				'cost'       => $data['cost']
+				'price'       => $data['price']
 			)
 		);
 	}
@@ -25,7 +25,7 @@ class Shippings_model extends CI_Model {
 			'state_id'   => $data['state'], 
 			'country_id' => $data['country'],
 			'zip'        => $data['zip'], 
-			'cost'       => $data['cost']
+			'price'       => $data['price']
 		);
 		$this->db->where('shipping_id',$id);
 		$query = $this->db->update('shippings',$datos);
@@ -59,7 +59,7 @@ class Shippings_model extends CI_Model {
 		$this->db->delete('shippings',array('shipping_id' => $id));	
 	}
 
-	public function shippings_cost($country,$states)
+	public function shippings_price($country,$states)
 	{
 		$this->db->join('countries','countries.country_id = shippings.country_id');
 		$this->db->join('states','states.state_id = shippings.state_id');

@@ -142,8 +142,8 @@
                         </li>
                         <!-- li end -->
                         <!-- Menu -->
-                        <li class="has-dropdown">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle menu-item">Menu</a>
+                        <li class="has-dropdown mega-dropdown">
+                            <a href="<?php echo base_url('menu') ?>" class="menu-item">Menu</a>
                         </li>
                         <!--end -->
                         <li>

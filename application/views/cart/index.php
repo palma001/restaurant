@@ -152,7 +152,7 @@
 								<input type="hidden" name="" id="subtotal" value="<?php echo $this->cart->format_number($this->cart->total()); ?>">
 	                        </li>
 	                        <li>Shipping :<span class="pull-right text-right shippings">Free Shipping</span>
-	                        	<input type="hidden" value="" id="cost">
+	                        	<input type="hidden" value="" id="price">
 	                        </li>
 	                        <li>Order Total :<span class="pull-right text-right order-total">$ <?php echo $this->cart->format_number($this->cart->total()); ?> </span></li>
 	                    </ul>
@@ -206,23 +206,23 @@
         });
 	}
 
-	function cost(country,states){
+	function price(country,states){
 		$.ajax({
-            url: 'http://localhost/comida/shippings/shippings_cost/',
+            url: 'http://localhost/comida/shippings/shippings_price/',
             type: 'POST',
             data: {country:country,states:states},
             dataType:'JSON',
             success:function(data){
             	if (data != 1) {
 	                var state = "";
-	                $.each(data.cost,function(key,item){
-	                	state = item.cost;
+	                $.each(data.price,function(key,item){
+	                	state = item.price;
 	                });
 	                $(".shippings").html('$ '+state);
-	                $('#cost').val(state);
+	                $('#price').val(state);
             	}else{
             		$(".shippings").html('$ '+ 0);
-            		$('#cost').val(0)
+            		$('#price').val(0)
             	}
             }	
             
@@ -231,7 +231,7 @@
 
 	function total() {
         var n1 = document.getElementById('subtotal').value;
-        var n2 = document.getElementById('cost').value;
+        var n2 = document.getElementById('price').value;
         var suma = parseInt(n1) + parseInt(n2);
        	$(".order-total").html("$ " +suma);
     }

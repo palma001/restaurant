@@ -14,21 +14,19 @@
             <ul class="metismenu" id="side-menu">
                <li><a href="<?php echo base_url("admin/");?>" title=""><i class="fe-home"></i> Home</a></li>
                <li class="menu-title">Pages</li>
-
                <?php  
                     if ($pages) {
                         foreach ($pages->result() as $key => $pages) {
                            echo '
-                           <li><a href="'.base_url('pages/'.$pages->page_id).'" title="">
+                           <li><a href="#" id="'.$pages->page_title.'" title="" class="page">
                                 <i class="fe-book"></i> '.$pages->page_title.'</a>
                            </li>';
                         }
                     }
                ?>
-               
             </ul>
         </div>
-        <!-- End Sidebar -->
         <div class="clearfix"></div>
     </div>
 </div>
+

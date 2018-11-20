@@ -61,8 +61,8 @@ class Shippings extends CI_Controller
                 'rules' => 'required',
             ),
             array(
-                'field' => 'cost',
-                'label' => 'Cost',
+                'field' => 'price',
+                'label' => 'price',
                 'rules' => 'required',
             ),
         );
@@ -77,7 +77,7 @@ class Shippings extends CI_Controller
                 'state'   => $this->input->post('state'),
                 'country' => $this->input->post('country'),
                 'zip'     => $this->input->post('zip'),
-                'cost'    => $this->input->post('cost'),
+                'price'    => $this->input->post('price'),
             );
             $this->shippings_model->store($data);
             $this->session->set_flashdata('message', 'Saved Successfully');
@@ -124,8 +124,8 @@ class Shippings extends CI_Controller
                 'rules' => 'required',
             ),
             array(
-                'field' => 'cost',
-                'label' => 'Cost',
+                'field' => 'price',
+                'label' => 'price',
                 'rules' => 'required',
             ),
         );
@@ -140,7 +140,7 @@ class Shippings extends CI_Controller
                 'state'   => $this->input->post('state'),
                 'country' => $this->input->post('country'),
                 'zip'     => $this->input->post('zip'),
-                'cost'    => $this->input->post('cost'),
+                'price'    => $this->input->post('price'),
             );
             $this->shippings_model->update($id,$data);
             $this->session->set_flashdata('message', 'Saved Successfully');
@@ -155,14 +155,14 @@ class Shippings extends CI_Controller
         $this->session->set_flashdata('message', 'Deleted Successfully');
     }
 
-    public function shippings_cost()
+    public function shippings_price()
     {
         $country = $this->input->post('country');
         $states  = $this->input->post('states');
         $data = array(
-            'cost' => $this->shippings_model->shippings_cost($country,$states),
+            'price' => $this->shippings_model->shippings_price($country,$states),
         );
-        if ($data['cost'] == false) {
+        if ($data['price'] == false) {
             echo 1;
         }else{
             echo json_encode($data);
