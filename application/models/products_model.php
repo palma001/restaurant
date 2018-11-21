@@ -48,6 +48,7 @@ class Products_model extends CI_Model {
 		}
 	}
 
+
 	public function get($id)
 	{
 		$this->db->where('product_id',$id);
@@ -75,6 +76,7 @@ class Products_model extends CI_Model {
 		if ($inicio !== FALSE && $quantity !== FALSE) {
 			$this->db->limit($quantity,$inicio);
 		}
+		$this->db->where('outstanding',1);
 		$query = $this->db->get('products');
 		return $query->result();
 	}
