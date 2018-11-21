@@ -177,12 +177,12 @@
 		$('#states').change(function(){
 			var country = $("#country").val();
 			var states  = $("#states").val();
-			cost(country,states);
+			price(country,states);
 		});
 		$('.calcular').click(function(){
 			var country = $("#country").val();
 			var states  = $("#states").val();
-			cost(country,states);
+			price(country,states);
 			setTimeout(function(){
 				total();
 			},500)
