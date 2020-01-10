@@ -1,6 +1,6 @@
 <!-- Page Title #4
 ============================================= -->
-<section id="page-title" class="page-title bg-overlay bg-parallax bg-overlay-gradient">
+<section id="page-title" style="margin-top: -105px" class="page-title bg-overlay bg-parallax bg-overlay-gradient">
     <div class="bg-section">
         <img src="<?php echo base_url('frontend_template/assets/images/page-title/6.jpg') ?>" alt="Background" />
     </div>
@@ -68,7 +68,7 @@
 		                                        <h6> <?php echo $items['name']; ?></h6>
 		                                    </div>
 		                                </td>
-		                                <td class="cart-product-price">$ <?php echo $this->cart->format_number($items['price']); ?></td>
+		                                <td class="cart-product-price">$ <?php echo $items['price'] ?></td>
 		                                <td class="cart-product-quantity">
 		                                    <div class="product-quantity">
 		                                        <a href="#"><i class="fa fa-minus"></i></a>
@@ -79,7 +79,7 @@
 		                                        <a href="#"><i class="fa fa-plus"></i></a>
 		                                    </div>
 		                                </td>
-		                                <td class="cart-product-total">$ <?php echo $this->cart->format_number($items['subtotal']); ?></td>
+		                                <td class="cart-product-total">$ <?php echo $items['subtotal'] ?></td>
 		                        	</tr>
 	                            <?php $i++;?>
 
@@ -148,13 +148,13 @@
 	                <div class="cart-total-amount">
 	                    <h6>Cart Totals :</h6>
 	                    <ul class="list-unstyled">
-	                        <li>Cart Subtotal :<span class="pull-right text-right">$ <?php echo $this->cart->format_number($this->cart->total()); ?></span>
-								<input type="hidden" name="" id="subtotal" value="<?php echo $this->cart->format_number($this->cart->total()); ?>">
+	                        <li>Cart Subtotal :<span class="pull-right text-right">$ <?php echo $this->cart->total(); ?></span>
+								<input type="hidden" name="" id="subtotal" value="<?php echo $this->cart->total(); ?>">
 	                        </li>
 	                        <li>Shipping :<span class="pull-right text-right shippings">Free Shipping</span>
 	                        	<input type="hidden" value="" id="price">
 	                        </li>
-	                        <li>Order Total :<span class="pull-right text-right order-total">$ <?php echo $this->cart->format_number($this->cart->total()); ?> </span></li>
+	                        <li>Order Total :<span class="pull-right text-right order-total">$ <?php echo $this->cart->total(); ?> </span></li>
 	                    </ul>
 	                </div>
 	                <!-- .cart-total-amount end -->
@@ -192,7 +192,7 @@
 
 	function states(country_id){
 		$.ajax({
-            url: 'http://localhost/comida/states/serach_states/',
+            url: 'http://localhost/delivery/states/serach_states/',
             type: 'POST',
             data: {country_id:country_id},
             dataType:'JSON',
@@ -208,7 +208,7 @@
 
 	function price(country,states){
 		$.ajax({
-            url: 'http://localhost/comida/shippings/shippings_price/',
+            url: 'http://localhost/delivery/shippings/shippings_price/',
             type: 'POST',
             data: {country:country,states:states},
             dataType:'JSON',
@@ -216,7 +216,7 @@
             	if (data != 1) {
 	                var state = "";
 	                $.each(data.price,function(key,item){
-	                	state = item.price;
+	                	state = item.cost;
 	                });
 	                $(".shippings").html('$ '+state);
 	                $('#price').val(state);
@@ -233,6 +233,6 @@
         var n1 = document.getElementById('subtotal').value;
         var n2 = document.getElementById('price').value;
         var suma = parseInt(n1) + parseInt(n2);
-       	$(".order-total").html("$ " +suma);
+       	$(".order-total").html("$ " +new Intl.NumberFormat("de-DE").format(suma));
     }
 </script>

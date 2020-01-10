@@ -1,7 +1,7 @@
 <!-- Page Title #4
 ============================================= -->
 <?php  if ($products) { ?>
-    <section id="page-title" class="page-title bg-overlay bg-parallax bg-overlay-gradient">
+    <section id="page-title" style="margin-top: -105px" class="page-title bg-overlay bg-parallax bg-overlay-gradient">
         <div class="bg-section">
             <img src="<?php echo base_url('frontend_template/assets/images/page-title/6.jpg') ?>" alt="Background" />
         </div>

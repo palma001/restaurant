@@ -77,7 +77,7 @@ class Shippings extends CI_Controller
                 'state'   => $this->input->post('state'),
                 'country' => $this->input->post('country'),
                 'zip'     => $this->input->post('zip'),
-                'price'    => $this->input->post('price'),
+                'cost'    => $this->input->post('price'),
             );
             $this->shippings_model->store($data);
             $this->session->set_flashdata('message', 'Saved Successfully');
@@ -140,7 +140,7 @@ class Shippings extends CI_Controller
                 'state'   => $this->input->post('state'),
                 'country' => $this->input->post('country'),
                 'zip'     => $this->input->post('zip'),
-                'price'    => $this->input->post('price'),
+                'cost'    => $this->input->post('price'),
             );
             $this->shippings_model->update($id,$data);
             $this->session->set_flashdata('message', 'Saved Successfully');

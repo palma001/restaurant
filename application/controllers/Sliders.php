@@ -20,7 +20,7 @@
 			$this->load->view('layouts/header_admin');
 			$this->load->view('layouts/topnav_admin');
 			$this->load->view('modals/modal_confirm');
-			$this->load->view('Sliders/index',$data);
+			$this->load->view('sliders/index',$data);
 			$this->load->view('layouts/navbar_admin');
 			$this->load->view('layouts/footer_admin');
 		}
@@ -29,7 +29,7 @@
 		{
 			$this->load->view('layouts/header_admin');
 			$this->load->view('layouts/topnav_admin');
-			$this->load->view('Sliders/create');
+			$this->load->view('sliders/create');
 			$this->load->view('layouts/navbar_admin');
 			$this->load->view('layouts/footer_admin');
 		}

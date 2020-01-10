@@ -8,7 +8,7 @@
             </div>
             <div class="modal-body">
                 <div class="reservations"></div>
-            </div>  
+            </div> 
             <div class="modal-footer">
                 <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
             </div>

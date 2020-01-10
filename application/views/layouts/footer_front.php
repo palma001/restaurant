@@ -103,7 +103,7 @@
     		function newsletter(email){
 
 		        $.ajax({
-		            url: '<?php echo base_url()?>/index.php/newsletters/store/',
+		            url: '<?php echo base_url()?>/newsletters/store/',
 		            type: 'POST',
 		            data: {email:email},
 		            dataType:'JSON',

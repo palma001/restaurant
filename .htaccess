@@ -10,7 +10,7 @@
     RewriteCond %{REQUEST_FILENAME} !-d
 
     #en casi de no existir redirecionamos
-    RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+    RewriteRule ^(.*)$ /delivery/index.php/$1 [L,QSA]
     
 </IfModule>
 

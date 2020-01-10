@@ -34,7 +34,7 @@
                                         ';
                                     }  
                                 ?>
-                                <form class="form-horizontal" method="post" action="<?php echo base_url('index.php/TypesUsers/store');?>">
+                                <form class="form-horizontal" method="post" action="<?php echo base_url('/Typesusers/store');?>">
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Type of User</label>
                                         <div class="col-sm-10">

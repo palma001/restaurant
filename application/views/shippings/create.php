@@ -99,7 +99,7 @@
 
     function states(country_id){
         $.ajax({
-            url: 'http://localhost/comida/states/serach_states/',
+            url: 'http://localhost/delivery/states/serach_states/',
             type: 'POST',
             data: {country_id:country_id},
             dataType:'JSON',

@@ -44,8 +44,9 @@
 
 	        $this->load->library('upload',$config);
 
-	        if (!$this->upload->do_upload("fileImagen")) {
-	        	$this->session->set_flashdata('message','Unsupported Format');
+	        if (!$this->upload->do_upload('fileImagen')) {
+				$error = array('error' => $this->upload->display_errors());
+				$this->session->set_flashdata('message', $this->upload->display_errors());
 	            redirect(base_url('galleries/create/')); 
 	        }else {
 	        	
@@ -71,14 +72,14 @@
 		{
 
 			$config['image_library']  = 'gd2';
-			$config['source_image']   = 'uploads/galleries/'.$filename;
+			$config['source_image']   = './uploads/galleries/'.$filename;
 			$config['create_thumb']   = TRUE;
 			$config['maintain_ratio'] = TRUE;
-			$config['new_image']      = 'uploads/galleries/thumbs/';
+			$config['new_image']      = './uploads/galleries/thumbs/';
 			$config['thumb_marker']   = '';
 			$config['width']          = 150;
 			$config['height']         = 150;
-			$this->load->library('image_lib', $config); 
+			$this->load->library('image_lib', $config);
 			$this->image_lib->resize();
 		}
 

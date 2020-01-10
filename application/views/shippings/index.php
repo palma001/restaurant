@@ -61,7 +61,7 @@
                                                         '</td>
                                                         <td>'.ucwords(strtolower($shippings->zip)).
                                                         '</td>
-                                                        <td>'.ucwords(strtolower($shippings->price)).
+                                                        <td>'.ucwords(strtolower($shippings->cost)).
                                                         '</td>
                                                         <td>
                                                             <a href="'.base_url('shippings/edit/'.$shippings->shipping_id).'"><i class="fe-edit-2"></i>
@@ -104,7 +104,7 @@
 
     function destroy(id){
          $.ajax({
-            url: '<?php echo base_url()?>/index.php/shippings/destroy/',
+            url: '<?php echo base_url()?>/shippings/destroy/',
             type: 'POST',
             data: {id:id},
             success:function(data){

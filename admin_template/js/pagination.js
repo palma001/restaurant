@@ -9,21 +9,21 @@ $(document).ready(function(){
     });
 function pagination(page){
     $.ajax({
-        url: 'http://localhost/comida/home/pagination/',
+        url: 'http://localhost/delivery/home/pagination/',
         type: 'POST',
         data:{nropage:page},
         dataType:'JSON',
         success:function(data){
             var product = "";
                 $.each(data.products,function(key,item){
-                    product +='<form action = "http://localhost/comida/cart/store/" method="post">';
+                    product +='<form action = "http://localhost/delivery/cart/store/" method="post">';
                         product += '<div class="col-xs-12 col-sm-6 col-md-4">'+
                             '<div class="product-item">'+
                                 '<div class="product--img">'+
-                                    '<img src="http://localhost/comida/uploads/products/'+item.image+'" alt="Product" />'+
+                                    '<img src="http://localhost/delivery/uploads/products/'+item.image+'" alt="Product" />'+
                                     '<div class="product--hover">'+
                                         '<div class="product--action">'+
-                                            '<button type ="submit">Add To Cart</button>'+
+                                            '<button class="btn-popup" type ="submit">Add To Cart</button>'+
                                         '</div>'+
                                     '</div>'+
                                     '<div class="divider--shape-1down"></div>'+

@@ -54,7 +54,7 @@
                                                         <?php echo $key;?>
                                                     </td>
                                                     <td>
-                                                        <img src="<?php echo base_url()?>uploads/galleries/thumbs/<?php echo  $galleries->gallery;?>">
+                                                        <img src="<?php echo base_url()?>/uploads/galleries/thumbs/<?php echo  $galleries->gallery;?>">
                                                     </td>
                                                     <td>
                                                         <a href="<?php echo $galleries->gallery_id; ?>" data-toggle="modal" data-target="#confirm" class="confir"> 
@@ -93,7 +93,7 @@
 
     function destroy(id){
          $.ajax({
-            url: '<?php echo base_url()?>/index.php/galleries/destroy/',
+            url: '<?php echo base_url()?>/galleries/destroy/',
             type: 'POST',
             data: {id:id},
             success:function(data){

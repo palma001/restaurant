@@ -14,7 +14,7 @@ class Shippings_model extends CI_Model {
 				'state_id'   => $data['state'], 
 				'country_id' => $data['country'],
 				'zip'        => $data['zip'], 
-				'price'       => $data['price']
+				'cost'      => $data['cost']
 			)
 		);
 	}
@@ -25,7 +25,7 @@ class Shippings_model extends CI_Model {
 			'state_id'   => $data['state'], 
 			'country_id' => $data['country'],
 			'zip'        => $data['zip'], 
-			'price'       => $data['price']
+			'cost'       => $data['cost']
 		);
 		$this->db->where('shipping_id',$id);
 		$query = $this->db->update('shippings',$datos);

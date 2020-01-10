@@ -93,7 +93,7 @@
 
     function destroy(id){
          $.ajax({
-            url: '<?php echo base_url()?>/index.php/sliders/destroy/',
+            url: '<?php echo base_url()?>/sliders/destroy/',
             type: 'POST',
             data: {id:id},
             success:function(data){

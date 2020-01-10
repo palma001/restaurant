@@ -60,7 +60,6 @@
 			$this->cart->update($data);
 			redirect('cart');
 		}
-
 		public function destroy(){
 			$rowid = $this->uri->segment(3);
 			$this->cart->remove($rowid);

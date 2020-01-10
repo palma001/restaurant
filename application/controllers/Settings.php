@@ -20,14 +20,14 @@
 			$this->load->view('layouts/header_admin');
 			$this->load->view('layouts/navbar_admin');
 			$this->load->view('layouts/topnav_admin');
-			$this->load->view('Settings/index',array('settings' =>$settings));
+			$this->load->view('settings/index',array('settings' =>$settings));
 		    $this->load->view('layouts/footer_admin');
 		}
 
 		public function update()
 		{
 			$config['upload_path']   = './uploads/logo/';
-			$config['allowed_types'] = 'jpg|jpeg|gif|png';
+			$config['allowed_types'] = 'jpg|jpeg|gif|png|svg';
 			$this->load->library('upload',$config);
 
 			$this->upload->do_upload('logo');

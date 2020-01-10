@@ -79,7 +79,7 @@
 				if (!$this->upload->do_upload('image')) {
 
 					$error = array('error' => $this->upload->display_errors());
-		            $this->session->set_flashdata('message','Unable to Upload the File');
+		            $this->session->set_flashdata('message', $this->upload->display_errors());
 		            redirect(base_url('products/create'));
 
 				}else{

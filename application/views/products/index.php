@@ -98,7 +98,7 @@
 
     function destroy(id){
          $.ajax({
-            url: '<?php echo base_url()?>/index.php/products/destroy/',
+            url: '<?php echo base_url()?>/products/destroy/',
             type: 'POST',
             data: {id:id},
             success:function(data){
@@ -108,7 +108,7 @@
     }
     function show_products(id){
         $.ajax({
-            url: '<?php echo base_url()?>/index.php/products/show/',
+            url: '<?php echo base_url()?>/products/show/',
             type: 'POST',
             data: {id:id},
             dataType:'JSON',

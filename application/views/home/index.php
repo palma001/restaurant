@@ -1,13 +1,15 @@
-<section id="slider" class="slider">
+<!-- slide 1 -->
+<?php  
+    if ($slider) {
+        ?>
+<section id="slider" style="margin-top: -105px" class="slider">
 	<!-- START REVOLUTION SLIDER 5.0 -->
 	<div class="rev_slider_wrapper">
 		<div id="slider1" class="rev_slider" data-version="5.0">
 			<ul>
-				<!-- slide 1 -->
-				<?php  
-					if ($slider) {
-						foreach ($slider->result() as $key => $slider) {
-				?>
+                <?php 
+                    foreach ($slider->result() as $key => $slider) {
+                ?>
 							<li data-transition="zoomin"
 								data-slotamount="default"
 								data-easein="Power4.easeInOut"
@@ -16,22 +18,22 @@
 								<!-- MAIN IMAGE -->
 								<img src="<?php echo base_url('uploads/imagenes/'.$slider->image);?>" alt="Slide Background Image"  width="1920" height="1280">
 							</li>
-				<?php 			
-						}
-					}
-				?>
+                    <?php } ?>
 			</ul>
 		</div>
         <!-- END REVOLUTION SLIDER -->
     </div><!-- END OF SLIDER WRAPPER -->
 </section>
+				<?php 			
+					}
+				?>
 <!-- tabs
 ============================================= -->
 
 <!-- Page Title #4
 ============================================= -->
 <?php  if ($products) { ?>
-    <section id="page-title" class="page-title bg-overlay bg-parallax bg-overlay-gradient">
+    <section id="page-title" class="page-title bg-overlay bg-parallax bg-overlay-gradient" <?php if (!$slider) echo 'style="margin-top: -105px"' ?>>
         <div class="bg-section">
             <img src="<?php echo base_url('frontend_template/assets/images/page-title/6.jpg') ?>" alt="Background" />
         </div>
