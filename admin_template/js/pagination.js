@@ -23,7 +23,7 @@ function pagination(page){
                                     '<img src="http://localhost/delivery/uploads/products/'+item.image+'" alt="Product" />'+
                                     '<div class="product--hover">'+
                                         '<div class="product--action">'+
-                                            '<button class="btn-popup" type ="submit">Add To Cart</button>'+
+                                            '<button type ="submit">Add To Cart</button>'+
                                         '</div>'+
                                     '</div>'+
                                     '<div class="divider--shape-1down"></div>'+
